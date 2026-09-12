@@ -1,0 +1,1953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+<title>
+UniPlan | Professors
+</title>
+<link rel="stylesheet" href="{{ url_for( 'static', filename='css/style.css' ) }}" >
+
+<script
+        src="{{ url_for(
+            'static',
+            filename='js/language.js'
+        ) }}"
+    >
+
+</script>
+
+<script>
+
+        (function () {
+
+            const savedTheme =
+                localStorage.getItem(
+                    "uniplan-theme"
+                ) || "light";
+
+            let theme =
+                savedTheme;
+
+            if (
+                theme === "system"
+            ) {
+
+                theme =
+                    window.matchMedia(
+                        "(prefers-color-scheme: dark)"
+                    ).matches
+                        ? "dark"
+                        : "light";
+
+            }
+
+            document.documentElement
+                .setAttribute(
+                    "data-theme",
+                    theme
+                );
+
+        })();
+
+    </script>
+<style> .professors-toolbar {
+    margin-top:24px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    padding:16px 18px;
+    border:1px solid var(--border);
+    border-radius:12px;
+    background:var(--white);
+}
+.professor-search {
+    width:340px;
+    height:40px;
+    padding:0 12px;
+    border:1px solid var(--border);
+    border-radius:8px;
+    background:#ffffff;
+    color:var(--text);
+    font-size:12px;
+}
+.professor-search:focus {
+    outline:none;
+    border-color:#bfc4f5;
+    box-shadow:0 0 0 3px rgba( 89, 97, 223, 0.08 );
+}
+.professor-count {
+    color:#8f98aa;
+    font-size:11px;
+    white-space:nowrap;
+}
+.professor-layout {
+    margin-top:18px;
+    display:grid;
+    grid-template-columns:minmax(0, 1fr) minmax(0, 1.25fr);
+    gap:18px;
+    align-items:start;
+}
+.professor-list-panel, .professor-detail-panel {
+    padding:20px;
+    border:1px solid var(--border);
+    border-radius:15px;
+    background:var(--white);
+    box-shadow:0 5px 18px rgba( 30, 40, 70, 0.03 );
+}
+.professor-list {
+    margin-top:16px;
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+}
+.professor-row {
+    width:100%;
+    padding:11px 12px;
+    border:1px solid #edf0f5;
+    border-radius:9px;
+    background:#ffffff;
+    text-align:left;
+    cursor:pointer;
+    transition:background 0.15s ease, border-color 0.15s ease;
+}
+.professor-row:hover {
+    border-color:#d9dcf5;
+    background:#fafaff;
+}
+.professor-row.active {
+    border-color:#c9cdf5;
+    background:#f7f7ff;
+}
+.professor-row-main {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+}
+.professor-row-name {
+    min-width:0;
+    color:var(--navy);
+    font-size:12px;
+    font-weight:700;
+    white-space:nowrap;
+    overflow:hidden;
+    text-overflow:ellipsis;
+}
+.professor-row-sessions {
+    flex-shrink:0;
+    color:var(--primary);
+    font-size:9px;
+    font-weight:700;
+    white-space:nowrap;
+}
+.professor-row-meta {
+    margin-top:4px;
+    display:flex;
+    gap:12px;
+    color:#9aa2b2;
+    font-size:9px;
+    flex-wrap:wrap;
+}
+.professor-empty {
+    padding:30px 15px;
+    color:#9ba3b4;
+    text-align:center;
+    font-size:11px;
+}
+.pagination {
+    margin-top:16px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
+    flex-wrap:wrap;
+}
+.page-button {
+    min-width:30px;
+    height:30px;
+    padding:0 8px;
+    border:1px solid var(--border);
+    border-radius:7px;
+    background:#ffffff;
+    color:#687288;
+    font-size:10px;
+    font-weight:600;
+    cursor:pointer;
+}
+.page-button:hover {
+    border-color:#c8cdf7;
+    background:var(--primary-light);
+    color:var(--primary);
+}
+.page-button.active {
+    border-color:var(--primary);
+    background:var(--primary);
+    color:#ffffff;
+}
+.page-button:disabled {
+    opacity:0.45;
+    cursor:default;
+}
+.page-info {
+    margin-left:7px;
+    color:#9aa2b2;
+    font-size:9px;
+    white-space:nowrap;
+}
+.professor-detail-header {
+    padding-bottom:16px;
+    border-bottom:1px solid #eef0f4;
+}
+.professor-detail-name {
+    color:var(--navy);
+    font-size:20px;
+    font-weight:700;
+}
+.professor-detail-id {
+    margin-top:5px;
+    color:#99a1b1;
+    font-size:10px;
+}
+.professor-detail-meta {
+    margin-top:12px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+}
+.professor-tag {
+    padding:6px 9px;
+    border:1px solid #e5e7ef;
+    border-radius:7px;
+    background:#fafbfe;
+    color:#687288;
+    font-size:9px;
+    font-weight:600;
+}
+.sessions-title {
+    margin-top:18px;
+    color:var(--navy);
+    font-size:13px;
+    font-weight:700;
+}
+.sessions-subtitle {
+    margin-top:4px;
+    color:#979faf;
+    font-size:10px;
+}
+.session-list {
+    margin-top:14px;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+    max-height:545px;
+    overflow-y:auto;
+    padding-right:3px;
+}
+.session-card {
+    padding:12px 13px;
+    border:1px solid #edf0f5;
+    border-radius:9px;
+    background:#ffffff;
+}
+.session-card-top {
+    display:flex;
+    align-items:flex-start;
+    justify-content:space-between;
+    gap:12px;
+}
+.session-module {
+    color:var(--navy);
+    font-size:11px;
+    font-weight:700;
+    min-width:0;
+}
+.session-quarter {
+    flex-shrink:0;
+    color:var(--primary);
+    font-size:9px;
+    font-weight:700;
+}
+.session-details {
+    margin-top:7px;
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px 12px;
+    color:#929aab;
+    font-size:10px;
+}
+.session-detail-strong {
+    color:#687288;
+    font-weight:600;
+}
+.topbar-dropdown-wrapper {
+    position:relative;
+}
+.notification, .user-profile {
+    cursor:pointer;
+}
+.user-profile {
+    border:none;
+}
+.topbar-dropdown {
+    position:absolute;
+    top:calc( 100% + 10px );
+    right:0;
+    z-index:1000;
+    width:300px;
+    border:1px solid #e1e5ed;
+    border-radius:12px;
+    background:#ffffff;
+    box-shadow:0 14px 35px rgba( 30, 40, 70, 0.12 );
+    overflow:hidden;
+}
+.topbar-dropdown-header {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:15px 16px;
+    border-bottom:1px solid #eef0f4;
+}
+.topbar-dropdown-header strong {
+    color:var(--navy);
+    font-size:11px;
+    font-weight:700;
+}
+.dropdown-close {
+    width:26px;
+    height:26px;
+    border:none;
+    border-radius:6px;
+    background:transparent;
+    color:#8d96a8;
+    font-size:18px;
+    line-height:1;
+    cursor:pointer;
+}
+.dropdown-close:hover {
+    background:#f5f6fa;
+}
+.notification-content {
+    display:flex;
+    align-items:flex-start;
+    gap:11px;
+    padding:17px;
+}
+.notification-status-dot {
+    width:9px;
+    height:9px;
+    margin-top:4px;
+    flex-shrink:0;
+    border-radius:50%;
+    background:#19b57b;
+    box-shadow:0 0 0 4px #eaf8f3;
+}
+.notification-content strong {
+    display:block;
+    color:var(--navy);
+    font-size:10px;
+    font-weight:700;
+}
+.notification-content p {
+    margin:4px 0 0;
+    color:#929bad;
+    font-size:9px;
+    line-height:1.45;
+}
+.profile-panel {
+    width:280px;
+    padding:0;
+}
+.profile-panel-user {
+    display:flex;
+    align-items:center;
+    gap:11px;
+    padding:16px;
+}
+.profile-panel-avatar {
+    width:38px;
+    height:38px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+    border-radius:10px;
+    background:#eeeefe;
+    color:var(--primary);
+    font-size:15px;
+    font-weight:700;
+}
+.profile-panel-user strong {
+    display:block;
+    color:var(--navy);
+    font-size:11px;
+    font-weight:700;
+}
+.profile-panel-user span {
+    display:block;
+    margin-top:3px;
+    color:#929bad;
+    font-size:9px;
+}
+.profile-panel-divider {
+    height:1px;
+    background:#eef0f4;
+}
+.profile-panel-email {
+    padding:13px 16px;
+}
+.profile-panel-email span {
+    display:block;
+    color:#929bad;
+    font-size:8px;
+    font-weight:700;
+    letter-spacing:0.3px;
+    text-transform:uppercase;
+}
+.profile-panel-email strong {
+    display:block;
+    margin-top:4px;
+    color:#59657d;
+    font-size:10px;
+    font-weight:600;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.profile-menu-item {
+    display:block;
+    padding:12px 16px;
+    border-top:1px solid #eef0f4;
+    color:#59657d;
+    font-size:10px;
+    font-weight:600;
+    text-decoration:none;
+}
+.profile-menu-item:hover {
+    background:#f8f9fc;
+    color:var(--primary);
+}
+@media (max-width: 1000px) {
+    . p r o f e s s o r - l a y o u t {
+        g r i d - t e m p l a t e - c o l u m n s : 1 f r ;
+    }
+    . p r o f e s s o r s - t o o l b a r {
+        f l e x - d i r e c t i o n : c o l u m n ;
+        a l i g n - i t e m s : s t r e t c h ;
+    }
+    . p r o f e s s o r - s e a r c h {
+        w i d t h : 1 0 0 % ;
+    }
+}
+@media (max-width: 700px) {
+    . t o p b a r - d r o p d o w n {
+        r i g h t : - 1 0 p x ;
+        w i d t h : m i n ( 3 0 0 p x , c a l c ( 1 0 0 v w - 4 0 p x ) ) ;
+    }
+}
+</style> </head>
+<body>
+<div class="app">
+<aside class="sidebar">
+<div class="brand">
+<div class="brand-icon"> U </div>
+<div>
+<div class="brand-name"> UniPlan </div>
+<div class="brand-subtitle"> University Scheduler </div>
+</div>
+</div>
+<div class="menu-title"> MAIN MENU </div>
+<nav class="nav">
+<!-- DASHBOARD -->
+<a href="/" class="nav-item" >
+<span class="nav-icon"> ▦ </span>
+<span> Dashboard </span>
+</a>
+<!-- TIMETABLE -->
+<a href="/timetable" class="nav-item" >
+<span class="nav-icon"> ▤ </span>
+<span> Timetable </span>
+</a>
+<!-- PROFESSORS -->
+<a href="/professors" class="nav-item active" >
+<span class="nav-icon"> ♙ </span>
+<span> Professors </span>
+</a>
+<a href="/preferences" class="nav-item">
+<span class="nav-icon"> ⚙</span>
+<span>Preferences</span>
+</a>
+<!-- ROOMS -->
+<a href="/rooms" class="nav-item" >
+<span class="nav-icon"> ▥ </span>
+<span> Rooms </span>
+</a>
+<!-- CAMPUSES -->
+<a href="/campuses" class="nav-item" >
+<span class="nav-icon"> ⌖ </span>
+<span> Campuses </span>
+</a>
+<!-- ANALYTICS -->
+<a href="/analytics" class="nav-item" >
+<span class="nav-icon"> ◔ </span>
+<span> Analytics </span>
+</a>
+<!-- CONFLICTS -->
+<a href="/conflicts" class="nav-item" >
+<span class="nav-icon"> ⚠ </span>
+<span> Conflicts </span>
+</a>
+</nav>
+<!-- SYSTEM -->
+<div class="sidebar-bottom">
+<div class="menu-title"> SYSTEM </div>
+<a href="/settings" class="nav-item" >
+<span class="nav-icon"> ⚙ </span>
+<span> Settings </span>
+</a>
+</div>
+<!-- FOOTER -->
+<div class="sidebar-footer">
+<div class="footer-dot"></div>
+<div>
+<div class="footer-title"> Scheduling Engine </div>
+<div class="footer-status"> Operational </div>
+</div>
+</div>
+</aside>
+<main class="main">
+<header class="topbar">
+<div>
+<div class="breadcrumb"> SCHEDULE MANAGEMENT </div>
+<h1> Professors </h1>
+<p class="page-description"> View professors and their scheduled teaching sessions. </p>
+</div>
+<div class="topbar-actions">
+<!-- NOTIFICATIONS -->
+<div class="topbar-dropdown-wrapper" >
+<button type="button" id="notificationButton" class="notification" aria-label="Notifications" aria-expanded="false" > ♢ </button>
+<div id="notificationPanel" class="topbar-dropdown notification-panel" hidden >
+<div class="topbar-dropdown-header" >
+<strong> Notifications </strong>
+<button type="button" class="dropdown-close" id="notificationClose" aria-label="Close" > × </button>
+</div>
+<div class="notification-content" >
+<div class="notification-status-dot" ></div>
+<div>
+<strong> Scheduling Engine </strong>
+<p> Operational — no new notifications. </p>
+</div>
+</div>
+</div>
+</div>
+<!-- USER PROFILE -->
+<div class="topbar-dropdown-wrapper" >
+<button type="button" id="profileButton" class="user-profile" aria-expanded="false" >
+<div class="avatar"> S </div>
+<div class="user-info">
+<div id="topbarUserName" class="user-name" > Saadiya </div>
+<div class="user-role"> Administrator </div>
+</div>
+<span class="user-arrow"> ⌄ </span>
+</button>
+<div id="profilePanel" class="topbar-dropdown profile-panel" hidden >
+<div class="profile-panel-user" >
+<div class="profile-panel-avatar" > S </div>
+<div>
+<strong id="profilePanelName" > Saadiya </strong>
+<span> Administrator </span>
+</div>
+</div>
+<div class="profile-panel-divider" ></div>
+<div class="profile-panel-email" >
+<span> Email </span>
+<strong id="profilePanelEmail" > Not set </strong>
+</div>
+<a href="/settings" class="profile-menu-item" > ⚙ Account Settings </a>
+</div>
+</div>
+</div>
+</header>
+<section class="calendar-heading">
+<div>
+<div class="schedule-title-row">
+<h2> Professor Directory <button class="info-button" data-info="Browse the university's professors and view the teaching sessions assigned to each professor." aria-label="More information" >i</button>
+</h2>
+<span class="schedule-status"> 300 Staff </span>
+</div>
+<p> Search for a professor to view their assigned sessions. </p>
+</div>
+</section>
+<section class="professors-toolbar">
+<input type="text" id="professorSearch" class="professor-search" placeholder="Search by name or professor ID..." autocomplete="off" >
+<span id="professorCount" class="professor-count" > 300 professors </span>
+</section>
+<section class="professor-layout">
+<!-- PROFESSOR LIST -->
+<div class="professor-list-panel">
+<div class="panel-header">
+<div>
+<h2> Professors </h2>
+<p> Select a professor to view their sessions. </p>
+</div>
+</div>
+<div id="professorList" class="professor-list" > {
+% for professor in professors %}
+<button type="button" class="professor-row" data-professor-id="{{ professor.professor_id }}" data-search="{{ professor.name|lower }} {{ professor.professor_id|lower }}" >
+<div class="professor-row-main">
+<div class="professor-row-name"> {
+{
+professor.name }
+}
+</div>
+<div class="professor-row-sessions"> {
+{
+professor.session_count }
+}
+sessions </div>
+</div>
+<div class="professor-row-meta">
+<span> {
+{
+professor.professor_id }
+}
+</span>
+<span> Faculty {
+{
+professor.faculty_id }
+}
+</span>
+<span> {
+{
+professor.campus_id }
+}
+</span>
+</div>
+</button> {
+% endfor %}
+<div id="noProfessors" class="professor-empty" style="display: none;" > No professors match your search. </div>
+</div>
+<!-- PAGINATION -->
+<div id="pagination" class="pagination" ></div>
+</div>
+<!-- PROFESSOR DETAILS -->
+<div class="professor-detail-panel">
+<div id="professorDetails" class="professor-empty" > Select a professor from the list to view their scheduled sessions. </div>
+</div>
+</section>
+</main>
+</div>
+<script>
+
+    const professors =
+        {{ professors | tojson }};
+
+    const sessionsByProfessor =
+        {{ sessions_by_professor | tojson }};
+
+    const itemsPerPage =
+        10;
+
+    let currentPage =
+        1;
+
+    let filteredProfessors =
+        [...professors];
+
+    let selectedProfessorId =
+        null;
+
+    
+
+    const searchInput =
+        document.getElementById(
+            "professorSearch"
+        );
+
+    const professorCount =
+        document.getElementById(
+            "professorCount"
+        );
+
+    const professorList =
+        document.getElementById(
+            "professorList"
+        );
+
+    const pagination =
+        document.getElementById(
+            "pagination"
+        );
+
+    const noProfessors =
+        document.getElementById(
+            "noProfessors"
+        );
+
+    const professorDetails =
+        document.getElementById(
+            "professorDetails"
+        );
+
+    
+
+    function escapeHtml(
+        value
+    ) {
+
+        return String(
+            value ?? ""
+        )
+        .replace(
+            /&/g,
+            "&amp;"
+        )
+        .replace(
+            /</g,
+            "&lt;"
+        )
+        .replace(
+            />/g,
+            "&gt;"
+        )
+        .replace(
+            /"/g,
+            "&quot;"
+        )
+        .replace(
+            /'/g,
+            "&#039;"
+        );
+
+    }
+
+    
+
+    function renderProfessorList() {
+
+        professorList
+            .querySelectorAll(
+                ".professor-row"
+            )
+            .forEach(
+                row => row.remove()
+            );
+
+        const start =
+            (
+                currentPage - 1
+            ) * itemsPerPage;
+
+        const end =
+            start +
+            itemsPerPage;
+
+        const visibleProfessors =
+            filteredProfessors.slice(
+                start,
+                end
+            );
+
+        visibleProfessors.forEach(
+            professor => {
+
+                const button =
+                    document.createElement(
+                        "button"
+                    );
+
+                button.type =
+                    "button";
+
+                button.className =
+                    "professor-row";
+
+                if (
+                    professor.professor_id ===
+                    selectedProfessorId
+                ) {
+
+                    button.classList.add(
+                        "active"
+                    );
+
+                }
+
+                button.dataset.professorId =
+                    professor.professor_id;
+
+                button.innerHTML = `
+
+                    <div class="professor-row-main">
+
+                        <div class="professor-row-name">
+
+                            ${escapeHtml(
+                                professor.name
+                            )}
+
+                        </div>
+
+                        <div class="professor-row-sessions">
+
+                            ${professor.session_count}
+                            sessions
+
+                        </div>
+
+                    </div>
+
+                    <div class="professor-row-meta">
+
+                        <span>
+                            ${escapeHtml(
+                                professor.professor_id
+                            )}
+                        </span>
+
+                        <span>
+                            Faculty
+                            ${escapeHtml(
+                                professor.faculty_id
+                            )}
+                        </span>
+
+                        <span>
+                            ${escapeHtml(
+                                professor.campus_id
+                            )}
+                        </span>
+
+                    </div>
+
+                `;
+
+                button.addEventListener(
+                    "click",
+                    function () {
+
+                        showProfessor(
+                            professor.professor_id
+                        );
+
+                    }
+                );
+
+                professorList.insertBefore(
+                    button,
+                    noProfessors
+                );
+
+            }
+        );
+
+        noProfessors.style.display =
+            visibleProfessors.length === 0
+                ? "block"
+                : "none";
+
+        renderPagination();
+
+    }
+
+    
+
+    function renderPagination() {
+
+        pagination.innerHTML =
+            "";
+
+        const totalPages =
+            Math.ceil(
+                filteredProfessors.length /
+                itemsPerPage
+            );
+
+        if (
+            totalPages <= 1
+        ) {
+
+            return;
+
+        }
+
+        /* PREVIOUS */
+
+        const previous =
+            document.createElement(
+                "button"
+            );
+
+        previous.type =
+            "button";
+
+        previous.className =
+            "page-button";
+
+        previous.textContent =
+            "‹";
+
+        previous.disabled =
+            currentPage === 1;
+
+        previous.addEventListener(
+            "click",
+            function () {
+
+                if (
+                    currentPage > 1
+                ) {
+
+                    currentPage -= 1;
+
+                    renderProfessorList();
+
+                }
+
+            }
+        );
+
+        pagination.appendChild(
+            previous
+        );
+
+        /* PAGE NUMBERS */
+
+        const pagesToShow =
+            [];
+
+        if (
+            totalPages <= 5
+        ) {
+
+            for (
+                let page = 1;
+                page <= totalPages;
+                page++
+            ) {
+
+                pagesToShow.push(
+                    page
+                );
+
+            }
+
+        } else {
+
+            pagesToShow.push(
+                1
+            );
+
+            if (
+                currentPage > 3
+            ) {
+
+                pagesToShow.push(
+                    "..."
+                );
+
+            }
+
+            const startPage =
+                Math.max(
+                    2,
+                    currentPage - 1
+                );
+
+            const endPage =
+                Math.min(
+                    totalPages - 1,
+                    currentPage + 1
+                );
+
+            for (
+                let page = startPage;
+                page <= endPage;
+                page++
+            ) {
+
+                pagesToShow.push(
+                    page
+                );
+
+            }
+
+            if (
+                currentPage <
+                totalPages - 2
+            ) {
+
+                pagesToShow.push(
+                    "..."
+                );
+
+            }
+
+            pagesToShow.push(
+                totalPages
+            );
+
+        }
+
+        pagesToShow.forEach(
+            page => {
+
+                if (
+                    page === "..."
+                ) {
+
+                    const dots =
+                        document.createElement(
+                            "span"
+                        );
+
+                    dots.className =
+                        "page-info";
+
+                    dots.textContent =
+                        "…";
+
+                    pagination.appendChild(
+                        dots
+                    );
+
+                    return;
+
+                }
+
+                const button =
+                    document.createElement(
+                        "button"
+                    );
+
+                button.type =
+                    "button";
+
+                button.className =
+                    "page-button";
+
+                button.textContent =
+                    page;
+
+                if (
+                    page === currentPage
+                ) {
+
+                    button.classList.add(
+                        "active"
+                    );
+
+                }
+
+                button.addEventListener(
+                    "click",
+                    function () {
+
+                        currentPage =
+                            page;
+
+                        renderProfessorList();
+
+                    }
+                );
+
+                pagination.appendChild(
+                    button
+                );
+
+            }
+        );
+
+        /* NEXT */
+
+        const next =
+            document.createElement(
+                "button"
+            );
+
+        next.type =
+            "button";
+
+        next.className =
+            "page-button";
+
+        next.textContent =
+            "›";
+
+        next.disabled =
+            currentPage ===
+            totalPages;
+
+        next.addEventListener(
+            "click",
+            function () {
+
+                if (
+                    currentPage <
+                    totalPages
+                ) {
+
+                    currentPage += 1;
+
+                    renderProfessorList();
+
+                }
+
+            }
+        );
+
+        pagination.appendChild(
+            next
+        );
+
+        /* PAGE INFORMATION */
+
+        const pageInfo =
+            document.createElement(
+                "span"
+            );
+
+        pageInfo.className =
+            "page-info";
+
+        pageInfo.textContent =
+            `Page ${
+                currentPage
+            } of ${
+                totalPages
+            }`;
+
+        pagination.appendChild(
+            pageInfo
+        );
+
+    }
+
+    
+
+    function timeToMinutesLocal(
+        time
+    ) {
+
+        if (
+            !time
+        ) {
+
+            return 0;
+
+        }
+
+        const parts =
+            String(
+                time
+            ).split(
+                ":"
+            );
+
+        return (
+            parseInt(
+                parts[0],
+                10
+            ) * 60
+            +
+            parseInt(
+                parts[1] || "0",
+                10
+            )
+        );
+
+    }
+
+    function getSessionEndTime(
+        session
+    ) {
+
+        const start =
+            timeToMinutesLocal(
+                session.start_time
+            );
+
+        const duration =
+            Number(
+                session.duration_hours
+            ) * 60;
+
+        const total =
+            start +
+            duration;
+
+        const hours =
+            Math.floor(
+                total / 60
+            );
+
+        const minutes =
+            total % 60;
+
+        return (
+            String(
+                hours
+            ).padStart(
+                2,
+                "0"
+            )
+            +
+            ":"
+            +
+            String(
+                minutes
+            ).padStart(
+                2,
+                "0"
+            )
+        );
+
+    }
+
+    
+
+    function showProfessor(
+        professorId
+    ) {
+
+        const professor =
+            professors.find(
+                item =>
+                    item.professor_id ===
+                    professorId
+            );
+
+        if (
+            !professor
+        ) {
+
+            return;
+
+        }
+
+        selectedProfessorId =
+            professorId;
+
+        document
+            .querySelectorAll(
+                ".professor-row"
+            )
+            .forEach(
+                row => {
+
+                    row.classList.toggle(
+                        "active",
+                        row.dataset.professorId ===
+                        professorId
+                    );
+
+                }
+            );
+
+        const sessions =
+            sessionsByProfessor[
+                professorId
+            ] || [];
+
+        let html =
+            "";
+
+        /* -------------------------------------------------
+           PROFESSOR HEADER
+           ------------------------------------------------- */
+
+        html += `
+
+            <div class="professor-detail-header">
+
+                <div class="professor-detail-name">
+                    ${escapeHtml(
+                        professor.name
+                    )}
+                </div>
+
+                <div class="professor-detail-id">
+
+                    Professor ID:
+                    ${escapeHtml(
+                        professor.professor_id
+                    )}
+
+                </div>
+
+                <div class="professor-detail-meta">
+
+                    <span class="professor-tag">
+
+                        Faculty:
+                        ${escapeHtml(
+                            professor.faculty_id
+                        )}
+
+                    </span>
+
+                    <span class="professor-tag">
+
+                        Primary Campus:
+                        ${escapeHtml(
+                            professor.campus_id
+                        )}
+
+                    </span>
+
+                    <span class="professor-tag">
+
+                        ${sessions.length}
+                        scheduled sessions
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        `;
+
+        /* -------------------------------------------------
+           SESSION HEADING
+           ------------------------------------------------- */
+
+        html += `
+
+            <div class="sessions-title">
+                Scheduled Sessions
+            </div>
+
+            <div class="sessions-subtitle">
+                All sessions assigned to this professor.
+            </div>
+
+        `;
+
+        /* -------------------------------------------------
+           NO SESSIONS
+           ------------------------------------------------- */
+
+        if (
+            sessions.length === 0
+        ) {
+
+            html += `
+
+                <div class="professor-empty">
+                    No scheduled sessions found.
+                </div>
+
+            `;
+
+        }
+
+        /* -------------------------------------------------
+           SESSION LIST
+           ------------------------------------------------- */
+
+        else {
+
+            html += `
+
+                <div class="session-list">
+
+            `;
+
+            sessions
+                .slice()
+                .sort(
+                    function (
+                        a,
+                        b
+                    ) {
+
+                        const quarterA =
+                            String(
+                                a.quarter_id ||
+                                ""
+                            );
+
+                        const quarterB =
+                            String(
+                                b.quarter_id ||
+                                ""
+                            );
+
+                        if (
+                            quarterA !==
+                            quarterB
+                        ) {
+
+                            return quarterA.localeCompare(
+                                quarterB
+                            );
+
+                        }
+
+                        const dayOrder = {
+
+                            Monday:
+                                1,
+
+                            Tuesday:
+                                2,
+
+                            Wednesday:
+                                3,
+
+                            Thursday:
+                                4,
+
+                            Friday:
+                                5
+
+                        };
+
+                        const dayA =
+                            dayOrder[
+                                a.day
+                            ] || 99;
+
+                        const dayB =
+                            dayOrder[
+                                b.day
+                            ] || 99;
+
+                        if (
+                            dayA !==
+                            dayB
+                        ) {
+
+                            return (
+                                dayA -
+                                dayB
+                            );
+
+                        }
+
+                        return (
+                            timeToMinutesLocal(
+                                a.start_time
+                            )
+                            -
+                            timeToMinutesLocal(
+                                b.start_time
+                            )
+                        );
+
+                    }
+                )
+                .forEach(
+                    session => {
+
+                        const duration =
+                            Number(
+                                session.duration_hours
+                            );
+
+                        const endTime =
+                            getSessionEndTime(
+                                session
+                            );
+
+                        html += `
+
+                            <div class="session-card">
+
+                                <div class="session-card-top">
+
+                                    <div class="session-module">
+
+                                        ${escapeHtml(
+                                            session.module_name ||
+                                            "—"
+                                        )}
+
+                                    </div>
+
+                                    <div class="session-quarter">
+
+                                        ${escapeHtml(
+                                            session.quarter_id ||
+                                            "—"
+                                        )}
+
+                                    </div>
+
+                                </div>
+
+                                <div class="session-details">
+
+                                    <span>
+
+                                        <span class="session-detail-strong">
+                                            Class:
+                                        </span>
+
+                                        ${escapeHtml(
+                                            session.class_id ||
+                                            "—"
+                                        )}
+
+                                    </span>
+
+                                    <span>
+
+                                        <span class="session-detail-strong">
+                                            Day:
+                                        </span>
+
+                                        ${escapeHtml(
+                                            session.day ||
+                                            "—"
+                                        )}
+
+                                    </span>
+
+                                    <span>
+
+                                        <span class="session-detail-strong">
+                                            Time:
+                                        </span>
+
+                                        ${escapeHtml(
+                                            formatTimeRange(
+                                                session.start_time,
+                                                endTime
+                                            )
+                                        )}
+
+                                    </span>
+
+                                    <span>
+
+                                        <span class="session-detail-strong">
+                                            Duration:
+                                        </span>
+
+                                        ${duration}
+
+                                        ${
+                                            duration === 1
+                                                ? "hour"
+                                                : "hours"
+                                        }
+
+                                    </span>
+
+                                    <span>
+
+                                        <span class="session-detail-strong">
+                                            Room:
+                                        </span>
+
+                                        ${escapeHtml(
+                                            session.room_id ||
+                                            "—"
+                                        )}
+
+                                    </span>
+
+                                    <span>
+
+                                        <span class="session-detail-strong">
+                                            Campus:
+                                        </span>
+
+                                        ${escapeHtml(
+                                            session.campus_id ||
+                                            session.room_campus_id ||
+                                            "—"
+                                        )}
+
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        `;
+
+                    }
+                );
+
+            html += `
+
+                </div>
+
+            `;
+
+        }
+
+        professorDetails.innerHTML =
+            html;
+
+    }
+
+    
+
+    searchInput.addEventListener(
+        "input",
+        function () {
+
+            const query =
+                this.value
+                    .trim()
+                    .toLowerCase();
+
+            filteredProfessors =
+                professors.filter(
+                    professor => {
+
+                        const name =
+                            String(
+                                professor.name ||
+                                ""
+                            )
+                            .toLowerCase();
+
+                        const id =
+                            String(
+                                professor.professor_id ||
+                                ""
+                            )
+                            .toLowerCase();
+
+                        return (
+                            name.includes(
+                                query
+                            )
+                            ||
+                            id.includes(
+                                query
+                            )
+                        );
+
+                    }
+                );
+
+            currentPage =
+                1;
+
+            professorCount.textContent =
+                `${filteredProfessors.length} ${
+                    filteredProfessors.length === 1
+                        ? "professor"
+                        : "professors"
+                }`;
+
+            renderProfessorList();
+
+        }
+    );
+
+    
+
+    professorCount.textContent =
+        `${professors.length} professors`;
+
+    renderProfessorList();
+
+    
+
+    const savedAccountName =
+        localStorage.getItem(
+            "uniplan-account-name"
+        ) || "Saadiya";
+
+    const savedAccountEmail =
+        localStorage.getItem(
+            "uniplan-account-email"
+        ) || "";
+
+    const topbarUserName =
+        document.getElementById(
+            "topbarUserName"
+        );
+
+    const profilePanelName =
+        document.getElementById(
+            "profilePanelName"
+        );
+
+    const profilePanelEmail =
+        document.getElementById(
+            "profilePanelEmail"
+        );
+
+    if (
+        topbarUserName
+    ) {
+
+        topbarUserName.textContent =
+            savedAccountName;
+
+    }
+
+    if (
+        profilePanelName
+    ) {
+
+        profilePanelName.textContent =
+            savedAccountName;
+
+    }
+
+    if (
+        profilePanelEmail
+    ) {
+
+        profilePanelEmail.textContent =
+            savedAccountEmail ||
+            "Not set";
+
+    }
+
+    
+
+    const notificationButton =
+        document.getElementById(
+            "notificationButton"
+        );
+
+    const notificationPanel =
+        document.getElementById(
+            "notificationPanel"
+        );
+
+    const notificationClose =
+        document.getElementById(
+            "notificationClose"
+        );
+
+    const profileButton =
+        document.getElementById(
+            "profileButton"
+        );
+
+    const profilePanel =
+        document.getElementById(
+            "profilePanel"
+        );
+
+    
+
+    function closeTopbarMenus() {
+
+        if (
+            notificationPanel
+        ) {
+
+            notificationPanel.hidden =
+                true;
+
+        }
+
+        if (
+            profilePanel
+        ) {
+
+            profilePanel.hidden =
+                true;
+
+        }
+
+        if (
+            notificationButton
+        ) {
+
+            notificationButton
+                .setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+        }
+
+        if (
+            profileButton
+        ) {
+
+            profileButton
+                .setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+        }
+
+    }
+
+    
+
+    if (
+        notificationButton
+    ) {
+
+        notificationButton
+            .addEventListener(
+                "click",
+                function (
+                    event
+                ) {
+
+                    event.stopPropagation();
+
+                    const shouldOpen =
+                        notificationPanel.hidden;
+
+                    closeTopbarMenus();
+
+                    if (
+                        shouldOpen
+                    ) {
+
+                        notificationPanel.hidden =
+                            false;
+
+                        notificationButton
+                            .setAttribute(
+                                "aria-expanded",
+                                "true"
+                            );
+
+                    }
+
+                }
+            );
+
+    }
+
+    
+
+    if (
+        notificationClose
+    ) {
+
+        notificationClose
+            .addEventListener(
+                "click",
+                function () {
+
+                    closeTopbarMenus();
+
+                }
+            );
+
+    }
+
+    
+
+    if (
+        profileButton
+    ) {
+
+        profileButton
+            .addEventListener(
+                "click",
+                function (
+                    event
+                ) {
+
+                    event.stopPropagation();
+
+                    const shouldOpen =
+                        profilePanel.hidden;
+
+                    closeTopbarMenus();
+
+                    if (
+                        shouldOpen
+                    ) {
+
+                        profilePanel.hidden =
+                            false;
+
+                        profileButton
+                            .setAttribute(
+                                "aria-expanded",
+                                "true"
+                            );
+
+                    }
+
+                }
+            );
+
+    }
+
+    
+
+    if (
+        notificationPanel
+    ) {
+
+        notificationPanel
+            .addEventListener(
+                "click",
+                function (
+                    event
+                ) {
+
+                    event.stopPropagation();
+
+                }
+            );
+
+    }
+
+    if (
+        profilePanel
+    ) {
+
+        profilePanel
+            .addEventListener(
+                "click",
+                function (
+                    event
+                ) {
+
+                    event.stopPropagation();
+
+                }
+            );
+
+    }
+
+    
+
+    document.addEventListener(
+        "click",
+        function () {
+
+            closeTopbarMenus();
+
+        }
+    );
+
+    
+
+    document.addEventListener(
+        "keydown",
+        function (
+            event
+        ) {
+
+            if (
+                event.key ===
+                "Escape"
+            ) {
+
+                closeTopbarMenus();
+
+            }
+
+        }
+    );
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UniPlan | Settings</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<script src="{{ url_for('static', filename='js/language.js') }}"></script>
+
+<script>
+(function () {
+    const savedTheme = localStorage.getItem("uniplan-theme") || "light";
+    let theme = savedTheme;
+    if (theme === "system") theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
+
+<style>
+/* Settings Page */
+.settings-page { margin-top: 24px; display: flex; flex-direction: column; gap: 18px; padding-bottom: 40px; }
+.settings-section { border: 1px solid var(--border); border-radius: 15px; background: var(--white); box-shadow: 0 5px 18px rgba(30, 40, 70, 0.03); overflow: hidden; }
+.settings-section-header { padding: 22px 28px; border-bottom: 1px solid #edf0f5; }
+.settings-section-header h2 { margin: 0; color: var(--navy); font-size: 20px; font-weight: 700; }
+.settings-section-header p { margin: 4px 0 0; color: #8c96ab; font-size: 11px; }
+.settings-body { padding: 0 28px; }
+
+/* Setting Rows */
+.setting-row { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 17px 0; border-bottom: 1px solid #eef1f5; }
+.setting-row:last-child { border-bottom: none; }
+.setting-info { min-width: 0; flex: 1; }
+.setting-title { color: var(--navy); font-size: 12px; font-weight: 700; }
+.setting-description { margin-top: 4px; color: #929bad; font-size: 10px; line-height: 1.5; }
+.setting-control { flex-shrink: 0; }
+
+/* Appearance */
+.appearance-options { display: flex; align-items: center; gap: 8px; }
+.appearance-button { min-width: 88px; height: 42px; padding: 0 13px; border: 1px solid #dfe3eb; border-radius: 9px; background: #ffffff; color: #657086; font-size: 10px; font-weight: 700; cursor: pointer; transition: all 0.15s ease; }
+.appearance-button:hover { border-color: #cbd0ef; background: #fafaff; color: var(--primary); }
+.appearance-button.active { border-color: #cbcfff; background: #f3f3ff; color: var(--primary); box-shadow: 0 2px 7px rgba(89, 97, 223, 0.08); }
+
+/* Select */
+.settings-select { width: 248px; height: 42px; padding: 0 12px; border: 1px solid #dfe3eb; border-radius: 9px; background: #ffffff; color: #44506a; font-size: 11px; cursor: pointer; }
+.settings-select:focus { outline: none; border-color: #bfc4f5; box-shadow: 0 0 0 3px rgba(89, 97, 223, 0.08); }
+
+/* Read Only Value */
+.setting-value { color: #59657d; font-size: 11px; font-weight: 700; white-space: nowrap; }
+
+/* Time Format */
+.time-format-options { display: flex; align-items: center; gap: 8px; }
+.time-format-button { min-width: 98px; height: 42px; padding: 0 13px; border: 1px solid #dfe3eb; border-radius: 9px; background: #ffffff; color: #657086; font-size: 10px; font-weight: 700; cursor: pointer; transition: all 0.15s ease; }
+.time-format-button:hover { border-color: #cbd0ef; background: #fafaff; color: var(--primary); }
+.time-format-button.active { border-color: #cbcfff; background: #f3f3ff; color: var(--primary); }
+
+/* Account */
+.account-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; padding: 24px 0; }
+.account-field { display: flex; flex-direction: column; gap: 7px; }
+.account-field.full { grid-column: 1 / -1; }
+.account-label { color: #7f8aa1; font-size: 10px; font-weight: 700; }
+.account-input { width: 100%; height: 42px; padding: 0 12px; border: 1px solid #dfe3eb; border-radius: 9px; background: #f7f8fb; color: #43506b; font-size: 11px; }
+.account-input:focus { outline: none; border-color: #bfc4f5; background: #ffffff; box-shadow: 0 0 0 3px rgba(89, 97, 223, 0.08); }
+.account-input.editable { background: #ffffff; }
+.account-actions { display: flex; justify-content: flex-end; gap: 8px; padding: 0 0 24px; }
+.settings-button { height: 39px; padding: 0 16px; border-radius: 8px; font-size: 10px; font-weight: 700; cursor: pointer; }
+.settings-button.secondary { border: 1px solid #dfe3eb; background: #ffffff; color: #687288; }
+.settings-button.secondary:hover { background: #fafbfe; }
+.settings-button.primary { border: 1px solid var(--primary); background: var(--primary); color: #ffffff; }
+.settings-button.primary:hover { opacity: 0.92; }
+.edit-account-button { height: 36px; padding: 0 14px; border: 1px solid #dfe3eb; border-radius: 8px; background: #ffffff; color: var(--primary); font-size: 10px; font-weight: 700; cursor: pointer; }
+.edit-account-button:hover { background: #fafaff; border-color: #cbcfff; }
+.account-mode-actions { display: flex; align-items: center; justify-content: flex-end; }
+.account-saved-message { margin-right: auto; color: #149765; font-size: 10px; font-weight: 700; opacity: 0; transition: opacity 0.2s ease; }
+.account-saved-message.show { opacity: 1; }
+
+/* Information Note */
+.settings-note { margin: 20px 0 0; padding: 13px 15px; border: 1px solid #e5e8ef; border-radius: 9px; background: #f8f9fc; color: #7a859b; font-size: 10px; line-height: 1.5; }
+.settings-note strong { color: #4e5a73; }
+
+/* Switch */
+.toggle { position: relative; width: 48px; height: 27px; flex-shrink: 0; }
+.toggle input { position: absolute; opacity: 0; width: 0; height: 0; }
+.toggle-slider { position: absolute; inset: 0; border-radius: 999px; background: #dfe3ea; cursor: pointer; transition: background 0.2s ease; }
+.toggle-slider::before { content: ""; position: absolute; width: 21px; height: 21px; left: 3px; top: 3px; border-radius: 50%; background: #ffffff; box-shadow: 0 1px 4px rgba(30, 40, 70, 0.16); transition: transform 0.2s ease; }
+.toggle input:checked + .toggle-slider { background: var(--primary); }
+.toggle input:checked + .toggle-slider::before { transform: translateX(21px); }
+.toggle-state { margin-right: 10px; min-width: 30px; color: #8d97aa; font-size: 9px; font-weight: 700; text-align: right; }
+.toggle-wrapper { display: flex; align-items: center; }
+
+/* Data Management */
+.data-management-file { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 22px 0; border-bottom: 1px solid #eef1f5; }
+.data-management-main { min-width: 0; flex: 1; }
+.data-management-filename { color: var(--navy); font-size: 12px; font-weight: 700; word-break: break-word; }
+.data-management-description { margin-top: 5px; color: #929bad; font-size: 10px; line-height: 1.5; }
+.data-management-status { display: inline-flex; align-items: center; gap: 7px; margin-top: 10px; padding: 7px 11px; border-radius: 999px; background: #edf9f4; color: #159467; font-size: 9px; font-weight: 700; }
+.data-management-status.invalid { background: #fff1f1; color: #c94b4b; }
+.data-management-status.loading { background: #f3f4f8; color: #7d879b; }
+.data-management-status-dot { width: 7px; height: 7px; border-radius: 50%; background: #19b57b; }
+.data-management-status.invalid .data-management-status-dot { background: #d95353; }
+.data-management-status.loading .data-management-status-dot { background: #9099aa; }
+.data-management-stats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; padding: 22px 0; }
+.data-management-stat { padding: 14px; border: 1px solid #e4e8ef; border-radius: 10px; background: #fbfcfe; }
+.data-management-stat-label { color: #8b95a8; font-size: 9px; }
+.data-management-stat-value { margin-top: 6px; color: var(--navy); font-size: 18px; font-weight: 700; }
+.data-management-upload { padding: 22px 0 24px; }
+.data-management-upload-title { color: var(--navy); font-size: 11px; font-weight: 700; }
+.data-management-upload-description { margin-top: 4px; color: #929bad; font-size: 9px; line-height: 1.5; }
+.data-management-upload-row { display: flex; align-items: center; gap: 10px; margin-top: 14px; }
+.data-management-file-input { flex: 1; min-width: 0; height: 39px; padding: 9px 11px; border: 1px solid #dfe3eb; border-radius: 8px; background: #ffffff; color: #59657d; font-size: 10px; }
+.data-management-file-input::file-selector-button { margin-right: 10px; border: none; padding: 7px 10px; border-radius: 6px; background: #f1f2fb; color: var(--primary); font-size: 9px; font-weight: 700; cursor: pointer; }
+.data-management-upload-button { flex-shrink: 0; height: 39px; padding: 0 16px; border: 1px solid var(--primary); border-radius: 8px; background: var(--primary); color: #ffffff; font-size: 10px; font-weight: 700; cursor: pointer; }
+.data-management-upload-button:hover { opacity: 0.92; }
+.data-management-upload-button:disabled { opacity: 0.55; cursor: not-allowed; }
+.data-management-message { display: none; margin-top: 12px; padding: 11px 13px; border-radius: 8px; font-size: 9px; line-height: 1.5; }
+.data-management-message.show { display: block; }
+.data-management-message.success { background: #edf9f4; color: #159467; border: 1px solid #d6f0e5; }
+.data-management-message.error { background: #fff1f1; color: #c94b4b; border: 1px solid #f2d5d5; }
+.data-management-warning { margin-top: 13px; padding: 11px 13px; border: 1px solid #ece3c7; border-radius: 8px; background: #fffaf0; color: #85734a; font-size: 9px; line-height: 1.5; }
+
+html[data-theme="dark"] .data-management-file { border-bottom-color: #2a3447; }
+html[data-theme="dark"] .data-management-filename,
+html[data-theme="dark"] .data-management-upload-title,
+html[data-theme="dark"] .data-management-stat-value { color: #e7ebf2; }
+html[data-theme="dark"] .data-management-description,
+html[data-theme="dark"] .data-management-upload-description { color: #99a5bb; }
+html[data-theme="dark"] .data-management-stat { background: #111827; border-color: #2f3a4f; }
+html[data-theme="dark"] .data-management-file-input { background: #111827; border-color: #364257; color: #d7deea; }
+html[data-theme="dark"] .data-management-file-input::file-selector-button { background: #25274a; color: #cdd1ff; }
+html[data-theme="dark"] .data-management-warning { background: #2a2618; border-color: #4b4328; color: #cbbd8b; }
+
+@media (max-width: 900px) {
+    .data-management-stats { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 700px) {
+    .data-management-file { align-items: flex-start; flex-direction: column; }
+    .data-management-stats { grid-template-columns: repeat(2, 1fr); }
+    .data-management-upload-row { align-items: stretch; flex-direction: column; }
+    .data-management-upload-button { width: 100%; }
+}
+
+/* System Info */
+.system-engine-row { display: flex; align-items: center; justify-content: space-between; padding: 20px 0; border-bottom: 1px solid #eef1f5; }
+.system-engine-title { color: var(--navy); font-size: 12px; font-weight: 700; }
+.system-engine-description { margin-top: 4px; color: #929bad; font-size: 10px; }
+.status-pill { display: inline-flex; align-items: center; gap: 7px; padding: 8px 12px; border-radius: 999px; background: #edf9f4; color: #159467; font-size: 10px; font-weight: 700; }
+.status-dot { width: 7px; height: 7px; border-radius: 50%; background: #19b57b; }
+.system-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; padding: 24px 0; }
+.system-card { padding: 17px; border: 1px solid #e4e8ef; border-radius: 12px; background: #fbfcfe; }
+.system-card-label { color: #8b95a8; font-size: 10px; }
+.system-card-value { margin-top: 7px; color: var(--navy); font-size: 22px; font-weight: 700; }
+.system-card-note { margin-top: 3px; color: #a0a8b6; font-size: 9px; }
+.completion-row { display: flex; align-items: center; justify-content: space-between; padding: 6px 0 24px; }
+.completion-title { color: var(--navy); font-size: 11px; font-weight: 700; }
+.completion-description { margin-top: 3px; color: #929bad; font-size: 9px; }
+
+/* Responsive */
+@media (max-width: 900px) {
+    .account-grid { grid-template-columns: 1fr; }
+    .account-field.full { grid-column: auto; }
+    .system-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 700px) {
+    .settings-body { padding: 0 20px; }
+    .settings-section-header { padding: 20px; }
+    .setting-row { align-items: flex-start; flex-direction: column; gap: 12px; }
+    .setting-control { align-self: stretch; }
+    .settings-select { width: 100%; }
+    .appearance-options, .time-format-options { width: 100%; }
+    .appearance-button, .time-format-button { flex: 1; }
+    .system-grid { grid-template-columns: 1fr; }
+}
+
+/* Topbar Dropdowns */
+.topbar-dropdown-wrapper { position: relative; }
+.notification, .user-profile { cursor: pointer; }
+.user-profile { border: none; }
+.topbar-dropdown { position: absolute; top: calc(100% + 10px); right: 0; z-index: 1000; width: 300px; border: 1px solid #e1e5ed; border-radius: 12px; background: #ffffff; box-shadow: 0 14px 35px rgba(30, 40, 70, 0.12); overflow: hidden; display: none; }
+.topbar-dropdown.show { display: block; }
+.topbar-dropdown-header { display: flex; align-items: center; justify-content: space-between; padding: 15px 16px; border-bottom: 1px solid #eef0f4; }
+.topbar-dropdown-header strong { color: var(--navy); font-size: 11px; font-weight: 700; }
+.topbar-dropdown-close { width: 26px; height: 26px; border: none; border-radius: 6px; background: transparent; color: #8d96a8; font-size: 18px; line-height: 1; cursor: pointer; }
+.topbar-dropdown-close:hover { background: #f5f6fa; }
+.topbar-dropdown-empty { padding: 22px 18px 24px; }
+.topbar-dropdown-empty-icon { width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; margin-bottom: 10px; border-radius: 9px; background: #edf9f4; color: #159467; font-size: 15px; font-weight: 700; }
+.topbar-dropdown-empty-title { color: var(--navy); font-size: 11px; font-weight: 700; }
+.topbar-dropdown-empty-text { margin-top: 4px; color: #929bad; font-size: 9px; line-height: 1.45; }
+.profile-panel { width: 280px; padding: 0; }
+.profile-panel-user { display: flex; align-items: center; gap: 11px; padding: 16px; }
+.profile-panel-avatar { width: 38px; height: 38px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; border-radius: 10px; background: #eeeefe; color: var(--primary); font-size: 15px; font-weight: 700; }
+.profile-panel-name { color: var(--navy); font-size: 11px; font-weight: 700; }
+.profile-panel-role { margin-top: 3px; color: #929bad; font-size: 9px; }
+.profile-panel-email { padding: 0 16px 13px; color: #59657d; font-size: 10px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.profile-panel-divider { height: 1px; background: #eef0f4; }
+.profile-panel-link { display: block; padding: 12px 16px; color: #59657d; font-size: 10px; font-weight: 600; text-decoration: none; }
+.profile-panel-link:hover { background: #f8f9fc; color: var(--primary); }
+
+/* Settings Dark Mode */
+html[data-theme="dark"] .settings-section { background: #171e2c; border-color: #2a3447; box-shadow: 0 5px 18px rgba(0, 0, 0, 0.16); }
+html[data-theme="dark"] .settings-section-header { border-bottom-color: #2a3447; }
+html[data-theme="dark"] .setting-title { color: #e7ebf2; }
+html[data-theme="dark"] .settings-section-header p,
+html[data-theme="dark"] .setting-description,
+html[data-theme="dark"] .account-label,
+html[data-theme="dark"] .system-engine-description,
+html[data-theme="dark"] .completion-description { color: #99a5bb; }
+html[data-theme="dark"] .setting-row,
+html[data-theme="dark"] .system-engine-row { border-bottom-color: #2a3447; }
+html[data-theme="dark"] .appearance-button,
+html[data-theme="dark"] .time-format-button,
+html[data-theme="dark"] .settings-select,
+html[data-theme="dark"] .edit-account-button,
+html[data-theme="dark"] .settings-button.secondary { background: #111827; border-color: #364257; color: #d7deea; }
+html[data-theme="dark"] .appearance-button:hover,
+html[data-theme="dark"] .time-format-button:hover,
+html[data-theme="dark"] .edit-account-button:hover,
+html[data-theme="dark"] .settings-button.secondary:hover { background: #1d2636; border-color: #58637b; }
+html[data-theme="dark"] .appearance-button.active,
+html[data-theme="dark"] .time-format-button.active { background: #25274a; border-color: #6268c7; color: #cdd1ff; }
+html[data-theme="dark"] .settings-select { color-scheme: dark; }
+html[data-theme="dark"] .setting-value,
+html[data-theme="dark"] .system-engine-title,
+html[data-theme="dark"] .system-card-value,
+html[data-theme="dark"] .completion-title { color: #e7ebf2; }
+html[data-theme="dark"] .account-input { background: #111827; border-color: #364257; color: #e7ebf2; }
+html[data-theme="dark"] .account-input:focus,
+html[data-theme="dark"] .account-input.editable { background: #151d2b; }
+html[data-theme="dark"] .settings-note,
+html[data-theme="dark"] .system-card { background: #111827; border-color: #2f3a4f; color: #aab4c6; }
+html[data-theme="dark"] .settings-note strong,
+html[data-theme="dark"] .system-card-label,
+html[data-theme="dark"] .system-card-note { color: #aab4c6; }
+html[data-theme="dark"] .toggle-slider { background: #3a4559; }
+html[data-theme="dark"] .status-pill { background: #123326; color: #74d6aa; }
+html[data-theme="dark"] .status-dot { background: #27c58b; }
+html[data-theme="dark"] .topbar-dropdown { background: #171e2c; border-color: #2a3447; box-shadow: 0 14px 30px rgba(0, 0, 0, 0.28); }
+html[data-theme="dark"] .topbar-dropdown-header,
+html[data-theme="dark"] .profile-panel-divider { border-color: #2a3447; }
+html[data-theme="dark"] .topbar-dropdown-header strong,
+html[data-theme="dark"] .profile-panel-name,
+html[data-theme="dark"] .topbar-dropdown-empty-title { color: #e7ebf2; }
+html[data-theme="dark"] .topbar-dropdown-empty-text,
+html[data-theme="dark"] .profile-panel-email,
+html[data-theme="dark"] .profile-panel-role { color: #99a5bb; }
+html[data-theme="dark"] .profile-panel-link { color: #cdd1ff; }
+html[data-theme="dark"] .topbar-dropdown-close { color: #aeb8c8; }
+html[data-theme="dark"] .topbar-dropdown-close:hover { background: #1d2636; }
+html[data-theme="dark"] .topbar-dropdown-empty-icon { background: #123326; color: #74d6aa; }
+html[data-theme="dark"] .profile-panel-avatar { background: #24274a; color: #cdd1ff; }
+
+@media (max-width: 700px) {
+    .topbar-dropdown { right: -10px; width: min(300px, calc(100vw - 40px)); }
+}
+
+/* Settings Typography */
+.settings-section-header h2 { font-size: 22px; }
+.settings-section-header p { font-size: 12px; }
+.setting-title { font-size: 13px; }
+.setting-description { font-size: 11px; }
+.setting-value { font-size: 12px; }
+.settings-select { font-size: 12px; }
+.appearance-button, .time-format-button { font-size: 11px; }
+.settings-button { font-size: 11px; }
+.edit-account-button { font-size: 11px; }
+.account-label { font-size: 11px; }
+.account-input { font-size: 12px; }
+.settings-note { font-size: 11px; }
+.toggle-state { font-size: 10px; }
+.system-engine-title { font-size: 13px; }
+.system-engine-description { font-size: 11px; }
+.completion-title { font-size: 12px; }
+.completion-description { font-size: 10px; }
+.data-management-description, .data-management-upload-description { font-size: 10px; }
+.data-management-filename { font-size: 13px; }
+.data-management-upload-title { font-size: 12px; }
+.data-management-status { font-size: 10px; }
+.data-management-stat-label { font-size: 10px; }
+.data-management-stat-value { font-size: 19px; }
+.data-management-file-input { font-size: 11px; }
+.data-management-upload-button { font-size: 11px; }
+.data-management-message, .data-management-warning { font-size: 10px; }
+
+/* Compact System Information */
+.system-health-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; padding: 22px 0 24px; }
+.system-health-card { padding: 17px 18px; border: 1px solid #e4e8ef; border-radius: 12px; background: #fbfcfe; }
+.system-health-label { color: #8b95a8; font-size: 10px; }
+.system-health-value { margin-top: 7px; color: var(--navy); font-size: 20px; font-weight: 700; }
+.system-health-note { margin-top: 4px; color: #99a2b2; font-size: 10px; }
+html[data-theme="dark"] .system-health-card { background: #111827; border-color: #2f3a4f; }
+html[data-theme="dark"] .system-health-label,
+html[data-theme="dark"] .system-health-note { color: #aab4c6; }
+html[data-theme="dark"] .system-health-value { color: #e7ebf2; }
+
+@media (max-width: 700px) {
+    .system-health-row { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+
+<body>
+<div class="app">
+
+<aside class="sidebar">
+<div class="brand">
+<div class="brand-icon">U</div>
+<div>
+<div class="brand-name">UniPlan</div>
+<div class="brand-subtitle">University Scheduler</div>
+</div>
+</div>
+
+<div class="menu-title">MAIN MENU</div>
+
+<nav class="nav">
+<a href="/" class="nav-item {% if request.path == '/' %}active{% endif %}">
+<span class="nav-icon">▦</span>
+<span>Dashboard</span>
+</a>
+
+<a href="/timetable" class="nav-item {% if request.path == '/timetable' %}active{% endif %}">
+<span class="nav-icon">▤</span>
+<span>Timetable</span>
+</a>
+
+<a href="/professors" class="nav-item {% if request.path == '/professors' %}active{% endif %}">
+<span class="nav-icon">♙</span>
+<span>Professors</span>
+</a>
+
+<a href="/preferences" class="nav-item {% if request.path == '/preferences' %}active{% endif %}">
+<span class="nav-icon">⚙</span>
+<span>Preferences</span>
+</a>
+
+<a href="/rooms" class="nav-item {% if request.path == '/rooms' %}active{% endif %}">
+<span class="nav-icon">▥</span>
+<span>Rooms</span>
+</a>
+
+<a href="/campuses" class="nav-item {% if request.path == '/campuses' %}active{% endif %}">
+<span class="nav-icon">⌖</span>
+<span>Campuses</span>
+</a>
+
+<a href="/analytics" class="nav-item {% if request.path == '/analytics' %}active{% endif %}">
+<span class="nav-icon">◔</span>
+<span>Analytics</span>
+</a>
+
+<a href="/conflicts" class="nav-item {% if request.path == '/conflicts' %}active{% endif %}">
+<span class="nav-icon">⚠</span>
+<span>Conflicts</span>
+</a>
+</nav>
+
+<div class="sidebar-bottom">
+<div class="menu-title">SYSTEM</div>
+<a href="/settings" class="nav-item {% if request.path == '/settings' %}active{% endif %}">
+<span class="nav-icon">⚙</span>
+<span>Settings</span>
+</a>
+</div>
+
+<div class="sidebar-footer">
+<div class="footer-dot"></div>
+<div>
+<div class="footer-title">Scheduling Engine</div>
+<div class="footer-status">Operational</div>
+</div>
+</div>
+</aside>
+
+<main class="main">
+
+<header class="topbar">
+<div>
+<div class="breadcrumb">SYSTEM</div>
+<h1>Settings</h1>
+<p class="page-description">Manage your UniPlan preferences, account information and system configuration.</p>
+</div>
+
+<div class="topbar-actions">
+
+<div class="topbar-dropdown-wrapper">
+<button type="button" class="notification" id="notificationButton" aria-label="Notifications" aria-expanded="false">♢</button>
+
+<div class="topbar-dropdown notification-panel" id="notificationPanel">
+<div class="topbar-dropdown-header">
+<strong>Notifications</strong>
+<button type="button" class="topbar-dropdown-close" id="notificationClose" aria-label="Close notifications">×</button>
+</div>
+<div class="topbar-dropdown-empty">
+<div class="topbar-dropdown-empty-icon">✓</div>
+<div class="topbar-dropdown-empty-title">All caught up</div>
+<div class="topbar-dropdown-empty-text">No new notifications right now.</div>
+</div>
+</div>
+</div>
+
+<div class="topbar-dropdown-wrapper">
+<button type="button" class="user-profile topbar-profile-button" id="profileButton" aria-expanded="false">
+<div class="avatar">S</div>
+<div class="user-info">
+<div class="user-name" id="topbarUserName">Saadiya</div>
+<div class="user-role">Administrator</div>
+</div>
+<span class="user-arrow">⌄</span>
+</button>
+
+<div class="topbar-dropdown profile-panel" id="profilePanel">
+<div class="profile-panel-user">
+<div class="avatar profile-panel-avatar">S</div>
+<div>
+<div class="profile-panel-name" id="profilePanelName">Saadiya</div>
+<div class="profile-panel-role">Administrator</div>
+</div>
+</div>
+
+<div class="profile-panel-email" id="profilePanelEmail">No email set</div>
+<div class="profile-panel-divider"></div>
+
+<a href="/settings" class="profile-panel-link"><span>⚙</span> Account Settings</a>
+</div>
+</div>
+
+</div>
+</header>
+
+<div class="settings-page">
+
+<section class="settings-section">
+<div class="settings-section-header">
+<h2>General</h2>
+<p>Personalise the way UniPlan looks and behaves.</p>
+</div>
+
+<div class="settings-body">
+
+<div class="setting-row">
+<div class="setting-info">
+<div class="setting-title">Appearance</div>
+<div class="setting-description">Choose how UniPlan should appear.</div>
+</div>
+
+<div class="setting-control">
+<div class="appearance-options">
+<button type="button" class="appearance-button" data-theme-choice="light">☼ Light</button>
+<button type="button" class="appearance-button" data-theme-choice="dark">◐ Dark</button>
+<button type="button" class="appearance-button" data-theme-choice="system">◌ System</button>
+</div>
+</div>
+</div>
+
+<div class="setting-row">
+<div class="setting-info">
+<div class="setting-title">Language</div>
+<div class="setting-description">Language used across the platform.</div>
+</div>
+
+<div class="setting-control">
+<select id="languageSetting" class="settings-select">
+<option value="en">English</option>
+<option value="de">Deutsch</option>
+</select>
+</div>
+</div>
+
+<div class="setting-row">
+<div class="setting-info">
+<div class="setting-title">Date Format</div>
+<div class="setting-description">Format used for displayed dates.</div>
+</div>
+
+<div class="setting-control">
+<select id="dateFormatSetting" class="settings-select">
+<option value="long">Long date</option>
+<option value="short">Short date</option>
+</select>
+</div>
+</div>
+
+<div class="setting-row">
+<div class="setting-info">
+<div class="setting-title">Time Format</div>
+<div class="setting-description">Choose how scheduling times are displayed.</div>
+</div>
+
+<div class="setting-control">
+<div class="time-format-options">
+<button type="button" class="time-format-button" data-time-format="24">24-hour</button>
+<button type="button" class="time-format-button" data-time-format="12">12-hour</button>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="settings-section">
+<div class="settings-section-header">
+<div style="display:flex;align-items:center;justify-content:space-between;gap:20px;">
+<div>
+<h2>Account</h2>
+<p>Manage the administrator profile used by UniPlan.</p>
+</div>
+<button type="button" id="editAccountButton" class="edit-account-button">Edit</button>
+</div>
+</div>
+
+<div class="settings-body">
+<div class="account-grid">
+
+<div class="account-field">
+<label for="accountName" class="account-label">Name</label>
+<input type="text" id="accountName" class="account-input" value="Saadiya" readonly>
+</div>
+
+<div class="account-field">
+<label for="accountRole" class="account-label">Role</label>
+<input type="text" id="accountRole" class="account-input" value="Administrator" readonly>
+</div>
+
+<div class="account-field full">
+<label for="accountEmail" class="account-label">Email</label>
+<input type="email" id="accountEmail" class="account-input" placeholder="Enter administrator email" readonly>
+</div>
+
+</div>
+
+<div id="accountActions" class="account-actions" style="display:none;">
+<div id="accountSavedMessage" class="account-saved-message">Changes saved</div>
+<button type="button" id="cancelAccountButton" class="settings-button secondary">Cancel</button>
+<button type="button" id="saveAccountButton" class="settings-button primary">Save Changes</button>
+</div>
+</div>
+</section>
+
+<section class="settings-section">
+<div class="settings-section-header">
+<h2>Scheduling Configuration</h2>
+<p>Current preferences associated with the scheduling engine.</p>
+</div>
+
+<div class="settings-body">
+
+<div class="settings-note">
+<strong>Note:</strong>
+These controls are stored as scheduling preferences. They will be connected to the scheduling engine separately.
+</div>
+
+<div class="setting-row">
+<div class="setting-info">
+<div class="setting-title">Teaching Days</div>
+<div class="setting-description">Days on which classes can be scheduled.</div>
+</div>
+<div class="setting-control">
+<div class="setting-value">Monday – Friday</div>
+</div>
+</div>
+
+<div class="setting-row">
+<div class="setting-info">
+<div class="setting-title">Operating Hours</div>
+<div class="setting-description">Daily scheduling window.</div>
+</div>
+<div class="setting-control">
+<div class="setting-value">09:00 – 17:00</div>
+</div>
+</div>
+
+<div class="setting-row">
+<div class="setting-info">
+<div class="setting-title">Time Slot Length</div>
+<div class="setting-description">Scheduling is represented using 30-minute blocks.</div>
+</div>
+<div class="setting-control">
+<div class="setting-value">30 minutes</div>
+</div>
+</div>
+
+<div class="setting-row">
+<div class="setting-info">
+<div class="setting-title">Session Durations</div>
+<div class="setting-description">Available teaching session lengths.</div>
+</div>
+<div class="setting-control">
+<div class="setting-value">2h, 2.5h, 3h</div>
+</div>
+</div>
+
+<div class="setting-row">
+<div class="setting-info">
+<div class="setting-title">Teaching Mode</div>
+<div class="setting-description">Scheduling uses the generated timetable from the active dataset.</div>
+</div>
+<div class="setting-control">
+<div class="setting-value">Automatic</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="settings-section">
+<div class="settings-section-header">
+<h2>Scheduling Preferences</h2>
+<p>Control optional scheduling and validation features.</p>
+</div>
+
+<div class="settings-body">
+
+<div class="setting-row">
+<div class="setting-info">
+<div class="setting-title">Campus Matching</div>
+<div class="setting-description">Prefer rooms located on the module's preferred campus.</div>
+</div>
+<div class="setting-control">
+<div class="toggle-wrapper">
+<span id="campusToggleState" class="toggle-state">ON</span>
+<label class="toggle">
+<input type="checkbox" id="campusMatchingToggle">
+<span class="toggle-slider"></span>
+</label>
+</div>
+</div>
+</div>
+
+<div class="setting-row">
+<div class="setting-info">
+<div class="setting-title">Capacity Validation</div>
+<div class="setting-description">Check room capacity against expected student numbers.</div>
+</div>
+<div class="setting-control">
+<div class="toggle-wrapper">
+<span id="capacityToggleState" class="toggle-state">ON</span>
+<label class="toggle">
+<input type="checkbox" id="capacityValidationToggle">
+<span class="toggle-slider"></span>
+</label>
+</div>
+</div>
+</div>
+
+<div class="setting-row">
+<div class="setting-info">
+<div class="setting-title">Professor Conflict Validation</div>
+<div class="setting-description">Prevent a professor from teaching overlapping sessions.</div>
+</div>
+<div class="setting-control">
+<div class="toggle-wrapper">
+<span id="professorToggleState" class="toggle-state">ON</span>
+<label class="toggle">
+<input type="checkbox" id="professorConflictToggle">
+<span class="toggle-slider"></span>
+</label>
+</div>
+</div>
+</div>
+
+<div class="setting-row">
+<div class="setting-info">
+<div class="setting-title">Student Group Conflict Validation</div>
+<div class="setting-description">Prevent a student group from having overlapping sessions.</div>
+</div>
+<div class="setting-control">
+<div class="toggle-wrapper">
+<span id="groupToggleState" class="toggle-state">ON</span>
+<label class="toggle">
+<input type="checkbox" id="groupConflictToggle">
+<span class="toggle-slider"></span>
+</label>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="settings-section">
+<div class="settings-section-header">
+<h2>Notifications</h2>
+<p>Choose which scheduling notifications are enabled.</p>
+</div>
+
+<div class="settings-body">
+
+<div class="setting-row">
+<div class="setting-info">
+<div class="setting-title">Schedule Notifications</div>
+<div class="setting-description">Show notifications when schedule information changes.</div>
+</div>
+<div class="setting-control">
+<div class="toggle-wrapper">
+<span id="scheduleNotificationState" class="toggle-state">ON</span>
+<label class="toggle">
+<input type="checkbox" id="scheduleNotificationToggle">
+<span class="toggle-slider"></span>
+</label>
+</div>
+</div>
+</div>
+
+<div class="setting-row">
+<div class="setting-info">
+<div class="setting-title">Conflict Notifications</div>
+<div class="setting-description">Show notifications when scheduling conflicts are detected.</div>
+</div>
+<div class="setting-control">
+<div class="toggle-wrapper">
+<span id="conflictNotificationState" class="toggle-state">ON</span>
+<label class="toggle">
+<input type="checkbox" id="conflictNotificationToggle">
+<span class="toggle-slider"></span>
+</label>
+</div>
+</div>
+</div>
+
+<div class="setting-row">
+<div class="setting-info">
+<div class="setting-title">System Notifications</div>
+<div class="setting-description">Show general system and scheduling engine notifications.</div>
+</div>
+<div class="setting-control">
+<div class="toggle-wrapper">
+<span id="systemNotificationState" class="toggle-state">ON</span>
+<label class="toggle">
+<input type="checkbox" id="systemNotificationToggle">
+<span class="toggle-slider"></span>
+</label>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="settings-section">
+<div class="settings-section-header">
+<h2>Data Management</h2>
+<p>Manage the active scheduling dataset.</p>
+</div>
+
+<div class="settings-body">
+
+<div class="data-management-file">
+<div class="data-management-main">
+<div class="data-management-filename" id="dataManagementFilename">Loading...</div>
+<div class="data-management-description">Current dataset used by UniPlan for scheduling and validation.</div>
+<div id="dataManagementStatus" class="data-management-status loading">
+<span class="data-management-status-dot"></span> Checking dataset...
+</div>
+</div>
+</div>
+
+<div class="data-management-stats">
+<div class="data-management-stat">
+<div class="data-management-stat-label">Students</div>
+<div class="data-management-stat-value" id="dataManagementStudents">—</div>
+</div>
+<div class="data-management-stat">
+<div class="data-management-stat-label">Classes</div>
+<div class="data-management-stat-value" id="dataManagementClasses">—</div>
+</div>
+<div class="data-management-stat">
+<div class="data-management-stat-label">Professors</div>
+<div class="data-management-stat-value" id="dataManagementProfessors">—</div>
+</div>
+<div class="data-management-stat">
+<div class="data-management-stat-label">Rooms</div>
+<div class="data-management-stat-value" id="dataManagementRooms">—</div>
+</div>
+<div class="data-management-stat">
+<div class="data-management-stat-label">Campuses</div>
+<div class="data-management-stat-value" id="dataManagementCampuses">—</div>
+</div>
+</div>
+
+<div class="data-management-upload">
+<div class="data-management-upload-title">Replace Dataset</div>
+<div class="data-management-upload-description">Upload a new Excel workbook to validate and regenerate the timetable.</div>
+
+<div class="data-management-upload-row">
+<input type="file" id="dataManagementFile" class="data-management-file-input" accept=".xlsx">
+<button type="button" id="dataManagementUploadButton" class="data-management-upload-button">Upload & Validate</button>
+</div>
+
+<div id="dataManagementMessage" class="data-management-message"></div>
+
+<div class="data-management-warning">
+Replacing the dataset will update the active scheduling data and regenerate the timetable.
+</div>
+</div>
+
+</div>
+</section>
+
+<section class="settings-section">
+<div class="settings-section-header">
+<h2>System Information</h2>
+<p>Current UniPlan system and scheduling status.</p>
+</div>
+
+<div class="settings-body">
+
+<div class="system-engine-row">
+<div>
+<div class="system-engine-title">Scheduling Engine</div>
+<div class="system-engine-description">The university scheduling engine is ready to generate and validate schedules.</div>
+</div>
+
+<div class="status-pill">
+<span class="status-dot"></span>
+Operational
+</div>
+</div>
+
+<div class="system-grid">
+<div class="system-card">
+<div class="system-card-label">Scheduling Days</div>
+<div class="system-card-value">5</div>
+<div class="system-card-note">Monday to Friday</div>
+</div>
+
+<div class="system-card">
+<div class="system-card-label">Daily Hours</div>
+<div class="system-card-value">8h</div>
+<div class="system-card-note">09:00 to 17:00</div>
+</div>
+
+<div class="system-card">
+<div class="system-card-label">Time Slots</div>
+<div class="system-card-value">30 min</div>
+<div class="system-card-note">Scheduling interval</div>
+</div>
+</div>
+
+<div class="system-health-row">
+<div class="system-health-card">
+<div class="system-health-label">Engine Status</div>
+<div class="system-health-value">Operational</div>
+<div class="system-health-note">Ready for schedule generation</div>
+</div>
+
+<div class="system-health-card">
+<div class="system-health-label">Validation</div>
+<div class="system-health-value">Enabled</div>
+<div class="system-health-note">Core schedule checks active</div>
+</div>
+</div>
+
+<div class="completion-row">
+<div>
+<div class="completion-title">System Ready</div>
+<div class="completion-description">UniPlan is ready to manage the current schedule and dataset.</div>
+</div>
+</div>
+
+</div>
+</section>
+
+</div>
+</main>
+</div>
+
+<script>
+const accountName = document.getElementById("accountName");
+const accountRole = document.getElementById("accountRole");
+const accountEmail = document.getElementById("accountEmail");
+const editAccountButton = document.getElementById("editAccountButton");
+const accountActions = document.getElementById("accountActions");
+const cancelAccountButton = document.getElementById("cancelAccountButton");
+const saveAccountButton = document.getElementById("saveAccountButton");
+const accountSavedMessage = document.getElementById("accountSavedMessage");
+
+function getLocalStorage(key, defaultValue = "") {
+    const value = localStorage.getItem(key);
+    return value === null ? defaultValue : value;
+}
+
+function setLocalStorage(key, value) {
+    localStorage.setItem(key, value);
+}
+
+let originalAccount = {
+    name: getLocalStorage("uniplan-account-name", "Saadiya"),
+    role: getLocalStorage("uniplan-account-role", "Administrator"),
+    email: getLocalStorage("uniplan-account-email", "")
+};
+
+function setAccountEditing(enabled) {
+    accountName.readOnly = !enabled;
+    accountRole.readOnly = !enabled;
+    accountEmail.readOnly = !enabled;
+
+    accountName.classList.toggle("editable", enabled);
+    accountRole.classList.toggle("editable", enabled);
+    accountEmail.classList.toggle("editable", enabled);
+
+    accountActions.style.display = enabled ? "flex" : "none";
+    editAccountButton.style.display = enabled ? "none" : "block";
+}
+
+accountName.value = originalAccount.name;
+accountRole.value = originalAccount.role;
+accountEmail.value = originalAccount.email;
+
+editAccountButton.addEventListener("click", function () {
+    accountSavedMessage.classList.remove("show");
+    setAccountEditing(true);
+});
+
+cancelAccountButton.addEventListener("click", function () {
+    accountName.value = originalAccount.name;
+    accountRole.value = originalAccount.role;
+    accountEmail.value = originalAccount.email;
+    setAccountEditing(false);
+});
+
+saveAccountButton.addEventListener("click", function () {
+    originalAccount = {
+        name: accountName.value.trim() || "Saadiya",
+        role: accountRole.value,
+        email: accountEmail.value.trim()
+    };
+
+    accountName.value = originalAccount.name;
+    setLocalStorage("uniplan-account-name", originalAccount.name);
+    setLocalStorage("uniplan-account-role", originalAccount.role);
+    setLocalStorage("uniplan-account-email", originalAccount.email);
+
+    accountSavedMessage.classList.add("show");
+    setAccountEditing(false);
+
+    setTimeout(function () {
+        accountSavedMessage.classList.remove("show");
+    }, 2500);
+});
+
+/* Saved account name */
+const savedAccountName = getLocalStorage("uniplan-account-name", "Saadiya");
+accountName.value = savedAccountName;
+originalAccount.name = savedAccountName;
+
+/* Appearance */
+const appearanceButtons = document.querySelectorAll(".appearance-button");
+
+function applyTheme(theme) {
+    let activeTheme = theme;
+
+    if (activeTheme === "system") {
+        activeTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+
+    document.documentElement.setAttribute("data-theme", activeTheme);
+    localStorage.setItem("uniplan-theme", theme);
+
+    appearanceButtons.forEach(function (button) {
+        button.classList.toggle("active", button.dataset.themeChoice === theme);
+    });
+}
+
+appearanceButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+        applyTheme(button.dataset.themeChoice);
+    });
+});
+
+applyTheme(localStorage.getItem("uniplan-theme") || "light");
+
+/* Language */
+const languageSetting = document.getElementById("languageSetting");
+
+function updateLanguageSetting() {
+    const language = getLocalStorage("uniplan-language", "en");
+    languageSetting.value = language;
+}
+
+languageSetting.addEventListener("change", function () {
+    setLocalStorage("uniplan-language", languageSetting.value);
+
+    if (typeof setLanguage === "function") {
+        setLanguage(languageSetting.value);
+    }
+
+    window.location.reload();
+});
+
+updateLanguageSetting();
+
+/* Date format */
+const dateFormatSetting = document.getElementById("dateFormatSetting");
+
+dateFormatSetting.value = getLocalStorage("uniplan-date-format", "long");
+
+dateFormatSetting.addEventListener("change", function () {
+    setLocalStorage("uniplan-date-format", dateFormatSetting.value);
+});
+
+/* Time format */
+const timeFormatButtons = document.querySelectorAll(".time-format-button");
+
+function applyTimeFormat(format) {
+    localStorage.setItem("uniplan-time-format", format);
+
+    timeFormatButtons.forEach(function (button) {
+        button.classList.toggle("active", button.dataset.timeFormat === format);
+    });
+}
+
+timeFormatButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+        applyTimeFormat(button.dataset.timeFormat);
+    });
+});
+
+applyTimeFormat(getLocalStorage("uniplan-time-format", "24"));
+
+/* Scheduling preferences */
+function setupToggle(elementId, storageKey, stateId, defaultValue) {
+    const toggle = document.getElementById(elementId);
+    const state = document.getElementById(stateId);
+    const savedValue = getLocalStorage(storageKey, defaultValue);
+
+    toggle.checked = savedValue === "true";
+
+    function updateState() {
+        state.textContent = toggle.checked ? "ON" : "OFF";
+        setLocalStorage(storageKey, toggle.checked);
+    }
+
+    updateState();
+    toggle.addEventListener("change", updateState);
+}
+
+setupToggle("campusMatchingToggle", "uniplan-campus-matching", "campusToggleState", "true");
+setupToggle("capacityValidationToggle", "uniplan-capacity-validation", "capacityToggleState", "true");
+setupToggle("professorConflictToggle", "uniplan-professor-conflicts", "professorToggleState", "true");
+setupToggle("groupConflictToggle", "uniplan-group-conflicts", "groupToggleState", "true");
+
+setupToggle("scheduleNotificationToggle", "uniplan-notify-schedule", "scheduleNotificationState", "true");
+setupToggle("conflictNotificationToggle", "uniplan-notify-conflicts", "conflictNotificationState", "true");
+setupToggle("systemNotificationToggle", "uniplan-notify-system", "systemNotificationState", "true");
+
+/* Data management */
+const dataManagementFilename = document.getElementById("dataManagementFilename");
+const dataManagementStatus = document.getElementById("dataManagementStatus");
+const dataManagementStudents = document.getElementById("dataManagementStudents");
+const dataManagementClasses = document.getElementById("dataManagementClasses");
+const dataManagementProfessors = document.getElementById("dataManagementProfessors");
+const dataManagementRooms = document.getElementById("dataManagementRooms");
+const dataManagementCampuses = document.getElementById("dataManagementCampuses");
+const dataManagementFile = document.getElementById("dataManagementFile");
+const dataManagementUploadButton = document.getElementById("dataManagementUploadButton");
+const dataManagementMessage = document.getElementById("dataManagementMessage");
+
+function updateDatasetStatus(dataset) {
+    dataManagementFilename.textContent = dataset.filename || "Unknown dataset";
+    dataManagementStudents.textContent = dataset.students ?? "—";
+    dataManagementClasses.textContent = dataset.classes ?? "—";
+    dataManagementProfessors.textContent = dataset.professors ?? "—";
+    dataManagementRooms.textContent = dataset.rooms ?? "—";
+    dataManagementCampuses.textContent = dataset.campuses ?? "—";
+
+    dataManagementStatus.classList.remove("loading", "invalid");
+
+    if (dataset.valid) {
+        dataManagementStatus.innerHTML = `<span class="data-management-status-dot"></span> Dataset valid`;
+    } else {
+        dataManagementStatus.classList.add("invalid");
+        dataManagementStatus.innerHTML = `<span class="data-management-status-dot"></span> Dataset invalid`;
+    }
+}
+
+function showDatasetMessage(message, type) {
+    dataManagementMessage.textContent = message;
+    dataManagementMessage.className = "data-management-message show " + type;
+}
+
+async function loadDatasetStatus() {
+    try {
+        dataManagementStatus.className = "data-management-status loading";
+        dataManagementStatus.innerHTML = `<span class="data-management-status-dot"></span> Checking dataset...`;
+
+        const response = await fetch("/api/data-management/status");
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+            throw new Error(result.message || "Unable to load dataset information.");
+        }
+
+        updateDatasetStatus(result);
+    } catch (error) {
+        dataManagementStatus.className = "data-management-status invalid";
+        dataManagementStatus.innerHTML = `<span class="data-management-status-dot"></span> Unable to read dataset`;
+        showDatasetMessage(error.message, "error");
+    }
+}
+
+dataManagementUploadButton.addEventListener("click", async function () {
+    const file = dataManagementFile.files[0];
+
+    if (!file) {
+        showDatasetMessage("Please select an Excel (.xlsx) file first.", "error");
+        return;
+    }
+
+    if (!file.name.toLowerCase().endsWith(".xlsx")) {
+        showDatasetMessage("Only .xlsx Excel files are supported.", "error");
+        return;
+    }
+
+    const confirmed = window.confirm("This will replace the active dataset and regenerate the timetable. Continue?");
+
+    if (!confirmed) return;
+
+    const formData = new FormData();
+    formData.append("dataset", file);
+
+    dataManagementUploadButton.disabled = true;
+    dataManagementUploadButton.textContent = "Processing...";
+    showDatasetMessage("Validating dataset and regenerating timetable. Please wait...", "success");
+
+    try {
+        const response = await fetch("/api/data-management/upload", {
+            method: "POST",
+            body: formData
+        });
+
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+            throw new Error(result.message || "Dataset upload failed.");
+        }
+
+        showDatasetMessage(result.message, "success");
+        dataManagementFile.value = "";
+        await loadDatasetStatus();
+
+        setTimeout(function () {
+            window.location.reload();
+        }, 1200);
+    } catch (error) {
+        showDatasetMessage(error.message, "error");
+        await loadDatasetStatus();
+    } finally {
+        dataManagementUploadButton.disabled = false;
+        dataManagementUploadButton.textContent = "Upload & Validate";
+    }
+});
+
+loadDatasetStatus();
+</script>
+
+<script>
+/* Topbar */
+(function () {
+    const notificationButton = document.getElementById("notificationButton");
+    const notificationPanel = document.getElementById("notificationPanel");
+    const notificationClose = document.getElementById("notificationClose");
+    const profileButton = document.getElementById("profileButton");
+    const profilePanel = document.getElementById("profilePanel");
+    const topbarUserName = document.getElementById("topbarUserName");
+    const profilePanelName = document.getElementById("profilePanelName");
+    const profilePanelEmail = document.getElementById("profilePanelEmail");
+
+    const savedName = localStorage.getItem("uniplan-account-name") || "Saadiya";
+    const savedEmail = localStorage.getItem("uniplan-account-email") || "";
+
+    if (topbarUserName) topbarUserName.textContent = savedName;
+    if (profilePanelName) profilePanelName.textContent = savedName;
+    if (profilePanelEmail) profilePanelEmail.textContent = savedEmail || "No email set";
+
+    function closeTopbarMenus() {
+        if (notificationPanel) notificationPanel.classList.remove("show");
+        if (profilePanel) profilePanel.classList.remove("show");
+        if (notificationButton) notificationButton.setAttribute("aria-expanded", "false");
+        if (profileButton) profileButton.setAttribute("aria-expanded", "false");
+    }
+
+    notificationButton?.addEventListener("click", function (event) {
+        event.stopPropagation();
+
+        const wasOpen = notificationPanel?.classList.contains("show");
+        closeTopbarMenus();
+
+        if (!wasOpen && notificationPanel) {
+            notificationPanel.classList.add("show");
+            notificationButton.setAttribute("aria-expanded", "true");
+        }
+    });
+
+    notificationClose?.addEventListener("click", function () {
+        closeTopbarMenus();
+    });
+
+    profileButton?.addEventListener("click", function (event) {
+        event.stopPropagation();
+
+        const wasOpen = profilePanel?.classList.contains("show");
+        closeTopbarMenus();
+
+        if (!wasOpen && profilePanel) {
+            profilePanel.classList.add("show");
+            profileButton.setAttribute("aria-expanded", "true");
+        }
+    });
+
+    document.addEventListener("click", function (event) {
+        if (!event.target.closest(".topbar-dropdown-wrapper")) closeTopbarMenus();
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") closeTopbarMenus();
+    });
+})();
+</script>
+
+</body>
+</html>

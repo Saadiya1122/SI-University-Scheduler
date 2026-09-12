@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UniPlan | Rooms</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<script src="{{ url_for('static', filename='js/language.js') }}"></script>
+
+<script>
+(function () {
+    const savedTheme = localStorage.getItem("uniplan-theme") || "light";
+    let theme = savedTheme;
+    if (theme === "system") theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
+
+<style>
+.rooms-toolbar { margin-top:24px; display:flex; align-items:center; justify-content:space-between; gap:15px; padding:16px 18px; border:1px solid var(--border); border-radius:12px; background:var(--white); }
+.room-search { width:340px; height:40px; padding:0 12px; border:1px solid var(--border); border-radius:8px; background:#fff; color:var(--text); font-size:12px; }
+.room-search:focus { outline:none; border-color:#bfc4f5; box-shadow:0 0 0 3px rgba(89,97,223,.08); }
+.room-count { color:#8f98aa; font-size:11px; white-space:nowrap; }
+
+.rooms-panel { margin-top:18px; padding:20px; border:1px solid var(--border); border-radius:15px; background:var(--white); box-shadow:0 5px 18px rgba(30,40,70,.03); }
+.rooms-table-wrapper { margin-top:16px; overflow-x:auto; }
+.rooms-table { width:100%; min-width:1120px; border-collapse:collapse; table-layout:auto; }
+.rooms-table th { padding:11px 12px; border-bottom:1px solid #e9ecf2; color:#929bad; font-size:9px; font-weight:700; letter-spacing:.3px; text-transform:uppercase; text-align:left; vertical-align:bottom; white-space:normal; line-height:1.35; overflow-wrap:break-word; }
+.rooms-table td { padding:12px; border-bottom:1px solid #f0f2f6; color:#6d778b; font-size:10px; vertical-align:middle; white-space:nowrap; }
+.rooms-table tbody tr { transition:background .15s ease; }
+.rooms-table tbody tr:hover { background:#fafbfe; }
+.rooms-table tbody tr:last-child td { border-bottom:none; }
+
+.room-col-id { width:9%; }
+.room-col-capacity { width:10%; }
+.room-col-building { width:18%; }
+.room-col-campus { width:11%; }
+.room-col-type { width:15%; }
+.room-col-sessions { width:10%; }
+.room-col-occupancy { width:13%; }
+.room-col-utilization { width:14%; }
+
+.room-id { color:var(--navy); font-weight:700; }
+.room-capacity,.room-building { color:#687288; font-weight:600; }
+.room-campus { display:inline-flex; align-items:center; padding:5px 8px; border:1px solid #e5e8ef; border-radius:6px; background:#fafbfe; color:#687288; font-size:9px; font-weight:600; }
+.room-type { color:#929aab; font-size:9px; }
+
+.room-utilization { display:flex; align-items:center; gap:8px; }
+.utilization-bar { width:65px; height:5px; overflow:hidden; border-radius:99px; background:#edf0f5; }
+.utilization-fill { height:100%; border-radius:99px; background:var(--primary); }
+.utilization-value { min-width:40px; color:var(--navy); font-size:9px; font-weight:700; }
+
+.room-empty { padding:35px 15px; color:#9ba3b4; text-align:center; font-size:11px; }
+
+.room-pagination { margin-top:16px; display:flex; align-items:center; justify-content:center; gap:5px; }
+.room-page-button { min-width:30px; height:30px; padding:0 8px; border:1px solid var(--border); border-radius:7px; background:#fff; color:#687288; font-size:10px; font-weight:600; cursor:pointer; }
+.room-page-button:hover { border-color:#c8cdf7; background:var(--primary-light); color:var(--primary); }
+.room-page-button.active { border-color:var(--primary); background:var(--primary); color:#fff; }
+.room-page-button:disabled { opacity:.45; cursor:default; }
+.room-page-info { margin-left:7px; color:#9aa2b2; font-size:9px; }
+
+.topbar-dropdown-wrapper { position:relative; }
+.notification,.user-profile { cursor:pointer; }
+.user-profile { border:none; }
+.topbar-dropdown { position:absolute; top:calc(100% + 10px); right:0; z-index:1000; width:300px; border:1px solid #e1e5ed; border-radius:12px; background:#fff; box-shadow:0 14px 35px rgba(30,40,70,.12); overflow:hidden; }
+.topbar-dropdown-header { display:flex; align-items:center; justify-content:space-between; padding:15px 16px; border-bottom:1px solid #eef0f4; }
+.topbar-dropdown-header strong { color:var(--navy); font-size:11px; font-weight:700; }
+.dropdown-close { width:26px; height:26px; border:none; border-radius:6px; background:transparent; color:#8d96a8; font-size:18px; line-height:1; cursor:pointer; }
+.dropdown-close:hover { background:#f5f6fa; }
+.notification-content { display:flex; align-items:flex-start; gap:11px; padding:17px; }
+.notification-status-dot { width:9px; height:9px; margin-top:4px; flex-shrink:0; border-radius:50%; background:#19b57b; box-shadow:0 0 0 4px #eaf8f3; }
+.notification-content strong { display:block; color:var(--navy); font-size:10px; font-weight:700; }
+.notification-content p { margin:4px 0 0; color:#929bad; font-size:9px; line-height:1.45; }
+
+.profile-panel { width:280px; padding:0; }
+.profile-panel-user { display:flex; align-items:center; gap:11px; padding:16px; }
+.profile-panel-avatar { width:38px; height:38px; display:flex; align-items:center; justify-content:center; flex-shrink:0; border-radius:10px; background:#eeeefe; color:var(--primary); font-size:15px; font-weight:700; }
+.profile-panel-user strong { display:block; color:var(--navy); font-size:11px; font-weight:700; }
+.profile-panel-user span { display:block; margin-top:3px; color:#929bad; font-size:9px; }
+.profile-panel-divider { height:1px; background:#eef0f4; }
+.profile-panel-email { padding:13px 16px; }
+.profile-panel-email span { display:block; color:#929bad; font-size:8px; font-weight:700; letter-spacing:.3px; text-transform:uppercase; }
+.profile-panel-email strong { display:block; margin-top:4px; color:#59657d; font-size:10px; font-weight:600; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.profile-menu-item { display:block; padding:12px 16px; border-top:1px solid #eef0f4; color:#59657d; font-size:10px; font-weight:600; text-decoration:none; }
+.profile-menu-item:hover { background:#f8f9fc; color:var(--primary); }
+
+@media (max-width:1100px) {
+    .rooms-table { min-width:1120px; }
+}
+
+@media (max-width:900px) {
+    .rooms-toolbar { flex-direction:column; align-items:stretch; }
+    .room-search { width:100%; }
+}
+
+@media (max-width:700px) {
+    .topbar-dropdown { right:-10px; width:min(300px,calc(100vw - 40px)); }
+}
+
+html[data-theme="dark"] .rooms-toolbar { background:#171e2c; border-color:#2a3447; }
+html[data-theme="dark"] .room-search { background:#111827; color:#e7ebf2; border-color:#303b50; }
+html[data-theme="dark"] .room-search::placeholder { color:#6f7b90; }
+html[data-theme="dark"] .rooms-panel { background:#171e2c; border-color:#2a3447; }
+html[data-theme="dark"] .rooms-table { background:#171e2c; }
+html[data-theme="dark"] .rooms-table th { background:#151c29; color:#8f9bb0; border-bottom-color:#2a3447; }
+html[data-theme="dark"] .rooms-table td { color:#aab4c5; border-bottom-color:#293447; }
+html[data-theme="dark"] .rooms-table tbody tr:hover { background:#1d2636; }
+html[data-theme="dark"] .room-id { color:#eef2f8; }
+html[data-theme="dark"] .room-capacity,html[data-theme="dark"] .room-building { color:#b7c1d0; }
+html[data-theme="dark"] .room-campus { background:#111827; border-color:#344056; color:#c0c9d7; }
+html[data-theme="dark"] .room-type { color:#929db0; }
+html[data-theme="dark"] .utilization-bar { background:#293447; }
+html[data-theme="dark"] .utilization-value { color:#e5eaf2; }
+html[data-theme="dark"] .room-page-button { background:#171e2c; border-color:#303b50; color:#aeb8c8; }
+html[data-theme="dark"] .room-page-button:hover { background:#222a3b; border-color:#4a55a2; color:#a5adff; }
+html[data-theme="dark"] .room-page-button.active { background:var(--primary); border-color:var(--primary); color:#fff; }
+html[data-theme="dark"] .room-page-info,html[data-theme="dark"] .room-empty { color:#8995aa; }
+</style>
+</head>
+
+<body>
+<div class="app">
+
+<aside class="sidebar">
+<div class="brand">
+<div class="brand-icon">U</div>
+<div>
+<div class="brand-name">UniPlan</div>
+<div class="brand-subtitle">University Scheduler</div>
+</div>
+</div>
+
+<div class="menu-title">MAIN MENU</div>
+
+<nav class="nav">
+<a href="/" class="nav-item {% if request.path == '/' %}active{% endif %}">
+<span class="nav-icon">▦</span><span>Dashboard</span>
+</a>
+<a href="/timetable" class="nav-item {% if request.path == '/timetable' %}active{% endif %}">
+<span class="nav-icon">▤</span><span>Timetable</span>
+</a>
+<a href="/professors" class="nav-item {% if request.path == '/professors' %}active{% endif %}">
+<span class="nav-icon">♙</span><span>Professors</span>
+</a>
+<a href="/preferences" class="nav-item">
+<span class="nav-icon">⚙</span><span>Preferences</span>
+</a>
+<a href="/rooms" class="nav-item {% if request.path == '/rooms' %}active{% endif %}">
+<span class="nav-icon">▥</span><span>Rooms</span>
+</a>
+<a href="/campuses" class="nav-item {% if request.path == '/campuses' %}active{% endif %}">
+<span class="nav-icon">⌖</span><span>Campuses</span>
+</a>
+<a href="/analytics" class="nav-item {% if request.path == '/analytics' %}active{% endif %}">
+<span class="nav-icon">◔</span><span>Analytics</span>
+</a>
+<a href="/conflicts" class="nav-item {% if request.path == '/conflicts' %}active{% endif %}">
+<span class="nav-icon">⚠</span><span>Conflicts</span>
+</a>
+</nav>
+
+<div class="sidebar-bottom">
+<div class="menu-title">SYSTEM</div>
+<a href="/settings" class="nav-item {% if request.path == '/settings' %}active{% endif %}">
+<span class="nav-icon">⚙</span><span>Settings</span>
+</a>
+</div>
+
+<div class="sidebar-footer">
+<div class="footer-dot"></div>
+<div>
+<div class="footer-title">Scheduling Engine</div>
+<div class="footer-status">Operational</div>
+</div>
+</div>
+</aside>
+
+<main class="main">
+
+<header class="topbar">
+<div>
+<div class="breadcrumb">RESOURCE MANAGEMENT</div>
+<h1>Rooms</h1>
+<p class="page-description">View room capacity, location and scheduling utilization.</p>
+</div>
+
+<div class="topbar-actions">
+
+<div class="topbar-dropdown-wrapper">
+<button type="button" id="notificationButton" class="notification" aria-label="Notifications" aria-expanded="false">♢</button>
+
+<div id="notificationPanel" class="topbar-dropdown notification-panel" hidden>
+<div class="topbar-dropdown-header">
+<strong>Notifications</strong>
+<button type="button" class="dropdown-close" id="notificationClose" aria-label="Close">×</button>
+</div>
+
+<div class="notification-content">
+<div class="notification-status-dot"></div>
+<div>
+<strong>Scheduling Engine</strong>
+<p>Operational — no new notifications.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="topbar-dropdown-wrapper">
+<button type="button" id="profileButton" class="user-profile" aria-expanded="false">
+<div class="avatar">S</div>
+<div class="user-info">
+<div id="topbarUserName" class="user-name">Saadiya</div>
+<div class="user-role">Administrator</div>
+</div>
+<span class="user-arrow">⌄</span>
+</button>
+
+<div id="profilePanel" class="topbar-dropdown profile-panel" hidden>
+<div class="profile-panel-user">
+<div class="profile-panel-avatar">S</div>
+<div>
+<strong id="profilePanelName">Saadiya</strong>
+<span>Administrator</span>
+</div>
+</div>
+
+<div class="profile-panel-divider"></div>
+
+<div class="profile-panel-email">
+<span>Email</span>
+<strong id="profilePanelEmail">Not set</strong>
+</div>
+
+<a href="/settings" class="profile-menu-item">⚙ Account Settings</a>
+</div>
+</div>
+
+</div>
+</header>
+
+<section class="calendar-heading">
+<div>
+<div class="schedule-title-row">
+<h2>
+Room Directory
+<button class="info-button" data-info="Browse the university's rooms, their capacity, location and scheduling utilisation." aria-label="More information">i</button>
+</h2>
+<span class="schedule-status">50 Rooms</span>
+</div>
+<p>Review lecture rooms and how efficiently they are being used.</p>
+</div>
+</section>
+
+<section class="rooms-toolbar">
+<input type="text" id="roomSearch" class="room-search" placeholder="Search by room, building or campus..." autocomplete="off">
+<span id="roomCount" class="room-count">{{ rooms|length }} rooms</span>
+</section>
+
+<section class="rooms-panel">
+
+<div class="panel-header">
+<div>
+<h2>Rooms</h2>
+<p>Capacity and scheduling information for each room.</p>
+</div>
+</div>
+
+<div class="rooms-table-wrapper">
+<table class="rooms-table">
+<thead>
+<tr>
+<th class="room-col-id">Room ID</th>
+<th class="room-col-capacity">Capacity</th>
+<th class="room-col-building">Building</th>
+<th class="room-col-campus">Campus</th>
+<th class="room-col-type">Room Type</th>
+<th class="room-col-sessions">Sessions</th>
+<th class="room-col-occupancy">Avg. Occupancy</th>
+<th class="room-col-utilization">Utilization</th>
+</tr>
+</thead>
+
+<tbody id="roomTableBody">
+{% for room in rooms %}
+<tr class="room-row" data-search="{{ room.room_id|lower }} {{ room.building_name|lower }} {{ room.campus_id|lower }} {{ room.room_type|lower }}">
+<td><span class="room-id">{{ room.room_id }}</span></td>
+<td><span class="room-capacity">{{ room.capacity }} seats</span></td>
+<td><span class="room-building">{{ room.building_name }}</span></td>
+<td><span class="room-campus">{{ room.campus_id }}</span></td>
+<td><span class="room-type">{{ room.room_type }}</span></td>
+<td><span class="room-capacity">{{ room.session_count }}</span></td>
+<td><span class="room-capacity">{{ room.average_students }} / {{ room.capacity }}</span></td>
+<td>
+<div class="room-utilization">
+<div class="utilization-bar">
+<div class="utilization-fill" style="width:{{ [room.utilization, 100]|min }}%;"></div>
+</div>
+<span class="utilization-value">{{ room.utilization }}%</span>
+</div>
+</td>
+</tr>
+{% endfor %}
+
+<tr id="noRooms" style="display:none;">
+<td colspan="8">
+<div class="room-empty">No rooms match your search.</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+<div id="roomPagination" class="room-pagination"></div>
+</section>
+
+</main>
+</div>
+
+<script>
+const itemsPerPage = 10;
+let currentPage = 1;
+let filteredRows = [];
+
+const roomSearch = document.getElementById("roomSearch");
+const roomCount = document.getElementById("roomCount");
+const noRooms = document.getElementById("noRooms");
+const roomPagination = document.getElementById("roomPagination");
+const allRows = Array.from(document.querySelectorAll(".room-row"));
+
+function filterRooms() {
+    const query = roomSearch.value.trim().toLowerCase();
+    filteredRows = allRows.filter(row => row.dataset.search.toLowerCase().includes(query));
+    currentPage = 1;
+    roomCount.textContent = `${filteredRows.length} room${filteredRows.length === 1 ? "" : "s"}`;
+    renderRoomTable();
+}
+
+function renderRoomTable() {
+    allRows.forEach(row => row.style.display = "none");
+
+    const start = (currentPage - 1) * itemsPerPage;
+    const visibleRows = filteredRows.slice(start, start + itemsPerPage);
+
+    visibleRows.forEach(row => row.style.display = "");
+    noRooms.style.display = filteredRows.length === 0 ? "" : "none";
+    renderRoomPagination();
+}
+
+function renderRoomPagination() {
+    roomPagination.innerHTML = "";
+
+    const totalPages = Math.ceil(filteredRows.length / itemsPerPage);
+    if (totalPages <= 1) return;
+
+    const previous = document.createElement("button");
+    previous.type = "button";
+    previous.className = "room-page-button";
+    previous.textContent = "‹";
+    previous.disabled = currentPage === 1;
+    previous.addEventListener("click", function () {
+        if (currentPage > 1) {
+            currentPage -= 1;
+            renderRoomTable();
+        }
+    });
+    roomPagination.appendChild(previous);
+
+    const pages = [];
+
+    if (totalPages <= 5) {
+        for (let page = 1; page <= totalPages; page++) pages.push(page);
+    } else {
+        pages.push(1);
+
+        if (currentPage > 3) pages.push("...");
+
+        const startPage = Math.max(2, currentPage - 1);
+        const endPage = Math.min(totalPages - 1, currentPage + 1);
+
+        for (let page = startPage; page <= endPage; page++) pages.push(page);
+
+        if (currentPage < totalPages - 2) pages.push("...");
+        pages.push(totalPages);
+    }
+
+    pages.forEach(page => {
+        if (page === "...") {
+            const dots = document.createElement("span");
+            dots.className = "room-page-info";
+            dots.textContent = "…";
+            roomPagination.appendChild(dots);
+            return;
+        }
+
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "room-page-button";
+        button.textContent = page;
+
+        if (page === currentPage) button.classList.add("active");
+
+        button.addEventListener("click", function () {
+            currentPage = page;
+            renderRoomTable();
+        });
+
+        roomPagination.appendChild(button);
+    });
+
+    const next = document.createElement("button");
+    next.type = "button";
+    next.className = "room-page-button";
+    next.textContent = "›";
+    next.disabled = currentPage === totalPages;
+
+    next.addEventListener("click", function () {
+        if (currentPage < totalPages) {
+            currentPage += 1;
+            renderRoomTable();
+        }
+    });
+
+    roomPagination.appendChild(next);
+
+    const pageInfo = document.createElement("span");
+    pageInfo.className = "room-page-info";
+    pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+    roomPagination.appendChild(pageInfo);
+}
+
+roomSearch.addEventListener("input", filterRooms);
+
+filteredRows = [...allRows];
+roomCount.textContent = `${filteredRows.length} rooms`;
+renderRoomTable();
+
+/* Account information */
+const savedAccountName = localStorage.getItem("uniplan-account-name") || "Saadiya";
+const savedAccountEmail = localStorage.getItem("uniplan-account-email") || "";
+
+const topbarUserName = document.getElementById("topbarUserName");
+const profilePanelName = document.getElementById("profilePanelName");
+const profilePanelEmail = document.getElementById("profilePanelEmail");
+
+if (topbarUserName) topbarUserName.textContent = savedAccountName;
+if (profilePanelName) profilePanelName.textContent = savedAccountName;
+if (profilePanelEmail) profilePanelEmail.textContent = savedAccountEmail || "Not set";
+
+/* Topbar */
+const notificationButton = document.getElementById("notificationButton");
+const notificationPanel = document.getElementById("notificationPanel");
+const notificationClose = document.getElementById("notificationClose");
+const profileButton = document.getElementById("profileButton");
+const profilePanel = document.getElementById("profilePanel");
+
+function closeTopbarMenus() {
+    if (notificationPanel) notificationPanel.hidden = true;
+    if (profilePanel) profilePanel.hidden = true;
+    if (notificationButton) notificationButton.setAttribute("aria-expanded", "false");
+    if (profileButton) profileButton.setAttribute("aria-expanded", "false");
+}
+
+if (notificationButton) {
+    notificationButton.addEventListener("click", function (event) {
+        event.stopPropagation();
+        const shouldOpen = notificationPanel.hidden;
+        closeTopbarMenus();
+
+        if (shouldOpen) {
+            notificationPanel.hidden = false;
+            notificationButton.setAttribute("aria-expanded", "true");
+        }
+    });
+}
+
+if (notificationClose) {
+    notificationClose.addEventListener("click", function () {
+        closeTopbarMenus();
+    });
+}
+
+if (profileButton) {
+    profileButton.addEventListener("click", function (event) {
+        event.stopPropagation();
+        const shouldOpen = profilePanel.hidden;
+        closeTopbarMenus();
+
+        if (shouldOpen) {
+            profilePanel.hidden = false;
+            profileButton.setAttribute("aria-expanded", "true");
+        }
+    });
+}
+
+if (notificationPanel) {
+    notificationPanel.addEventListener("click", function (event) {
+        event.stopPropagation();
+    });
+}
+
+if (profilePanel) {
+    profilePanel.addEventListener("click", function (event) {
+        event.stopPropagation();
+    });
+}
+
+document.addEventListener("click", function () {
+    closeTopbarMenus();
+});
+
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") closeTopbarMenus();
+});
+</script>
+
+</body>
+</html>

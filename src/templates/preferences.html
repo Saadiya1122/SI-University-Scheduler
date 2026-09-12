@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UniPlan | Preferences</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<script src="{{ url_for('static', filename='js/language.js') }}"></script>
+
+<script>
+(function () {
+    const savedTheme = localStorage.getItem("uniplan-theme") || "light";
+    let theme = savedTheme;
+    if (theme === "system") theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
+
+<style>
+.preferences-heading { margin-top:34px; }
+.preferences-heading h2 { color:var(--navy); font-size:21px; font-weight:700; }
+.preferences-heading p { margin-top:6px; color:var(--muted); font-size:13px; line-height:1.5; }
+
+.preferences-selector { margin-top:22px; padding:19px 20px; border:1px solid var(--border); border-radius:14px; background:var(--white); box-shadow:0 5px 18px rgba(30,40,70,.03); }
+.selector-label { display:block; margin-bottom:8px; color:#7d879a; font-size:11px; font-weight:700; letter-spacing:.3px; }
+.selector-row { display:flex; align-items:center; gap:14px; }
+.professor-select { width:390px; height:42px; padding:0 12px; border:1px solid var(--border); border-radius:9px; background:var(--white); color:var(--text); font-size:12px; outline:none; }
+.professor-select:focus { border-color:#bfc4f5; box-shadow:0 0 0 3px rgba(89,97,223,.08); }
+.professor-summary { color:#8f98aa; font-size:11px; }
+
+.preferences-grid { margin-top:18px; display:grid; grid-template-columns:minmax(0,1.55fr) minmax(310px,.8fr); gap:18px; align-items:start; }
+.preference-panel { padding:21px; border:1px solid var(--border); border-radius:15px; background:var(--white); box-shadow:0 5px 18px rgba(30,40,70,.03); }
+.panel-header h2 { color:var(--navy); font-size:18px; font-weight:700; }
+.panel-header p { margin-top:5px; color:#939bad; font-size:11px; line-height:1.55; }
+
+.availability-table-wrapper { margin-top:18px; overflow-x:auto; border:1px solid var(--border-light); border-radius:11px; }
+.availability-table { width:100%; min-width:600px; border-collapse:collapse; }
+.availability-table th { padding:12px 11px; border-bottom:1px solid var(--border); background:#f8f9fc; color:#7e889c; font-size:10px; font-weight:700; text-align:left; }
+.availability-table td { padding:11px; border-bottom:1px solid #eef0f4; vertical-align:middle; color:#566177; font-size:11px; }
+.availability-table tr:last-child td { border-bottom:none; }
+.day-name { color:var(--navy); font-size:11px; font-weight:700; }
+.day-meta { margin-top:3px; color:#a0a8b7; font-size:9px; }
+
+.status-select,.time-input { width:100%; height:36px; padding:0 9px; border:1px solid var(--border); border-radius:7px; background:var(--white); color:var(--text); font-size:11px; outline:none; }
+.status-select { min-width:125px; }
+.time-input { min-width:120px; }
+.status-select:focus,.time-input:focus { border-color:#bfc4f5; box-shadow:0 0 0 3px rgba(89,97,223,.07); }
+.time-input:disabled { opacity:.45; cursor:not-allowed; }
+
+.availability-note { margin-top:14px; padding:12px 13px; border:1px solid #dfe2fa; border-radius:9px; background:#f8f8ff; color:#7d879a; font-size:10px; line-height:1.55; }
+.availability-note strong { color:var(--primary); }
+
+.preference-section { margin-top:22px; }
+.preference-section:first-of-type { margin-top:0; }
+.preference-section-title { color:var(--navy); font-size:13px; font-weight:700; }
+.preference-section-subtitle { margin-top:4px; color:#929bad; font-size:10px; line-height:1.5; }
+
+.preference-select { width:100%; height:38px; margin-top:10px; padding:0 10px; border:1px solid var(--border); border-radius:8px; background:var(--white); color:var(--text); font-size:11px; outline:none; }
+.preference-select:focus { border-color:#bfc4f5; box-shadow:0 0 0 3px rgba(89,97,223,.07); }
+
+.checkbox-list { margin-top:12px; display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.checkbox-item { display:flex; align-items:center; gap:8px; color:#5f6a7f; font-size:11px; }
+.checkbox-item input { width:14px; height:14px; accent-color:var(--primary); }
+
+.notes-input { width:100%; min-height:90px; margin-top:10px; padding:10px; resize:vertical; border:1px solid var(--border); border-radius:8px; background:var(--white); color:var(--text); font-family:inherit; font-size:11px; line-height:1.5; outline:none; }
+.notes-input:focus { border-color:#bfc4f5; box-shadow:0 0 0 3px rgba(89,97,223,.07); }
+
+.preferences-actions { margin-top:24px; display:flex; align-items:center; gap:9px; }
+.save-status { flex:1; color:#9199aa; font-size:10px; }
+.secondary-button,.primary-button { height:37px; padding:0 15px; border-radius:8px; font-size:10px; font-weight:700; cursor:pointer; }
+.secondary-button { border:1px solid var(--border); background:var(--white); color:#69748a; }
+.secondary-button:hover { border-color:#c8cdf7; background:var(--primary-light); color:var(--primary); }
+.primary-button { border:1px solid var(--primary); background:var(--primary); color:#fff; }
+.primary-button:hover { background:var(--primary-dark); }
+
+@media (max-width:1050px) {
+    .preferences-grid { grid-template-columns:1fr; }
+}
+
+@media (max-width:700px) {
+    .selector-row { align-items:stretch; flex-direction:column; }
+    .professor-select { width:100%; }
+    .checkbox-list { grid-template-columns:1fr; }
+    .preferences-actions { flex-wrap:wrap; }
+    .save-status { width:100%; flex:none; }
+}
+
+html[data-theme="dark"] .preferences-selector,
+html[data-theme="dark"] .preference-panel {
+    background:#171d2a;
+    border-color:#2a3447;
+    box-shadow:none;
+}
+
+html[data-theme="dark"] .professor-select,
+html[data-theme="dark"] .status-select,
+html[data-theme="dark"] .time-input,
+html[data-theme="dark"] .preference-select,
+html[data-theme="dark"] .notes-input {
+    background:#111722;
+    border-color:#303b50;
+    color:#e8edf5;
+}
+
+html[data-theme="dark"] .availability-table-wrapper { border-color:#2a3447; }
+html[data-theme="dark"] .availability-table th { background:#141a26; border-color:#2a3447; color:#9ba6bb; }
+html[data-theme="dark"] .availability-table td { border-color:#283244; color:#b4bfd1; }
+html[data-theme="dark"] .availability-note { background:#171a2a; border-color:#343961; }
+html[data-theme="dark"] .secondary-button { background:#171d2a; border-color:#303b50; color:#aeb8ca; }
+</style>
+</head>
+
+<body>
+<div class="app">
+
+<aside class="sidebar">
+<div class="brand">
+<div class="brand-icon">U</div>
+<div>
+<div class="brand-name">UniPlan</div>
+<div class="brand-subtitle">University Scheduler</div>
+</div>
+</div>
+
+<div class="menu-title">MAIN MENU</div>
+
+<nav class="nav">
+<a href="/" class="nav-item"><span class="nav-icon">▦</span><span>Dashboard</span></a>
+<a href="/timetable" class="nav-item"><span class="nav-icon">▤</span><span>Timetable</span></a>
+<a href="/professors" class="nav-item"><span class="nav-icon">♙</span><span>Professors</span></a>
+<a href="/preferences" class="nav-item active"><span class="nav-icon">⚙</span><span>Preferences</span></a>
+<a href="/rooms" class="nav-item"><span class="nav-icon">▥</span><span>Rooms</span></a>
+<a href="/campuses" class="nav-item"><span class="nav-icon">⌖</span><span>Campuses</span></a>
+<a href="/analytics" class="nav-item"><span class="nav-icon">◔</span><span>Analytics</span></a>
+<a href="/conflicts" class="nav-item"><span class="nav-icon">⚠</span><span>Conflicts</span></a>
+</nav>
+
+<div class="sidebar-bottom">
+<div class="menu-title">SYSTEM</div>
+<a href="/settings" class="nav-item"><span class="nav-icon">⚙</span><span>Settings</span></a>
+</div>
+
+<div class="sidebar-footer">
+<div class="footer-dot"></div>
+<div>
+<div class="footer-title">Scheduling Engine</div>
+<div class="footer-status">Operational</div>
+</div>
+</div>
+</aside>
+
+<main class="main">
+<header class="topbar">
+<div>
+<div class="breadcrumb">SCHEDULE MANAGEMENT</div>
+<h1>Preferences</h1>
+<p class="page-description">Configure professor availability and scheduling preferences.</p>
+</div>
+
+<div class="topbar-actions">
+
+<div class="topbar-dropdown-wrapper">
+<button type="button" id="notificationButton" class="notification" aria-label="Notifications" aria-expanded="false">♢</button>
+
+<div id="notificationPanel" class="topbar-dropdown notification-panel" hidden>
+<div class="topbar-dropdown-header">
+<strong>Notifications</strong>
+<button type="button" class="dropdown-close" id="notificationClose" aria-label="Close">×</button>
+</div>
+<div class="notification-content">
+<div class="notification-status-dot"></div>
+<div>
+<strong>Scheduling Engine</strong>
+<p>Operational — no new notifications.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="topbar-dropdown-wrapper">
+<button type="button" id="profileButton" class="user-profile" aria-expanded="false">
+<div class="avatar">S</div>
+<div class="user-info">
+<div id="topbarUserName" class="user-name">Saadiya</div>
+<div class="user-role">Administrator</div>
+</div>
+<span class="user-arrow">⌄</span>
+</button>
+
+<div id="profilePanel" class="topbar-dropdown profile-panel" hidden>
+<div class="profile-panel-user">
+<div class="profile-panel-avatar">S</div>
+<div>
+<strong id="profilePanelName">Saadiya</strong>
+<span>Administrator</span>
+</div>
+</div>
+
+<div class="profile-panel-divider"></div>
+
+<div class="profile-panel-email">
+<span>Email</span>
+<strong id="profilePanelEmail">Not set</strong>
+</div>
+
+<a href="/settings" class="profile-menu-item">⚙ Account Settings</a>
+</div>
+</div>
+
+</div>
+</header>
+
+<section class="preferences-heading">
+<h2>Professor Scheduling Preferences <button class="info-button" data-info="Configure professor availability and scheduling preferences used by the timetable scheduler." aria-label="More information">i</button></h2>
+<p>Availability defines when a professor can teach. Preferences guide the scheduler when several valid options exist.</p>
+</section>
+
+<section class="preferences-selector">
+<label class="selector-label" for="professorSelect">PROFESSOR</label>
+
+<div class="selector-row">
+<select id="professorSelect" class="professor-select">
+<option value="">Select a professor...</option>
+{% for professor in professors %}
+<option value="{{ professor.professor_id }}">{{ professor.name }} — {{ professor.professor_id }}</option>
+{% endfor %}
+</select>
+
+<span id="professorSummary" class="professor-summary">No professor selected</span>
+</div>
+</section>
+
+<section class="preferences-grid">
+
+<div class="preference-panel">
+<div class="panel-header">
+<h2>Availability</h2>
+<p>Define when the professor is available to teach. Unavailable periods are treated as hard constraints.</p>
+</div>
+
+<div class="availability-table-wrapper">
+<table class="availability-table">
+<thead>
+<tr>
+<th>DAY</th>
+<th>STATUS</th>
+<th>START</th>
+<th>END</th>
+</tr>
+</thead>
+
+<tbody>
+{% for day in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"] %}
+<tr>
+<td>
+<div class="day-name">{{ day }}</div>
+<div class="day-meta">Teaching day</div>
+</td>
+
+<td>
+<select class="status-select" data-day="{{ day }}">
+<option value="available">Available</option>
+<option value="unavailable">Unavailable</option>
+</select>
+</td>
+
+<td><input type="time" class="time-input" value="09:00" data-day="{{ day }}"></td>
+<td><input type="time" class="time-input" value="17:00" data-day="{{ day }}"></td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
+<div class="availability-note">
+<strong>Availability is a hard constraint.</strong>
+The scheduler will not assign teaching sessions outside the professor's available periods.
+</div>
+</div>
+
+<div class="preference-panel">
+<div class="panel-header">
+<h2>Scheduling Preferences</h2>
+<p>These preferences guide the scheduler without overriding availability.</p>
+</div>
+
+<div class="preference-section">
+<div class="preference-section-title">Preferred teaching time</div>
+<div class="preference-section-subtitle">Choose the general period preferred by the professor.</div>
+
+<select id="preferredTime" class="preference-select">
+<option value="none">No preference</option>
+<option value="morning">Morning</option>
+<option value="afternoon">Afternoon</option>
+<option value="evening">Evening</option>
+</select>
+</div>
+
+<div class="preference-section">
+<div class="preference-section-title">Preferred days</div>
+<div class="preference-section-subtitle">These days receive preference when valid alternatives exist.</div>
+
+<div class="checkbox-list">
+{% for day in ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"] %}
+<label class="checkbox-item">
+<input type="checkbox" class="preferred-day" value="{{ day }}">
+{{ day }}
+</label>
+{% endfor %}
+</div>
+</div>
+
+<div class="preference-section">
+<div class="preference-section-title">Scheduling options</div>
+<div class="preference-section-subtitle">Soft preferences used when several schedules are feasible.</div>
+
+<div class="checkbox-list">
+<label class="checkbox-item">
+<input type="checkbox" id="preferFewerGaps">
+Prefer fewer gaps between sessions
+</label>
+
+<label class="checkbox-item">
+<input type="checkbox" id="preferFewerDays">
+Prefer fewer teaching days
+</label>
+</div>
+</div>
+
+<div class="preference-section">
+<div class="preference-section-title">Notes</div>
+<div class="preference-section-subtitle">Optional information for administrators and scheduling.</div>
+<textarea id="preferenceNotes" class="notes-input" placeholder="Add any relevant scheduling notes..."></textarea>
+</div>
+
+<div class="preferences-actions">
+<span id="saveStatus" class="save-status">No changes saved yet.</span>
+<button type="button" id="resetButton" class="secondary-button">Reset</button>
+<button type="button" id="saveButton" class="primary-button">Save Preferences</button>
+</div>
+
+</div>
+</section>
+</main>
+</div>
+
+<script>
+const professorSelect = document.getElementById("professorSelect");
+const savedPreferences = {{ professor_preferences | tojson }};
+const professorSummary = document.getElementById("professorSummary");
+const saveStatus = document.getElementById("saveStatus");
+
+function loadSelectedProfessorPreferences() {
+    const professorId = professorSelect.value;
+    if (!professorId) return;
+
+    const data = savedPreferences[professorId];
+
+    document.querySelectorAll(".status-select").forEach(select => {
+        select.value = "available";
+        select.dispatchEvent(new Event("change"));
+    });
+
+    document.querySelectorAll(".time-input").forEach((input, index) => {
+        input.value = index % 2 === 0 ? "09:00" : "17:00";
+        input.disabled = false;
+    });
+
+    document.getElementById("preferredTime").value = "none";
+
+    document.querySelectorAll(".preferred-day").forEach(checkbox => {
+        checkbox.checked = false;
+    });
+
+    document.getElementById("preferFewerGaps").checked = false;
+    document.getElementById("preferFewerDays").checked = false;
+    document.getElementById("preferenceNotes").value = "";
+
+    if (!data) {
+        saveStatus.textContent = "No saved preferences for this professor.";
+        return;
+    }
+
+    Object.entries(data.availability || {}).forEach(([day, values]) => {
+        const statusSelect = document.querySelector(`.status-select[data-day="${day}"]`);
+        const timeInputs = document.querySelectorAll(`.time-input[data-day="${day}"]`);
+
+        if (!statusSelect) return;
+
+        statusSelect.value = values.status || "available";
+
+        if (timeInputs.length >= 2) {
+            timeInputs[0].value = values.start_time || "09:00";
+            timeInputs[1].value = values.end_time || "17:00";
+        }
+
+        statusSelect.dispatchEvent(new Event("change"));
+    });
+
+    document.getElementById("preferredTime").value = data.preferred_time || "none";
+
+    document.querySelectorAll(".preferred-day").forEach(checkbox => {
+        checkbox.checked = (data.preferred_days || []).includes(checkbox.value);
+    });
+
+    document.getElementById("preferFewerGaps").checked = Boolean(data.prefer_fewer_gaps);
+    document.getElementById("preferFewerDays").checked = Boolean(data.prefer_fewer_days);
+    document.getElementById("preferenceNotes").value = data.notes || "";
+    saveStatus.textContent = "Saved preferences loaded.";
+}
+
+professorSelect.addEventListener("change", function () {
+    if (!this.value) {
+        professorSummary.textContent = "No professor selected";
+        saveStatus.textContent = "Select a professor to configure preferences.";
+        return;
+    }
+
+    const selectedOption = this.options[this.selectedIndex];
+    professorSummary.textContent = `Selected: ${selectedOption.textContent.trim()}`;
+    saveStatus.textContent = "Loading preferences...";
+    loadSelectedProfessorPreferences();
+});
+
+document.querySelectorAll(".status-select").forEach(select => {
+    select.addEventListener("change", function () {
+        const day = this.dataset.day;
+        const inputs = document.querySelectorAll(`.time-input[data-day="${day}"]`);
+        const unavailable = this.value === "unavailable";
+
+        inputs.forEach(input => {
+            input.disabled = unavailable;
+        });
+    });
+});
+
+document.getElementById("saveButton").addEventListener("click", async function () {
+    if (!professorSelect.value) {
+        saveStatus.textContent = "Please select a professor first.";
+        return;
+    }
+
+    const availability = {};
+
+    document.querySelectorAll(".status-select").forEach(select => {
+        const day = select.dataset.day;
+        const timeInputs = document.querySelectorAll(`.time-input[data-day="${day}"]`);
+
+        availability[day] = {
+            status: select.value,
+            start_time: timeInputs[0].value,
+            end_time: timeInputs[1].value
+        };
+    });
+
+    const preferredDays = Array.from(
+        document.querySelectorAll(".preferred-day:checked")
+    ).map(checkbox => checkbox.value);
+
+    const data = {
+        professor_id: professorSelect.value,
+        availability: availability,
+        preferred_time: document.getElementById("preferredTime").value,
+        preferred_days: preferredDays,
+        prefer_fewer_gaps: document.getElementById("preferFewerGaps").checked,
+        prefer_fewer_days: document.getElementById("preferFewerDays").checked,
+        notes: document.getElementById("preferenceNotes").value
+    };
+
+    saveStatus.textContent = "Saving...";
+
+    try {
+        const response = await fetch("/api/preferences", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (!response.ok) throw new Error(result.message || "Could not save preferences.");
+
+        savedPreferences[professorSelect.value] = {
+            availability: availability,
+            preferred_time: data.preferred_time,
+            preferred_days: preferredDays,
+            prefer_fewer_gaps: data.prefer_fewer_gaps,
+            prefer_fewer_days: data.prefer_fewer_days,
+            notes: data.notes
+        };
+
+        saveStatus.textContent = "Preferences saved successfully.";
+    } catch (error) {
+        saveStatus.textContent = error.message;
+    }
+});
+
+document.getElementById("resetButton").addEventListener("click", function () {
+    document.querySelectorAll(".status-select").forEach(select => {
+        select.value = "available";
+        select.dispatchEvent(new Event("change"));
+    });
+
+    document.querySelectorAll(".time-input").forEach((input, index) => {
+        input.value = index % 2 === 0 ? "09:00" : "17:00";
+        input.disabled = false;
+    });
+
+    document.getElementById("preferredTime").value = "none";
+
+    document.querySelectorAll(".preferred-day").forEach(checkbox => {
+        checkbox.checked = false;
+    });
+
+    document.getElementById("preferFewerGaps").checked = false;
+    document.getElementById("preferFewerDays").checked = false;
+    document.getElementById("preferenceNotes").value = "";
+    saveStatus.textContent = "Preferences reset.";
+});
+
+const notificationButton = document.getElementById("notificationButton");
+const notificationPanel = document.getElementById("notificationPanel");
+const notificationClose = document.getElementById("notificationClose");
+const profileButton = document.getElementById("profileButton");
+const profilePanel = document.getElementById("profilePanel");
+
+function closeTopbarMenus() {
+    if (notificationPanel) notificationPanel.hidden = true;
+    if (profilePanel) profilePanel.hidden = true;
+    if (notificationButton) notificationButton.setAttribute("aria-expanded", "false");
+    if (profileButton) profileButton.setAttribute("aria-expanded", "false");
+}
+
+notificationButton.addEventListener("click", function (event) {
+    event.stopPropagation();
+    const willOpen = notificationPanel.hidden;
+    closeTopbarMenus();
+    notificationPanel.hidden = !willOpen;
+    notificationButton.setAttribute("aria-expanded", String(willOpen));
+});
+
+notificationClose.addEventListener("click", function () {
+    closeTopbarMenus();
+});
+
+profileButton.addEventListener("click", function (event) {
+    event.stopPropagation();
+    const willOpen = profilePanel.hidden;
+    closeTopbarMenus();
+    profilePanel.hidden = !willOpen;
+    profileButton.setAttribute("aria-expanded", String(willOpen));
+});
+
+document.addEventListener("click", function () {
+    closeTopbarMenus();
+});
+
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") closeTopbarMenus();
+});
+
+const storedName = localStorage.getItem("uniplan-account-name");
+const storedEmail = localStorage.getItem("uniplan-account-email");
+
+if (storedName) {
+    document.getElementById("topbarUserName").textContent = storedName;
+    document.getElementById("profilePanelName").textContent = storedName;
+}
+
+if (storedEmail) {
+    document.getElementById("profilePanelEmail").textContent = storedEmail;
+}
+</script>
+
+</body>
+</html>

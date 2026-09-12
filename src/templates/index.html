@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UniPlan | Dashboard</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<script src="{{ url_for('static', filename='js/language.js') }}"></script>
+
+<script>
+(function () {
+    const savedTheme = localStorage.getItem("uniplan-theme") || "light";
+    let theme = savedTheme;
+    if (theme === "system") theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
+
+<style>
+.topbar-dropdown-wrapper { position:relative; }
+.notification,.user-profile { cursor:pointer; }
+
+.topbar-dropdown { position:absolute; top:calc(100% + 10px); right:0; z-index:1000; width:300px; border:1px solid #e1e5ed; border-radius:12px; background:#fff; box-shadow:0 14px 35px rgba(30,40,70,.12); overflow:hidden; }
+.topbar-dropdown-header { display:flex; align-items:center; justify-content:space-between; padding:15px 16px; border-bottom:1px solid #eef0f4; }
+.topbar-dropdown-header strong { color:var(--navy); font-size:11px; font-weight:700; }
+.dropdown-close { width:26px; height:26px; border:none; border-radius:6px; background:transparent; color:#8d96a8; font-size:18px; line-height:1; cursor:pointer; }
+.dropdown-close:hover { background:#f5f6fa; }
+
+.notification-content { display:flex; align-items:flex-start; gap:11px; padding:17px; }
+.notification-status-dot { width:9px; height:9px; margin-top:4px; flex-shrink:0; border-radius:50%; background:#19b57b; box-shadow:0 0 0 4px #eaf8f3; }
+.notification-content strong { display:block; color:var(--navy); font-size:10px; }
+.notification-content p { margin:4px 0 0; color:#929bad; font-size:9px; line-height:1.45; }
+
+.profile-panel { width:280px; padding:0; }
+.profile-panel-user { display:flex; align-items:center; gap:11px; padding:16px; }
+.profile-panel-avatar { width:38px; height:38px; display:flex; align-items:center; justify-content:center; flex-shrink:0; border-radius:10px; background:#eeeefe; color:var(--primary); font-size:15px; font-weight:700; }
+.profile-panel-user strong { display:block; color:var(--navy); font-size:11px; }
+.profile-panel-user span { display:block; margin-top:3px; color:#929bad; font-size:9px; }
+.profile-panel-divider { height:1px; background:#eef0f4; }
+.profile-panel-email { padding:13px 16px; }
+.profile-panel-email span { display:block; color:#929bad; font-size:8px; font-weight:700; letter-spacing:.3px; text-transform:uppercase; }
+.profile-panel-email strong { display:block; margin-top:4px; color:#59657d; font-size:10px; font-weight:600; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.profile-menu-item { display:block; padding:12px 16px; border-top:1px solid #eef0f4; color:#59657d; font-size:10px; font-weight:600; text-decoration:none; }
+.profile-menu-item:hover { background:#f8f9fc; color:var(--primary); }
+
+@media (max-width:700px) {
+    .topbar-dropdown { right:-10px; width:min(300px,calc(100vw - 40px)); }
+}
+</style>
+</head>
+
+<body>
+<div class="app">
+
+<aside class="sidebar">
+<div class="brand">
+<div class="brand-icon">U</div>
+<div>
+<div class="brand-name">UniPlan</div>
+<div class="brand-subtitle">University Scheduler</div>
+</div>
+</div>
+
+<div class="menu-title">MAIN MENU</div>
+
+<nav class="nav">
+<a href="/" class="nav-item active">
+<span class="nav-icon">▦</span>
+<span>Dashboard</span>
+</a>
+
+<a href="/timetable" class="nav-item">
+<span class="nav-icon">▤</span>
+<span>Timetable</span>
+</a>
+
+<a href="/professors" class="nav-item">
+<span class="nav-icon">♙</span>
+<span>Professors</span>
+</a>
+
+<a href="/preferences" class="nav-item">
+<span class="nav-icon">⚙</span>
+<span>Preferences</span>
+</a>
+
+<a href="/rooms" class="nav-item">
+<span class="nav-icon">▥</span>
+<span>Rooms</span>
+</a>
+
+<a href="/campuses" class="nav-item">
+<span class="nav-icon">⌖</span>
+<span>Campuses</span>
+</a>
+
+<a href="/analytics" class="nav-item">
+<span class="nav-icon">◔</span>
+<span>Analytics</span>
+</a>
+
+<a href="/conflicts" class="nav-item">
+<span class="nav-icon">⚠</span>
+<span>Conflicts</span>
+</a>
+</nav>
+
+<div class="sidebar-bottom">
+<div class="menu-title">SYSTEM</div>
+
+<a href="/settings" class="nav-item">
+<span class="nav-icon">⚙</span>
+<span>Settings</span>
+</a>
+</div>
+
+<div class="sidebar-footer">
+<div class="footer-dot"></div>
+<div>
+<div class="footer-title">Scheduling Engine</div>
+<div class="footer-status">Operational</div>
+</div>
+</div>
+</aside>
+
+<main class="main">
+
+<header class="topbar">
+<div>
+<div class="breadcrumb">UNIVERSITY OVERVIEW</div>
+<h1>Dashboard</h1>
+<p class="page-description">Monitor your university schedule and planning activity.</p>
+</div>
+
+<div class="topbar-actions">
+
+<div class="topbar-dropdown-wrapper">
+<button type="button" id="notificationButton" class="notification" aria-label="Notifications" aria-expanded="false">♢</button>
+
+<div id="notificationPanel" class="topbar-dropdown notification-panel" hidden>
+<div class="topbar-dropdown-header">
+<strong>Notifications</strong>
+<button type="button" class="dropdown-close" id="notificationClose" aria-label="Close">×</button>
+</div>
+
+<div class="notification-content">
+<div class="notification-status-dot"></div>
+<div>
+<strong>Scheduling Engine</strong>
+<p>Operational — no new notifications.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="topbar-dropdown-wrapper">
+<button type="button" id="profileButton" class="user-profile" aria-expanded="false">
+<div class="avatar">S</div>
+
+<div class="user-info">
+<div id="topbarUserName" class="user-name">Saadiya</div>
+<div class="user-role">Administrator</div>
+</div>
+
+<span class="user-arrow">⌄</span>
+</button>
+
+<div id="profilePanel" class="topbar-dropdown profile-panel" hidden>
+<div class="profile-panel-user">
+<div class="profile-panel-avatar">S</div>
+
+<div>
+<strong id="profilePanelName">Saadiya</strong>
+<span>Administrator</span>
+</div>
+</div>
+
+<div class="profile-panel-divider"></div>
+
+<div class="profile-panel-email">
+<span>Email</span>
+<strong id="profilePanelEmail">Not set</strong>
+</div>
+
+<a href="/settings" class="profile-menu-item">⚙ Account Settings</a>
+</div>
+</div>
+
+</div>
+</header>
+
+<section class="welcome-row">
+<div>
+<h2>Good afternoon, Saadiya 👋</h2>
+<p>Here's a quick look at the current university schedule.</p>
+</div>
+
+<button type="button" class="generate-btn" id="viewTimetableButton">
+<span>＋</span>
+View Timetable
+</button>
+</section>
+
+<section class="stats-grid">
+
+<div class="stat-card">
+<div class="stat-top">
+<div class="stat-label">
+Students
+<button class="info-button" data-info="Total number of students enrolled in the university dataset." aria-label="More information">i</button>
+</div>
+<div class="stat-icon purple">♙</div>
+</div>
+
+<div class="stat-value">{{ data.students }}</div>
+<div class="stat-bottom">University students</div>
+</div>
+
+<div class="stat-card">
+<div class="stat-top">
+<div class="stat-label">
+Classes
+<button class="info-button" data-info="Total number of schedulable class offerings included in the university dataset." aria-label="More information">i</button>
+</div>
+<div class="stat-icon blue">▦</div>
+</div>
+
+<div class="stat-value">{{ data.classes }}</div>
+<div class="stat-bottom">Scheduled classes</div>
+</div>
+
+<div class="stat-card">
+<div class="stat-top">
+<div class="stat-label">
+Sessions
+<button class="info-button" data-info="Total number of teaching sessions scheduled across the academic quarters." aria-label="More information">i</button>
+</div>
+<div class="stat-icon cyan">◷</div>
+</div>
+
+<div class="stat-value">{{ data.sessions }}</div>
+<div class="stat-bottom">Across four quarters</div>
+</div>
+
+<div class="stat-card">
+<div class="stat-top">
+<div class="stat-label">
+Professors
+<button class="info-button" data-info="Total number of professors available for scheduled teaching sessions." aria-label="More information">i</button>
+</div>
+<div class="stat-icon green">♙</div>
+</div>
+
+<div class="stat-value">{{ data.professors }}</div>
+<div class="stat-bottom">Teaching staff</div>
+</div>
+
+</section>
+
+<section class="health-card">
+<div class="health-left">
+<div class="health-icon">✓</div>
+
+<div>
+<div class="health-title">Schedule is healthy</div>
+<div class="health-description">All generated sessions passed the final validation checks.</div>
+</div>
+</div>
+
+<div class="health-badge">VALID</div>
+</section>
+
+<section class="content-grid">
+
+<div class="panel quarter-panel">
+
+<div class="panel-header">
+<div>
+<h2>
+Quarter Overview
+<button class="info-button" data-info="Overview of scheduling performance for each academic quarter, including sessions, room utilisation and campus matching." aria-label="More information">i</button>
+</h2>
+
+<p>Scheduling performance across the academic year.</p>
+</div>
+
+<button type="button" class="small-button" id="quarterDetailsButton">View Details</button>
+</div>
+
+<div class="quarter-grid">
+
+<div class="quarter-card active-quarter">
+<div class="quarter-header">
+<span>Q1</span>
+<span class="quarter-dot"></span>
+</div>
+
+<div class="quarter-number">{{ data.quarters.Q1.sessions }}</div>
+<div class="quarter-label">Sessions</div>
+
+<div class="progress">
+<div style="width:{{ data.quarters.Q1.utilization }}%;"></div>
+</div>
+
+<div class="quarter-meta">
+<span>Utilization</span>
+<strong>{{ data.quarters.Q1.utilization }}%</strong>
+</div>
+
+<div class="quarter-meta">
+<span>Campus match</span>
+<strong>{{ data.quarters.Q1.campus_match }}%</strong>
+</div>
+</div>
+
+<div class="quarter-card">
+<div class="quarter-header">
+<span>Q2</span>
+<span class="quarter-dot"></span>
+</div>
+
+<div class="quarter-number">{{ data.quarters.Q2.sessions }}</div>
+<div class="quarter-label">Sessions</div>
+
+<div class="progress">
+<div style="width:{{ data.quarters.Q2.utilization }}%;"></div>
+</div>
+
+<div class="quarter-meta">
+<span>Utilization</span>
+<strong>{{ data.quarters.Q2.utilization }}%</strong>
+</div>
+
+<div class="quarter-meta">
+<span>Campus match</span>
+<strong>{{ data.quarters.Q2.campus_match }}%</strong>
+</div>
+</div>
+
+<div class="quarter-card">
+<div class="quarter-header">
+<span>Q3</span>
+<span class="quarter-dot"></span>
+</div>
+
+<div class="quarter-number">{{ data.quarters.Q3.sessions }}</div>
+<div class="quarter-label">Sessions</div>
+
+<div class="progress">
+<div style="width:{{ data.quarters.Q3.utilization }}%;"></div>
+</div>
+
+<div class="quarter-meta">
+<span>Utilization</span>
+<strong>{{ data.quarters.Q3.utilization }}%</strong>
+</div>
+
+<div class="quarter-meta">
+<span>Campus match</span>
+<strong>{{ data.quarters.Q3.campus_match }}%</strong>
+</div>
+</div>
+
+<div class="quarter-card">
+<div class="quarter-header">
+<span>Q4</span>
+<span class="quarter-dot"></span>
+</div>
+
+<div class="quarter-number">{{ data.quarters.Q4.sessions }}</div>
+<div class="quarter-label">Sessions</div>
+
+<div class="progress">
+<div style="width:{{ data.quarters.Q4.utilization }}%;"></div>
+</div>
+
+<div class="quarter-meta">
+<span>Utilization</span>
+<strong>{{ data.quarters.Q4.utilization }}%</strong>
+</div>
+
+<div class="quarter-meta">
+<span>Campus match</span>
+<strong>{{ data.quarters.Q4.campus_match }}%</strong>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="panel performance-panel">
+
+<div class="panel-header">
+<div>
+<h2>System Performance</h2>
+<p>Current scheduling efficiency.</p>
+</div>
+</div>
+
+<div class="performance-item">
+<div class="performance-info">
+<span>
+Room Utilization
+<button class="info-button" data-info="Percentage of available room capacity being used by the scheduled sessions." aria-label="More information">i</button>
+</span>
+
+<strong>{{ data.performance.room_utilization }}%</strong>
+</div>
+
+<div class="progress large">
+<div style="width:{{ data.performance.room_utilization }}%;"></div>
+</div>
+</div>
+
+<div class="performance-item">
+<div class="performance-info">
+<span>
+Campus Match
+<button class="info-button" data-info="Percentage of sessions scheduled at a campus that matches the preferred or assigned campus requirements." aria-label="More information">i</button>
+</span>
+
+<strong>{{ data.performance.campus_match }}%</strong>
+</div>
+
+<div class="progress large">
+<div style="width:{{ data.performance.campus_match }}%;"></div>
+</div>
+</div>
+
+<div class="performance-item">
+<div class="performance-info">
+<span>
+Session Completion
+<button class="info-button" data-info="Percentage of expected teaching sessions that were successfully scheduled." aria-label="More information">i</button>
+</span>
+
+<strong>{{ data.performance.session_completion }}%</strong>
+</div>
+
+<div class="progress large">
+<div style="width:{{ data.performance.session_completion }}%;"></div>
+</div>
+</div>
+
+<div class="engine-box">
+<div class="engine-title">
+Scheduling Engine
+<button class="info-button" data-info="Algorithms used by UniPlan to build, repair and optimise the university timetable." aria-label="More information">i</button>
+</div>
+
+<div class="engine-row">
+<span>Welsh–Powell</span>
+<strong>Active</strong>
+</div>
+
+<div class="engine-row">
+<span>Greedy Solver</span>
+<strong>Complete</strong>
+</div>
+
+<div class="engine-row">
+<span>Backtracking</span>
+<strong>Ready</strong>
+</div>
+
+<div class="engine-row">
+<span>DP Optimizer</span>
+<strong>Complete</strong>
+</div>
+</div>
+
+</div>
+</section>
+
+</main>
+</div>
+
+<script>
+const notificationButton = document.getElementById("notificationButton");
+const notificationPanel = document.getElementById("notificationPanel");
+const notificationClose = document.getElementById("notificationClose");
+const profileButton = document.getElementById("profileButton");
+const profilePanel = document.getElementById("profilePanel");
+const topbarUserName = document.getElementById("topbarUserName");
+const profilePanelName = document.getElementById("profilePanelName");
+const profilePanelEmail = document.getElementById("profilePanelEmail");
+
+const savedAccountName = localStorage.getItem("uniplan-account-name") || "Saadiya";
+const savedAccountEmail = localStorage.getItem("uniplan-account-email") || "";
+
+if (topbarUserName) topbarUserName.textContent = savedAccountName;
+if (profilePanelName) profilePanelName.textContent = savedAccountName;
+if (profilePanelEmail) profilePanelEmail.textContent = savedAccountEmail || "Not set";
+
+function closeTopbarMenus() {
+    if (notificationPanel) notificationPanel.hidden = true;
+    if (profilePanel) profilePanel.hidden = true;
+    if (notificationButton) notificationButton.setAttribute("aria-expanded", "false");
+    if (profileButton) profileButton.setAttribute("aria-expanded", "false");
+}
+
+if (notificationButton) {
+    notificationButton.addEventListener("click", function (event) {
+        event.stopPropagation();
+        const shouldOpen = notificationPanel.hidden;
+        closeTopbarMenus();
+
+        if (shouldOpen) {
+            notificationPanel.hidden = false;
+            notificationButton.setAttribute("aria-expanded", "true");
+        }
+    });
+}
+
+if (notificationClose) {
+    notificationClose.addEventListener("click", function () {
+        closeTopbarMenus();
+    });
+}
+
+if (profileButton) {
+    profileButton.addEventListener("click", function (event) {
+        event.stopPropagation();
+        const shouldOpen = profilePanel.hidden;
+        closeTopbarMenus();
+
+        if (shouldOpen) {
+            profilePanel.hidden = false;
+            profileButton.setAttribute("aria-expanded", "true");
+        }
+    });
+}
+
+if (notificationPanel) {
+    notificationPanel.addEventListener("click", function (event) {
+        event.stopPropagation();
+    });
+}
+
+if (profilePanel) {
+    profilePanel.addEventListener("click", function (event) {
+        event.stopPropagation();
+    });
+}
+
+document.addEventListener("click", function () {
+    closeTopbarMenus();
+});
+
+document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") closeTopbarMenus();
+});
+
+const viewTimetableButton = document.getElementById("viewTimetableButton");
+
+if (viewTimetableButton) {
+    viewTimetableButton.addEventListener("click", function () {
+        window.location.href = "/timetable";
+    });
+}
+
+const quarterDetailsButton = document.getElementById("quarterDetailsButton");
+
+if (quarterDetailsButton) {
+    quarterDetailsButton.addEventListener("click", function () {
+        window.location.href = "/analytics";
+    });
+}
+</script>
+
+</body>
+</html>

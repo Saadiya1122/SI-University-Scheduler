@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UniPlan | Conflicts</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<script src="{{ url_for('static', filename='js/language.js') }}"></script>
+
+<script>
+(function () {
+    const savedTheme = localStorage.getItem("uniplan-theme") || "light";
+    let theme = savedTheme;
+    if (theme === "system") theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
+
+<style>
+/* Conflict page */
+.conflict-status-card { display:flex; align-items:center; justify-content:space-between; gap:24px; padding:24px 28px; background:#fff; border:1px solid #e4e7f0; border-radius:16px; box-shadow:0 8px 24px rgba(32,45,80,.05); }
+.conflict-status-left { display:flex; align-items:center; gap:16px; }
+.conflict-status-icon { width:46px; height:46px; display:flex; align-items:center; justify-content:center; border-radius:12px; background:#eef9f3; color:#16845b; font-size:22px; font-weight:700; }
+.conflict-status-title { margin-bottom:4px; color:#182641; font-size:16px; font-weight:700; }
+.conflict-status-description { color:#7d89a3; font-size:13px; line-height:1.5; }
+.conflict-status-badge { padding:8px 14px; border-radius:999px; background:#eef9f3; color:#16845b; font-size:12px; font-weight:700; letter-spacing:.04em; }
+.conflict-status-badge.invalid { background:#fff1f1; color:#c43d3d; }
+
+.conflict-section { margin-top:24px; }
+.conflict-section-header { margin-bottom:14px; }
+.conflict-section-header h2 { margin:0; color:#182641; font-size:18px; }
+.conflict-section-header p { margin:5px 0 0; color:#8994ab; font-size:13px; }
+
+.conflict-table-wrapper,.failed-table-wrapper { overflow-x:auto; background:#fff; border:1px solid #e4e7f0; border-radius:16px; box-shadow:0 8px 24px rgba(32,45,80,.04); }
+.conflict-table { width:100%; min-width:760px; border-collapse:collapse; }
+.conflict-table th { padding:15px 18px; border-bottom:1px solid #e8ebf2; color:#929db3; font-size:11px; font-weight:700; text-align:left; text-transform:uppercase; letter-spacing:.05em; }
+.conflict-table td { padding:16px 18px; border-bottom:1px solid #edf0f5; color:#56627b; font-size:13px; }
+.conflict-table tr:last-child td { border-bottom:none; }
+.conflict-type { display:inline-flex; padding:6px 10px; border-radius:999px; background:#fff4e8; color:#b66b16; font-size:11px; font-weight:700; }
+.conflict-class { color:#1b2944; font-weight:700; }
+
+.empty-conflict { min-height:120px; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:24px 20px; color:#8994ab; text-align:center; }
+.empty-conflict-icon { margin-bottom:10px; color:#16845b; font-size:30px; }
+.empty-conflict-title { margin-bottom:5px; color:#1b2944; font-size:15px; font-weight:700; }
+.empty-conflict-text { font-size:13px; }
+
+.failed-table-wrapper { margin-top:24px; }
+
+.validation-list { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:12px; }
+.validation-item { padding:18px; background:#fff; border:1px solid #e4e7f0; border-radius:14px; }
+.validation-label { margin-bottom:8px; color:#8b96ab; font-size:12px; }
+.validation-value { color:#182641; font-size:22px; font-weight:700; }
+.validation-value.good { color:#16845b; }
+.validation-value.bad { color:#c43d3d; }
+
+@media (max-width:900px) {
+    .validation-list { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .conflict-status-card { flex-direction:column; align-items:flex-start; }
+}
+
+@media (max-width:600px) {
+    .validation-list { grid-template-columns:1fr; }
+}
+
+/* Dark mode */
+html[data-theme="dark"] .conflict-status-card,
+html[data-theme="dark"] .conflict-table-wrapper,
+html[data-theme="dark"] .failed-table-wrapper,
+html[data-theme="dark"] .validation-item {
+    background:#171e2c;
+    border-color:#2a3447;
+    box-shadow:0 8px 24px rgba(0,0,0,.16);
+}
+
+html[data-theme="dark"] .conflict-status-title,
+html[data-theme="dark"] .conflict-section-header h2,
+html[data-theme="dark"] .validation-value,
+html[data-theme="dark"] .conflict-class,
+html[data-theme="dark"] .empty-conflict-title { color:#e7ebf2; }
+
+html[data-theme="dark"] .conflict-status-description,
+html[data-theme="dark"] .conflict-section-header p,
+html[data-theme="dark"] .validation-label,
+html[data-theme="dark"] .empty-conflict,
+html[data-theme="dark"] .empty-conflict-text { color:#9aa6ba; }
+
+html[data-theme="dark"] .conflict-table th { background:#171e2c; border-bottom-color:#2a3447; color:#9aa6ba; }
+html[data-theme="dark"] .conflict-table td { background:#171e2c; border-bottom-color:#252f42; color:#b8c1d1; }
+html[data-theme="dark"] .conflict-table tr:hover td { background:#1c2535; }
+html[data-theme="dark"] .conflict-status-icon { background:#12352a; color:#54c895; }
+html[data-theme="dark"] .conflict-status-badge { background:#12352a; color:#54c895; }
+html[data-theme="dark"] .conflict-status-badge.invalid { background:#3a2024; color:#ef7d86; }
+html[data-theme="dark"] .empty-conflict-icon { color:#54c895; }
+html[data-theme="dark"] .validation-value.good { color:#54c895; }
+html[data-theme="dark"] .validation-value.bad { color:#ef7d86; }
+
+/* Topbar */
+.topbar-dropdown-wrapper { position:relative; }
+.topbar-actions .notification,.topbar-actions .user-profile { cursor:pointer; }
+.topbar-actions .user-profile { border:none; margin:0; }
+
+.topbar-dropdown { position:absolute; top:calc(100% + 10px); right:0; z-index:2000; display:none; background:#fff; border:1px solid #e1e5ed; border-radius:12px; box-shadow:0 14px 35px rgba(30,40,70,.14); overflow:hidden; }
+.topbar-dropdown.open { display:block; }
+.notification-panel { width:330px; }
+
+.topbar-dropdown-header { display:flex; align-items:center; justify-content:space-between; gap:14px; padding:14px 16px; border-bottom:1px solid #eef0f4; }
+.topbar-dropdown-header > div { display:flex; flex-direction:column; gap:3px; }
+.topbar-dropdown-header strong { color:#182641; font-size:12px; font-weight:700; }
+.topbar-dropdown-header span { color:#929bad; font-size:9px; font-weight:600; }
+.topbar-dropdown-close { width:26px; height:26px; border:none; border-radius:6px; background:transparent; color:#8d96a8; font-size:18px; line-height:1; cursor:pointer; }
+.topbar-dropdown-close:hover { background:#f5f6fa; }
+
+.notification-item { display:flex; align-items:flex-start; gap:11px; padding:16px; }
+.notification-dot { width:8px; height:8px; flex:0 0 8px; margin-top:5px; border-radius:50%; background:#5961df; }
+.notification-item-title { color:#1b2944; font-size:11px; font-weight:700; }
+.notification-item-text { margin-top:4px; color:#68748c; font-size:10px; line-height:1.45; }
+
+.profile-panel { width:290px; }
+.profile-panel-user { display:flex; align-items:center; gap:11px; padding:16px; }
+.profile-panel-avatar { width:38px; height:38px; display:flex; align-items:center; justify-content:center; flex-shrink:0; border-radius:10px; background:#eeeefe; color:var(--primary); font-size:15px; font-weight:700; }
+.profile-panel-name { color:#182641; font-size:11px; font-weight:700; }
+.profile-panel-email { margin-top:3px; color:#929bad; font-size:9px; line-height:1.35; word-break:break-word; }
+.profile-panel-divider { height:1px; background:#eef0f4; }
+.profile-panel-link { display:flex; align-items:center; gap:7px; padding:12px 16px; color:#59657d; font-size:10px; font-weight:600; text-decoration:none; }
+.profile-panel-link:hover { background:#f8f9fc; color:var(--primary); }
+
+html[data-theme="dark"] .topbar-dropdown { background:#171e2c; border-color:#2a3447; box-shadow:0 14px 30px rgba(0,0,0,.30); }
+html[data-theme="dark"] .topbar-dropdown-header { border-bottom-color:#2a3447; }
+html[data-theme="dark"] .topbar-dropdown-header strong,
+html[data-theme="dark"] .notification-item-title,
+html[data-theme="dark"] .profile-panel-name { color:#e7ebf2; }
+html[data-theme="dark"] .topbar-dropdown-header span,
+html[data-theme="dark"] .notification-item-text,
+html[data-theme="dark"] .profile-panel-email { color:#99a5bb; }
+html[data-theme="dark"] .topbar-dropdown-close { color:#aeb8c8; }
+html[data-theme="dark"] .topbar-dropdown-close:hover { background:#1d2636; }
+html[data-theme="dark"] .profile-panel-divider { background:#2a3447; }
+html[data-theme="dark"] .profile-panel-link { color:#cdd1ff; }
+html[data-theme="dark"] .profile-panel-link:hover { background:#1d2636; color:#e1e3ff; }
+
+@media (max-width:700px) {
+    .topbar-dropdown { right:-10px; }
+    .notification-panel { width:min(330px,calc(100vw - 40px)); }
+    .profile-panel { width:min(290px,calc(100vw - 40px)); }
+}
+</style>
+</head>
+
+<body>
+<div class="app">
+
+<aside class="sidebar">
+<div class="brand">
+<div class="brand-icon">U</div>
+<div>
+<div class="brand-name">UniPlan</div>
+<div class="brand-subtitle">University Scheduler</div>
+</div>
+</div>
+
+<div class="menu-title">MAIN MENU</div>
+
+<nav class="nav">
+<a href="/" class="nav-item {% if request.path == '/' %}active{% endif %}">
+<span class="nav-icon">▦</span>
+<span>Dashboard</span>
+</a>
+
+<a href="/timetable" class="nav-item {% if request.path == '/timetable' %}active{% endif %}">
+<span class="nav-icon">▤</span>
+<span>Timetable</span>
+</a>
+
+<a href="/professors" class="nav-item {% if request.path == '/professors' %}active{% endif %}">
+<span class="nav-icon">♙</span>
+<span>Professors</span>
+</a>
+
+<a href="/preferences" class="nav-item">
+<span class="nav-icon">⚙</span>
+<span>Preferences</span>
+</a>
+
+<a href="/rooms" class="nav-item {% if request.path == '/rooms' %}active{% endif %}">
+<span class="nav-icon">▥</span>
+<span>Rooms</span>
+</a>
+
+<a href="/campuses" class="nav-item {% if request.path == '/campuses' %}active{% endif %}">
+<span class="nav-icon">⌖</span>
+<span>Campuses</span>
+</a>
+
+<a href="/analytics" class="nav-item {% if request.path == '/analytics' %}active{% endif %}">
+<span class="nav-icon">◔</span>
+<span>Analytics</span>
+</a>
+
+<a href="/conflicts" class="nav-item {% if request.path == '/conflicts' %}active{% endif %}">
+<span class="nav-icon">⚠</span>
+<span>Conflicts</span>
+</a>
+</nav>
+
+<div class="sidebar-bottom">
+<div class="menu-title">SYSTEM</div>
+
+<a href="/settings" class="nav-item {% if request.path == '/settings' %}active{% endif %}">
+<span class="nav-icon">⚙</span>
+<span>Settings</span>
+</a>
+</div>
+
+<div class="sidebar-footer">
+<div class="footer-dot"></div>
+<div>
+<div class="footer-title">Scheduling Engine</div>
+<div class="footer-status">Operational</div>
+</div>
+</div>
+</aside>
+
+<main class="main">
+
+<header class="topbar">
+<div>
+<div class="breadcrumb">SCHEDULE QUALITY</div>
+<h1>Conflicts</h1>
+<p class="page-description">Review scheduling conflicts, validation errors and unresolved classes.</p>
+</div>
+
+<div class="topbar-actions">
+
+<div class="topbar-dropdown-wrapper">
+<button type="button" class="notification" id="notificationButton" aria-label="Notifications" aria-expanded="false">♢</button>
+
+<div class="topbar-dropdown notification-panel" id="notificationPanel" aria-hidden="true">
+<div class="topbar-dropdown-header">
+<div>
+<strong>Notifications</strong>
+<span>System updates</span>
+</div>
+
+<button type="button" class="topbar-dropdown-close" id="notificationClose" aria-label="Close notifications">×</button>
+</div>
+
+<div class="notification-item">
+<div class="notification-dot"></div>
+<div>
+<div class="notification-item-title">Scheduling Engine</div>
+<div class="notification-item-text">The latest generated timetable has been validated.</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="topbar-dropdown-wrapper">
+<button type="button" class="user-profile" id="profileButton" aria-expanded="false" aria-haspopup="true">
+<div class="avatar"><span id="topbarAvatar">S</span></div>
+
+<div class="user-info">
+<div class="user-name" id="topbarUserName">Saadiya</div>
+<div class="user-role">Administrator</div>
+</div>
+
+<span class="user-arrow">⌄</span>
+</button>
+
+<div class="topbar-dropdown profile-panel" id="profilePanel" aria-hidden="true">
+<div class="profile-panel-user">
+<div class="profile-panel-avatar" id="profilePanelAvatar">S</div>
+
+<div>
+<div class="profile-panel-name" id="profilePanelName">Saadiya</div>
+<div class="profile-panel-email" id="profilePanelEmail">administrator@uniplan.local</div>
+</div>
+</div>
+
+<div class="profile-panel-divider"></div>
+
+<a href="/settings" class="profile-panel-link">
+<span>⚙</span>
+Account Settings
+</a>
+</div>
+</div>
+
+</div>
+</header>
+
+<section class="calendar-heading">
+<div>
+<div class="schedule-title-row">
+<h2>
+Conflict Monitor
+<button class="info-button" data-info="Review timetable conflicts and validation results to confirm that the generated schedule satisfies the core scheduling constraints." aria-label="More information">i</button>
+</h2>
+
+<span class="schedule-status">{{ total_conflicts }} Conflicts</span>
+</div>
+
+<p>Validate the generated timetable against the core scheduling constraints.</p>
+</div>
+</section>
+
+<section class="stats-grid">
+
+<div class="stat-card">
+<div class="stat-top">
+<div class="stat-label">
+Unresolved Conflicts
+<button class="info-button" data-info="Total number of scheduling conflicts that remain unresolved in the generated timetable." aria-label="More information">i</button>
+</div>
+<div class="stat-icon purple">⚠</div>
+</div>
+
+<div class="stat-value">{{ total_conflicts }}</div>
+<div class="stat-bottom">All detected scheduling issues</div>
+</div>
+
+<div class="stat-card">
+<div class="stat-top">
+<div class="stat-label">
+Professor Conflicts
+<button class="info-button" data-info="Conflicts where the same professor is assigned to overlapping teaching sessions." aria-label="More information">i</button>
+</div>
+<div class="stat-icon blue">♙</div>
+</div>
+
+<div class="stat-value">{{ professor_conflicts }}</div>
+<div class="stat-bottom">Same professor at overlapping times</div>
+</div>
+
+<div class="stat-card">
+<div class="stat-top">
+<div class="stat-label">
+Student Group Conflicts
+<button class="info-button" data-info="Conflicts where students in the same group are assigned to overlapping teaching sessions." aria-label="More information">i</button>
+</div>
+<div class="stat-icon cyan">▦</div>
+</div>
+
+<div class="stat-value">{{ group_conflicts }}</div>
+<div class="stat-bottom">Shared groups scheduled together</div>
+</div>
+
+<div class="stat-card">
+<div class="stat-top">
+<div class="stat-label">
+Room Conflicts
+<button class="info-button" data-info="Conflicts where the same room is assigned to overlapping teaching sessions." aria-label="More information">i</button>
+</div>
+<div class="stat-icon green">▥</div>
+</div>
+
+<div class="stat-value">{{ room_conflicts }}</div>
+<div class="stat-bottom">Same room at overlapping times</div>
+</div>
+
+</section>
+
+<section class="conflict-section">
+<div class="conflict-status-card">
+
+<div class="conflict-status-left">
+<div class="conflict-status-icon">
+{% if schedule_valid %}✓{% else %}!{% endif %}
+</div>
+
+<div>
+<div class="conflict-status-title">
+{% if schedule_valid %}Schedule is conflict-free{% else %}Schedule requires review{% endif %}
+</div>
+
+<div class="conflict-status-description">
+{% if schedule_valid %}
+All generated sessions passed the current validation checks.
+{% else %}
+One or more scheduling constraints require manual review.
+{% endif %}
+</div>
+</div>
+</div>
+
+<div class="conflict-status-badge {% if not schedule_valid %}invalid{% endif %}">
+{% if schedule_valid %}VALID{% else %}REVIEW REQUIRED{% endif %}
+</div>
+
+</div>
+</section>
+
+<section class="conflict-section">
+<div class="conflict-section-header">
+<h2>
+Validation Summary
+<button class="info-button" data-info="Summary of the final validation checks applied to the generated timetable, including conflicts, capacity and session errors." aria-label="More information">i</button>
+</h2>
+<p>Results from the final schedule validation checks.</p>
+</div>
+
+<div class="validation-list">
+
+<div class="validation-item">
+<div class="validation-label">Professor Conflicts</div>
+<div class="validation-value {% if professor_conflicts == 0 %}good{% else %}bad{% endif %}">{{ professor_conflicts }}</div>
+</div>
+
+<div class="validation-item">
+<div class="validation-label">Group Conflicts</div>
+<div class="validation-value {% if group_conflicts == 0 %}good{% else %}bad{% endif %}">{{ group_conflicts }}</div>
+</div>
+
+<div class="validation-item">
+<div class="validation-label">Room Conflicts</div>
+<div class="validation-value {% if room_conflicts == 0 %}good{% else %}bad{% endif %}">{{ room_conflicts }}</div>
+</div>
+
+<div class="validation-item">
+<div class="validation-label">Capacity Errors</div>
+<div class="validation-value {% if capacity_errors == 0 %}good{% else %}bad{% endif %}">{{ capacity_errors }}</div>
+</div>
+
+<div class="validation-item">
+<div class="validation-label">Session Errors</div>
+<div class="validation-value {% if session_errors == 0 %}good{% else %}bad{% endif %}">{{ session_errors }}</div>
+</div>
+
+</div>
+</section>
+
+<section class="conflict-section">
+<div class="conflict-section-header">
+<h2>
+Conflict Details
+<button class="info-button" data-info="Detailed list of conflicting classes, their overlapping time, and the professor, student group or room involved." aria-label="More information">i</button>
+</h2>
+<p>Conflicting classes and the entities involved.</p>
+</div>
+
+<div class="conflict-table-wrapper">
+{% if conflict_rows %}
+
+<table class="conflict-table">
+<thead>
+<tr>
+<th>Type</th>
+<th>Class</th>
+<th>Conflicting Class</th>
+<th>Day</th>
+<th>Time</th>
+<th>Entity</th>
+</tr>
+</thead>
+
+<tbody>
+{% for conflict in conflict_rows %}
+<tr>
+<td><span class="conflict-type">{{ conflict.type }}</span></td>
+<td class="conflict-class">{{ conflict.class_a }}</td>
+<td class="conflict-class">{{ conflict.class_b }}</td>
+<td>{{ conflict.day }}</td>
+<td>{{ conflict.time }}</td>
+<td>{{ conflict.entity }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+
+{% else %}
+
+<div class="empty-conflict">
+<div class="empty-conflict-icon">✓</div>
+<div class="empty-conflict-title">No unresolved scheduling conflicts</div>
+<div class="empty-conflict-text">The generated timetable passed the current conflict checks.</div>
+</div>
+
+{% endif %}
+</div>
+</section>
+
+{% if failed_classes %}
+<section class="conflict-section">
+<div class="conflict-section-header">
+<h2>
+Failed Classes
+<button class="info-button" data-info="Classes that could not be scheduled for their required number of teaching sessions." aria-label="More information">i</button>
+</h2>
+<p>Classes that did not receive their required number of sessions.</p>
+</div>
+
+<div class="failed-table-wrapper">
+<table class="conflict-table">
+<thead>
+<tr>
+<th>Class</th>
+<th>Expected Sessions</th>
+<th>Scheduled Sessions</th>
+<th>Reason</th>
+</tr>
+</thead>
+
+<tbody>
+{% for item in failed_classes %}
+<tr>
+<td class="conflict-class">{{ item.class_id }}</td>
+<td>{{ item.expected }}</td>
+<td>{{ item.actual }}</td>
+<td>{{ item.reason }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+</section>
+{% endif %}
+
+</main>
+</div>
+
+<script>
+(function () {
+    const accountNameKey = "uniplan-account-name";
+    const accountEmailKey = "uniplan-account-email";
+
+    function getAccountName() {
+        return localStorage.getItem(accountNameKey) || "Saadiya";
+    }
+
+    function getAccountEmail() {
+        return localStorage.getItem(accountEmailKey) || "administrator@uniplan.local";
+    }
+
+    function updateAccountDisplay() {
+        const name = getAccountName();
+        const email = getAccountEmail();
+        const initial = name.trim().charAt(0).toUpperCase() || "S";
+
+        const topbarUserName = document.getElementById("topbarUserName");
+        const profilePanelName = document.getElementById("profilePanelName");
+        const profilePanelEmail = document.getElementById("profilePanelEmail");
+        const topbarAvatar = document.getElementById("topbarAvatar");
+        const profilePanelAvatar = document.getElementById("profilePanelAvatar");
+
+        if (topbarUserName) topbarUserName.textContent = name;
+        if (profilePanelName) profilePanelName.textContent = name;
+        if (profilePanelEmail) profilePanelEmail.textContent = email;
+        if (topbarAvatar) topbarAvatar.textContent = initial;
+        if (profilePanelAvatar) profilePanelAvatar.textContent = initial;
+    }
+
+    function closeTopbarMenus() {
+        const notificationPanel = document.getElementById("notificationPanel");
+        const profilePanel = document.getElementById("profilePanel");
+        const notificationButton = document.getElementById("notificationButton");
+        const profileButton = document.getElementById("profileButton");
+
+        if (notificationPanel) {
+            notificationPanel.classList.remove("open");
+            notificationPanel.setAttribute("aria-hidden", "true");
+        }
+
+        if (profilePanel) {
+            profilePanel.classList.remove("open");
+            profilePanel.setAttribute("aria-hidden", "true");
+        }
+
+        if (notificationButton) notificationButton.setAttribute("aria-expanded", "false");
+        if (profileButton) profileButton.setAttribute("aria-expanded", "false");
+    }
+
+    const notificationButton = document.getElementById("notificationButton");
+    const notificationPanel = document.getElementById("notificationPanel");
+    const notificationClose = document.getElementById("notificationClose");
+    const profileButton = document.getElementById("profileButton");
+    const profilePanel = document.getElementById("profilePanel");
+
+    if (notificationButton && notificationPanel) {
+        notificationButton.addEventListener("click", function (event) {
+            event.stopPropagation();
+            const willOpen = !notificationPanel.classList.contains("open");
+            closeTopbarMenus();
+
+            if (willOpen) {
+                notificationPanel.classList.add("open");
+                notificationPanel.setAttribute("aria-hidden", "false");
+                notificationButton.setAttribute("aria-expanded", "true");
+            }
+        });
+    }
+
+    if (notificationClose) {
+        notificationClose.addEventListener("click", function (event) {
+            event.stopPropagation();
+            closeTopbarMenus();
+        });
+    }
+
+    if (profileButton && profilePanel) {
+        profileButton.addEventListener("click", function (event) {
+            event.stopPropagation();
+            const willOpen = !profilePanel.classList.contains("open");
+            closeTopbarMenus();
+
+            if (willOpen) {
+                profilePanel.classList.add("open");
+                profilePanel.setAttribute("aria-hidden", "false");
+                profileButton.setAttribute("aria-expanded", "true");
+            }
+        });
+    }
+
+    document.addEventListener("click", function () {
+        closeTopbarMenus();
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") closeTopbarMenus();
+    });
+
+    updateAccountDisplay();
+    window.addEventListener("storage", updateAccountDisplay);
+
+    function applyConflictLanguage() {
+        const language = localStorage.getItem("uniplan-language") || "en";
+        if (language !== "de") return;
+
+        const german = {
+            "SCHEDULE QUALITY": "STUNDENPLANQUALITÄT",
+            "Conflicts": "Konflikte",
+            "Review scheduling conflicts, validation errors and unresolved classes.": "Planungskonflikte, Validierungsfehler und ungelöste Kurse überprüfen.",
+            "Conflict Monitor": "Konfliktüberwachung",
+            "Validate the generated timetable against the core scheduling constraints.": "Den erstellten Stundenplan anhand der zentralen Planungsvorgaben validieren.",
+            "Unresolved Conflicts": "Ungelöste Konflikte",
+            "All detected scheduling issues": "Alle erkannten Planungsprobleme",
+            "Professor Conflicts": "Dozentenkonflikte",
+            "Same professor at overlapping times": "Gleicher Dozent zu überlappenden Zeiten",
+            "Student Group Conflicts": "Studierendengruppenkonflikte",
+            "Shared groups scheduled together": "Gemeinsame Gruppen gleichzeitig eingeplant",
+            "Room Conflicts": "Raumkonflikte",
+            "Same room at overlapping times": "Gleicher Raum zu überlappenden Zeiten",
+            "Schedule is conflict-free": "Der Stundenplan ist konfliktfrei",
+            "All generated sessions passed the current validation checks.": "Alle generierten Veranstaltungen haben die aktuellen Validierungsprüfungen bestanden.",
+            "Validation Summary": "Validierungsübersicht",
+            "Results from the final schedule validation checks.": "Ergebnisse der abschließenden Stundenplan-Validierung.",
+            "Group Conflicts": "Gruppenkonflikte",
+            "Capacity Errors": "Kapazitätsfehler",
+            "Session Errors": "Veranstaltungsfehler",
+            "Conflict Details": "Konfliktdetails",
+            "Conflicting classes and the entities involved.": "Konfliktierende Kurse und die beteiligten Entitäten.",
+            "No unresolved scheduling conflicts": "Keine ungelösten Planungskonflikte",
+            "The generated timetable passed the current conflict checks.": "Der erstellte Stundenplan hat die aktuellen Konfliktprüfungen bestanden.",
+            "Failed Classes": "Fehlgeschlagene Kurse",
+            "Classes that did not receive their required number of sessions.": "Kurse, die nicht die erforderliche Anzahl an Veranstaltungen erhalten haben.",
+            "Expected Sessions": "Erwartete Veranstaltungen",
+            "Scheduled Sessions": "Geplante Veranstaltungen",
+            "Reason": "Grund",
+            "Type": "Typ",
+            "Class": "Kurs",
+            "Conflicting Class": "Konfliktierender Kurs",
+            "Entity": "Entität",
+            "Day": "Tag",
+            "Time": "Zeit",
+            "Notifications": "Benachrichtigungen",
+            "System updates": "Systemupdates",
+            "Scheduling Engine": "Planungsmodul",
+            "The latest generated timetable has been validated.": "Der zuletzt erstellte Stundenplan wurde validiert.",
+            "Account Settings": "Kontoeinstellungen"
+        };
+
+        document.querySelectorAll("body *").forEach(element => {
+            if (element.children.length > 0) return;
+
+            const original = element.textContent.trim();
+            if (german[original]) element.textContent = german[original];
+        });
+
+        document.querySelectorAll("body").forEach(body => {
+            body.querySelectorAll("input[placeholder]").forEach(input => {
+                const value = input.getAttribute("placeholder");
+                if (german[value]) input.setAttribute("placeholder", german[value]);
+            });
+        });
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        setTimeout(applyConflictLanguage, 0);
+    });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+{
+    "PROF002": {
+        "availability": {
+            "Monday": {
+                "status": "available",
+                "start_time": "00:00",
+                "end_time": "15:00"
+            },
+            "Tuesday": {
+                "status": "unavailable",
+                "start_time": "09:00",
+                "end_time": "17:00"
+            },
+            "Wednesday": {
+                "status": "available",
+                "start_time": "09:00",
+                "end_time": "17:00"
+            },
+            "Thursday": {
+                "status": "unavailable",
+                "start_time": "09:00",
+                "end_time": "17:00"
+            },
+            "Friday": {
+                "status": "available",
+                "start_time": "14:00",
+                "end_time": "16:00"
+            }
+        },
+        "preferred_time": "none",
+        "preferred_days": [],
+        "prefer_fewer_gaps": false,
+        "prefer_fewer_days": false,
+        "notes": ""
+    }
+}

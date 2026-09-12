@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>UniPlan | Timetable</title>
+<link rel="stylesheet" href="{{ url_for( 'static', filename='css/style.css' ) }}">
+<script src="{{ url_for( 'static', filename='js/language.js' ) }}"></script>
+
+<script>
+(function() {
+    const savedTheme = localStorage.getItem("uniplan-theme") || "light";
+    let theme = savedTheme;
+    if (theme === "system") theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
+
+<style>
+/* Topbar dropdowns */
+.topbar-dropdown-wrapper { position:relative; }
+.notification,.user-profile { cursor:pointer; }
+.user-profile { border:none; }
+.topbar-dropdown { position:absolute; top:calc(100% + 10px); right:0; z-index:1000; width:300px; border:1px solid #e1e5ed; border-radius:12px; background:#ffffff; box-shadow:0 14px 35px rgba(30,40,70,0.12); overflow:hidden; }
+.topbar-dropdown-header { display:flex; align-items:center; justify-content:space-between; padding:15px 16px; border-bottom:1px solid #eef0f4; }
+.topbar-dropdown-header strong { color:var(--navy); font-size:11px; font-weight:700; }
+.dropdown-close { width:26px; height:26px; border:none; border-radius:6px; background:transparent; color:#8d96a8; font-size:18px; line-height:1; cursor:pointer; }
+.dropdown-close:hover { background:#f5f6fa; }
+
+.notification-content { display:flex; align-items:flex-start; gap:11px; padding:17px; }
+.notification-status-dot { width:9px; height:9px; margin-top:4px; flex-shrink:0; border-radius:50%; background:#19b57b; box-shadow:0 0 0 4px #eaf8f3; }
+.notification-content strong { display:block; color:var(--navy); font-size:10px; font-weight:700; }
+.notification-content p { margin:4px 0 0; color:#929bad; font-size:9px; line-height:1.45; }
+
+.profile-panel { width:280px; padding:0; }
+.profile-panel-user { display:flex; align-items:center; gap:11px; padding:16px; }
+.profile-panel-avatar { width:38px; height:38px; display:flex; align-items:center; justify-content:center; flex-shrink:0; border-radius:10px; background:#eeeefe; color:var(--primary); font-size:15px; font-weight:700; }
+.profile-panel-user strong { display:block; color:var(--navy); font-size:11px; font-weight:700; }
+.profile-panel-user span { display:block; margin-top:3px; color:#929bad; font-size:9px; }
+.profile-panel-divider { height:1px; background:#eef0f4; }
+.profile-panel-email { padding:13px 16px; }
+.profile-panel-email span { display:block; color:#929bad; font-size:8px; font-weight:700; letter-spacing:0.3px; text-transform:uppercase; }
+.profile-panel-email strong { display:block; margin-top:4px; color:#59657d; font-size:10px; font-weight:600; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.profile-menu-item { display:block; padding:12px 16px; border-top:1px solid #eef0f4; color:#59657d; font-size:10px; font-weight:600; text-decoration:none; }
+.profile-menu-item:hover { background:#f8f9fc; color:var(--primary); }
+
+/* Mobile */
+@media (max-width:700px) {
+.topbar-dropdown { right:-10px; width:min(300px,calc(100vw - 40px)); }
+}
+</style>
+</head>
+
+<body>
+<div class="app">
+
+<aside class="sidebar">
+<div class="brand">
+<div class="brand-icon">U</div>
+<div>
+<div class="brand-name">UniPlan</div>
+<div class="brand-subtitle">University Scheduler</div>
+</div>
+</div>
+
+<div class="menu-title">MAIN MENU</div>
+
+<nav class="nav">
+<a href="/" class="nav-item">
+<span class="nav-icon">▦</span>
+<span>Dashboard</span>
+</a>
+
+<a href="/timetable" class="nav-item active">
+<span class="nav-icon">▤</span>
+<span>Timetable</span>
+</a>
+
+<a href="/professors" class="nav-item">
+<span class="nav-icon">♙</span>
+<span>Professors</span>
+</a>
+
+<a href="/rooms" class="nav-item">
+<span class="nav-icon">▥</span>
+<span>Rooms</span>
+</a>
+
+<a href="/campuses" class="nav-item">
+<span class="nav-icon">⌖</span>
+<span>Campuses</span>
+</a>
+
+<a href="/analytics" class="nav-item">
+<span class="nav-icon">◔</span>
+<span>Analytics</span>
+</a>
+
+<a href="/conflicts" class="nav-item">
+<span class="nav-icon">⚠</span>
+<span>Conflicts</span>
+</a>
+</nav>
+
+<div class="sidebar-bottom">
+<div class="menu-title">SYSTEM</div>
+<a href="/settings" class="nav-item">
+<span class="nav-icon">⚙</span>
+<span>Settings</span>
+</a>
+</div>
+
+<div class="sidebar-footer">
+<div class="footer-dot"></div>
+<div>
+<div class="footer-title">Scheduling Engine</div>
+<div class="footer-status">Operational</div>
+</div>
+</div>
+</aside>
+
+<main class="main">
+<header class="topbar">
+<div>
+<div class="breadcrumb">SCHEDULE MANAGEMENT</div>
+<h1>Timetable</h1>
+<p class="page-description">View and explore the generated university schedule.</p>
+</div>
+
+<div class="topbar-actions">
+<div class="topbar-dropdown-wrapper">
+<button type="button" id="notificationButton" class="notification" aria-label="Notifications" aria-expanded="false">♢</button>
+
+<div id="notificationPanel" class="topbar-dropdown notification-panel" hidden>
+<div class="topbar-dropdown-header">
+<strong>Notifications</strong>
+<button type="button" class="dropdown-close" id="notificationClose" aria-label="Close">×</button>
+</div>
+
+<div class="notification-content">
+<div class="notification-status-dot"></div>
+<div>
+<strong>Scheduling Engine</strong>
+<p>Operational — no new notifications.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="topbar-dropdown-wrapper">
+<button type="button" id="profileButton" class="user-profile" aria-expanded="false">
+<div class="avatar">S</div>
+<div class="user-info">
+<div id="topbarUserName" class="user-name">Saadiya</div>
+<div class="user-role">Administrator</div>
+</div>
+<span class="user-arrow">⌄</span>
+</button>
+
+<div id="profilePanel" class="topbar-dropdown profile-panel" hidden>
+<div class="profile-panel-user">
+<div class="profile-panel-avatar">S</div>
+<div>
+<strong id="profilePanelName">Saadiya</strong>
+<span>Administrator</span>
+</div>
+</div>
+
+<div class="profile-panel-divider"></div>
+
+<div class="profile-panel-email">
+<span>Email</span>
+<strong id="profilePanelEmail">Not set</strong>
+</div>
+
+<a href="/settings" class="profile-menu-item">⚙ Account Settings</a>
+</div>
+</div>
+</div>
+</header>
+
+<section class="calendar-heading">
+<div>
+<div class="schedule-title-row">
+<h2>
+Weekly Schedule
+<button class="info-button" data-info="Generated timetable showing the scheduled teaching sessions for the selected week." aria-label="More information">i</button>
+</h2>
+<span class="schedule-status">Generated</span>
+</div>
+<p id="sessionCount">Loading schedule...</p>
+</div>
+
+<div class="calendar-month">
+<button type="button" id="previousWeek" class="week-arrow">‹</button>
+<div class="calendar-period">
+<strong id="monthYear">September 2026</strong>
+<span id="weekRange">Week 1</span>
+</div>
+<button type="button" id="nextWeek" class="week-arrow">›</button>
+</div>
+</section>
+
+<section class="calendar-toolbar">
+<label>
+Quarter
+<button class="info-button" data-info="Select the academic quarter whose sessions you want to display." aria-label="More information">i</button>
+<select id="quarterFilter">
+<option value="Q1">Q1</option>
+<option value="Q2">Q2</option>
+<option value="Q3">Q3</option>
+<option value="Q4">Q4</option>
+</select>
+</label>
+
+<label>
+Week
+<select id="weekFilter"></select>
+</label>
+
+<label>
+Campus
+<button class="info-button" data-info="Filter the timetable to show sessions assigned to a specific campus." aria-label="More information">i</button>
+<select id="campusFilter">
+<option value="all">All Campuses</option>
+</select>
+</label>
+
+<label class="module-filter">
+Module
+<button class="info-button" data-info="Search for a specific module and show only its scheduled sessions." aria-label="More information">i</button>
+<div class="module-select">
+<input type="text" id="moduleSearch" placeholder="Search module..." autocomplete="off">
+<button type="button" id="moduleDropdown" class="module-dropdown-button">▾</button>
+<div id="moduleResults" class="search-results"></div>
+</div>
+</label>
+</section>
+
+<section class="week-navigation">
+<div>
+<span class="week-label">TEACHING WEEK</span>
+<strong id="weekTitle">Week 1</strong>
+</div>
+
+<div class="week-navigation-actions">
+<button type="button" id="previousWeekBottom" class="small-week-button">← Previous</button>
+<button type="button" id="todayWeek" class="small-week-button primary">Current Week</button>
+<button type="button" id="nextWeekBottom" class="small-week-button">Next →</button>
+</div>
+</section>
+
+<div class="teaching-hours-note">
+<span>
+Teaching hours
+<button class="info-button" data-info="Configured teaching period and working days used by the scheduling algorithm." aria-label="More information">i</button>
+</span>
+<strong id="teachingHoursDisplay">{{ schedule_config.teaching_start }} – {{ schedule_config.teaching_end }}</strong>
+<small>{{ schedule_config.teaching_days | join(" – ") }}</small>
+</div>
+
+<section id="weekView" class="week-view">
+<div class="week-calendar">
+
+<div class="week-calendar-header">
+<div class="week-time-header">Time</div>
+
+<button type="button" class="week-day-header" data-day="Monday">
+<strong>Monday</strong>
+<span data-day-date="Monday">—</span>
+</button>
+
+<button type="button" class="week-day-header" data-day="Tuesday">
+<strong>Tuesday</strong>
+<span data-day-date="Tuesday">—</span>
+</button>
+
+<button type="button" class="week-day-header" data-day="Wednesday">
+<strong>Wednesday</strong>
+<span data-day-date="Wednesday">—</span>
+</button>
+
+<button type="button" class="week-day-header" data-day="Thursday">
+<strong>Thursday</strong>
+<span data-day-date="Thursday">—</span>
+</button>
+
+<button type="button" class="week-day-header" data-day="Friday">
+<strong>Friday</strong>
+<span data-day-date="Friday">—</span>
+</button>
+</div>
+
+<div id="weekCalendarBody" class="week-calendar-body">
+<div id="weekTimeColumn" class="week-time-column"></div>
+<div class="week-day-column" data-week-day="Monday"></div>
+<div class="week-day-column" data-week-day="Tuesday"></div>
+<div class="week-day-column" data-week-day="Wednesday"></div>
+<div class="week-day-column" data-week-day="Thursday"></div>
+<div class="week-day-column" data-week-day="Friday"></div>
+</div>
+</div>
+</section>
+
+<section id="dayView" class="day-view">
+<div class="day-view-header">
+<button type="button" id="backToWeek" class="back-week-button">← Week overview</button>
+
+<div class="day-view-title">
+<span>DAY SCHEDULE</span>
+<h3 id="dayDetailTitle">Monday</h3>
+<p id="dayDetailDate">21 September 2026</p>
+</div>
+
+<div class="day-switcher">
+<button type="button" id="previousDay" class="small-week-button">← Previous</button>
+<button type="button" id="nextDay" class="small-week-button">Next →</button>
+</div>
+</div>
+
+<div class="day-hours-bar">
+<span>
+Teaching hours
+<button class="info-button" data-info="Configured teaching period and working days used by the scheduling algorithm." aria-label="More information">i</button>
+</span>
+<strong id="dayTeachingHoursDisplay">09:00 – 17:00</strong>
+<small>Monday – Friday</small>
+</div>
+
+<div id="dayDetailContent" class="day-detail-content"></div>
+
+<div id="dayEmptyState" class="calendar-empty-state">
+<div class="empty-icon">◌</div>
+<h3>No sessions found</h3>
+<p>There are no sessions matching the selected filters.</p>
+</div>
+</section>
+</main>
+</div>
+
+<div id="sessionModal" class="session-modal" aria-hidden="true">
+<div id="sessionModalBackdrop" class="session-modal-backdrop"></div>
+
+<div class="session-modal-card" role="dialog" aria-modal="true" aria-labelledby="modalModule">
+<div class="session-modal-header">
+<div>
+<div class="session-modal-label">SESSION DETAILS</div>
+<h2 id="modalModule">Module</h2>
+</div>
+<button type="button" id="sessionModalClose" class="session-modal-close" aria-label="Close">×</button>
+</div>
+
+<div class="session-modal-subtitle">
+<span id="modalClass">Class</span>
+<span class="modal-dot">•</span>
+<span id="modalProgramme">Programme</span>
+</div>
+
+<div class="session-info-grid">
+<div class="session-info-item">
+<span class="session-info-label">Professor</span>
+<strong id="modalProfessor">—</strong>
+</div>
+
+<div class="session-info-item">
+<span class="session-info-label">Students</span>
+<strong id="modalStudents">—</strong>
+</div>
+
+<div class="session-info-item">
+<span class="session-info-label">Room</span>
+<strong id="modalRoom">—</strong>
+</div>
+
+<div class="session-info-item">
+<span class="session-info-label">Room Capacity</span>
+<strong id="modalCapacity">—</strong>
+</div>
+
+<div class="session-info-item">
+<span class="session-info-label">Campus</span>
+<strong id="modalCampus">—</strong>
+</div>
+
+<div class="session-info-item">
+<span class="session-info-label">Schedule</span>
+<strong id="modalSchedule">—</strong>
+</div>
+
+<div class="session-info-item">
+<span class="session-info-label">Duration</span>
+<strong id="modalDuration">—</strong>
+</div>
+</div>
+
+<div class="session-modal-footer">
+<button type="button" id="sessionModalDone" class="session-modal-done">Close</button>
+</div>
+</div>
+</div>
+
+<script>
+const scheduleData = {{ schedule | tojson }};
+const calendarWeeks = {{ calendar_weeks | tojson }};
+const campuses = {{ campuses | tojson }};
+</script>
+
+<script>
+// Topbar buttons and panels
+const notificationButton = document.getElementById("notificationButton");
+const notificationPanel = document.getElementById("notificationPanel");
+const notificationClose = document.getElementById("notificationClose");
+const profileButton = document.getElementById("profileButton");
+const profilePanel = document.getElementById("profilePanel");
+const topbarUserName = document.getElementById("topbarUserName");
+const profilePanelName = document.getElementById("profilePanelName");
+const profilePanelEmail = document.getElementById("profilePanelEmail");
+
+const savedAccountName = localStorage.getItem("uniplan-account-name") || "Saadiya";
+const savedAccountEmail = localStorage.getItem("uniplan-account-email") || "";
+
+if (topbarUserName) topbarUserName.textContent = savedAccountName;
+if (profilePanelName) profilePanelName.textContent = savedAccountName;
+if (profilePanelEmail) profilePanelEmail.textContent = savedAccountEmail || "Not set";
+
+function closeTopbarMenus() {
+    if (notificationPanel) notificationPanel.hidden = true;
+    if (profilePanel) profilePanel.hidden = true;
+    if (notificationButton) notificationButton.setAttribute("aria-expanded", "false");
+    if (profileButton) profileButton.setAttribute("aria-expanded", "false");
+}
+
+if (notificationButton) {
+    notificationButton.addEventListener("click", function(event) {
+        event.stopPropagation();
+        const shouldOpen = notificationPanel.hidden;
+        closeTopbarMenus();
+
+        if (shouldOpen) {
+            notificationPanel.hidden = false;
+            notificationButton.setAttribute("aria-expanded", "true");
+        }
+    });
+}
+
+if (notificationClose) notificationClose.addEventListener("click", closeTopbarMenus);
+
+if (profileButton) {
+    profileButton.addEventListener("click", function(event) {
+        event.stopPropagation();
+        const shouldOpen = profilePanel.hidden;
+        closeTopbarMenus();
+
+        if (shouldOpen) {
+            profilePanel.hidden = false;
+            profileButton.setAttribute("aria-expanded", "true");
+        }
+    });
+}
+
+if (notificationPanel) notificationPanel.addEventListener("click", function(event) { event.stopPropagation(); });
+if (profilePanel) profilePanel.addEventListener("click", function(event) { event.stopPropagation(); });
+
+document.addEventListener("click", function() { closeTopbarMenus(); });
+document.addEventListener("keydown", function(event) { if (event.key === "Escape") closeTopbarMenus(); });
+</script>
+
+<script>
+window.UNIPLAN_SCHEDULE_CONFIG = {
+    teaching_days: {{ schedule_config.teaching_days | tojson }},
+    teaching_start: {{ schedule_config.teaching_start | tojson }},
+    teaching_end: {{ schedule_config.teaching_end | tojson }},
+    scheduling_interval_minutes: {{ schedule_config.scheduling_interval_minutes }}
+};
+</script>
+
+<script src="{{ url_for( 'static', filename='js/app.js' ) }}"></script>
+</body>
+</html>

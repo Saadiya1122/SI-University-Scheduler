@@ -1,0 +1,1551 @@
+quarter_id,class_id,module_name,programme_name,campus_id,professor_id,group_ids,student_count,day,start_time,duration_hours,room_id,capacity,room_campus_id
+Q1,C0716,Robotics: Applications,BEng Software Systems,BER02,PROF090,"['G064', 'G065']",95,Monday,09:00,2.0,R016,100,BER02
+Q1,C0017,Data Structures: Advanced Methods,BSc Computer Science,BER03,PROF161,"['G002', 'G003']",93,Tuesday,09:00,2.0,R029,230,BER03
+Q1,C0568,Risk Management,BSc Banking and Finance,BER01,PROF100,"['G052', 'G051']",93,Wednesday,09:00,2.5,R009,135,BER01
+Q1,C0489,Financial Modelling,BSc Economics,BER01,PROF193,"['G045', 'G044']",89,Thursday,09:00,2.5,R009,135,BER01
+Q1,C0512,Derivatives,BSc Economics,BER01,PROF241,"['G046', 'G047']",85,Friday,09:00,2.0,R009,135,BER01
+Q1,C0470,Organisational Behaviour: Applications,MSc Management,BER01,PROF284,"['G043', 'G042']",81,Monday,11:00,3.0,R015,130,BER02
+Q1,C1102,Counselling Foundations: Applications,BSc Psychology,BER01,PROF080,"['G098', 'G097']",80,Tuesday,11:00,2.0,R002,80,BER01
+Q1,C0069,Algorithms: Applications,BSc Data Science,BER03,PROF106,"['G007', 'G008']",79,Friday,11:00,2.5,R029,230,BER03
+Q1,C0607,Financial Modelling: Applications,MSc Economics,BER01,PROF271,"['G055', 'G054']",79,Wednesday,11:30,3.0,R002,80,BER01
+Q1,C0052,Big Data Engineering: Applications,BSc Data Science,BER03,PROF041,"['G006', 'G005']",78,Thursday,11:30,2.0,R029,230,BER03
+Q1,C0649,Financial Analytics,MSc Financial Analytics,BER04,PROF040,"['G058', 'G059']",75,Tuesday,13:00,3.0,R044,125,BER04
+Q1,C0988,Creative Project Management,BA UX and Interaction Design,BER04,PROF269,"['G087', 'G088']",74,Thursday,13:30,2.0,R044,125,BER04
+Q1,C0988,Creative Project Management,BA UX and Interaction Design,BER04,PROF269,"['G087', 'G088']",74,Friday,13:30,2.0,R044,125,BER04
+Q1,C0400,Digital Transformation,BSc Marketing and Management,BER04,PROF056,"['G037', 'G036']",73,Monday,14:00,2.0,R044,125,BER04
+Q1,C1338,Molecular Biology: Applications,MSc Health Informatics,POT01,PROF110,"['G119', 'G118']",72,Wednesday,11:30,3.0,R047,105,POT01
+Q1,C0119,Advanced Programming,BSc Artificial Intelligence,BER03,PROF267,"['G011', 'G012']",71,Thursday,09:00,2.0,R036,75,BER03
+Q1,C0119,Advanced Programming,BSc Artificial Intelligence,BER03,PROF267,"['G011', 'G012']",71,Friday,09:00,2.0,R036,75,BER03
+Q1,C0673,Risk Management: Applications,MSc Financial Analytics,BER04,PROF254,"['G060', 'G061']",71,Monday,11:00,3.0,R044,125,BER04
+Q1,C0358,Supply Chain Management,BSc International Business,BER01,PROF272,"['G033', 'G032']",70,Tuesday,09:00,2.0,R002,80,BER01
+Q1,C0152,Computer Vision: Applications,BSc Cybersecurity,BER03,PROF052,"['G015', 'G014']",60,Wednesday,14:30,2.0,R027,60,BER03
+Q1,C0139,Database Systems: Advanced Methods,BSc Artificial Intelligence,BER03,PROF170,['G013'],51,Thursday,11:30,2.0,R027,60,BER03
+Q1,C0139,Database Systems: Advanced Methods,BSc Artificial Intelligence,BER03,PROF170,['G013'],51,Friday,11:00,2.0,R027,60,BER03
+Q1,C0243,Computer Networks: Advanced Methods,MSc Computer Science,BER03,PROF053,['G023'],51,Tuesday,13:00,3.0,R027,60,BER03
+Q1,C0307,Business Foundations: Advanced Methods,BSc Business Administration,BER01,PROF122,['G028'],51,Monday,09:00,2.0,R027,60,BER03
+Q1,C0845,Quality Engineering: Applications,MEng Digital Engineering,POT01,PROF077,['G075'],51,Wednesday,11:30,3.0,R045,55,POT01
+Q1,C0903,Motion Design: Applications,BA Digital Media,BER04,PROF036,['G081'],51,Thursday,13:30,2.0,R042,70,BER04
+Q1,C0903,Motion Design: Applications,BA Digital Media,BER04,PROF036,['G081'],51,Friday,13:30,2.0,R042,70,BER04
+Q1,C1052,Creative Coding,MA Digital Media and Innovation,BER04,PROF119,['G093'],51,Monday,14:00,3.0,R042,70,BER04
+Q1,C1325,Health Management: Advanced Methods,BSc Health Management,POT01,PROF295,['G117'],51,Tuesday,11:00,2.0,R045,55,POT01
+Q1,C0424,Business Law,BSc Marketing and Management,BER04,PROF136,['G039'],50,Thursday,09:00,2.0,R042,70,BER04
+Q1,C0284,Advanced Databases,MSc Artificial Intelligence,POT01,PROF147,['G026'],49,Friday,13:30,3.0,R045,55,POT01
+Q1,C0593,Data Analysis for Finance: Applications,BSc Banking and Finance,BER01,PROF199,['G053'],49,Wednesday,09:00,2.5,R008,60,BER01
+Q1,C0693,Quality Engineering,BEng Software Systems,BER02,PROF214,['G062'],49,Tuesday,09:00,2.0,R021,50,BER02
+Q1,C0831,Quality Engineering: Applications,BEng Engineering Management,POT01,PROF081,['G074'],49,Thursday,13:30,2.5,R045,55,POT01
+Q1,C0866,Digital Engineering: Applications,MEng Digital Engineering,POT01,PROF244,['G077'],49,Monday,11:00,3.0,R045,55,POT01
+Q1,C0890,Manufacturing Systems: Applications,MEng Engineering Management,POT01,PROF300,['G079'],49,Friday,13:30,3.0,R046,55,POT01
+Q1,C1006,Digital Storytelling: Advanced Methods,BA Digital Communication,BER04,PROF209,['G089'],49,Tuesday,11:00,2.0,R042,70,BER04
+Q1,C1032,Creative Coding,BA Digital Communication,BER04,PROF011,['G092'],49,Wednesday,14:30,2.0,R042,70,BER04
+Q1,C1087,Human Behaviour,BSc Psychology,BER01,PROF103,['G096'],49,Thursday,11:30,2.0,R008,60,BER01
+Q1,C1231,Regulatory Compliance,LLB Law,BER01,PROF033,['G109'],49,Monday,14:00,2.5,R002,80,BER01
+Q1,C1300,Research in Health Sciences,BSc Health Management,POT01,PROF163,['G115'],49,Tuesday,13:00,2.0,R045,55,POT01
+Q1,C0172,Cloud Computing: Applications,BSc Cybersecurity,BER03,PROF242,['G016'],48,Wednesday,09:00,2.5,R027,60,BER03
+Q1,C0738,Engineering Optimisation: Applications,BEng Software Systems,BER02,PROF126,['G066'],48,Friday,11:00,2.5,R021,50,BER02
+Q1,C0846,Quality Engineering: Applications,MEng Digital Engineering,POT01,PROF124,['G076'],48,Thursday,13:30,3.0,R046,55,POT01
+Q1,C1121,Developmental Psychology,BA Social Sciences,BER01,PROF129,['G099'],48,Tuesday,15:00,2.0,R019,145,BER02
+Q1,C1121,Developmental Psychology,BA Social Sciences,BER01,PROF129,['G099'],48,Monday,09:00,2.0,R046,55,POT01
+Q1,C1255,Employment Law,LLM Business and Technology Law,BER01,PROF014,['G111'],48,Wednesday,11:30,3.0,R008,60,BER01
+Q1,C1256,Employment Law,LLM Business and Technology Law,BER01,PROF153,['G112'],48,Friday,13:30,3.0,R008,60,BER01
+Q1,C0264,Data Structures: Advanced Methods,MSc Artificial Intelligence,POT01,PROF116,['G024'],47,Tuesday,13:00,3.0,R046,55,POT01
+Q1,C0264,Data Structures: Advanced Methods,MSc Artificial Intelligence,POT01,PROF116,['G024'],47,Thursday,13:30,3.0,R047,105,POT01
+Q1,C0534,Monetary Economics: Applications,BSc Economics,BER01,PROF155,['G048'],47,Monday,09:00,2.0,R045,55,POT01
+Q1,C0534,Monetary Economics: Applications,BSc Economics,BER01,PROF155,['G048'],47,Wednesday,14:30,2.0,R008,60,BER01
+Q1,C0753,Engineering Optimisation: Applications,BEng Industrial Engineering,BER02,PROF296,['G067'],47,Friday,09:00,2.0,R021,50,BER02
+Q1,C0924,Digital Publishing: Applications,BA Digital Media,BER04,PROF016,['G082'],47,Monday,11:00,2.0,R042,70,BER04
+Q1,C1277,Health Economics,BSc Health Management,POT01,PROF115,['G113'],47,Tuesday,09:00,2.0,R045,55,POT01
+Q1,C0195,Digital Forensics: Applications,BSc Cybersecurity,BER03,PROF202,['G019'],46,Thursday,09:00,2.0,R027,60,BER03
+Q1,C0320,Project Management,BSc Business Administration,BER01,PROF268,['G029'],46,Wednesday,09:00,2.0,R002,80,BER01
+Q1,C0320,Project Management,BSc Business Administration,BER01,PROF268,['G029'],46,Friday,09:00,2.0,R008,60,BER01
+Q1,C1244,Regulatory Compliance,LLM Business and Technology Law,BER01,PROF114,['G110'],45,Monday,14:00,3.0,R008,60,BER01
+Q1,C0218,Data Mining: Applications,MSc Computer Science,BER03,PROF048,['G020'],44,Tuesday,13:00,3.0,R034,45,BER03
+Q1,C1189,Cognitive Psychology,MA Applied Psychology,BER01,PROF184,['G106'],44,Thursday,13:30,3.0,R001,45,BER01
+Q1,C1209,Contract Law: Applications,LLB Law,BER01,PROF169,['G107'],44,Wednesday,14:30,2.0,R001,45,BER01
+Q1,C0546,International Finance,BSc Banking and Finance,BER01,PROF259,['G049'],43,Friday,11:00,2.0,R001,45,BER01
+Q1,C0546,International Finance,BSc Banking and Finance,BER01,PROF259,['G049'],43,Monday,09:00,2.0,R001,45,BER01
+Q1,C0629,Derivatives: Applications,MSc Economics,BER01,PROF027,['G056'],43,Wednesday,11:30,3.0,R001,45,BER01
+Q1,C0628,Statistics for Economics: Applications,MSc Economics,BER01,PROF067,['G057'],42,Tuesday,13:00,3.0,R001,45,BER01
+Q1,C0788,Systems Engineering,BEng Industrial Engineering,BER02,PROF279,['G070'],42,Thursday,11:30,2.0,R021,50,BER02
+Q1,C0788,Systems Engineering,BEng Industrial Engineering,BER02,PROF279,['G070'],42,Friday,09:00,2.0,R022,55,BER02
+Q1,C0807,Automation,BEng Engineering Management,POT01,PROF185,['G072'],42,Monday,11:00,2.0,R046,55,POT01
+Q1,C1135,Sociology,BA Social Sciences,BER01,PROF057,['G101'],42,Thursday,09:00,2.0,R001,45,BER01
+Q1,C1135,Sociology,BA Social Sciences,BER01,PROF057,['G101'],42,Friday,11:00,2.0,R008,60,BER01
+Q1,C1188,Cognitive Psychology,MA Applied Psychology,BER01,PROF043,['G105'],42,Wednesday,11:30,3.0,R009,135,BER01
+Q1,C1301,Research in Health Sciences,BSc Health Management,POT01,PROF001,['G116'],42,Tuesday,11:00,2.0,R046,55,POT01
+Q1,C0092,Programming Fundamentals: Advanced Methods,BSc Data Science,BER03,PROF298,['G009'],41,Monday,14:00,2.0,R034,45,BER03
+Q1,C0217,Web Application Development: Applications,MSc Computer Science,BER03,PROF128,['G021'],41,Thursday,13:30,3.0,R034,45,BER03
+Q1,C0819,Engineering Economics: Applications,BEng Engineering Management,POT01,PROF102,['G073'],41,Friday,09:00,2.0,R045,55,POT01
+Q1,C0819,Engineering Economics: Applications,BEng Engineering Management,POT01,PROF102,['G073'],41,Tuesday,09:00,2.0,R046,55,POT01
+Q1,C1282,Biomedical Foundations: Applications,BSc Health Management,POT01,PROF255,['G114'],41,Monday,11:00,2.5,R021,50,BER02
+Q1,C1356,Healthcare Operations: Applications,MSc Health Informatics,POT01,PROF025,['G120'],41,Wednesday,11:30,3.0,R046,55,POT01
+Q1,C0036,Advanced Algorithms,BSc Computer Science,BER03,PROF230,['G004'],40,Friday,11:00,2.0,R033,40,BER03
+Q1,C0332,Human Resource Management: Applications,BSc International Business,BER01,PROF160,['G031'],40,Tuesday,13:00,2.5,R007,40,BER01
+Q1,C0263,Artificial Intelligence: Applications,MSc Artificial Intelligence,POT01,PROF249,['G025'],39,Thursday,13:30,3.0,R049,40,POT01
+Q1,C0375,Business Foundations,BSc International Business,BER01,PROF150,['G035'],39,Monday,09:00,2.0,R018,40,BER02
+Q1,C0905,Digital Media Foundations,BA Digital Media,BER04,PROF250,['G080'],38,Friday,13:30,2.0,R038,40,BER04
+Q1,C0296,International Business: Advanced Methods,BSc Business Administration,BER01,PROF182,['G027'],37,Wednesday,09:00,2.0,R007,40,BER01
+Q1,C0549,Financial Markets: Applications,BSc Banking and Finance,BER01,PROF248,['G050'],37,Tuesday,13:00,2.5,R002,80,BER01
+Q1,C0002,Database Systems: Applications,BSc Computer Science,BER03,PROF085,['G001'],36,Monday,14:00,2.0,R033,40,BER03
+Q1,C0454,Marketing Principles: Advanced Methods,MSc Management,BER01,PROF019,['G041'],36,Thursday,13:30,3.0,R007,40,BER01
+Q1,C0750,Sustainable Engineering,BEng Industrial Engineering,BER02,PROF245,['G068'],36,Friday,09:00,2.0,R018,40,BER02
+Q1,C0333,Operations Management: Advanced Methods,BSc International Business,BER01,PROF005,['G030'],35,Wednesday,14:30,2.0,R006,35,BER01
+Q1,C0333,Operations Management: Advanced Methods,BSc International Business,BER01,PROF005,['G030'],35,Monday,09:00,2.0,R007,40,BER01
+Q1,C0696,Industrial Systems: Applications,BEng Software Systems,BER02,PROF030,['G063'],35,Tuesday,11:00,2.0,R018,40,BER02
+Q1,C1132,Introduction to Psychology,BA Social Sciences,BER01,PROF297,['G100'],35,Friday,11:00,2.5,R006,35,BER01
+Q1,C1219,Intellectual Property,LLB Law,BER01,PROF280,['G108'],35,Wednesday,09:00,2.0,R006,35,BER01
+Q1,C0421,Operations Management,BSc Marketing and Management,BER04,PROF289,['G038'],34,Thursday,11:30,2.0,R039,35,BER04
+Q1,C0442,Strategic Management,BSc Marketing and Management,BER04,PROF123,['G040'],34,Monday,11:00,2.0,R041,35,BER04
+Q1,C0772,Software Systems: Applications,BEng Industrial Engineering,BER02,PROF145,['G069'],34,Tuesday,09:00,2.0,R018,40,BER02
+Q1,C0772,Software Systems: Applications,BEng Industrial Engineering,BER02,PROF145,['G069'],34,Wednesday,14:30,2.0,R018,40,BER02
+Q1,C0785,Embedded Systems: Applications,BEng Industrial Engineering,BER02,PROF092,['G071'],34,Friday,13:30,2.0,R018,40,BER02
+Q1,C1076,Applied Statistics,BSc Psychology,BER01,PROF042,['G095'],34,Thursday,09:00,2.0,R006,35,BER01
+Q1,C0960,Information Design: Applications,BA UX and Interaction Design,BER04,PROF206,['G085'],33,Monday,14:00,2.0,R039,35,BER04
+Q1,C1031,Creative Coding,BA Digital Communication,BER04,PROF231,['G091'],33,Tuesday,11:00,2.0,R039,35,BER04
+Q1,C1154,Psychological Assessment,BA Social Sciences,BER01,PROF229,['G102'],33,Wednesday,09:00,2.5,R001,45,BER01
+Q1,C1177,Psychological Assessment,MA Applied Psychology,BER01,PROF018,['G104'],33,Friday,13:30,3.0,R006,35,BER01
+Q1,C1019,Design Thinking,BA Digital Communication,BER04,PROF012,['G090'],32,Thursday,09:00,2.5,R039,35,BER04
+Q1,C0196,Software Architecture: Advanced Methods,BSc Cybersecurity,BER03,PROF228,['G018'],31,Monday,09:00,2.0,R006,35,BER01
+Q1,C0240,Secure Software Engineering: Applications,MSc Computer Science,BER03,PROF130,['G022'],31,Tuesday,13:00,3.0,R033,40,BER03
+Q1,C0974,Web Design,BA UX and Interaction Design,BER04,PROF026,['G086'],30,Wednesday,14:30,2.0,R037,30,BER04
+Q1,C0904,Portfolio Development: Applications,BA Digital Media,BER04,PROF206,"['G081', 'G080']",89,Thursday,11:30,2.0,R044,125,BER04
+Q1,C0266,Algorithms,MSc Artificial Intelligence,POT01,PROF052,"['G025', 'G024']",86,Friday,13:30,3.0,R047,105,POT01
+Q1,C1337,Innovation in Healthcare,MSc Health Informatics,POT01,PROF133,"['G118', 'G119']",72,Monday,11:00,3.0,R047,105,POT01
+Q1,C0138,Computer Vision: Applications,BSc Artificial Intelligence,BER03,PROF047,['G013'],51,Tuesday,13:00,2.5,R025,70,BER03
+Q1,C0245,Software Architecture,MSc Computer Science,BER03,PROF022,['G023'],51,Wednesday,11:30,3.0,R027,60,BER03
+Q1,C0309,Innovation Management,BSc Business Administration,BER01,PROF150,['G028'],51,Thursday,11:30,2.0,R002,80,BER01
+Q1,C0309,Innovation Management,BSc Business Administration,BER01,PROF150,['G028'],51,Friday,09:00,2.0,R002,80,BER01
+Q1,C0843,Systems Engineering: Applications,MEng Digital Engineering,POT01,PROF279,['G075'],51,Monday,14:00,3.0,R047,105,POT01
+Q1,C1051,Motion Design: Advanced Methods,MA Digital Media and Innovation,BER04,PROF213,['G093'],51,Tuesday,13:00,3.0,R042,70,BER04
+Q1,C1155,Psychological Assessment,BA Social Sciences,BER01,PROF042,['G103'],51,Thursday,11:00,2.5,R014,220,BER01
+Q1,C1324,Molecular Biology: Applications,BSc Health Management,POT01,PROF115,['G117'],51,Wednesday,09:00,2.0,R045,55,POT01
+Q1,C0488,Risk Management: Advanced Methods,BSc Economics,BER01,PROF086,['G045'],50,Friday,11:00,2.0,R002,80,BER01
+Q1,C1098,Developmental Psychology,BSc Psychology,BER01,PROF297,['G097'],50,Monday,09:00,2.0,R021,50,BER02
+Q1,C0014,Statistical Computing,BSc Computer Science,BER03,PROF130,['G003'],49,Wednesday,14:30,2.0,R025,70,BER03
+Q1,C0014,Statistical Computing,BSc Computer Science,BER03,PROF130,['G003'],49,Thursday,09:00,2.0,R025,70,BER03
+Q1,C0173,Cloud Computing: Applications,BSc Cybersecurity,BER03,PROF230,['G017'],49,Tuesday,09:00,2.5,R027,60,BER03
+Q1,C0283,Big Data Engineering: Applications,MSc Artificial Intelligence,POT01,PROF249,['G026'],49,Friday,09:00,3.0,R046,55,POT01
+Q1,C0374,Business Foundations,BSc International Business,BER01,PROF268,['G034'],49,Monday,11:00,2.0,R002,80,BER01
+Q1,C0592,Banking Fundamentals: Applications,BSc Banking and Finance,BER01,PROF155,['G053'],49,Wednesday,11:30,2.5,R014,220,BER01
+Q1,C0592,Banking Fundamentals: Applications,BSc Banking and Finance,BER01,PROF155,['G053'],49,Thursday,09:00,2.5,R008,60,BER01
+Q1,C0695,Industrial Systems: Applications,BEng Software Systems,BER02,PROF072,['G062'],49,Tuesday,11:00,2.0,R021,50,BER02
+Q1,C0717,Systems Engineering: Advanced Methods,BEng Software Systems,BER02,PROF092,['G064'],49,Friday,09:00,2.0,R017,90,BER02
+Q1,C0832,Industrial Systems: Advanced Methods,BEng Engineering Management,POT01,PROF089,['G074'],49,Monday,14:00,2.5,R045,55,POT01
+Q1,C0868,Engineering Design,MEng Digital Engineering,POT01,PROF285,['G077'],49,Wednesday,11:30,3.0,R021,50,BER02
+Q1,C0891,Software Systems: Advanced Methods,MEng Engineering Management,POT01,PROF102,['G079'],49,Thursday,13:30,3.0,R021,50,BER02
+Q1,C1005,Media Psychology: Applications,BA Digital Communication,BER04,PROF113,['G089'],49,Tuesday,09:00,2.0,R042,70,BER04
+Q1,C1030,Motion Design: Advanced Methods,BA Digital Communication,BER04,PROF251,['G092'],49,Friday,11:00,2.5,R042,70,BER04
+Q1,C1086,Psychological Assessment: Advanced Methods,BSc Psychology,BER01,PROF158,['G096'],49,Monday,09:00,2.0,R008,60,BER01
+Q1,C1232,Corporate Governance: Applications,LLB Law,BER01,PROF265,['G109'],49,Tuesday,09:00,2.0,R008,60,BER01
+Q1,C1302,Life Sciences: Applications,BSc Health Management,POT01,PROF082,['G115'],49,Wednesday,09:00,2.0,R046,55,POT01
+Q1,C0737,Operations Research: Applications,BEng Software Systems,BER02,PROF244,['G066'],48,Thursday,09:00,2.5,R021,50,BER02
+Q1,C0848,Industrial Systems: Advanced Methods,MEng Digital Engineering,POT01,PROF030,['G076'],48,Friday,13:30,3.0,R021,50,BER02
+Q1,C1122,Psychology of Learning,BA Social Sciences,BER01,PROF057,['G099'],48,Monday,11:00,2.0,R025,70,BER03
+Q1,C1259,Legal Research: Applications,LLM Business and Technology Law,BER01,PROF280,['G111'],48,Tuesday,13:00,3.0,R009,135,BER01
+Q1,C1260,Legal Research: Applications,LLM Business and Technology Law,BER01,PROF014,['G112'],48,Thursday,13:30,3.0,R008,60,BER01
+Q1,C0532,International Finance,BSc Economics,BER01,PROF068,['G048'],47,Wednesday,09:00,2.0,R014,220,BER01
+Q1,C0570,Applied Econometrics,BSc Banking and Finance,BER01,PROF264,['G052'],47,Monday,14:00,2.5,R025,70,BER03
+Q1,C0749,Sustainable Engineering,BEng Industrial Engineering,BER02,PROF214,['G067'],47,Friday,11:00,2.0,R022,55,BER02
+Q1,C0926,Media Production,BA Digital Media,BER04,PROF250,['G082'],47,Wednesday,14:30,2.5,R044,125,BER04
+Q1,C1279,Genetics,BSc Health Management,POT01,PROF276,['G113'],47,Tuesday,11:00,2.0,R047,105,POT01
+Q1,C0197,Software Architecture: Advanced Methods,BSc Cybersecurity,BER03,PROF106,['G019'],46,Monday,09:00,2.0,R025,70,BER03
+Q1,C0321,Sustainable Business,BSc Business Administration,BER01,PROF272,['G029'],46,Thursday,11:30,2.0,R009,135,BER01
+Q1,C0468,Business Analytics,MSc Management,BER01,PROF123,['G042'],46,Friday,13:30,3.0,R002,80,BER01
+Q1,C0511,Statistics for Economics,BSc Economics,BER01,PROF259,['G047'],46,Tuesday,13:00,2.5,R014,220,BER01
+Q1,C0569,Applied Econometrics,BSc Banking and Finance,BER01,PROF237,['G051'],46,Wednesday,14:30,2.5,R002,80,BER01
+Q1,C0715,Engineering Mathematics: Applications,BEng Software Systems,BER02,PROF145,['G065'],46,Monday,11:00,2.0,R017,90,BER02
+Q1,C0606,FinTech Foundations,MSc Economics,BER01,PROF241,['G055'],45,Thursday,13:30,3.0,R002,80,BER01
+Q1,C0939,UX Research,BA Digital Media,BER04,PROF036,['G084'],45,Friday,11:00,2.5,R044,125,BER04
+Q1,C1243,Business Law,LLM Business and Technology Law,BER01,PROF033,['G110'],45,Tuesday,13:00,3.0,R021,50,BER02
+Q1,C0013,Statistical Computing,BSc Computer Science,BER03,PROF170,['G002'],44,Wednesday,09:00,2.0,R034,45,BER03
+Q1,C0013,Statistical Computing,BSc Computer Science,BER03,PROF170,['G002'],44,Monday,14:00,2.0,R036,75,BER03
+Q1,C0216,Web Application Development: Applications,MSc Computer Science,BER03,PROF085,['G020'],44,Thursday,13:30,3.0,R027,60,BER03
+Q1,C0879,Sustainable Engineering: Applications,MEng Engineering Management,POT01,PROF296,['G078'],44,Wednesday,11:30,3.0,R034,45,BER03
+Q1,C1191,Quantitative Research,MA Applied Psychology,BER01,PROF200,['G106'],44,Friday,13:30,3.0,R001,45,BER01
+Q1,C1207,Employment Law: Advanced Methods,LLB Law,BER01,PROF038,['G107'],44,Monday,09:00,2.0,R034,45,BER03
+Q1,C0049,Digital Forensics,BSc Data Science,BER03,PROF112,['G006'],43,Tuesday,13:00,2.5,R036,75,BER03
+Q1,C0073,Operating Systems: Advanced Methods,BSc Data Science,BER03,PROF298,['G008'],43,Monday,11:00,2.0,R027,60,BER03
+Q1,C0544,Macroeconomics,BSc Banking and Finance,BER01,PROF254,['G049'],43,Thursday,11:30,2.0,R001,45,BER01
+Q1,C0625,Monetary Economics,MSc Economics,BER01,PROF040,['G056'],43,Friday,13:30,3.0,R009,135,BER01
+Q1,C0936,Interaction Design: Advanced Methods,BA Digital Media,BER04,PROF026,['G083'],43,Wednesday,09:00,2.0,R042,70,BER04
+Q1,C0652,International Finance: Applications,MSc Financial Analytics,BER04,PROF271,['G058'],42,Tuesday,09:00,3.0,R044,125,BER04
+Q1,C0784,Embedded Systems: Applications,BEng Industrial Engineering,BER02,PROF185,['G070'],42,Monday,14:00,2.0,R021,50,BER02
+Q1,C0808,Embedded Systems: Applications,BEng Engineering Management,POT01,PROF126,['G072'],42,Thursday,09:00,2.0,R045,55,POT01
+Q1,C1062,Visual Communication: Advanced Methods,MA Digital Media and Innovation,BER04,PROF012,['G094'],42,Wednesday,11:30,3.0,R042,70,BER04
+Q1,C1137,Social Psychology: Applications,BA Social Sciences,BER01,PROF043,['G101'],42,Friday,09:00,2.0,R001,45,BER01
+Q1,C1192,Organisational Psychology: Applications,MA Applied Psychology,BER01,PROF229,['G105'],42,Monday,11:00,3.0,R001,45,BER01
+Q1,C1303,Life Sciences: Applications,BSc Health Management,POT01,PROF029,['G116'],42,Tuesday,09:00,2.0,R047,105,POT01
+Q1,C0093,Data Structures,BSc Data Science,BER03,PROF053,['G009'],41,Thursday,11:30,2.0,R034,45,BER03
+Q1,C0671,Data Analysis for Finance,MSc Financial Analytics,BER04,PROF044,['G060'],41,Wednesday,11:30,3.0,R044,125,BER04
+Q1,C0820,Technical Management: Applications,BEng Engineering Management,POT01,PROF225,['G073'],41,Friday,11:00,2.5,R045,55,POT01
+Q1,C1280,Genetics,BSc Health Management,POT01,PROF110,['G114'],41,Tuesday,11:00,2.0,R001,45,BER01
+Q1,C1355,Healthcare Quality,MSc Health Informatics,POT01,PROF295,['G120'],41,Thursday,13:30,3.0,R022,55,BER02
+Q1,C0038,Advanced Databases,BSc Computer Science,BER03,PROF292,['G004'],40,Monday,09:00,2.0,R035,40,BER03
+Q1,C0334,Operations Management: Advanced Methods,BSc International Business,BER01,PROF219,['G031'],40,Tuesday,09:00,2.0,R007,40,BER01
+Q1,C0334,Operations Management: Advanced Methods,BSc International Business,BER01,PROF219,['G031'],40,Friday,09:00,2.0,R007,40,BER01
+Q1,C0397,Sustainable Business: Applications,BSc Marketing and Management,BER04,PROF257,['G037'],40,Wednesday,14:30,2.0,R038,40,BER04
+Q1,C0987,Content Strategy,BA UX and Interaction Design,BER04,PROF231,['G088'],40,Monday,14:00,2.0,R038,40,BER04
+Q1,C0357,International Business,BSc International Business,BER01,PROF236,['G033'],39,Thursday,09:00,2.0,R007,40,BER01
+Q1,C0379,Marketing Principles: Applications,BSc International Business,BER01,PROF024,['G035'],39,Tuesday,13:00,2.5,R018,40,BER02
+Q1,C0487,Risk Management: Advanced Methods,BSc Economics,BER01,PROF173,['G044'],39,Friday,09:00,2.0,R014,220,BER01
+Q1,C0510,Statistics for Economics,BSc Economics,BER01,PROF199,['G046'],39,Wednesday,14:30,2.5,R007,40,BER01
+Q1,C0116,Computer Networks: Applications,BSc Artificial Intelligence,BER03,PROF258,['G012'],37,Monday,09:00,2.0,R033,40,BER03
+Q1,C0297,Entrepreneurship,BSc Business Administration,BER01,PROF203,['G027'],37,Thursday,09:00,2.5,R002,80,BER01
+Q1,C0547,International Finance,BSc Banking and Finance,BER01,PROF193,['G050'],37,Friday,09:00,2.0,R033,40,BER03
+Q1,C0547,International Finance,BSc Banking and Finance,BER01,PROF193,['G050'],37,Tuesday,11:00,2.0,R007,40,BER01
+Q1,C0003,Secure Software Engineering: Applications,BSc Computer Science,BER03,PROF215,['G001'],36,Monday,11:00,2.0,R035,40,BER03
+Q1,C0072,Operating Systems: Advanced Methods,BSc Data Science,BER03,PROF041,['G007'],36,Wednesday,09:00,2.0,R033,40,BER03
+Q1,C0456,Consumer Behaviour,MSc Management,BER01,PROF262,['G041'],36,Thursday,09:00,3.0,R018,40,BER02
+Q1,C0752,Operations Research: Applications,BEng Industrial Engineering,BER02,PROF090,['G068'],36,Friday,11:00,2.5,R018,40,BER02
+Q1,C0048,Digital Forensics,BSc Data Science,BER03,PROF247,['G005'],35,Tuesday,13:00,2.5,R035,40,BER03
+Q1,C0331,Human Resource Management: Applications,BSc International Business,BER01,PROF122,['G030'],35,Monday,14:00,2.5,R007,40,BER01
+Q1,C0467,Leadership: Advanced Methods,MSc Management,BER01,PROF182,['G043'],35,Wednesday,11:30,3.0,R006,35,BER01
+Q1,C0694,Quality Engineering,BEng Software Systems,BER02,PROF245,['G063'],35,Thursday,11:30,2.0,R022,55,BER02
+Q1,C1136,Social Psychology: Applications,BA Social Sciences,BER01,PROF018,['G100'],35,Friday,09:00,2.0,R006,35,BER01
+Q1,C1220,Ethics and Governance,LLB Law,BER01,PROF009,['G108'],35,Tuesday,09:00,2.0,R006,35,BER01
+Q1,C0105,Programming Fundamentals: Advanced Methods,BSc Artificial Intelligence,BER03,PROF161,['G010'],34,Monday,09:00,2.0,R041,35,BER04
+Q1,C0115,Computer Networks: Applications,BSc Artificial Intelligence,BER03,PROF048,['G011'],34,Wednesday,14:30,2.0,R033,40,BER03
+Q1,C0419,Business Communication: Advanced Methods,BSc Marketing and Management,BER04,PROF120,['G038'],34,Thursday,09:00,2.0,R041,35,BER04
+Q1,C0444,Entrepreneurship: Applications,BSc Marketing and Management,BER04,PROF054,['G040'],34,Friday,13:30,2.5,R039,35,BER04
+Q1,C0603,Investment Analysis,MSc Economics,BER01,PROF083,['G054'],34,Tuesday,13:00,3.0,R006,35,BER01
+Q1,C0774,Control Engineering: Advanced Methods,BEng Industrial Engineering,BER02,PROF077,['G069'],34,Monday,11:00,2.0,R048,35,POT01
+Q1,C0787,Engineering Design: Advanced Methods,BEng Industrial Engineering,BER02,PROF291,['G071'],34,Wednesday,09:00,2.0,R018,40,BER02
+Q1,C0984,Digital Storytelling: Advanced Methods,BA UX and Interaction Design,BER04,PROF207,['G087'],34,Thursday,11:30,2.0,R041,35,BER04
+Q1,C1075,Research Methods,BSc Psychology,BER01,PROF129,['G095'],34,Friday,11:00,2.0,R007,40,BER01
+Q1,C0396,Sustainable Business: Applications,BSc Marketing and Management,BER04,PROF160,['G036'],33,Monday,09:00,2.0,R039,35,BER04
+Q1,C0653,International Finance: Applications,MSc Financial Analytics,BER04,PROF198,['G059'],33,Tuesday,09:00,3.0,R041,35,BER04
+Q1,C0961,Interaction Design: Advanced Methods,BA UX and Interaction Design,BER04,PROF148,['G085'],33,Wednesday,14:30,2.5,R039,35,BER04
+Q1,C0961,Interaction Design: Advanced Methods,BA UX and Interaction Design,BER04,PROF148,['G085'],33,Thursday,13:30,2.5,R039,35,BER04
+Q1,C1033,Digital Media Foundations: Applications,BA Digital Communication,BER04,PROF235,['G091'],33,Friday,13:30,2.0,R041,35,BER04
+Q1,C1158,Social Research: Applications,BA Social Sciences,BER01,PROF010,['G102'],33,Monday,14:00,2.5,R006,35,BER01
+Q1,C1158,Social Research: Applications,BA Social Sciences,BER01,PROF010,['G102'],33,Wednesday,11:30,2.5,R007,40,BER01
+Q1,C1176,Counselling Foundations: Advanced Methods,MA Applied Psychology,BER01,PROF224,['G104'],33,Tuesday,13:00,3.0,R039,35,BER04
+Q1,C1017,Graphic Design: Advanced Methods,BA Digital Communication,BER04,PROF179,['G090'],32,Thursday,11:30,2.0,R038,40,BER04
+Q1,C1017,Graphic Design: Advanced Methods,BA Digital Communication,BER04,PROF179,['G090'],32,Friday,09:00,2.0,R039,35,BER04
+Q1,C0198,Web Application Development,BSc Cybersecurity,BER03,PROF267,['G018'],31,Monday,11:00,2.0,R006,35,BER01
+Q1,C0356,International Business,BSc International Business,BER01,PROF284,['G032'],31,Wednesday,09:00,2.0,R039,35,BER04
+Q1,C0150,Data Structures: Applications,BSc Cybersecurity,BER03,PROF242,['G014'],30,Thursday,09:00,2.0,R026,30,BER03
+Q1,C0151,Data Structures: Applications,BSc Cybersecurity,BER03,PROF101,['G015'],30,Friday,11:00,2.0,R026,30,BER03
+Q1,C0672,Data Analysis for Finance,MSc Financial Analytics,BER04,PROF248,['G061'],30,Monday,14:00,3.0,R003,30,BER01
+Q1,C0972,Immersive Media: Applications,BA UX and Interaction Design,BER04,PROF135,['G086'],30,Tuesday,11:00,2.0,R037,30,BER04
+Q1,C1099,Developmental Psychology,BSc Psychology,BER01,PROF103,['G098'],30,Wednesday,14:30,2.0,R003,30,BER01
+Q1,C0174,Statistical Computing: Applications,BSc Cybersecurity,BER03,PROF258,"['G017', 'G016']",97,Thursday,13:30,2.5,R029,230,BER03
+Q1,C0140,Operating Systems,BSc Artificial Intelligence,BER03,PROF202,['G013'],51,Friday,13:30,2.0,R027,60,BER03
+Q1,C0241,Secure Software Engineering: Applications,MSc Computer Science,BER03,PROF078,['G023'],51,Tuesday,09:00,3.0,R025,70,BER03
+Q1,C0308,Organisational Behaviour,BSc Business Administration,BER01,PROF031,['G028'],51,Monday,11:00,2.5,R023,120,BER02
+Q1,C0847,Industrial Systems: Advanced Methods,MEng Digital Engineering,POT01,PROF214,['G075'],51,Friday,13:30,3.0,R022,55,BER02
+Q1,C0906,Digital Media Foundations,BA Digital Media,BER04,PROF206,['G081'],51,Wednesday,09:00,2.0,R044,125,BER04
+Q1,C1159,Social Research: Applications,BA Social Sciences,BER01,PROF229,['G103'],51,Thursday,13:30,2.5,R009,135,BER01
+Q1,C1159,Social Research: Applications,BA Social Sciences,BER01,PROF229,['G103'],51,Tuesday,13:00,2.5,R022,55,BER02
+Q1,C1323,Innovation in Healthcare,BSc Health Management,POT01,PROF028,['G117'],51,Wednesday,11:30,2.0,R022,55,BER02
+Q1,C0422,Operations Management,BSc Marketing and Management,BER04,PROF160,['G039'],50,Monday,14:00,2.0,R016,100,BER02
+Q1,C0491,Microeconomics: Applications,BSc Economics,BER01,PROF159,['G045'],50,Thursday,11:30,2.0,R045,55,POT01
+Q1,C1100,Psychology of Learning,BSc Psychology,BER01,PROF034,['G097'],50,Friday,09:00,2.0,R027,60,BER03
+Q1,C0016,Artificial Intelligence: Applications,BSc Computer Science,BER03,PROF059,['G003'],49,Wednesday,09:00,2.0,R025,70,BER03
+Q1,C0285,Machine Learning,MSc Artificial Intelligence,POT01,PROF017,['G026'],49,Monday,11:00,3.0,R016,100,BER02
+Q1,C0378,Marketing Principles: Applications,BSc International Business,BER01,PROF284,['G034'],49,Tuesday,13:00,2.5,R017,90,BER02
+Q1,C0591,Economic Policy,BSc Banking and Finance,BER01,PROF086,['G053'],49,Thursday,11:30,2.0,R046,55,POT01
+Q1,C0697,Energy Systems: Applications,BEng Software Systems,BER02,PROF097,['G062'],49,Friday,11:00,2.5,R017,90,BER02
+Q1,C0714,Engineering Mathematics: Applications,BEng Software Systems,BER02,PROF188,['G064'],49,Wednesday,14:30,2.0,R021,50,BER02
+Q1,C0833,Control Engineering,BEng Engineering Management,POT01,PROF126,['G074'],49,Tuesday,09:00,2.0,R022,55,BER02
+Q1,C0867,Engineering Mathematics: Advanced Methods,MEng Digital Engineering,POT01,PROF030,['G077'],49,Thursday,13:30,3.0,R025,70,BER03
+Q1,C1007,Content Strategy,BA Digital Communication,BER04,PROF036,['G089'],49,Monday,09:00,2.0,R042,70,BER04
+Q1,C1034,Digital Media Foundations: Applications,BA Digital Communication,BER04,PROF275,['G092'],49,Friday,09:00,2.0,R042,70,BER04
+Q1,C1088,Behavioural Research,BSc Psychology,BER01,PROF184,['G096'],49,Wednesday,11:30,2.0,R025,70,BER03
+Q1,C1233,Digital Regulation: Applications,LLB Law,BER01,PROF051,['G109'],49,Tuesday,13:00,2.5,R016,100,BER02
+Q1,C1304,Health Informatics: Applications,BSc Health Management,POT01,PROF058,['G115'],49,Monday,14:00,2.5,R046,55,POT01
+Q1,C0739,Digital Engineering: Advanced Methods,BEng Software Systems,BER02,PROF291,['G066'],48,Friday,13:30,2.0,R017,90,BER02
+Q1,C0739,Digital Engineering: Advanced Methods,BEng Software Systems,BER02,PROF291,['G066'],48,Wednesday,14:30,2.0,R022,55,BER02
+Q1,C0844,Systems Engineering: Applications,MEng Digital Engineering,POT01,PROF279,['G076'],48,Tuesday,13:00,3.0,R047,105,POT01
+Q1,C1120,Cognitive Psychology: Advanced Methods,BA Social Sciences,BER01,PROF103,['G099'],48,Thursday,09:00,2.0,R014,220,BER01
+Q1,C1257,Legal Foundations: Applications,LLM Business and Technology Law,BER01,PROF139,['G111'],48,Friday,13:30,3.0,R014,220,BER01
+Q1,C1258,Legal Foundations: Applications,LLM Business and Technology Law,BER01,PROF210,['G112'],48,Monday,11:00,3.0,R036,75,BER03
+Q1,C0533,Financial Markets: Applications,BSc Economics,BER01,PROF020,['G048'],47,Wednesday,11:30,2.0,R036,75,BER03
+Q1,C0572,Financial Analytics: Applications,BSc Banking and Finance,BER01,PROF098,['G052'],47,Thursday,09:00,2.0,R022,55,BER02
+Q1,C0572,Financial Analytics: Applications,BSc Banking and Finance,BER01,PROF098,['G052'],47,Wednesday,14:30,2.0,R009,135,BER01
+Q1,C0751,Operations Research: Applications,BEng Industrial Engineering,BER02,PROF174,['G067'],47,Thursday,13:30,2.5,R017,90,BER02
+Q1,C0925,Content Strategy: Advanced Methods,BA Digital Media,BER04,PROF004,['G082'],47,Tuesday,11:00,2.0,R043,130,BER04
+Q1,C1281,Biomedical Foundations: Applications,BSc Health Management,POT01,PROF217,['G113'],47,Friday,11:00,2.5,R047,105,POT01
+Q1,C0199,Web Application Development,BSc Cybersecurity,BER03,PROF161,['G019'],46,Monday,14:00,2.0,R027,60,BER03
+Q1,C0319,Operations Management: Advanced Methods,BSc Business Administration,BER01,PROF013,['G029'],46,Wednesday,11:30,2.0,R017,90,BER02
+Q1,C0466,Leadership: Advanced Methods,MSc Management,BER01,PROF049,['G042'],46,Tuesday,13:00,3.0,R023,120,BER02
+Q1,C0514,Investment Analysis: Applications,BSc Economics,BER01,PROF264,['G047'],46,Thursday,11:30,2.0,R025,70,BER03
+Q1,C0514,Investment Analysis: Applications,BSc Economics,BER01,PROF264,['G047'],46,Monday,09:00,2.0,R022,55,BER02
+Q1,C0571,Financial Analytics: Applications,BSc Banking and Finance,BER01,PROF167,['G051'],46,Friday,09:00,2.0,R025,70,BER03
+Q1,C0571,Financial Analytics: Applications,BSc Banking and Finance,BER01,PROF167,['G051'],46,Wednesday,11:30,2.0,R016,100,BER02
+Q1,C0718,Systems Engineering: Advanced Methods,BEng Software Systems,BER02,PROF300,['G065'],46,Thursday,09:00,2.0,R017,90,BER02
+Q1,C0604,Investment Analysis,MSc Economics,BER01,PROF065,['G055'],45,Monday,11:00,3.0,R008,60,BER01
+Q1,C0937,Interaction Design: Advanced Methods,BA Digital Media,BER04,PROF250,['G084'],45,Friday,09:00,2.0,R044,125,BER04
+Q1,C1245,Corporate Governance: Applications,LLM Business and Technology Law,BER01,PROF169,['G110'],45,Tuesday,09:00,3.0,R009,135,BER01
+Q1,C0015,Artificial Intelligence: Applications,BSc Computer Science,BER03,PROF247,['G002'],44,Wednesday,14:30,2.0,R034,45,BER03
+Q1,C0880,Operations Research: Advanced Methods,MEng Engineering Management,POT01,PROF145,['G078'],44,Thursday,13:30,3.0,R036,75,BER03
+Q1,C0880,Operations Research: Advanced Methods,MEng Engineering Management,POT01,PROF145,['G078'],44,Friday,13:30,3.0,R034,45,BER03
+Q1,C1193,Organisational Psychology: Applications,MA Applied Psychology,BER01,PROF197,['G106'],44,Monday,14:00,3.0,R001,45,BER01
+Q1,C1208,Competition Law,LLB Law,BER01,PROF195,['G107'],44,Wednesday,09:00,2.5,R021,50,BER02
+Q1,C0071,Cybersecurity Fundamentals: Applications,BSc Data Science,BER03,PROF023,['G008'],43,Tuesday,13:00,2.5,R029,230,BER03
+Q1,C0548,Financial Markets: Applications,BSc Banking and Finance,BER01,PROF220,['G049'],43,Thursday,09:00,2.5,R034,45,BER03
+Q1,C0627,Statistics for Economics: Applications,MSc Economics,BER01,PROF155,['G056'],43,Friday,09:00,3.0,R034,45,BER03
+Q1,C0938,UX Research,BA Digital Media,BER04,PROF016,['G083'],43,Wednesday,14:30,2.5,R043,130,BER04
+Q1,C0626,Monetary Economics,MSc Economics,BER01,PROF259,['G057'],42,Monday,11:00,3.0,R022,55,BER02
+Q1,C0650,Macroeconomics: Applications,MSc Financial Analytics,BER04,PROF040,['G058'],42,Thursday,13:30,3.0,R043,130,BER04
+Q1,C0786,Engineering Design: Advanced Methods,BEng Industrial Engineering,BER02,PROF003,['G070'],42,Tuesday,09:00,2.0,R017,90,BER02
+Q1,C0809,Engineering Design: Advanced Methods,BEng Engineering Management,POT01,PROF196,['G072'],42,Tuesday,13:00,2.5,R015,130,BER02
+Q1,C0809,Engineering Design: Advanced Methods,BEng Engineering Management,POT01,PROF196,['G072'],42,Wednesday,09:00,2.5,R047,105,POT01
+Q1,C1064,Interactive Media,MA Digital Media and Innovation,BER04,PROF231,['G094'],42,Friday,13:30,3.0,R043,130,BER04
+Q1,C1133,Introduction to Psychology,BA Social Sciences,BER01,PROF149,['G101'],42,Monday,14:00,2.5,R022,55,BER02
+Q1,C1190,Quantitative Research,MA Applied Psychology,BER01,PROF205,['G105'],42,Thursday,13:30,3.0,R014,220,BER01
+Q1,C1305,Health Informatics: Applications,BSc Health Management,POT01,PROF063,['G116'],42,Tuesday,13:00,2.5,R043,130,BER04
+Q1,C0091,Machine Learning: Applications,BSc Data Science,BER03,PROF215,['G009'],41,Wednesday,09:00,2.0,R036,75,BER03
+Q1,C0219,Data Mining: Applications,MSc Computer Science,BER03,PROF242,['G021'],41,Friday,13:30,3.0,R025,70,BER03
+Q1,C0674,Applied Econometrics: Applications,MSc Financial Analytics,BER04,PROF157,['G060'],41,Monday,14:00,3.0,R023,120,BER02
+Q1,C0821,Project Engineering: Advanced Methods,BEng Engineering Management,POT01,PROF124,['G073'],41,Wednesday,09:00,2.0,R022,55,BER02
+Q1,C1278,Health Economics,BSc Health Management,POT01,PROF096,['G114'],41,Tuesday,09:00,2.0,R001,45,BER01
+Q1,C1357,Medical Ethics: Applications,MSc Health Informatics,POT01,PROF255,['G120'],41,Thursday,09:00,3.0,R047,105,POT01
+Q1,C0037,Big Data Engineering: Applications,BSc Computer Science,BER03,PROF130,['G004'],40,Friday,09:00,2.0,R035,40,BER03
+Q1,C0336,Project Management,BSc International Business,BER01,PROF257,['G031'],40,Monday,09:00,2.0,R038,40,BER04
+Q1,C0985,Digital Storytelling: Advanced Methods,BA UX and Interaction Design,BER04,PROF209,['G088'],40,Wednesday,11:30,2.0,R038,40,BER04
+Q1,C0265,Data Structures: Advanced Methods,MSc Artificial Intelligence,POT01,PROF243,['G025'],39,Tuesday,13:00,3.0,R049,40,POT01
+Q1,C0265,Data Structures: Advanced Methods,MSc Artificial Intelligence,POT01,PROF243,['G025'],39,Thursday,09:00,3.0,R049,40,POT01
+Q1,C0355,Strategic Management: Advanced Methods,BSc International Business,BER01,PROF219,['G033'],39,Friday,11:00,2.0,R009,135,BER01
+Q1,C0377,Digital Transformation,BSc International Business,BER01,PROF069,['G035'],39,Monday,11:00,2.0,R038,40,BER04
+Q1,C0490,Microeconomics: Applications,BSc Economics,BER01,PROF193,['G044'],39,Wednesday,14:30,2.0,R014,220,BER01
+Q1,C0513,Investment Analysis: Applications,BSc Economics,BER01,PROF173,['G046'],39,Tuesday,11:00,2.0,R008,60,BER01
+Q1,C0513,Investment Analysis: Applications,BSc Economics,BER01,PROF173,['G046'],39,Friday,11:00,2.0,R014,220,BER01
+Q1,C1336,Nutrition and Health,MSc Health Informatics,POT01,PROF021,['G119'],39,Monday,14:00,3.0,R035,40,BER03
+Q1,C0902,Motion Design: Applications,BA Digital Media,BER04,PROF011,['G080'],38,Wednesday,09:00,2.0,R038,40,BER04
+Q1,C0902,Motion Design: Applications,BA Digital Media,BER04,PROF011,['G080'],38,Thursday,09:00,2.0,R038,40,BER04
+Q1,C0118,Distributed Systems: Applications,BSc Artificial Intelligence,BER03,PROF101,['G012'],37,Tuesday,11:00,2.0,R033,40,BER03
+Q1,C0295,Corporate Strategy: Applications,BSc Business Administration,BER01,PROF138,['G027'],37,Friday,11:00,2.0,R035,40,BER03
+Q1,C0545,Macroeconomics,BSc Banking and Finance,BER01,PROF084,['G050'],37,Wednesday,11:30,2.0,R018,40,BER02
+Q1,C0001,Computer Vision,BSc Computer Science,BER03,PROF052,['G001'],36,Thursday,11:30,2.0,R033,40,BER03
+Q1,C0070,Cybersecurity Fundamentals: Applications,BSc Data Science,BER03,PROF228,['G007'],36,Monday,11:00,2.5,R033,40,BER03
+Q1,C0754,Engineering Optimisation: Applications,BEng Industrial Engineering,BER02,PROF225,['G068'],36,Tuesday,09:00,2.0,R016,100,BER02
+Q1,C0050,Software Architecture: Applications,BSc Data Science,BER03,PROF022,['G005'],35,Friday,11:00,2.5,R025,70,BER03
+Q1,C0335,Project Management,BSc International Business,BER01,PROF054,['G030'],35,Wednesday,09:00,2.0,R041,35,BER04
+Q1,C0469,Business Analytics,MSc Management,BER01,PROF024,['G043'],35,Thursday,13:30,3.0,R006,35,BER01
+Q1,C0698,Energy Systems: Applications,BEng Software Systems,BER02,PROF171,['G063'],35,Monday,11:00,2.5,R018,40,BER02
+Q1,C1134,Sociology,BA Social Sciences,BER01,PROF158,['G100'],35,Tuesday,11:00,2.0,R006,35,BER01
+Q1,C1134,Sociology,BA Social Sciences,BER01,PROF158,['G100'],35,Wednesday,14:30,2.0,R041,35,BER04
+Q1,C1221,Cyber Law: Applications,LLB Law,BER01,PROF189,['G108'],35,Friday,09:00,2.0,R041,35,BER04
+Q1,C0103,Data Mining,BSc Artificial Intelligence,BER03,PROF249,['G010'],34,Tuesday,13:00,2.5,R041,35,BER04
+Q1,C0103,Data Mining,BSc Artificial Intelligence,BER03,PROF249,['G010'],34,Thursday,09:00,2.5,R033,40,BER03
+Q1,C0117,Distributed Systems: Applications,BSc Artificial Intelligence,BER03,PROF047,['G011'],34,Monday,09:00,2.0,R048,35,POT01
+Q1,C0423,Business Law,BSc Marketing and Management,BER04,PROF203,['G038'],34,Wednesday,11:30,2.0,R039,35,BER04
+Q1,C0443,Consumer Behaviour,BSc Marketing and Management,BER04,PROF140,['G040'],34,Friday,11:00,2.5,R039,35,BER04
+Q1,C0443,Consumer Behaviour,BSc Marketing and Management,BER04,PROF140,['G040'],34,Monday,14:00,2.5,R041,35,BER04
+Q1,C0605,FinTech Foundations,MSc Economics,BER01,PROF100,['G054'],34,Tuesday,09:00,3.0,R014,220,BER01
+Q1,C0773,Engineering Simulation: Applications,BEng Industrial Engineering,BER02,PROF037,['G069'],34,Wednesday,09:00,2.0,R017,90,BER02
+Q1,C0789,Systems Engineering,BEng Industrial Engineering,BER02,PROF208,['G071'],34,Thursday,11:30,2.0,R017,90,BER02
+Q1,C0789,Systems Engineering,BEng Industrial Engineering,BER02,PROF208,['G071'],34,Friday,09:00,2.0,R016,100,BER02
+Q1,C0986,Content Strategy,BA UX and Interaction Design,BER04,PROF238,['G087'],34,Wednesday,14:30,2.0,R040,250,BER04
+Q1,C1074,Introduction to Psychology: Advanced Methods,BSc Psychology,BER01,PROF117,['G095'],34,Thursday,13:30,2.5,R041,35,BER04
+Q1,C0398,Business Foundations,BSc Marketing and Management,BER04,PROF289,['G036'],33,Monday,11:00,2.0,R039,35,BER04
+Q1,C0651,Macroeconomics: Applications,MSc Financial Analytics,BER04,PROF199,['G059'],33,Friday,13:30,3.0,R040,250,BER04
+Q1,C0962,UX Research,BA UX and Interaction Design,BER04,PROF055,['G085'],33,Tuesday,13:00,2.5,R038,40,BER04
+Q1,C1156,Social Policy,BA Social Sciences,BER01,PROF042,['G102'],33,Wednesday,14:30,2.0,R048,35,POT01
+Q1,C1178,Social Policy,MA Applied Psychology,BER01,PROF283,['G104'],33,Monday,14:00,3.0,R048,35,POT01
+Q1,C1335,Nutrition and Health,MSc Health Informatics,POT01,PROF166,['G118'],33,Thursday,13:30,3.0,R048,35,POT01
+Q1,C0194,Digital Forensics: Applications,BSc Cybersecurity,BER03,PROF230,['G018'],31,Tuesday,13:00,2.0,R048,35,POT01
+Q1,C0244,Software Architecture,MSc Computer Science,BER03,PROF170,['G022'],31,Friday,13:30,3.0,R033,40,BER03
+Q1,C0354,Strategic Management: Advanced Methods,BSc International Business,BER01,PROF182,['G032'],31,Wednesday,14:30,2.0,R035,40,BER03
+Q1,C0153,Database Systems: Advanced Methods,BSc Cybersecurity,BER03,PROF298,['G014'],30,Monday,09:00,2.0,R003,30,BER01
+Q1,C0154,Database Systems: Advanced Methods,BSc Cybersecurity,BER03,PROF079,['G015'],30,Tuesday,09:00,2.0,R026,30,BER03
+Q1,C0675,Applied Econometrics: Applications,MSc Financial Analytics,BER04,PROF067,['G061'],30,Thursday,13:30,3.0,R037,30,BER04
+Q1,C0973,Creative Coding: Advanced Methods,BA UX and Interaction Design,BER04,PROF227,['G086'],30,Wednesday,11:30,2.5,R037,30,BER04
+Q1,C1101,Psychology of Learning,BSc Psychology,BER01,PROF212,['G098'],30,Friday,09:00,2.0,R003,30,BER01
+Q1,C0175,Programming Fundamentals,BSc Cybersecurity,BER03,PROF292,"['G016', 'G017']",97,Monday,11:00,2.0,R043,130,BER04
+Q1,C0175,Programming Fundamentals,BSc Cybersecurity,BER03,PROF292,"['G016', 'G017']",97,Tuesday,15:00,2.0,R020,150,BER02
+Q1,C1157,Social Policy,BA Social Sciences,BER01,PROF103,['G103'],51,Wednesday,09:00,2.0,R016,100,BER02
+Q1,C0420,Business Communication: Advanced Methods,BSc Marketing and Management,BER04,PROF268,['G039'],50,Thursday,11:30,2.0,R042,70,BER04
+Q1,C0376,Digital Transformation,BSc International Business,BER01,PROF005,['G034'],49,Friday,11:00,2.0,R036,75,BER03
+Q1,C0892,Industrial Systems,MEng Engineering Management,POT01,PROF030,['G079'],49,Monday,14:00,3.0,R017,90,BER02
+Q1,C0262,Artificial Intelligence: Applications,MSc Artificial Intelligence,POT01,PROF170,['G024'],47,Tuesday,09:00,3.0,R036,75,BER03
+Q1,C0941,Media Psychology,BA Digital Media,BER04,PROF269,['G084'],45,Wednesday,11:30,2.0,R043,130,BER04
+Q1,C0220,Advanced Algorithms,MSc Computer Science,BER03,PROF052,['G020'],44,Friday,09:00,3.0,R023,120,BER02
+Q1,C0878,Control Engineering: Applications,MEng Engineering Management,POT01,PROF214,['G078'],44,Thursday,09:00,3.0,R016,100,BER02
+Q1,C0051,Software Architecture: Applications,BSc Data Science,BER03,PROF247,['G006'],43,Monday,11:00,2.5,R034,45,BER03
+Q1,C0940,Media Psychology,BA Digital Media,BER04,PROF026,['G083'],43,Tuesday,11:00,2.0,R040,250,BER04
+Q1,C0630,Derivatives: Applications,MSc Economics,BER01,PROF083,['G057'],42,Wednesday,11:30,3.0,R023,120,BER02
+Q1,C1063,Digital Storytelling,MA Digital Media and Innovation,BER04,PROF119,['G094'],42,Thursday,13:30,3.0,R040,250,BER04
+Q1,C0221,Advanced Algorithms,MSc Computer Science,BER03,PROF041,['G021'],41,Friday,09:00,3.0,R015,130,BER02
+Q1,C0399,Business Foundations,BSc Marketing and Management,BER04,PROF284,['G037'],40,Tuesday,09:00,2.0,R038,40,BER04
+Q1,C0455,Strategic Management,MSc Management,BER01,PROF160,['G041'],36,Monday,11:00,3.0,R007,40,BER01
+Q1,C0104,Machine Learning: Applications,BSc Artificial Intelligence,BER03,PROF249,['G010'],34,Wednesday,09:00,2.5,R035,40,BER03
+Q1,C1029,Motion Design: Advanced Methods,BA Digital Communication,BER04,PROF250,['G091'],33,Tuesday,13:00,2.5,R040,250,BER04
+Q1,C1018,Interaction Design,BA Digital Communication,BER04,PROF036,['G090'],32,Monday,14:00,2.0,R018,40,BER02
+Q1,C0242,Computer Networks: Advanced Methods,MSc Computer Science,BER03,PROF053,['G022'],31,Thursday,13:30,3.0,R033,40,BER03
+Q1,C1050,Creative Project Management: Applications,MA Digital Media and Innovation,BER04,PROF250,['G093'],51,Wednesday,11:30,3.0,R040,250,BER04
+Q2,C0853,Digital Engineering: Advanced Methods,MEng Digital Engineering,POT01,PROF285,"['G076', 'G075']",99,Monday,09:00,3.0,R047,105,POT01
+Q2,C1263,International Law: Applications,LLM Business and Technology Law,BER01,PROF282,"['G111', 'G112']",96,Tuesday,09:00,3.0,R009,135,BER01
+Q2,C0907,Design Thinking: Applications,BA Digital Media,BER04,PROF026,"['G081', 'G080']",89,Wednesday,09:00,2.5,R044,125,BER04
+Q2,C1285,Health Management: Applications,BSc Health Management,POT01,PROF061,"['G113', 'G114']",88,Thursday,09:00,2.0,R047,105,POT01
+Q2,C0271,Web Application Development,MSc Artificial Intelligence,POT01,PROF023,"['G025', 'G024']",86,Friday,09:00,3.0,R047,105,POT01
+Q2,C1196,Behavioural Research,MA Applied Psychology,BER01,PROF034,"['G106', 'G105']",86,Thursday,11:00,3.0,R009,135,BER01
+Q2,C0427,Innovation Management,BSc Marketing and Management,BER04,PROF140,"['G039', 'G038']",84,Wednesday,11:30,2.0,R044,125,BER04
+Q2,C0701,Engineering Mathematics: Advanced Methods,BEng Software Systems,BER02,PROF072,"['G063', 'G062']",84,Monday,12:00,2.0,R016,100,BER02
+Q2,C1035,UX Research,BA Digital Communication,BER04,PROF135,"['G091', 'G092']",82,Tuesday,12:00,2.0,R044,125,BER04
+Q2,C1103,Social Research,BSc Psychology,BER01,PROF240,"['G097', 'G098']",80,Friday,12:00,2.0,R002,80,BER01
+Q2,C0608,International Finance,MSc Economics,BER01,PROF248,"['G054', 'G055']",79,Wednesday,13:30,3.0,R002,80,BER01
+Q2,C0053,Programming Fundamentals: Applications,BSc Data Science,BER03,PROF079,"['G006', 'G005']",78,Monday,14:00,2.5,R016,100,BER02
+Q2,C0053,Programming Fundamentals: Applications,BSc Data Science,BER03,PROF079,"['G006', 'G005']",78,Tuesday,14:00,2.5,R029,230,BER03
+Q2,C0202,Data Structures,BSc Cybersecurity,BER03,PROF165,"['G018', 'G019']",77,Thursday,14:00,2.0,R029,230,BER03
+Q2,C0202,Data Structures,BSc Cybersecurity,BER03,PROF165,"['G018', 'G019']",77,Friday,14:00,2.0,R029,230,BER03
+Q2,C1140,Health Psychology,BA Social Sciences,BER01,PROF129,"['G100', 'G101']",77,Thursday,09:00,2.0,R002,80,BER01
+Q2,C1140,Health Psychology,BA Social Sciences,BER01,PROF129,"['G100', 'G101']",77,Friday,09:00,2.0,R002,80,BER01
+Q2,C0656,Banking Fundamentals: Applications,MSc Financial Analytics,BER04,PROF098,"['G059', 'G058']",75,Monday,09:00,3.0,R044,125,BER04
+Q2,C0993,Interaction Design: Applications,BA UX and Interaction Design,BER04,PROF221,"['G088', 'G087']",74,Tuesday,09:00,2.5,R044,125,BER04
+Q2,C0141,Big Data Engineering: Applications,BSc Artificial Intelligence,BER03,PROF228,['G013'],51,Wednesday,09:00,2.5,R027,60,BER03
+Q2,C0247,Statistical Computing: Applications,MSc Computer Science,BER03,PROF022,['G023'],51,Thursday,11:00,3.0,R027,60,BER03
+Q2,C0310,Entrepreneurship: Advanced Methods,BSc Business Administration,BER01,PROF123,['G028'],51,Friday,12:00,2.0,R008,60,BER01
+Q2,C1055,Media Psychology,MA Digital Media and Innovation,BER04,PROF252,['G093'],51,Tuesday,14:00,3.0,R042,70,BER04
+Q2,C1161,Applied Statistics,BA Social Sciences,BER01,PROF043,['G103'],51,Wednesday,11:30,2.0,R008,60,BER01
+Q2,C1326,Biostatistics: Applications,BSc Health Management,POT01,PROF211,['G117'],51,Monday,14:00,2.5,R047,105,POT01
+Q2,C0497,Statistics for Economics: Applications,BSc Economics,BER01,PROF155,['G045'],50,Friday,14:00,2.0,R008,60,BER01
+Q2,C0021,Digital Forensics: Applications,BSc Computer Science,BER03,PROF121,['G003'],49,Wednesday,13:30,2.0,R027,60,BER03
+Q2,C0181,Computer Networks,BSc Cybersecurity,BER03,PROF074,['G017'],49,Thursday,14:00,2.0,R027,60,BER03
+Q2,C0181,Computer Networks,BSc Cybersecurity,BER03,PROF074,['G017'],49,Monday,12:00,2.0,R027,60,BER03
+Q2,C0380,Entrepreneurship,BSc International Business,BER01,PROF204,['G034'],49,Tuesday,09:00,2.5,R008,60,BER01
+Q2,C0380,Entrepreneurship,BSc International Business,BER01,PROF204,['G034'],49,Friday,09:00,2.5,R008,60,BER01
+Q2,C0594,Microeconomics: Applications,BSc Banking and Finance,BER01,PROF146,['G053'],49,Wednesday,09:00,2.0,R008,60,BER01
+Q2,C0719,Control Engineering: Applications,BEng Software Systems,BER02,PROF137,['G064'],49,Thursday,11:00,2.5,R021,50,BER02
+Q2,C0834,Engineering Optimisation: Applications,BEng Engineering Management,POT01,PROF124,['G074'],49,Monday,09:00,2.0,R045,55,POT01
+Q2,C0871,Engineering Economics,MEng Digital Engineering,POT01,PROF278,['G077'],49,Tuesday,14:00,3.0,R045,55,POT01
+Q2,C0894,Project Engineering: Advanced Methods,MEng Engineering Management,POT01,PROF244,['G079'],49,Friday,14:00,3.0,R045,55,POT01
+Q2,C1008,Portfolio Development: Applications,BA Digital Communication,BER04,PROF148,['G089'],49,Wednesday,11:30,2.0,R042,70,BER04
+Q2,C1089,Social Psychology,BSc Psychology,BER01,PROF200,['G096'],49,Thursday,14:00,2.5,R008,60,BER01
+Q2,C1234,Commercial Transactions,LLB Law,BER01,PROF178,['G109'],49,Monday,12:00,2.0,R002,80,BER01
+Q2,C1306,Medical Ethics,BSc Health Management,POT01,PROF096,['G115'],49,Wednesday,13:30,2.0,R045,55,POT01
+Q2,C0176,Cybersecurity Fundamentals: Applications,BSc Cybersecurity,BER03,PROF292,['G016'],48,Tuesday,12:00,2.0,R027,60,BER03
+Q2,C0741,Software Systems: Advanced Methods,BEng Software Systems,BER02,PROF003,['G066'],48,Friday,09:00,2.5,R021,50,BER02
+Q2,C1123,Human Behaviour: Advanced Methods,BA Social Sciences,BER01,PROF018,['G099'],48,Monday,14:00,2.5,R008,60,BER01
+Q2,C0535,Data Analysis for Finance,BSc Economics,BER01,PROF068,['G048'],47,Thursday,09:00,2.0,R008,60,BER01
+Q2,C0574,Behavioural Economics,BSc Banking and Finance,BER01,PROF050,['G052'],47,Wednesday,09:00,2.0,R002,80,BER01
+Q2,C0759,Software Systems: Advanced Methods,BEng Industrial Engineering,BER02,PROF214,['G067'],47,Tuesday,09:00,2.5,R021,50,BER02
+Q2,C0928,Graphic Design,BA Digital Media,BER04,PROF152,['G082'],47,Thursday,09:00,2.0,R042,70,BER04
+Q2,C0928,Graphic Design,BA Digital Media,BER04,PROF152,['G082'],47,Friday,12:00,2.0,R042,70,BER04
+Q2,C0324,International Business: Applications,BSc Business Administration,BER01,PROF289,['G029'],46,Monday,09:00,2.0,R008,60,BER01
+Q2,C0471,International Business,MSc Management,BER01,PROF272,['G042'],46,Wednesday,13:30,3.0,R008,60,BER01
+Q2,C0516,Financial Analytics,BSc Economics,BER01,PROF254,['G047'],46,Tuesday,12:00,2.0,R008,60,BER01
+Q2,C0577,Economic Policy: Applications,BSc Banking and Finance,BER01,PROF167,['G051'],46,Thursday,11:00,2.0,R008,60,BER01
+Q2,C0724,Operations Research: Advanced Methods,BEng Software Systems,BER02,PROF092,['G065'],46,Friday,12:00,2.0,R021,50,BER02
+Q2,C0943,Media Production: Advanced Methods,BA Digital Media,BER04,PROF002,['G084'],45,Monday,14:00,2.5,R042,70,BER04
+Q2,C1246,Data Protection Law,LLM Business and Technology Law,BER01,PROF162,['G110'],45,Tuesday,14:00,3.0,R001,45,BER01
+Q2,C0018,Advanced Databases,BSc Computer Science,BER03,PROF116,['G002'],44,Wednesday,09:00,2.5,R034,45,BER03
+Q2,C0018,Advanced Databases,BSc Computer Science,BER03,PROF116,['G002'],44,Thursday,14:00,2.5,R034,45,BER03
+Q2,C0224,Database Systems: Advanced Methods,MSc Computer Science,BER03,PROF247,['G020'],44,Friday,14:00,3.0,R034,45,BER03
+Q2,C0883,Systems Engineering,MEng Engineering Management,POT01,PROF102,['G078'],44,Monday,09:00,3.0,R046,55,POT01
+Q2,C1210,Corporate Governance,LLB Law,BER01,PROF239,['G107'],44,Wednesday,13:30,2.5,R001,45,BER01
+Q2,C0075,Web Application Development: Applications,BSc Data Science,BER03,PROF242,['G008'],43,Thursday,11:00,2.5,R034,45,BER03
+Q2,C0550,Banking Fundamentals,BSc Banking and Finance,BER01,PROF198,['G049'],43,Tuesday,09:00,2.5,R001,45,BER01
+Q2,C0631,Applied Econometrics,MSc Economics,BER01,PROF259,['G056'],43,Friday,09:00,3.0,R001,45,BER01
+Q2,C0946,Portfolio Development,BA Digital Media,BER04,PROF227,['G083'],43,Monday,12:00,2.0,R021,50,BER02
+Q2,C0636,Macroeconomics: Advanced Methods,MSc Economics,BER01,PROF039,['G057'],42,Wednesday,13:30,3.0,R009,135,BER01
+Q2,C0790,Energy Systems: Applications,BEng Industrial Engineering,BER02,PROF111,['G070'],42,Thursday,09:00,2.0,R021,50,BER02
+Q2,C0810,Industrial Systems: Applications,BEng Engineering Management,POT01,PROF172,['G072'],42,Tuesday,12:00,2.0,R045,55,POT01
+Q2,C1066,Web Design,MA Digital Media and Innovation,BER04,PROF055,['G094'],42,Monday,14:00,3.0,R021,50,BER02
+Q2,C1311,Innovation in Healthcare: Applications,BSc Health Management,POT01,PROF168,['G116'],42,Friday,12:00,2.0,R045,55,POT01
+Q2,C0094,Secure Software Engineering: Applications,BSc Data Science,BER03,PROF053,['G009'],41,Thursday,14:00,2.0,R025,70,BER03
+Q2,C0227,Operating Systems,MSc Computer Science,BER03,PROF202,['G021'],41,Tuesday,14:00,3.0,R034,45,BER03
+Q2,C0676,Corporate Finance: Applications,MSc Financial Analytics,BER04,PROF264,['G060'],41,Wednesday,13:30,3.0,R042,70,BER04
+Q2,C0824,Software Systems,BEng Engineering Management,POT01,PROF089,['G073'],41,Friday,14:00,2.0,R046,55,POT01
+Q2,C1360,Public Health: Advanced Methods,MSc Health Informatics,POT01,PROF110,['G120'],41,Monday,09:00,3.0,R016,100,BER02
+Q2,C0039,Natural Language Processing: Applications,BSc Computer Science,BER03,PROF052,['G004'],40,Thursday,09:00,2.0,R033,40,BER03
+Q2,C0338,Organisational Behaviour: Advanced Methods,BSc International Business,BER01,PROF293,['G031'],40,Friday,09:00,2.0,R007,40,BER01
+Q2,C0402,International Business: Advanced Methods,BSc Marketing and Management,BER04,PROF122,['G037'],40,Tuesday,09:00,2.5,R038,40,BER04
+Q2,C0362,Leadership,BSc International Business,BER01,PROF136,['G033'],39,Wednesday,11:30,2.0,R007,40,BER01
+Q2,C0385,Operations Management: Applications,BSc International Business,BER01,PROF069,['G035'],39,Thursday,11:00,2.0,R007,40,BER01
+Q2,C0496,Statistics for Economics: Applications,BSc Economics,BER01,PROF222,['G044'],39,Monday,12:00,2.0,R007,40,BER01
+Q2,C0515,Financial Analytics,BSc Economics,BER01,PROF027,['G046'],39,Friday,12:00,2.0,R007,40,BER01
+Q2,C1340,Clinical Data Management,MSc Health Informatics,POT01,PROF177,['G119'],39,Tuesday,14:00,3.0,R049,40,POT01
+Q2,C0121,Artificial Intelligence: Applications,BSc Artificial Intelligence,BER03,PROF101,['G012'],37,Wednesday,11:30,2.0,R033,40,BER03
+Q2,C0299,Leadership: Advanced Methods,BSc Business Administration,BER01,PROF176,['G027'],37,Thursday,14:00,2.0,R007,40,BER01
+Q2,C0553,Data Analysis for Finance,BSc Banking and Finance,BER01,PROF159,['G050'],37,Monday,14:00,2.5,R007,40,BER01
+Q2,C0553,Data Analysis for Finance,BSc Banking and Finance,BER01,PROF159,['G050'],37,Friday,14:00,2.5,R007,40,BER01
+Q2,C0004,Big Data Engineering,BSc Computer Science,BER03,PROF288,['G001'],36,Wednesday,09:00,2.0,R033,40,BER03
+Q2,C0074,Web Application Development: Applications,BSc Data Science,BER03,PROF243,['G007'],36,Thursday,11:00,2.5,R033,40,BER03
+Q2,C0457,Operations Management: Advanced Methods,MSc Management,BER01,PROF236,['G041'],36,Tuesday,09:00,3.0,R007,40,BER01
+Q2,C0756,Engineering Design: Applications,BEng Industrial Engineering,BER02,PROF208,['G068'],36,Monday,12:00,2.0,R018,40,BER02
+Q2,C0337,Organisational Behaviour: Advanced Methods,BSc International Business,BER01,PROF024,['G030'],35,Friday,09:00,2.0,R006,35,BER01
+Q2,C0474,Supply Chain Management,MSc Management,BER01,PROF031,['G043'],35,Wednesday,13:30,3.0,R006,35,BER01
+Q2,C1222,Legal Research,LLB Law,BER01,PROF192,['G108'],35,Thursday,09:00,2.0,R006,35,BER01
+Q2,C0108,Computer Networks: Advanced Methods,BSc Artificial Intelligence,BER03,PROF085,['G010'],34,Monday,09:00,2.5,R048,35,POT01
+Q2,C0122,Data Structures: Advanced Methods,BSc Artificial Intelligence,BER03,PROF267,['G011'],34,Friday,14:00,2.5,R033,40,BER03
+Q2,C0445,Project Management,BSc Marketing and Management,BER04,PROF268,['G040'],34,Tuesday,12:00,2.0,R039,35,BER04
+Q2,C0775,Project Engineering: Applications,BEng Industrial Engineering,BER02,PROF300,['G069'],34,Thursday,14:00,2.0,R018,40,BER02
+Q2,C1077,Organisational Psychology: Advanced Methods,BSc Psychology,BER01,PROF035,['G095'],34,Wednesday,11:30,2.0,R006,35,BER01
+Q2,C0405,Human Resource Management,BSc Marketing and Management,BER04,PROF056,['G036'],33,Monday,14:00,2.5,R048,35,POT01
+Q2,C0965,Motion Design,BA UX and Interaction Design,BER04,PROF036,['G085'],33,Tuesday,14:00,2.5,R039,35,BER04
+Q2,C1162,Cognitive Psychology: Applications,BA Social Sciences,BER01,PROF263,['G102'],33,Friday,12:00,2.0,R006,35,BER01
+Q2,C1180,Applied Statistics,MA Applied Psychology,BER01,PROF201,['G104'],33,Thursday,11:00,3.0,R006,35,BER01
+Q2,C1339,Clinical Data Management,MSc Health Informatics,POT01,PROF142,['G118'],33,Wednesday,13:30,3.0,R048,35,POT01
+Q2,C1020,Content Strategy: Advanced Methods,BA Digital Communication,BER04,PROF269,['G090'],32,Friday,09:00,2.5,R039,35,BER04
+Q2,C0250,Natural Language Processing,MSc Computer Science,BER03,PROF230,['G022'],31,Monday,09:00,3.0,R041,35,BER04
+Q2,C0361,Leadership,BSc International Business,BER01,PROF160,['G032'],31,Tuesday,12:00,2.0,R006,35,BER01
+Q2,C0157,Big Data Engineering: Applications,BSc Cybersecurity,BER03,PROF190,['G014'],30,Thursday,09:00,2.0,R026,30,BER03
+Q2,C0157,Big Data Engineering: Applications,BSc Cybersecurity,BER03,PROF190,['G014'],30,Wednesday,09:00,2.0,R026,30,BER03
+Q2,C0975,UX Research: Advanced Methods,BA UX and Interaction Design,BER04,PROF004,['G086'],30,Tuesday,12:00,2.0,R037,30,BER04
+Q2,C0700,Digital Engineering: Applications,BEng Software Systems,BER02,PROF285,"['G062', 'G063']",84,Friday,12:00,2.0,R017,90,BER02
+Q2,C1036,Media Psychology,BA Digital Communication,BER04,PROF148,"['G092', 'G091']",82,Monday,12:00,2.0,R017,90,BER02
+Q2,C0054,Natural Language Processing: Applications,BSc Data Science,BER03,PROF247,"['G005', 'G006']",78,Thursday,14:00,2.0,R002,80,BER01
+Q2,C0142,Advanced Databases,BSc Artificial Intelligence,BER03,PROF215,['G013'],51,Wednesday,13:30,2.5,R025,70,BER03
+Q2,C0249,Programming Fundamentals,MSc Computer Science,BER03,PROF112,['G023'],51,Tuesday,09:00,3.0,R027,60,BER03
+Q2,C0311,Business Communication,BSc Business Administration,BER01,PROF203,['G028'],51,Friday,14:00,2.0,R002,80,BER01
+Q2,C0909,Visual Communication: Advanced Methods,BA Digital Media,BER04,PROF004,['G081'],51,Monday,12:00,2.0,R042,70,BER04
+Q2,C1053,Interaction Design: Advanced Methods,MA Digital Media and Innovation,BER04,PROF231,['G093'],51,Thursday,11:00,3.0,R042,70,BER04
+Q2,C1165,Quantitative Research: Applications,BA Social Sciences,BER01,PROF158,['G103'],51,Wednesday,09:00,2.5,R009,135,BER01
+Q2,C1327,Healthcare Quality: Applications,BSc Health Management,POT01,PROF007,['G117'],51,Friday,09:00,2.0,R045,55,POT01
+Q2,C0426,Organisational Behaviour,BSc Marketing and Management,BER04,PROF120,['G039'],50,Monday,14:00,2.0,R044,125,BER04
+Q2,C0426,Organisational Behaviour,BSc Marketing and Management,BER04,PROF120,['G039'],50,Tuesday,12:00,2.0,R042,70,BER04
+Q2,C0493,Financial Markets,BSc Economics,BER01,PROF067,['G045'],50,Thursday,09:00,2.0,R009,135,BER01
+Q2,C1104,Introduction to Psychology: Applications,BSc Psychology,BER01,PROF229,['G097'],50,Friday,14:00,2.0,R009,135,BER01
+Q2,C0177,Cybersecurity Fundamentals: Applications,BSc Cybersecurity,BER03,PROF242,['G017'],49,Wednesday,11:30,2.0,R027,60,BER03
+Q2,C0287,Database Systems,MSc Artificial Intelligence,POT01,PROF101,['G026'],49,Monday,09:00,3.0,R017,90,BER02
+Q2,C0382,Human Resource Management,BSc International Business,BER01,PROF024,['G034'],49,Tuesday,14:00,2.0,R008,60,BER01
+Q2,C0595,Portfolio Management: Applications,BSc Banking and Finance,BER01,PROF159,['G053'],49,Thursday,14:00,2.5,R009,135,BER01
+Q2,C0721,Sustainable Engineering: Applications,BEng Software Systems,BER02,PROF072,['G064'],49,Friday,12:00,2.0,R022,55,BER02
+Q2,C0836,Embedded Systems,BEng Engineering Management,POT01,PROF290,['G074'],49,Wednesday,11:30,2.0,R045,55,POT01
+Q2,C0869,Engineering Simulation: Applications,MEng Digital Engineering,POT01,PROF185,['G077'],49,Tuesday,09:00,3.0,R045,55,POT01
+Q2,C0895,Digital Engineering,MEng Engineering Management,POT01,PROF127,['G079'],49,Monday,14:00,3.0,R046,55,POT01
+Q2,C1010,Information Design,BA Digital Communication,BER04,PROF227,['G089'],49,Friday,09:00,2.0,R042,70,BER04
+Q2,C1090,Qualitative Research,BSc Psychology,BER01,PROF226,['G096'],49,Wednesday,09:00,2.5,R014,220,BER01
+Q2,C1090,Qualitative Research,BSc Psychology,BER01,PROF226,['G096'],49,Thursday,11:00,2.5,R002,80,BER01
+Q2,C1235,Employment Law: Applications,LLB Law,BER01,PROF118,['G109'],49,Tuesday,12:00,2.0,R002,80,BER01
+Q2,C1235,Employment Law: Applications,LLB Law,BER01,PROF118,['G109'],49,Friday,12:00,2.0,R009,135,BER01
+Q2,C1308,Nutrition and Health: Applications,BSc Health Management,POT01,PROF133,['G115'],49,Monday,12:00,2.0,R045,55,POT01
+Q2,C1308,Nutrition and Health: Applications,BSc Health Management,POT01,PROF133,['G115'],49,Wednesday,11:30,2.0,R046,55,POT01
+Q2,C0178,Operating Systems: Advanced Methods,BSc Cybersecurity,BER03,PROF130,['G016'],48,Thursday,09:00,2.0,R027,60,BER03
+Q2,C0740,Manufacturing Systems: Applications,BEng Software Systems,BER02,PROF214,['G066'],48,Tuesday,14:00,2.0,R021,50,BER02
+Q2,C0850,Operations Research: Applications,MEng Digital Engineering,POT01,PROF196,['G076'],48,Friday,14:00,3.0,R047,105,POT01
+Q2,C1124,Social Research,BA Social Sciences,BER01,PROF117,['G099'],48,Monday,09:00,2.0,R025,70,BER03
+Q2,C1261,European Business Law,LLM Business and Technology Law,BER01,PROF195,['G111'],48,Wednesday,13:30,3.0,R014,220,BER01
+Q2,C1262,European Business Law,LLM Business and Technology Law,BER01,PROF287,['G112'],48,Thursday,14:00,3.0,R014,220,BER01
+Q2,C0267,Digital Forensics: Applications,MSc Artificial Intelligence,POT01,PROF121,['G024'],47,Tuesday,09:00,3.0,R046,55,POT01
+Q2,C0537,Applied Econometrics: Applications,BSc Economics,BER01,PROF222,['G048'],47,Monday,14:00,2.0,R002,80,BER01
+Q2,C0537,Applied Econometrics: Applications,BSc Economics,BER01,PROF222,['G048'],47,Friday,09:00,2.0,R009,135,BER01
+Q2,C0576,Econometrics: Applications,BSc Banking and Finance,BER01,PROF100,['G052'],47,Wednesday,11:30,2.0,R002,80,BER01
+Q2,C0755,Engineering Design: Applications,BEng Industrial Engineering,BER02,PROF291,['G067'],47,Thursday,09:00,2.0,R022,55,BER02
+Q2,C0927,Digital Media Foundations: Advanced Methods,BA Digital Media,BER04,PROF246,['G082'],47,Monday,12:00,2.0,R036,75,BER03
+Q2,C1283,Molecular Biology,BSc Health Management,POT01,PROF095,['G113'],47,Tuesday,12:00,2.0,R046,55,POT01
+Q2,C0204,Computer Vision,BSc Cybersecurity,BER03,PROF017,['G019'],46,Friday,12:00,2.0,R027,60,BER03
+Q2,C0322,Marketing Principles,BSc Business Administration,BER01,PROF160,['G029'],46,Wednesday,09:00,2.0,R021,50,BER02
+Q2,C0520,International Finance: Applications,BSc Economics,BER01,PROF264,['G047'],46,Thursday,11:00,2.0,R014,220,BER01
+Q2,C0573,Behavioural Economics,BSc Banking and Finance,BER01,PROF107,['G051'],46,Monday,09:00,2.0,R027,60,BER03
+Q2,C0720,Control Engineering: Applications,BEng Software Systems,BER02,PROF245,['G065'],46,Tuesday,14:00,2.5,R022,55,BER02
+Q2,C0610,Financial Markets: Applications,MSc Economics,BER01,PROF050,['G055'],45,Friday,14:00,3.0,R001,45,BER01
+Q2,C0945,Motion Design,BA Digital Media,BER04,PROF235,['G084'],45,Wednesday,09:00,2.5,R042,70,BER04
+Q2,C0945,Motion Design,BA Digital Media,BER04,PROF235,['G084'],45,Thursday,14:00,2.5,R042,70,BER04
+Q2,C1247,Commercial Transactions,LLM Business and Technology Law,BER01,PROF169,['G110'],45,Monday,14:00,3.0,R001,45,BER01
+Q2,C0022,Software Architecture: Advanced Methods,BSc Computer Science,BER03,PROF165,['G002'],44,Tuesday,09:00,2.0,R034,45,BER03
+Q2,C0222,Computer Vision: Applications,MSc Computer Science,BER03,PROF074,['G020'],44,Friday,09:00,3.0,R034,45,BER03
+Q2,C0881,Embedded Systems: Applications,MEng Engineering Management,POT01,PROF124,['G078'],44,Wednesday,13:30,3.0,R046,55,POT01
+Q2,C1198,Community Studies: Applications,MA Applied Psychology,BER01,PROF043,['G106'],44,Thursday,14:00,3.0,R001,45,BER01
+Q2,C1211,Digital Regulation,LLB Law,BER01,PROF046,['G107'],44,Tuesday,14:00,2.5,R002,80,BER01
+Q2,C1211,Digital Regulation,LLB Law,BER01,PROF046,['G107'],44,Monday,09:00,2.5,R001,45,BER01
+Q2,C0077,Data Mining: Applications,BSc Data Science,BER03,PROF147,['G008'],43,Friday,12:00,2.0,R034,45,BER03
+Q2,C0554,Risk Management: Applications,BSc Banking and Finance,BER01,PROF039,['G049'],43,Wednesday,09:00,2.5,R001,45,BER01
+Q2,C0635,Macroeconomics: Advanced Methods,MSc Economics,BER01,PROF173,['G056'],43,Thursday,11:00,3.0,R001,45,BER01
+Q2,C0942,Media Production: Advanced Methods,BA Digital Media,BER04,PROF251,['G083'],43,Tuesday,09:00,2.5,R042,70,BER04
+Q2,C0632,Applied Econometrics,MSc Economics,BER01,PROF146,['G057'],42,Monday,14:00,3.0,R022,55,BER02
+Q2,C0654,Economic Policy,MSc Financial Analytics,BER04,PROF084,['G058'],42,Friday,14:00,3.0,R042,70,BER04
+Q2,C0792,Engineering Economics: Advanced Methods,BEng Industrial Engineering,BER02,PROF126,['G070'],42,Wednesday,11:30,2.0,R021,50,BER02
+Q2,C0812,Engineering Economics: Advanced Methods,BEng Engineering Management,POT01,PROF092,['G072'],42,Tuesday,14:00,2.0,R046,55,POT01
+Q2,C1139,Organisational Psychology,BA Social Sciences,BER01,PROF240,['G101'],42,Thursday,11:00,2.0,R022,55,BER02
+Q2,C1194,Human Behaviour,MA Applied Psychology,BER01,PROF018,['G105'],42,Monday,09:00,3.0,R034,45,BER03
+Q2,C1307,Medical Ethics,BSc Health Management,POT01,PROF110,['G116'],42,Wednesday,11:30,2.0,R047,105,POT01
+Q2,C0096,Software Architecture,BSc Data Science,BER03,PROF243,['G009'],41,Friday,09:00,2.5,R027,60,BER03
+Q2,C0225,Database Systems: Advanced Methods,MSc Computer Science,BER03,PROF053,['G021'],41,Tuesday,09:00,3.0,R025,70,BER03
+Q2,C0678,Behavioural Economics: Applications,MSc Financial Analytics,BER04,PROF044,['G060'],41,Thursday,14:00,3.0,R044,125,BER04
+Q2,C0823,Systems Engineering: Advanced Methods,BEng Engineering Management,POT01,PROF300,['G073'],41,Wednesday,09:00,2.0,R045,55,POT01
+Q2,C1284,Molecular Biology,BSc Health Management,POT01,PROF168,['G114'],41,Monday,12:00,2.0,R001,45,BER01
+Q2,C1358,Human Biology: Applications,MSc Health Informatics,POT01,PROF166,['G120'],41,Friday,14:00,3.0,R021,50,BER02
+Q2,C0040,Algorithms: Advanced Methods,BSc Computer Science,BER03,PROF048,['G004'],40,Tuesday,12:00,2.0,R033,40,BER03
+Q2,C0340,Marketing Principles,BSc International Business,BER01,PROF289,['G031'],40,Thursday,11:00,2.5,R018,40,BER02
+Q2,C0340,Marketing Principles,BSc International Business,BER01,PROF289,['G031'],40,Wednesday,13:30,2.5,R007,40,BER01
+Q2,C0404,Entrepreneurship,BSc Marketing and Management,BER04,PROF069,['G037'],40,Monday,14:00,2.5,R038,40,BER04
+Q2,C0990,Digital Media Foundations,BA UX and Interaction Design,BER04,PROF045,['G088'],40,Tuesday,12:00,2.0,R038,40,BER04
+Q2,C0270,Software Architecture: Advanced Methods,MSc Artificial Intelligence,POT01,PROF052,['G025'],39,Friday,14:00,3.0,R049,40,POT01
+Q2,C0381,Entrepreneurship,BSc International Business,BER01,PROF284,['G035'],39,Thursday,14:00,2.5,R033,40,BER03
+Q2,C0381,Entrepreneurship,BSc International Business,BER01,PROF284,['G035'],39,Wednesday,09:00,2.5,R007,40,BER01
+Q2,C0492,Financial Markets,BSc Economics,BER01,PROF157,['G044'],39,Monday,09:00,2.0,R018,40,BER02
+Q2,C0517,Macroeconomics: Applications,BSc Economics,BER01,PROF155,['G046'],39,Tuesday,12:00,2.0,R007,40,BER01
+Q2,C1342,Biostatistics: Applications,MSc Health Informatics,POT01,PROF163,['G119'],39,Thursday,11:00,3.0,R049,40,POT01
+Q2,C0908,Visual Communication: Advanced Methods,BA Digital Media,BER04,PROF179,['G080'],38,Friday,12:00,2.0,R038,40,BER04
+Q2,C0123,Data Structures: Advanced Methods,BSc Artificial Intelligence,BER03,PROF267,['G012'],37,Monday,14:00,2.5,R035,40,BER03
+Q2,C0300,Business Analytics,BSc Business Administration,BER01,PROF204,['G027'],37,Wednesday,11:30,2.0,R001,45,BER01
+Q2,C0300,Business Analytics,BSc Business Administration,BER01,PROF204,['G027'],37,Tuesday,14:00,2.0,R007,40,BER01
+Q2,C0551,Banking Fundamentals,BSc Banking and Finance,BER01,PROF068,['G050'],37,Friday,09:00,2.5,R014,220,BER01
+Q2,C0006,Statistical Computing: Applications,BSc Computer Science,BER03,PROF079,['G001'],36,Wednesday,11:30,2.0,R035,40,BER03
+Q2,C0078,Advanced Algorithms,BSc Data Science,BER03,PROF292,['G007'],36,Monday,12:00,2.0,R035,40,BER03
+Q2,C0459,Sustainable Business,MSc Management,BER01,PROF219,['G041'],36,Tuesday,14:00,3.0,R009,135,BER01
+Q2,C0760,Software Systems: Advanced Methods,BEng Industrial Engineering,BER02,PROF003,['G068'],36,Thursday,14:00,2.5,R021,50,BER02
+Q2,C0339,Marketing Principles,BSc International Business,BER01,PROF176,['G030'],35,Wednesday,13:30,2.5,R039,35,BER04
+Q2,C0339,Marketing Principles,BSc International Business,BER01,PROF176,['G030'],35,Friday,14:00,2.5,R006,35,BER01
+Q2,C0472,International Business,MSc Management,BER01,PROF236,['G043'],35,Monday,09:00,3.0,R007,40,BER01
+Q2,C1138,Organisational Psychology,BA Social Sciences,BER01,PROF034,['G100'],35,Thursday,14:00,2.0,R006,35,BER01
+Q2,C1224,Regulatory Compliance: Applications,LLB Law,BER01,PROF282,['G108'],35,Tuesday,12:00,2.0,R001,45,BER01
+Q2,C0107,Secure Software Engineering: Applications,BSc Artificial Intelligence,BER03,PROF288,['G010'],34,Wednesday,11:30,2.0,R034,45,BER03
+Q2,C0120,Artificial Intelligence: Applications,BSc Artificial Intelligence,BER03,PROF170,['G011'],34,Friday,12:00,2.0,R033,40,BER03
+Q2,C0446,Sustainable Business,BSc Marketing and Management,BER04,PROF140,['G040'],34,Thursday,11:00,2.5,R039,35,BER04
+Q2,C0609,Financial Markets: Applications,MSc Economics,BER01,PROF254,['G054'],34,Monday,14:00,3.0,R006,35,BER01
+Q2,C0777,Engineering Mathematics,BEng Industrial Engineering,BER02,PROF071,['G069'],34,Tuesday,09:00,2.5,R018,40,BER02
+Q2,C0791,Energy Systems: Applications,BEng Industrial Engineering,BER02,PROF111,['G071'],34,Wednesday,09:00,2.0,R018,40,BER02
+Q2,C0989,Digital Media Foundations,BA UX and Interaction Design,BER04,PROF026,['G087'],34,Friday,09:00,2.0,R041,35,BER04
+Q2,C1078,Counselling Foundations,BSc Psychology,BER01,PROF200,['G095'],34,Thursday,11:00,2.5,R041,35,BER04
+Q2,C0403,Entrepreneurship,BSc Marketing and Management,BER04,PROF122,['G036'],33,Tuesday,14:00,2.5,R041,35,BER04
+Q2,C0655,Economic Policy,MSc Financial Analytics,BER04,PROF198,['G059'],33,Monday,14:00,3.0,R039,35,BER04
+Q2,C0963,Interactive Media: Applications,BA UX and Interaction Design,BER04,PROF252,['G085'],33,Wednesday,13:30,2.5,R041,35,BER04
+Q2,C1160,Applied Statistics,BA Social Sciences,BER01,PROF218,['G102'],33,Friday,09:00,2.0,R048,35,POT01
+Q2,C1179,Research Methods,MA Applied Psychology,BER01,PROF263,['G104'],33,Thursday,14:00,3.0,R039,35,BER04
+Q2,C1341,Biostatistics: Applications,MSc Health Informatics,POT01,PROF058,['G118'],33,Tuesday,09:00,3.0,R048,35,POT01
+Q2,C1022,Immersive Media,BA Digital Communication,BER04,PROF143,['G090'],32,Friday,12:00,2.0,R039,35,BER04
+Q2,C0203,Computer Vision,BSc Cybersecurity,BER03,PROF202,['G018'],31,Wednesday,09:00,2.0,R035,40,BER03
+Q2,C0363,Business Foundations: Applications,BSc International Business,BER01,PROF293,['G032'],31,Monday,12:00,2.0,R006,35,BER01
+Q2,C0363,Business Foundations: Applications,BSc International Business,BER01,PROF293,['G032'],31,Friday,12:00,2.0,R001,45,BER01
+Q2,C0158,Big Data Engineering: Applications,BSc Cybersecurity,BER03,PROF190,['G015'],30,Wednesday,11:30,2.0,R026,30,BER03
+Q2,C0158,Big Data Engineering: Applications,BSc Cybersecurity,BER03,PROF190,['G015'],30,Thursday,11:00,2.0,R026,30,BER03
+Q2,C0159,Advanced Databases,BSc Cybersecurity,BER03,PROF023,['G014'],30,Monday,12:00,2.0,R003,30,BER01
+Q2,C0677,Corporate Finance: Applications,MSc Financial Analytics,BER04,PROF167,['G061'],30,Tuesday,09:00,3.0,R037,30,BER04
+Q2,C0977,Digital Publishing,BA UX and Interaction Design,BER04,PROF036,['G086'],30,Friday,14:00,2.0,R037,30,BER04
+Q2,C0977,Digital Publishing,BA UX and Interaction Design,BER04,PROF036,['G086'],30,Wednesday,13:30,2.0,R037,30,BER04
+Q2,C1105,Introduction to Psychology: Applications,BSc Psychology,BER01,PROF035,['G098'],30,Thursday,09:00,2.0,R003,30,BER01
+Q2,C0699,Engineering Optimisation,BEng Software Systems,BER02,PROF111,"['G062', 'G063']",84,Monday,09:00,2.5,R023,120,BER02
+Q2,C0143,Machine Learning,BSc Artificial Intelligence,BER03,PROF047,['G013'],51,Tuesday,12:00,2.0,R025,70,BER03
+Q2,C0251,Natural Language Processing,MSc Computer Science,BER03,PROF202,['G023'],51,Friday,09:00,3.0,R025,70,BER03
+Q2,C0312,Management Accounting,BSc Business Administration,BER01,PROF204,['G028'],51,Wednesday,09:00,2.0,R022,55,BER02
+Q2,C0911,Digital Storytelling,BA Digital Media,BER04,PROF252,['G081'],51,Thursday,14:00,2.5,R043,130,BER04
+Q2,C1054,UX Research,MA Digital Media and Innovation,BER04,PROF231,['G093'],51,Monday,09:00,3.0,R042,70,BER04
+Q2,C1163,Cognitive Psychology: Applications,BA Social Sciences,BER01,PROF224,['G103'],51,Tuesday,12:00,2.0,R009,135,BER01
+Q2,C1328,Healthcare Operations: Advanced Methods,BSc Health Management,POT01,PROF029,['G117'],51,Wednesday,11:30,2.0,R022,55,BER02
+Q2,C0429,Strategic Management: Applications,BSc Marketing and Management,BER04,PROF015,['G039'],50,Thursday,09:00,2.0,R044,125,BER04
+Q2,C0495,Monetary Economics,BSc Economics,BER01,PROF248,['G045'],50,Friday,09:00,2.5,R022,55,BER02
+Q2,C1106,Sociology: Applications,BSc Psychology,BER01,PROF035,['G097'],50,Tuesday,14:00,2.5,R014,220,BER01
+Q2,C0179,Operating Systems: Advanced Methods,BSc Cybersecurity,BER03,PROF288,['G017'],49,Monday,14:00,2.0,R036,75,BER03
+Q2,C0288,Secure Software Engineering,MSc Artificial Intelligence,POT01,PROF243,['G026'],49,Wednesday,13:30,3.0,R047,105,POT01
+Q2,C0288,Secure Software Engineering,MSc Artificial Intelligence,POT01,PROF243,['G026'],49,Thursday,14:00,3.0,R045,55,POT01
+Q2,C0596,Corporate Finance: Advanced Methods,BSc Banking and Finance,BER01,PROF232,['G053'],49,Friday,12:00,2.0,R014,220,BER01
+Q2,C0723,Operations Research: Advanced Methods,BEng Software Systems,BER02,PROF285,['G064'],49,Monday,12:00,2.0,R022,55,BER02
+Q2,C0870,Control Engineering: Advanced Methods,MEng Digital Engineering,POT01,PROF099,['G077'],49,Wednesday,13:30,3.0,R021,50,BER02
+Q2,C1009,Digital Media Foundations,BA Digital Communication,BER04,PROF036,['G089'],49,Tuesday,09:00,2.0,R043,130,BER04
+Q2,C1038,Digital Storytelling: Applications,BA Digital Communication,BER04,PROF206,['G092'],49,Friday,14:00,2.0,R044,125,BER04
+Q2,C1091,Developmental Psychology: Applications,BSc Psychology,BER01,PROF158,['G096'],49,Monday,09:00,2.5,R002,80,BER01
+Q2,C1236,Legal Foundations: Advanced Methods,LLB Law,BER01,PROF038,['G109'],49,Thursday,09:00,2.0,R014,220,BER01
+Q2,C1236,Legal Foundations: Advanced Methods,LLB Law,BER01,PROF038,['G109'],49,Tuesday,14:00,2.0,R027,60,BER03
+Q2,C1310,Innovation in Healthcare: Applications,BSc Health Management,POT01,PROF181,['G115'],49,Friday,12:00,2.0,R046,55,POT01
+Q2,C0180,Computer Networks,BSc Cybersecurity,BER03,PROF292,['G016'],48,Thursday,11:00,2.0,R025,70,BER03
+Q2,C0180,Computer Networks,BSc Cybersecurity,BER03,PROF292,['G016'],48,Tuesday,09:00,2.0,R036,75,BER03
+Q2,C0742,Industrial Systems,BEng Software Systems,BER02,PROF145,['G066'],48,Wednesday,09:00,2.0,R017,90,BER02
+Q2,C1125,Introduction to Psychology: Applications,BA Social Sciences,BER01,PROF212,['G099'],48,Monday,12:00,2.0,R008,60,BER01
+Q2,C1264,Risk and Liability: Applications,LLM Business and Technology Law,BER01,PROF234,['G111'],48,Friday,14:00,3.0,R014,220,BER01
+Q2,C1265,Risk and Liability: Applications,LLM Business and Technology Law,BER01,PROF261,['G112'],48,Thursday,11:00,3.0,R045,55,POT01
+Q2,C0269,Software Architecture: Advanced Methods,MSc Artificial Intelligence,POT01,PROF048,['G024'],47,Tuesday,14:00,3.0,R047,105,POT01
+Q2,C0536,Risk Management: Applications,BSc Economics,BER01,PROF199,['G048'],47,Wednesday,11:30,2.0,R009,135,BER01
+Q2,C0578,Economic Policy: Applications,BSc Banking and Finance,BER01,PROF086,['G052'],47,Monday,12:00,2.0,R025,70,BER03
+Q2,C0757,Manufacturing Systems: Applications,BEng Industrial Engineering,BER02,PROF291,['G067'],47,Wednesday,09:00,2.0,R016,100,BER02
+Q2,C0929,Brand Communication,BA Digital Media,BER04,PROF113,['G082'],47,Friday,09:00,2.0,R044,125,BER04
+Q2,C1286,Research in Health Sciences: Applications,BSc Health Management,POT01,PROF082,['G113'],47,Monday,12:00,2.0,R046,55,POT01
+Q2,C0201,Programming Fundamentals: Advanced Methods,BSc Cybersecurity,BER03,PROF242,['G019'],46,Thursday,09:00,2.0,R025,70,BER03
+Q2,C0323,Corporate Strategy,BSc Business Administration,BER01,PROF150,['G029'],46,Tuesday,12:00,2.0,R014,220,BER01
+Q2,C0473,Supply Chain Management,MSc Management,BER01,PROF140,['G042'],46,Friday,14:00,3.0,R022,55,BER02
+Q2,C0518,Macroeconomics: Applications,BSc Economics,BER01,PROF187,['G047'],46,Wednesday,11:30,2.0,R014,220,BER01
+Q2,C0575,Econometrics: Applications,BSc Banking and Finance,BER01,PROF083,['G051'],46,Monday,14:00,2.0,R025,70,BER03
+Q2,C0722,Sustainable Engineering: Applications,BEng Software Systems,BER02,PROF225,['G065'],46,Thursday,09:00,2.0,R017,90,BER02
+Q2,C0612,Monetary Economics: Applications,MSc Economics,BER01,PROF050,['G055'],45,Tuesday,09:00,3.0,R002,80,BER01
+Q2,C0947,Portfolio Development,BA Digital Media,BER04,PROF012,['G084'],45,Wednesday,13:30,2.0,R044,125,BER04
+Q2,C1248,Employment Law: Applications,LLM Business and Technology Law,BER01,PROF033,['G110'],45,Monday,09:00,3.0,R022,55,BER02
+Q2,C0020,Digital Forensics: Applications,BSc Computer Science,BER03,PROF228,['G002'],44,Thursday,09:00,2.0,R034,45,BER03
+Q2,C0226,Operating Systems,MSc Computer Science,BER03,PROF267,['G020'],44,Tuesday,14:00,3.0,R025,70,BER03
+Q2,C0882,Engineering Design: Advanced Methods,MEng Engineering Management,POT01,PROF278,['G078'],44,Friday,09:00,3.0,R046,55,POT01
+Q2,C1195,Human Behaviour,MA Applied Psychology,BER01,PROF034,['G106'],44,Wednesday,13:30,3.0,R034,45,BER03
+Q2,C1212,Intellectual Property: Applications,LLB Law,BER01,PROF265,['G107'],44,Thursday,14:00,2.5,R022,55,BER02
+Q2,C0056,Algorithms: Advanced Methods,BSc Data Science,BER03,PROF101,['G006'],43,Friday,14:00,2.5,R027,60,BER03
+Q2,C0079,Advanced Algorithms,BSc Data Science,BER03,PROF017,['G008'],43,Monday,12:00,2.0,R034,45,BER03
+Q2,C0552,Data Analysis for Finance,BSc Banking and Finance,BER01,PROF067,['G049'],43,Tuesday,14:00,2.5,R036,75,BER03
+Q2,C0552,Data Analysis for Finance,BSc Banking and Finance,BER01,PROF067,['G049'],43,Wednesday,13:30,2.5,R022,55,BER02
+Q2,C0633,Financial Analytics: Applications,MSc Economics,BER01,PROF222,['G056'],43,Thursday,14:00,3.0,R046,55,POT01
+Q2,C0944,Motion Design,BA Digital Media,BER04,PROF164,['G083'],43,Monday,14:00,2.5,R017,90,BER02
+Q2,C0944,Motion Design,BA Digital Media,BER04,PROF164,['G083'],43,Friday,09:00,2.5,R043,130,BER04
+Q2,C0634,Financial Analytics: Applications,MSc Economics,BER01,PROF220,['G057'],42,Tuesday,09:00,3.0,R014,220,BER01
+Q2,C0657,Data Analysis for Finance: Applications,MSc Financial Analytics,BER04,PROF068,['G058'],42,Wednesday,13:30,3.0,R043,130,BER04
+Q2,C1067,Graphic Design: Applications,MA Digital Media and Innovation,BER04,PROF148,['G094'],42,Monday,09:00,3.0,R021,50,BER02
+Q2,C1142,Psychological Assessment: Applications,BA Social Sciences,BER01,PROF109,['G101'],42,Thursday,14:00,2.5,R036,75,BER03
+Q2,C1197,Community Studies: Applications,MA Applied Psychology,BER01,PROF226,['G105'],42,Friday,14:00,3.0,R025,70,BER03
+Q2,C1309,Nutrition and Health: Applications,BSc Health Management,POT01,PROF110,['G116'],42,Tuesday,12:00,2.0,R047,105,POT01
+Q2,C1309,Nutrition and Health: Applications,BSc Health Management,POT01,PROF110,['G116'],42,Wednesday,09:00,2.0,R046,55,POT01
+Q2,C0095,Computer Networks: Advanced Methods,BSc Data Science,BER03,PROF170,['G009'],41,Thursday,11:00,2.5,R036,75,BER03
+Q2,C0223,Computer Vision: Applications,MSc Computer Science,BER03,PROF165,['G021'],41,Monday,14:00,3.0,R027,60,BER03
+Q2,C0680,Econometrics: Advanced Methods,MSc Financial Analytics,BER04,PROF167,['G060'],41,Friday,09:00,3.0,R040,250,BER04
+Q2,C0680,Econometrics: Advanced Methods,MSc Financial Analytics,BER04,PROF167,['G060'],41,Tuesday,14:00,3.0,R044,125,BER04
+Q2,C0822,Robotics: Applications,BEng Engineering Management,POT01,PROF003,['G073'],41,Wednesday,13:30,2.5,R036,75,BER03
+Q2,C1287,Research in Health Sciences: Applications,BSc Health Management,POT01,PROF299,['G114'],41,Thursday,11:00,2.0,R046,55,POT01
+Q2,C1359,Biotechnology Foundations: Applications,MSc Health Informatics,POT01,PROF175,['G120'],41,Monday,14:00,3.0,R034,45,BER03
+Q2,C1359,Biotechnology Foundations: Applications,MSc Health Informatics,POT01,PROF175,['G120'],41,Wednesday,13:30,3.0,R017,90,BER02
+Q2,C0041,Database Systems,BSc Computer Science,BER03,PROF223,['G004'],40,Thursday,11:00,2.0,R035,40,BER03
+Q2,C0041,Database Systems,BSc Computer Science,BER03,PROF223,['G004'],40,Friday,12:00,2.0,R035,40,BER03
+Q2,C0342,Corporate Strategy,BSc International Business,BER01,PROF123,['G031'],40,Tuesday,12:00,2.0,R018,40,BER02
+Q2,C0992,Information Design,BA UX and Interaction Design,BER04,PROF016,['G088'],40,Monday,09:00,2.5,R038,40,BER04
+Q2,C0360,Project Management: Advanced Methods,BSc International Business,BER01,PROF289,['G033'],39,Thursday,09:00,2.0,R007,40,BER01
+Q2,C0383,Human Resource Management,BSc International Business,BER01,PROF257,['G035'],39,Friday,12:00,2.0,R018,40,BER02
+Q2,C0494,Monetary Economics,BSc Economics,BER01,PROF020,['G044'],39,Tuesday,09:00,2.5,R033,40,BER03
+Q2,C0519,International Finance: Applications,BSc Economics,BER01,PROF065,['G046'],39,Wednesday,11:30,2.0,R018,40,BER02
+Q2,C1344,Healthcare Quality: Applications,MSc Health Informatics,POT01,PROF063,['G119'],39,Thursday,14:00,3.0,R049,40,POT01
+Q2,C0910,Digital Storytelling,BA Digital Media,BER04,PROF207,['G080'],38,Friday,14:00,2.5,R038,40,BER04
+Q2,C0125,Algorithms,BSc Artificial Intelligence,BER03,PROF247,['G012'],37,Monday,12:00,2.0,R033,40,BER03
+Q2,C0125,Algorithms,BSc Artificial Intelligence,BER03,PROF247,['G012'],37,Tuesday,12:00,2.0,R035,40,BER03
+Q2,C0298,Business Law: Applications,BSc Business Administration,BER01,PROF284,['G027'],37,Wednesday,13:30,2.0,R018,40,BER02
+Q2,C0005,Cloud Computing: Applications,BSc Computer Science,BER03,PROF041,['G001'],36,Monday,09:00,2.5,R033,40,BER03
+Q2,C0076,Data Mining: Applications,BSc Data Science,BER03,PROF079,['G007'],36,Friday,12:00,2.0,R025,70,BER03
+Q2,C0458,Project Management,MSc Management,BER01,PROF069,['G041'],36,Wednesday,13:30,3.0,R033,40,BER03
+Q2,C0758,Manufacturing Systems: Applications,BEng Industrial Engineering,BER02,PROF030,['G068'],36,Tuesday,12:00,2.0,R021,50,BER02
+Q2,C0055,Algorithms: Advanced Methods,BSc Data Science,BER03,PROF147,['G005'],35,Thursday,11:00,2.5,R029,230,BER03
+Q2,C0341,Corporate Strategy,BSc International Business,BER01,PROF277,['G030'],35,Friday,12:00,2.0,R041,35,BER04
+Q2,C0476,Business Communication: Applications,MSc Management,BER01,PROF293,['G043'],35,Monday,14:00,3.0,R018,40,BER02
+Q2,C1141,Psychological Assessment: Applications,BA Social Sciences,BER01,PROF042,['G100'],35,Tuesday,09:00,2.5,R006,35,BER01
+Q2,C1223,Business Law: Applications,LLB Law,BER01,PROF051,['G108'],35,Thursday,14:00,2.0,R041,35,BER04
+Q2,C1223,Business Law: Applications,LLB Law,BER01,PROF051,['G108'],35,Wednesday,09:00,2.0,R006,35,BER01
+Q2,C0106,Database Systems: Applications,BSc Artificial Intelligence,BER03,PROF023,['G010'],34,Friday,12:00,2.0,R036,75,BER03
+Q2,C0124,Algorithms,BSc Artificial Intelligence,BER03,PROF128,['G011'],34,Tuesday,12:00,2.0,R034,45,BER03
+Q2,C0124,Algorithms,BSc Artificial Intelligence,BER03,PROF128,['G011'],34,Thursday,09:00,2.0,R035,40,BER03
+Q2,C0428,Strategic Management: Applications,BSc Marketing and Management,BER04,PROF160,['G038'],34,Monday,12:00,2.0,R039,35,BER04
+Q2,C0447,Business Analytics: Applications,BSc Marketing and Management,BER04,PROF176,['G040'],34,Wednesday,11:30,2.0,R039,35,BER04
+Q2,C0611,Monetary Economics: Applications,MSc Economics,BER01,PROF157,['G054'],34,Friday,09:00,3.0,R018,40,BER02
+Q2,C0776,Automation: Applications,BEng Industrial Engineering,BER02,PROF072,['G069'],34,Tuesday,14:00,2.0,R018,40,BER02
+Q2,C0793,Engineering Economics: Advanced Methods,BEng Industrial Engineering,BER02,PROF092,['G071'],34,Thursday,09:00,2.0,R018,40,BER02
+Q2,C1079,Work and Society,BSc Psychology,BER01,PROF297,['G095'],34,Monday,12:00,2.0,R041,35,BER04
+Q2,C1079,Work and Society,BSc Psychology,BER01,PROF297,['G095'],34,Wednesday,09:00,2.0,R039,35,BER04
+Q2,C0401,International Business: Advanced Methods,BSc Marketing and Management,BER04,PROF024,['G036'],33,Tuesday,09:00,2.5,R039,35,BER04
+Q2,C0964,Media Production: Advanced Methods,BA UX and Interaction Design,BER04,PROF221,['G085'],33,Thursday,09:00,2.0,R039,35,BER04
+Q2,C1164,Quantitative Research: Applications,BA Social Sciences,BER01,PROF240,['G102'],33,Friday,14:00,2.5,R039,35,BER04
+Q2,C1181,Cognitive Psychology: Applications,MA Applied Psychology,BER01,PROF263,['G104'],33,Monday,09:00,3.0,R006,35,BER01
+Q2,C1343,Healthcare Quality: Applications,MSc Health Informatics,POT01,PROF104,['G118'],33,Wednesday,09:00,3.0,R048,35,POT01
+Q2,C0246,Statistical Computing: Applications,MSc Computer Science,BER03,PROF190,['G022'],31,Thursday,14:00,3.0,R035,40,BER03
+Q2,C0156,Software Architecture: Applications,BSc Cybersecurity,BER03,PROF116,['G015'],30,Tuesday,12:00,2.0,R026,30,BER03
+Q2,C0681,Econometrics: Advanced Methods,MSc Financial Analytics,BER04,PROF155,['G061'],30,Friday,09:00,3.0,R037,30,BER04
+Q2,C0681,Econometrics: Advanced Methods,MSc Financial Analytics,BER04,PROF155,['G061'],30,Monday,14:00,3.0,R003,30,BER01
+Q2,C0976,Visual Communication,BA UX and Interaction Design,BER04,PROF152,['G086'],30,Wednesday,11:30,2.0,R037,30,BER04
+Q2,C1107,Sociology: Applications,BSc Psychology,BER01,PROF080,['G098'],30,Tuesday,14:00,2.5,R003,30,BER01
+Q2,C0851,Engineering Optimisation: Applications,MEng Digital Engineering,POT01,PROF111,['G075'],51,Thursday,11:00,3.0,R047,105,POT01
+Q2,C0019,Advanced Databases,BSc Computer Science,BER03,PROF288,['G003'],49,Friday,14:00,2.5,R036,75,BER03
+Q2,C0019,Advanced Databases,BSc Computer Science,BER03,PROF288,['G003'],49,Monday,09:00,2.5,R036,75,BER03
+Q2,C0286,Algorithms: Advanced Methods,MSc Artificial Intelligence,POT01,PROF190,['G026'],49,Tuesday,09:00,3.0,R047,105,POT01
+Q2,C0384,Operations Management: Applications,BSc International Business,BER01,PROF289,['G034'],49,Wednesday,09:00,2.0,R025,70,BER03
+Q2,C0893,Technical Management: Applications,MEng Engineering Management,POT01,PROF092,['G079'],49,Wednesday,13:30,3.0,R016,100,BER02
+Q2,C0475,Business Communication: Applications,MSc Management,BER01,PROF236,['G042'],46,Thursday,11:00,3.0,R017,90,BER02
+Q2,C0794,Operations Research,BEng Industrial Engineering,BER02,PROF072,['G070'],42,Friday,09:00,2.5,R017,90,BER02
+Q2,C0811,Energy Systems: Applications,BEng Engineering Management,POT01,PROF285,['G072'],42,Monday,14:00,2.5,R045,55,POT01
+Q2,C0811,Energy Systems: Applications,BEng Engineering Management,POT01,PROF285,['G072'],42,Tuesday,09:00,2.5,R022,55,BER02
+Q2,C1065,Creative Coding: Advanced Methods,MA Digital Media and Innovation,BER04,PROF004,['G094'],42,Wednesday,13:30,3.0,R040,250,BER04
+Q2,C0406,Human Resource Management,BSc Marketing and Management,BER04,PROF257,['G037'],40,Friday,14:00,2.5,R043,130,BER04
+Q2,C0268,Digital Forensics: Applications,MSc Artificial Intelligence,POT01,PROF165,['G025'],39,Thursday,11:00,3.0,R050,40,POT01
+Q2,C0364,Business Foundations: Applications,BSc International Business,BER01,PROF293,['G033'],39,Monday,09:00,2.0,R035,40,BER03
+Q2,C0364,Business Foundations: Applications,BSc International Business,BER01,PROF293,['G033'],39,Tuesday,12:00,2.0,R049,40,POT01
+Q2,C0555,Risk Management: Applications,BSc Banking and Finance,BER01,PROF065,['G050'],37,Friday,11:30,2.5,R050,40,POT01
+Q2,C0425,Organisational Behaviour,BSc Marketing and Management,BER04,PROF203,['G038'],34,Monday,14:00,2.0,R033,40,BER03
+Q2,C0425,Organisational Behaviour,BSc Marketing and Management,BER04,PROF203,['G038'],34,Wednesday,09:00,2.0,R041,35,BER04
+Q2,C0795,Operations Research,BEng Industrial Engineering,BER02,PROF208,['G071'],34,Thursday,14:00,2.5,R017,90,BER02
+Q2,C0991,Information Design,BA UX and Interaction Design,BER04,PROF221,['G087'],34,Tuesday,14:00,2.5,R038,40,BER04
+Q2,C0658,Data Analysis for Finance: Applications,MSc Financial Analytics,BER04,PROF020,['G059'],33,Wednesday,13:30,3.0,R038,40,BER04
+Q2,C1037,Digital Storytelling: Applications,BA Digital Communication,BER04,PROF148,['G091'],33,Monday,14:00,2.0,R041,35,BER04
+Q2,C1021,Media Production,BA Digital Communication,BER04,PROF036,['G090'],32,Thursday,09:00,2.0,R041,35,BER04
+Q2,C0200,Programming Fundamentals: Advanced Methods,BSc Cybersecurity,BER03,PROF041,['G018'],31,Friday,12:00,2.0,R029,230,BER03
+Q2,C0248,Programming Fundamentals,MSc Computer Science,BER03,PROF053,['G022'],31,Tuesday,14:00,3.0,R033,40,BER03
+Q2,C0359,Project Management: Advanced Methods,BSc International Business,BER01,PROF123,['G032'],31,Monday,09:00,2.0,R039,35,BER04
+Q2,C0155,Software Architecture: Applications,BSc Cybersecurity,BER03,PROF128,['G014'],30,Friday,09:00,2.0,R026,30,BER03
+Q2,C0160,Advanced Databases,BSc Cybersecurity,BER03,PROF079,['G015'],30,Wednesday,09:00,2.0,R028,30,BER03
+Q2,C0679,Behavioural Economics: Applications,MSc Financial Analytics,BER04,PROF027,['G061'],30,Thursday,14:00,3.0,R037,30,BER04
+Q2,C0849,Operations Research: Applications,MEng Digital Engineering,POT01,PROF072,['G075'],51,Monday,14:00,3.0,R023,120,BER02
+Q2,C0023,Software Architecture: Advanced Methods,BSc Computer Science,BER03,PROF288,['G003'],49,Friday,12:00,2.0,R016,100,BER02
+Q2,C0835,Digital Engineering: Advanced Methods,BEng Engineering Management,POT01,PROF285,['G074'],49,Tuesday,14:00,2.5,R017,90,BER02
+Q2,C0852,Engineering Optimisation: Applications,MEng Digital Engineering,POT01,PROF285,['G076'],48,Wednesday,13:30,3.0,R023,120,BER02
+Q3,C0390,Innovation Management: Applications,BSc International Business,BER01,PROF015,"['G035', 'G034']",88,Monday,09:00,2.5,R044,125,BER04
+Q3,C1166,Work and Society,BA Social Sciences,BER01,PROF109,"['G102', 'G103']",84,Tuesday,09:00,2.0,R009,135,BER01
+Q3,C0254,Computer Networks,MSc Computer Science,BER03,PROF202,"['G023', 'G022']",82,Wednesday,09:00,3.0,R029,230,BER03
+Q3,C1041,Portfolio Development,BA Digital Communication,BER04,PROF246,"['G091', 'G092']",82,Thursday,09:00,2.0,R044,125,BER04
+Q3,C0479,Business Foundations: Applications,MSc Management,BER01,PROF156,"['G042', 'G043']",81,Friday,09:00,3.0,R009,135,BER01
+Q3,C0082,Database Systems: Advanced Methods,BSc Data Science,BER03,PROF079,"['G007', 'G008']",79,Tuesday,11:00,2.0,R029,230,BER03
+Q3,C0209,Big Data Engineering,BSc Cybersecurity,BER03,PROF112,"['G018', 'G019']",77,Thursday,11:00,2.5,R029,230,BER03
+Q3,C0994,Digital Storytelling,BA UX and Interaction Design,BER04,PROF144,"['G088', 'G087']",74,Monday,11:30,2.0,R017,90,BER02
+Q3,C1347,Epidemiology: Applications,MSc Health Informatics,POT01,PROF115,"['G118', 'G119']",72,Wednesday,12:00,3.0,R047,105,POT01
+Q3,C0365,Strategic Management,BSc International Business,BER01,PROF284,"['G032', 'G033']",70,Friday,12:00,2.0,R002,80,BER01
+Q3,C0365,Strategic Management,BSc International Business,BER01,PROF284,"['G032', 'G033']",70,Tuesday,13:00,2.0,R002,80,BER01
+Q3,C0161,Natural Language Processing: Applications,BSc Cybersecurity,BER03,PROF121,"['G014', 'G015']",60,Monday,13:30,2.0,R036,75,BER03
+Q3,C0146,Secure Software Engineering,BSc Artificial Intelligence,BER03,PROF292,['G013'],51,Thursday,13:30,2.5,R027,60,BER03
+Q3,C0314,Digital Transformation,BSc Business Administration,BER01,PROF293,['G028'],51,Friday,14:00,2.0,R008,60,BER01
+Q3,C0856,Software Systems: Advanced Methods,MEng Digital Engineering,POT01,PROF037,['G075'],51,Tuesday,13:00,3.0,R045,55,POT01
+Q3,C0913,Immersive Media: Applications,BA Digital Media,BER04,PROF152,['G081'],51,Wednesday,15:00,2.0,R042,70,BER04
+Q3,C1057,Motion Design,MA Digital Media and Innovation,BER04,PROF011,['G093'],51,Monday,13:30,3.0,R044,125,BER04
+Q3,C1329,Epidemiology: Applications,BSc Health Management,POT01,PROF021,['G117'],51,Thursday,11:00,2.5,R045,55,POT01
+Q3,C0435,Project Management: Applications,BSc Marketing and Management,BER04,PROF272,['G039'],50,Friday,09:00,2.0,R042,70,BER04
+Q3,C0435,Project Management: Applications,BSc Marketing and Management,BER04,PROF272,['G039'],50,Wednesday,09:00,2.0,R042,70,BER04
+Q3,C0501,Applied Econometrics,BSc Economics,BER01,PROF044,['G045'],50,Tuesday,09:00,2.0,R008,60,BER01
+Q3,C1108,Quantitative Research,BSc Psychology,BER01,PROF212,['G097'],50,Friday,12:00,2.0,R008,60,BER01
+Q3,C1108,Quantitative Research,BSc Psychology,BER01,PROF212,['G097'],50,Monday,09:00,2.0,R002,80,BER01
+Q3,C0029,Data Structures,BSc Computer Science,BER03,PROF230,['G003'],49,Thursday,09:00,2.0,R027,60,BER03
+Q3,C0183,Data Mining: Applications,BSc Cybersecurity,BER03,PROF170,['G017'],49,Wednesday,12:00,2.0,R027,60,BER03
+Q3,C0597,Statistics for Economics: Applications,BSc Banking and Finance,BER01,PROF107,['G053'],49,Tuesday,11:00,2.0,R008,60,BER01
+Q3,C0702,Software Systems: Applications,BEng Software Systems,BER02,PROF125,['G062'],49,Friday,14:00,2.0,R021,50,BER02
+Q3,C0725,Embedded Systems: Applications,BEng Software Systems,BER02,PROF296,['G064'],49,Monday,11:30,2.0,R022,55,BER02
+Q3,C0838,Industrial Systems,BEng Engineering Management,POT01,PROF186,['G074'],49,Thursday,13:30,2.0,R045,55,POT01
+Q3,C0838,Industrial Systems,BEng Engineering Management,POT01,PROF186,['G074'],49,Wednesday,15:00,2.0,R045,55,POT01
+Q3,C0872,Automation: Applications,MEng Digital Engineering,POT01,PROF154,['G077'],49,Tuesday,13:00,3.0,R046,55,POT01
+Q3,C0896,Systems Engineering: Advanced Methods,MEng Engineering Management,POT01,PROF090,['G079'],49,Friday,09:00,3.0,R045,55,POT01
+Q3,C1011,Visual Communication: Advanced Methods,BA Digital Communication,BER04,PROF055,['G089'],49,Monday,09:00,2.0,R042,70,BER04
+Q3,C1092,Psychological Assessment,BSc Psychology,BER01,PROF010,['G096'],49,Thursday,09:00,2.0,R008,60,BER01
+Q3,C1237,Technology Law: Applications,LLB Law,BER01,PROF210,['G109'],49,Wednesday,09:00,2.0,R008,60,BER01
+Q3,C1316,Biostatistics: Advanced Methods,BSc Health Management,POT01,PROF095,['G115'],49,Monday,11:30,2.0,R047,105,POT01
+Q3,C0744,Project Engineering: Advanced Methods,BEng Software Systems,BER02,PROF174,['G066'],48,Thursday,11:00,2.0,R021,50,BER02
+Q3,C0857,Software Systems: Advanced Methods,MEng Digital Engineering,POT01,PROF290,['G076'],48,Tuesday,13:00,3.0,R047,105,POT01
+Q3,C1127,Quantitative Research,BA Social Sciences,BER01,PROF226,['G099'],48,Wednesday,12:00,2.0,R008,60,BER01
+Q3,C1266,Law and Emerging Technologies,LLM Business and Technology Law,BER01,PROF234,['G111'],48,Friday,14:00,3.0,R002,80,BER01
+Q3,C1269,Competition Law: Applications,LLM Business and Technology Law,BER01,PROF183,['G112'],48,Monday,13:30,3.0,R023,120,BER02
+Q3,C0274,Data Structures,MSc Artificial Intelligence,POT01,PROF078,['G024'],47,Thursday,13:30,3.0,R046,55,POT01
+Q3,C0540,Econometrics: Advanced Methods,BSc Economics,BER01,PROF098,['G048'],47,Wednesday,15:00,2.0,R008,60,BER01
+Q3,C0580,FinTech Foundations,BSc Banking and Finance,BER01,PROF167,['G052'],47,Tuesday,09:00,2.0,R002,80,BER01
+Q3,C0763,Technical Management: Applications,BEng Industrial Engineering,BER02,PROF208,['G067'],47,Friday,12:00,2.0,R021,50,BER02
+Q3,C1290,Healthcare Operations: Applications,BSc Health Management,POT01,PROF133,['G113'],47,Wednesday,09:00,2.0,R045,55,POT01
+Q3,C0325,Operations Management,BSc Business Administration,BER01,PROF032,['G029'],46,Monday,09:00,2.0,R022,55,BER02
+Q3,C0524,Banking Fundamentals: Applications,BSc Economics,BER01,PROF222,['G047'],46,Thursday,09:00,2.0,R002,80,BER01
+Q3,C0579,FinTech Foundations,BSc Banking and Finance,BER01,PROF084,['G051'],46,Tuesday,11:00,2.0,R002,80,BER01
+Q3,C0726,Embedded Systems: Applications,BEng Software Systems,BER02,PROF196,['G065'],46,Friday,09:00,2.0,R021,50,BER02
+Q3,C0614,Data Analysis for Finance,MSc Economics,BER01,PROF040,['G055'],45,Wednesday,12:00,3.0,R001,45,BER01
+Q3,C0949,Interaction Design,BA Digital Media,BER04,PROF164,['G084'],45,Monday,11:30,2.0,R042,70,BER04
+Q3,C1249,Dispute Resolution,LLM Business and Technology Law,BER01,PROF139,['G110'],45,Thursday,13:30,3.0,R001,45,BER01
+Q3,C0024,Machine Learning: Applications,BSc Computer Science,BER03,PROF059,['G002'],44,Tuesday,09:00,2.0,R034,45,BER03
+Q3,C0230,Advanced Databases,MSc Computer Science,BER03,PROF249,['G020'],44,Friday,14:00,3.0,R034,45,BER03
+Q3,C0230,Advanced Databases,MSc Computer Science,BER03,PROF249,['G020'],44,Monday,13:30,3.0,R027,60,BER03
+Q3,C0886,Operations Research,MEng Engineering Management,POT01,PROF244,['G078'],44,Tuesday,13:00,3.0,R001,45,BER01
+Q3,C1213,Employment Law,LLB Law,BER01,PROF256,['G107'],44,Wednesday,15:00,2.0,R001,45,BER01
+Q3,C0062,Advanced Programming,BSc Data Science,BER03,PROF048,['G006'],43,Thursday,11:00,2.0,R034,45,BER03
+Q3,C0558,Corporate Finance: Applications,BSc Banking and Finance,BER01,PROF050,['G049'],43,Friday,12:00,2.0,R001,45,BER01
+Q3,C0637,Econometrics: Applications,MSc Economics,BER01,PROF173,['G056'],43,Wednesday,09:00,3.0,R001,45,BER01
+Q3,C0637,Econometrics: Applications,MSc Economics,BER01,PROF173,['G056'],43,Monday,13:30,3.0,R008,60,BER01
+Q3,C0948,Interaction Design,BA Digital Media,BER04,PROF012,['G083'],43,Thursday,09:00,2.0,R042,70,BER04
+Q3,C0640,Economic Policy: Applications,MSc Economics,BER01,PROF159,['G057'],42,Tuesday,13:00,3.0,R008,60,BER01
+Q3,C0663,Corporate Finance: Advanced Methods,MSc Financial Analytics,BER04,PROF039,['G058'],42,Friday,09:00,3.0,R044,125,BER04
+Q3,C0798,Engineering Design,BEng Industrial Engineering,BER02,PROF097,['G070'],42,Thursday,11:00,2.0,R022,55,BER02
+Q3,C0813,Digital Engineering: Applications,BEng Engineering Management,POT01,PROF102,['G072'],42,Wednesday,12:00,2.0,R045,55,POT01
+Q3,C1068,Visual Communication,MA Digital Media and Innovation,BER04,PROF002,['G094'],42,Monday,13:30,3.0,R042,70,BER04
+Q3,C1144,Community Studies,BA Social Sciences,BER01,PROF158,['G101'],42,Tuesday,11:00,2.0,R001,45,BER01
+Q3,C1199,Qualitative Research,MA Applied Psychology,BER01,PROF129,['G105'],42,Friday,14:00,3.0,R001,45,BER01
+Q3,C1313,Public Health: Applications,BSc Health Management,POT01,PROF094,['G116'],42,Thursday,13:30,2.0,R047,105,POT01
+Q3,C0099,Natural Language Processing,BSc Data Science,BER03,PROF130,['G009'],41,Wednesday,09:00,2.5,R034,45,BER03
+Q3,C0233,Machine Learning,MSc Computer Science,BER03,PROF161,['G021'],41,Tuesday,13:00,3.0,R034,45,BER03
+Q3,C0684,FinTech Foundations: Applications,MSc Financial Analytics,BER04,PROF220,['G060'],41,Monday,13:30,3.0,R021,50,BER02
+Q3,C0827,Project Engineering,BEng Engineering Management,POT01,PROF225,['G073'],41,Thursday,09:00,2.0,R045,55,POT01
+Q3,C1289,Healthcare Quality,BSc Health Management,POT01,PROF299,['G114'],41,Friday,12:00,2.0,R045,55,POT01
+Q3,C1361,Health Economics: Applications,MSc Health Informatics,POT01,PROF168,['G120'],41,Wednesday,12:00,3.0,R046,55,POT01
+Q3,C0042,Distributed Systems: Applications,BSc Computer Science,BER03,PROF101,['G004'],40,Thursday,11:00,2.0,R033,40,BER03
+Q3,C0344,Business Communication: Advanced Methods,BSc International Business,BER01,PROF160,['G031'],40,Tuesday,13:00,2.5,R007,40,BER01
+Q3,C0408,Leadership: Advanced Methods,BSc Marketing and Management,BER04,PROF182,['G037'],40,Friday,09:00,2.5,R038,40,BER04
+Q3,C0273,Programming Fundamentals: Advanced Methods,MSc Artificial Intelligence,POT01,PROF243,['G025'],39,Monday,13:30,3.0,R049,40,POT01
+Q3,C0498,Risk Management,BSc Economics,BER01,PROF259,['G044'],39,Wednesday,15:00,2.0,R007,40,BER01
+Q3,C0521,Economic Policy,BSc Economics,BER01,PROF199,['G046'],39,Thursday,13:30,2.5,R007,40,BER01
+Q3,C0521,Economic Policy,BSc Economics,BER01,PROF199,['G046'],39,Tuesday,09:00,2.5,R007,40,BER01
+Q3,C0914,Creative Coding: Advanced Methods,BA Digital Media,BER04,PROF213,['G080'],38,Friday,14:00,2.5,R038,40,BER04
+Q3,C0129,Software Architecture: Advanced Methods,BSc Artificial Intelligence,BER03,PROF085,['G012'],37,Monday,09:00,2.5,R033,40,BER03
+Q3,C0303,Supply Chain Management,BSc Business Administration,BER01,PROF176,['G027'],37,Wednesday,15:00,2.0,R002,80,BER01
+Q3,C0557,Portfolio Management,BSc Banking and Finance,BER01,PROF271,['G050'],37,Thursday,11:00,2.5,R007,40,BER01
+Q3,C0008,Cybersecurity Fundamentals: Applications,BSc Computer Science,BER03,PROF247,['G001'],36,Tuesday,09:00,2.0,R033,40,BER03
+Q3,C0460,Marketing Principles,MSc Management,BER01,PROF203,['G041'],36,Friday,09:00,3.0,R007,40,BER01
+Q3,C0762,Engineering Economics: Applications,BEng Industrial Engineering,BER02,PROF081,['G068'],36,Wednesday,09:00,2.0,R018,40,BER02
+Q3,C0762,Engineering Economics: Applications,BEng Industrial Engineering,BER02,PROF081,['G068'],36,Monday,11:30,2.0,R018,40,BER02
+Q3,C0057,Computer Networks: Applications,BSc Data Science,BER03,PROF022,['G005'],35,Thursday,09:00,2.0,R033,40,BER03
+Q3,C0057,Computer Networks: Applications,BSc Data Science,BER03,PROF022,['G005'],35,Tuesday,11:00,2.0,R033,40,BER03
+Q3,C0345,Operations Management,BSc International Business,BER01,PROF024,['G030'],35,Wednesday,12:00,2.0,R006,35,BER01
+Q3,C0707,Control Engineering: Advanced Methods,BEng Software Systems,BER02,PROF124,['G063'],35,Monday,09:00,2.0,R018,40,BER02
+Q3,C1143,Community Studies,BA Social Sciences,BER01,PROF043,['G100'],35,Friday,12:00,2.0,R006,35,BER01
+Q3,C1225,Risk and Liability,LLB Law,BER01,PROF195,['G108'],35,Thursday,13:30,2.0,R006,35,BER01
+Q3,C0109,Cloud Computing: Applications,BSc Artificial Intelligence,BER03,PROF190,['G010'],34,Tuesday,09:00,2.0,R035,40,BER03
+Q3,C0130,Web Application Development,BSc Artificial Intelligence,BER03,PROF267,['G011'],34,Wednesday,15:00,2.0,R033,40,BER03
+Q3,C0434,Project Management: Applications,BSc Marketing and Management,BER04,PROF088,['G038'],34,Monday,11:30,2.0,R039,35,BER04
+Q3,C0434,Project Management: Applications,BSc Marketing and Management,BER04,PROF088,['G038'],34,Friday,12:00,2.0,R039,35,BER04
+Q3,C0448,Corporate Strategy,BSc Marketing and Management,BER04,PROF013,['G040'],34,Thursday,09:00,2.0,R039,35,BER04
+Q3,C0613,Data Analysis for Finance,MSc Economics,BER01,PROF100,['G054'],34,Tuesday,13:00,3.0,R006,35,BER01
+Q3,C0779,Industrial Systems: Advanced Methods,BEng Industrial Engineering,BER02,PROF089,['G069'],34,Wednesday,09:00,2.0,R021,50,BER02
+Q3,C0797,Engineering Mathematics: Advanced Methods,BEng Industrial Engineering,BER02,PROF099,['G071'],34,Monday,09:00,2.0,R006,35,BER01
+Q3,C1081,Sociology,BSc Psychology,BER01,PROF035,['G095'],34,Friday,14:00,2.0,R006,35,BER01
+Q3,C0409,Business Analytics,BSc Marketing and Management,BER04,PROF122,['G036'],33,Thursday,11:00,2.5,R039,35,BER04
+Q3,C0664,Corporate Finance: Advanced Methods,MSc Financial Analytics,BER04,PROF241,['G059'],33,Wednesday,12:00,3.0,R039,35,BER04
+Q3,C0966,Graphic Design: Advanced Methods,BA UX and Interaction Design,BER04,PROF251,['G085'],33,Monday,11:30,2.0,R041,35,BER04
+Q3,C1183,Work and Society,MA Applied Psychology,BER01,PROF200,['G104'],33,Tuesday,13:00,3.0,R009,135,BER01
+Q3,C1023,Graphic Design,BA Digital Communication,BER04,PROF207,['G090'],32,Friday,09:00,2.0,R039,35,BER04
+Q3,C0683,Investment Analysis: Applications,MSc Financial Analytics,BER04,PROF157,['G061'],30,Thursday,13:30,3.0,R037,30,BER04
+Q3,C0979,Creative Coding,BA UX and Interaction Design,BER04,PROF206,['G086'],30,Monday,09:00,2.5,R003,30,BER01
+Q3,C1109,Quantitative Research,BSc Psychology,BER01,PROF283,['G098'],30,Friday,12:00,2.0,R003,30,BER01
+Q3,C1109,Quantitative Research,BSc Psychology,BER01,PROF283,['G098'],30,Wednesday,15:00,2.0,R003,30,BER01
+Q3,C0525,Data Analysis for Finance: Applications,BSc Economics,BER01,PROF068,"['G047', 'G046']",85,Tuesday,15:00,2.0,R020,150,BER02
+Q3,C0144,Algorithms: Advanced Methods,BSc Artificial Intelligence,BER03,PROF079,['G013'],51,Thursday,09:00,2.0,R025,70,BER03
+Q3,C0253,Operating Systems: Advanced Methods,MSc Computer Science,BER03,PROF215,['G023'],51,Friday,14:00,3.0,R027,60,BER03
+Q3,C0313,Business Foundations,BSc Business Administration,BER01,PROF156,['G028'],51,Monday,09:00,2.5,R047,105,POT01
+Q3,C0854,Manufacturing Systems: Applications,MEng Digital Engineering,POT01,PROF102,['G075'],51,Wednesday,09:00,3.0,R046,55,POT01
+Q3,C0915,Creative Coding: Advanced Methods,BA Digital Media,BER04,PROF055,['G081'],51,Tuesday,13:00,2.5,R042,70,BER04
+Q3,C1056,Media Production: Advanced Methods,MA Digital Media and Innovation,BER04,PROF026,['G093'],51,Thursday,13:30,3.0,R042,70,BER04
+Q3,C1170,Behavioural Research: Applications,BA Social Sciences,BER01,PROF035,['G103'],51,Monday,11:30,2.0,R002,80,BER01
+Q3,C1330,Human Biology: Advanced Methods,BSc Health Management,POT01,PROF110,['G117'],51,Friday,09:00,2.0,R046,55,POT01
+Q3,C0433,Management Accounting,BSc Marketing and Management,BER04,PROF015,['G039'],50,Tuesday,09:00,2.5,R042,70,BER04
+Q3,C0499,Risk Management,BSc Economics,BER01,PROF259,['G045'],50,Wednesday,12:00,2.0,R002,80,BER01
+Q3,C1112,Health Psychology: Applications,BSc Psychology,BER01,PROF010,['G097'],50,Monday,13:30,2.5,R016,100,BER02
+Q3,C1112,Health Psychology: Applications,BSc Psychology,BER01,PROF010,['G097'],50,Thursday,11:00,2.5,R008,60,BER01
+Q3,C0025,Machine Learning: Applications,BSc Computer Science,BER03,PROF223,['G003'],49,Friday,12:00,2.0,R027,60,BER03
+Q3,C0187,Artificial Intelligence,BSc Cybersecurity,BER03,PROF116,['G017'],49,Wednesday,15:00,2.0,R027,60,BER03
+Q3,C0598,Derivatives: Applications,BSc Banking and Finance,BER01,PROF098,['G053'],49,Tuesday,09:00,2.0,R014,220,BER01
+Q3,C0704,Engineering Simulation: Applications,BEng Software Systems,BER02,PROF172,['G062'],49,Friday,09:00,2.5,R022,55,BER02
+Q3,C0727,Engineering Design: Advanced Methods,BEng Software Systems,BER02,PROF081,['G064'],49,Monday,09:00,2.0,R016,100,BER02
+Q3,C0837,Software Systems: Advanced Methods,BEng Engineering Management,POT01,PROF208,['G074'],49,Wednesday,09:00,2.0,R047,105,POT01
+Q3,C0874,Robotics,MEng Digital Engineering,POT01,PROF196,['G077'],49,Thursday,13:30,3.0,R021,50,BER02
+Q3,C0874,Robotics,MEng Digital Engineering,POT01,PROF196,['G077'],49,Tuesday,09:00,3.0,R045,55,POT01
+Q3,C0897,Software Systems,MEng Engineering Management,POT01,PROF300,['G079'],49,Monday,13:30,3.0,R047,105,POT01
+Q3,C1040,Motion Design,BA Digital Communication,BER04,PROF250,['G092'],49,Wednesday,12:00,2.5,R042,70,BER04
+Q3,C1040,Motion Design,BA Digital Communication,BER04,PROF250,['G092'],49,Friday,14:00,2.5,R042,70,BER04
+Q3,C1093,Social Policy,BSc Psychology,BER01,PROF283,['G096'],49,Thursday,11:00,2.0,R002,80,BER01
+Q3,C1093,Social Policy,BSc Psychology,BER01,PROF283,['G096'],49,Tuesday,11:00,2.0,R009,135,BER01
+Q3,C1238,European Business Law: Applications,LLB Law,BER01,PROF009,['G109'],49,Wednesday,15:00,2.0,R009,135,BER01
+Q3,C1312,Public Health: Applications,BSc Health Management,POT01,PROF091,['G115'],49,Friday,12:00,2.0,R046,55,POT01
+Q3,C0184,Advanced Algorithms,BSc Cybersecurity,BER03,PROF267,['G016'],48,Monday,09:00,2.5,R036,75,BER03
+Q3,C0745,Digital Engineering,BEng Software Systems,BER02,PROF127,['G066'],48,Thursday,09:00,2.0,R021,50,BER02
+Q3,C0855,Manufacturing Systems: Applications,MEng Digital Engineering,POT01,PROF225,['G076'],48,Tuesday,09:00,3.0,R046,55,POT01
+Q3,C1126,Cognitive Psychology,BA Social Sciences,BER01,PROF212,['G099'],48,Wednesday,09:00,2.0,R002,80,BER01
+Q3,C1267,Law and Emerging Technologies,LLM Business and Technology Law,BER01,PROF195,['G112'],48,Friday,14:00,3.0,R009,135,BER01
+Q3,C1268,Competition Law: Applications,LLM Business and Technology Law,BER01,PROF180,['G111'],48,Thursday,13:30,3.0,R008,60,BER01
+Q3,C0276,Computer Vision,MSc Artificial Intelligence,POT01,PROF048,['G024'],47,Monday,13:30,3.0,R045,55,POT01
+Q3,C0582,Financial Modelling: Applications,BSc Banking and Finance,BER01,PROF107,['G052'],47,Tuesday,13:00,2.0,R014,220,BER01
+Q3,C0761,Engineering Economics: Applications,BEng Industrial Engineering,BER02,PROF154,['G067'],47,Wednesday,12:00,2.0,R021,50,BER02
+Q3,C0761,Engineering Economics: Applications,BEng Industrial Engineering,BER02,PROF154,['G067'],47,Friday,09:00,2.0,R017,90,BER02
+Q3,C0930,Digital Storytelling: Advanced Methods,BA Digital Media,BER04,PROF213,['G082'],47,Thursday,09:00,2.0,R043,130,BER04
+Q3,C1288,Healthcare Quality,BSc Health Management,POT01,PROF064,['G113'],47,Monday,11:30,2.0,R045,55,POT01
+Q3,C0326,Business Law,BSc Business Administration,BER01,PROF150,['G029'],46,Tuesday,11:00,2.0,R014,220,BER01
+Q3,C0326,Business Law,BSc Business Administration,BER01,PROF150,['G029'],46,Wednesday,15:00,2.0,R014,220,BER01
+Q3,C0477,Leadership,MSc Management,BER01,PROF204,['G042'],46,Friday,14:00,3.0,R014,220,BER01
+Q3,C0581,Financial Modelling: Applications,BSc Banking and Finance,BER01,PROF044,['G051'],46,Thursday,11:00,2.0,R009,135,BER01
+Q3,C0728,Engineering Design: Advanced Methods,BEng Software Systems,BER02,PROF244,['G065'],46,Monday,11:30,2.0,R016,100,BER02
+Q3,C0618,Applied Econometrics: Applications,MSc Economics,BER01,PROF050,['G055'],45,Tuesday,13:00,3.0,R021,50,BER02
+Q3,C0953,Visual Communication: Applications,BA Digital Media,BER04,PROF152,['G084'],45,Wednesday,09:00,2.5,R044,125,BER04
+Q3,C1250,Technology Law: Applications,LLM Business and Technology Law,BER01,PROF093,['G110'],45,Thursday,09:00,3.0,R001,45,BER01
+Q3,C0028,Data Structures,BSc Computer Science,BER03,PROF230,['G002'],44,Monday,11:30,2.0,R034,45,BER03
+Q3,C0232,Machine Learning,MSc Computer Science,BER03,PROF023,['G020'],44,Friday,09:00,3.0,R034,45,BER03
+Q3,C0884,Energy Systems: Applications,MEng Engineering Management,POT01,PROF296,['G078'],44,Wednesday,12:00,3.0,R034,45,BER03
+Q3,C1200,Qualitative Research,MA Applied Psychology,BER01,PROF158,['G106'],44,Tuesday,13:00,3.0,R022,55,BER02
+Q3,C1214,Legal Foundations: Applications,LLB Law,BER01,PROF006,['G107'],44,Monday,09:00,2.0,R001,45,BER01
+Q3,C0058,Computer Networks: Applications,BSc Data Science,BER03,PROF161,['G006'],43,Thursday,13:30,2.0,R034,45,BER03
+Q3,C0058,Computer Networks: Applications,BSc Data Science,BER03,PROF161,['G006'],43,Friday,12:00,2.0,R034,45,BER03
+Q3,C0081,Computer Vision: Applications,BSc Data Science,BER03,PROF059,['G008'],43,Wednesday,15:00,2.0,R034,45,BER03
+Q3,C0081,Computer Vision: Applications,BSc Data Science,BER03,PROF059,['G008'],43,Monday,11:30,2.0,R001,45,BER01
+Q3,C0556,Portfolio Management,BSc Banking and Finance,BER01,PROF222,['G049'],43,Tuesday,13:00,2.5,R027,60,BER03
+Q3,C0950,Design Thinking,BA Digital Media,BER04,PROF113,['G083'],43,Thursday,11:00,2.5,R042,70,BER04
+Q3,C0642,Banking Fundamentals: Advanced Methods,MSc Economics,BER01,PROF167,['G057'],42,Friday,14:00,3.0,R022,55,BER02
+Q3,C0659,Microeconomics: Applications,MSc Financial Analytics,BER04,PROF173,['G058'],42,Wednesday,12:00,3.0,R044,125,BER04
+Q3,C0800,Manufacturing Systems,BEng Industrial Engineering,BER02,PROF125,['G070'],42,Monday,13:30,2.0,R022,55,BER02
+Q3,C0800,Manufacturing Systems,BEng Industrial Engineering,BER02,PROF125,['G070'],42,Tuesday,09:00,2.0,R021,50,BER02
+Q3,C0815,Engineering Design,BEng Engineering Management,POT01,PROF186,['G072'],42,Thursday,09:00,2.0,R046,55,POT01
+Q3,C1070,Content Strategy: Applications,MA Digital Media and Innovation,BER04,PROF209,['G094'],42,Monday,09:00,3.0,R021,50,BER02
+Q3,C1146,Research Methods: Applications,BA Social Sciences,BER01,PROF129,['G101'],42,Friday,09:00,2.5,R001,45,BER01
+Q3,C1317,Biostatistics: Advanced Methods,BSc Health Management,POT01,PROF095,['G116'],42,Tuesday,11:00,2.0,R047,105,POT01
+Q3,C0097,Statistical Computing: Applications,BSc Data Science,BER03,PROF052,['G009'],41,Wednesday,12:00,2.5,R025,70,BER03
+Q3,C0229,Big Data Engineering: Applications,MSc Computer Science,BER03,PROF228,['G021'],41,Thursday,13:30,3.0,R025,70,BER03
+Q3,C0682,Investment Analysis: Applications,MSc Financial Analytics,BER04,PROF039,['G060'],41,Tuesday,13:00,3.0,R044,125,BER04
+Q3,C0826,Operations Research: Advanced Methods,BEng Engineering Management,POT01,PROF124,['G073'],41,Friday,12:00,2.0,R047,105,POT01
+Q3,C1291,Healthcare Operations: Applications,BSc Health Management,POT01,PROF133,['G114'],41,Monday,13:30,2.0,R046,55,POT01
+Q3,C1362,Genetics: Applications,MSc Health Informatics,POT01,PROF007,['G120'],41,Wednesday,09:00,3.0,R022,55,BER02
+Q3,C0043,Advanced Programming,BSc Computer Science,BER03,PROF128,['G004'],40,Thursday,09:00,2.0,R035,40,BER03
+Q3,C0346,Operations Management,BSc International Business,BER01,PROF277,['G031'],40,Friday,12:00,2.0,R007,40,BER01
+Q3,C0412,Organisational Behaviour: Applications,BSc Marketing and Management,BER04,PROF219,['G037'],40,Monday,09:00,2.0,R038,40,BER04
+Q3,C0412,Organisational Behaviour: Applications,BSc Marketing and Management,BER04,PROF219,['G037'],40,Tuesday,09:00,2.0,R038,40,BER04
+Q3,C0996,Interactive Media,BA UX and Interaction Design,BER04,PROF045,['G088'],40,Wednesday,15:00,2.0,R038,40,BER04
+Q3,C0996,Interactive Media,BA UX and Interaction Design,BER04,PROF045,['G088'],40,Thursday,11:00,2.0,R038,40,BER04
+Q3,C0277,Computer Vision,MSc Artificial Intelligence,POT01,PROF288,['G025'],39,Friday,14:00,3.0,R049,40,POT01
+Q3,C0369,Entrepreneurship: Applications,BSc International Business,BER01,PROF122,['G033'],39,Monday,11:30,2.0,R007,40,BER01
+Q3,C0502,Financial Analytics: Applications,BSc Economics,BER01,PROF198,['G044'],39,Tuesday,13:00,2.5,R018,40,BER02
+Q3,C1346,Environmental Health,MSc Health Informatics,POT01,PROF260,['G119'],39,Wednesday,09:00,3.0,R049,40,POT01
+Q3,C0912,Immersive Media: Applications,BA Digital Media,BER04,PROF012,['G080'],38,Thursday,13:30,2.0,R038,40,BER04
+Q3,C0127,Digital Forensics: Applications,BSc Artificial Intelligence,BER03,PROF190,['G012'],37,Monday,13:30,2.0,R033,40,BER03
+Q3,C0301,Strategic Management: Advanced Methods,BSc Business Administration,BER01,PROF284,['G027'],37,Friday,09:00,2.5,R008,60,BER01
+Q3,C0301,Strategic Management: Advanced Methods,BSc Business Administration,BER01,PROF284,['G027'],37,Tuesday,09:00,2.5,R018,40,BER02
+Q3,C0561,Behavioural Economics: Applications,BSc Banking and Finance,BER01,PROF155,['G050'],37,Thursday,13:30,2.5,R002,80,BER01
+Q3,C0007,Advanced Programming,BSc Computer Science,BER03,PROF101,['G001'],36,Monday,09:00,2.5,R035,40,BER03
+Q3,C0080,Computer Vision: Applications,BSc Data Science,BER03,PROF249,['G007'],36,Wednesday,15:00,2.0,R035,40,BER03
+Q3,C0080,Computer Vision: Applications,BSc Data Science,BER03,PROF249,['G007'],36,Friday,12:00,2.0,R033,40,BER03
+Q3,C0461,Corporate Strategy,MSc Management,BER01,PROF024,['G041'],36,Tuesday,13:00,3.0,R033,40,BER03
+Q3,C0764,Technical Management: Applications,BEng Industrial Engineering,BER02,PROF137,['G068'],36,Thursday,09:00,2.0,R018,40,BER02
+Q3,C0059,Distributed Systems: Applications,BSc Data Science,BER03,PROF247,['G005'],35,Wednesday,09:00,2.5,R033,40,BER03
+Q3,C0343,Business Communication: Advanced Methods,BSc International Business,BER01,PROF032,['G030'],35,Monday,13:30,2.5,R041,35,BER04
+Q3,C0481,Digital Transformation: Applications,MSc Management,BER01,PROF120,['G043'],35,Friday,14:00,3.0,R007,40,BER01
+Q3,C0705,Engineering Simulation: Applications,BEng Software Systems,BER02,PROF290,['G063'],35,Thursday,11:00,2.5,R018,40,BER02
+Q3,C1145,Research Methods: Applications,BA Social Sciences,BER01,PROF057,['G100'],35,Tuesday,13:00,2.5,R039,35,BER04
+Q3,C1226,Data Protection Law: Applications,LLB Law,BER01,PROF153,['G108'],35,Wednesday,12:00,2.0,R007,40,BER01
+Q3,C0111,Programming Fundamentals,BSc Artificial Intelligence,BER03,PROF243,['G010'],34,Monday,09:00,2.5,R048,35,POT01
+Q3,C0128,Software Architecture: Advanced Methods,BSc Artificial Intelligence,BER03,PROF130,['G011'],34,Thursday,11:00,2.5,R035,40,BER03
+Q3,C0430,Business Communication,BSc Marketing and Management,BER04,PROF160,['G038'],34,Friday,09:00,2.0,R041,35,BER04
+Q3,C0450,Supply Chain Management: Applications,BSc Marketing and Management,BER04,PROF257,['G040'],34,Wednesday,09:00,2.5,R039,35,BER04
+Q3,C0617,Applied Econometrics: Applications,MSc Economics,BER01,PROF271,['G054'],34,Tuesday,09:00,3.0,R006,35,BER01
+Q3,C0780,Control Engineering,BEng Industrial Engineering,BER02,PROF174,['G069'],34,Monday,13:30,2.5,R039,35,BER04
+Q3,C0799,Engineering Design,BEng Industrial Engineering,BER02,PROF089,['G071'],34,Friday,12:00,2.0,R018,40,BER02
+Q3,C0997,Media Production: Applications,BA UX and Interaction Design,BER04,PROF011,['G087'],34,Thursday,09:00,2.0,R041,35,BER04
+Q3,C1082,Social Psychology: Applications,BSc Psychology,BER01,PROF042,['G095'],34,Wednesday,15:00,2.0,R006,35,BER01
+Q3,C0411,Organisational Behaviour: Applications,BSc Marketing and Management,BER04,PROF013,['G036'],33,Monday,11:30,2.0,R048,35,POT01
+Q3,C0411,Organisational Behaviour: Applications,BSc Marketing and Management,BER04,PROF013,['G036'],33,Tuesday,11:00,2.0,R039,35,BER04
+Q3,C0967,Interaction Design,BA UX and Interaction Design,BER04,PROF164,['G085'],33,Friday,14:00,2.0,R039,35,BER04
+Q3,C1042,Web Design: Applications,BA Digital Communication,BER04,PROF206,['G091'],33,Thursday,13:30,2.5,R039,35,BER04
+Q3,C1167,Human Behaviour: Applications,BA Social Sciences,BER01,PROF226,['G102'],33,Wednesday,09:00,2.5,R006,35,BER01
+Q3,C1184,Human Behaviour: Applications,MA Applied Psychology,BER01,PROF043,['G104'],33,Monday,13:30,3.0,R006,35,BER01
+Q3,C1345,Environmental Health,MSc Health Informatics,POT01,PROF108,['G118'],33,Tuesday,13:00,3.0,R048,35,POT01
+Q3,C1024,Brand Communication,BA Digital Communication,BER04,PROF207,['G090'],32,Friday,12:00,2.0,R041,35,BER04
+Q3,C0207,Software Architecture,BSc Cybersecurity,BER03,PROF170,['G018'],31,Thursday,09:00,2.0,R034,45,BER03
+Q3,C0207,Software Architecture,BSc Cybersecurity,BER03,PROF170,['G018'],31,Wednesday,15:00,2.0,R025,70,BER03
+Q3,C0255,Distributed Systems,MSc Computer Science,BER03,PROF017,['G022'],31,Friday,09:00,3.0,R033,40,BER03
+Q3,C0366,Consumer Behaviour,BSc International Business,BER01,PROF176,['G032'],31,Monday,11:30,2.0,R035,40,BER03
+Q3,C0162,Algorithms: Advanced Methods,BSc Cybersecurity,BER03,PROF242,['G014'],30,Tuesday,13:00,2.5,R026,30,BER03
+Q3,C0163,Algorithms: Advanced Methods,BSc Cybersecurity,BER03,PROF165,['G015'],30,Thursday,11:00,2.5,R026,30,BER03
+Q3,C0687,Financial Modelling: Advanced Methods,MSc Financial Analytics,BER04,PROF232,['G061'],30,Wednesday,12:00,3.0,R037,30,BER04
+Q3,C0978,Motion Design: Advanced Methods,BA UX and Interaction Design,BER04,PROF251,['G086'],30,Monday,13:30,2.5,R003,30,BER01
+Q3,C1111,Organisational Psychology: Applications,BSc Psychology,BER01,PROF066,['G098'],30,Friday,14:00,2.5,R003,30,BER01
+Q3,C1201,Developmental Psychology: Applications,MA Applied Psychology,BER01,PROF149,"['G105', 'G106']",86,Tuesday,09:00,3.0,R017,90,BER02
+Q3,C0145,Database Systems,BSc Artificial Intelligence,BER03,PROF059,['G013'],51,Thursday,11:00,2.5,R027,60,BER03
+Q3,C0145,Database Systems,BSc Artificial Intelligence,BER03,PROF059,['G013'],51,Wednesday,12:00,2.5,R036,75,BER03
+Q3,C0256,Distributed Systems,MSc Computer Science,BER03,PROF161,['G023'],51,Monday,13:30,3.0,R025,70,BER03
+Q3,C0315,Marketing Principles: Applications,BSc Business Administration,BER01,PROF140,['G028'],51,Friday,09:00,2.0,R002,80,BER01
+Q3,C0858,Industrial Systems,MEng Digital Engineering,POT01,PROF208,['G075'],51,Thursday,13:30,3.0,R022,55,BER02
+Q3,C0917,Web Design,BA Digital Media,BER04,PROF209,['G081'],51,Tuesday,09:00,2.5,R044,125,BER04
+Q3,C0917,Web Design,BA Digital Media,BER04,PROF209,['G081'],51,Wednesday,09:00,2.5,R043,130,BER04
+Q3,C1058,Portfolio Development,MA Digital Media and Innovation,BER04,PROF250,['G093'],51,Friday,09:00,3.0,R043,130,BER04
+Q3,C1168,Human Behaviour: Applications,BA Social Sciences,BER01,PROF010,['G103'],51,Monday,09:00,2.5,R023,120,BER02
+Q3,C1331,Health Management,BSc Health Management,POT01,PROF070,['G117'],51,Tuesday,09:00,2.0,R047,105,POT01
+Q3,C0503,Financial Analytics: Applications,BSc Economics,BER01,PROF241,['G045'],50,Thursday,13:30,2.5,R009,135,BER01
+Q3,C1110,Organisational Psychology: Applications,BSc Psychology,BER01,PROF229,['G097'],50,Wednesday,12:00,2.5,R009,135,BER01
+Q3,C0027,Programming Fundamentals: Advanced Methods,BSc Computer Science,BER03,PROF106,['G003'],49,Friday,14:00,2.0,R025,70,BER03
+Q3,C0388,Organisational Behaviour: Applications,BSc International Business,BER01,PROF176,['G034'],49,Monday,13:30,2.0,R002,80,BER01
+Q3,C0388,Organisational Behaviour: Applications,BSc International Business,BER01,PROF176,['G034'],49,Tuesday,11:00,2.0,R021,50,BER02
+Q3,C0599,Investment Analysis: Advanced Methods,BSc Banking and Finance,BER01,PROF084,['G053'],49,Thursday,09:00,2.0,R009,135,BER01
+Q3,C0706,Control Engineering: Advanced Methods,BEng Software Systems,BER02,PROF071,['G062'],49,Wednesday,15:00,2.0,R021,50,BER02
+Q3,C0729,Systems Engineering,BEng Software Systems,BER02,PROF111,['G064'],49,Friday,14:00,2.5,R017,90,BER02
+Q3,C0729,Systems Engineering,BEng Software Systems,BER02,PROF111,['G064'],49,Monday,13:30,2.5,R017,90,BER02
+Q3,C0839,Energy Systems,BEng Engineering Management,POT01,PROF125,['G074'],49,Tuesday,11:00,2.0,R022,55,BER02
+Q3,C0839,Energy Systems,BEng Engineering Management,POT01,PROF125,['G074'],49,Thursday,09:00,2.0,R047,105,POT01
+Q3,C0873,Engineering Mathematics,MEng Digital Engineering,POT01,PROF092,['G077'],49,Wednesday,09:00,3.0,R027,60,BER03
+Q3,C1013,Interactive Media,BA Digital Communication,BER04,PROF164,['G089'],49,Tuesday,09:00,2.0,R043,130,BER04
+Q3,C1043,Web Design: Applications,BA Digital Communication,BER04,PROF002,['G092'],49,Friday,09:00,2.5,R040,250,BER04
+Q3,C1094,Social Research: Applications,BSc Psychology,BER01,PROF042,['G096'],49,Monday,09:00,2.5,R017,90,BER02
+Q3,C1239,International Law: Advanced Methods,LLB Law,BER01,PROF132,['G109'],49,Thursday,11:00,2.0,R014,220,BER01
+Q3,C1314,Clinical Data Management: Applications,BSc Health Management,POT01,PROF216,['G115'],49,Tuesday,13:00,2.5,R025,70,BER03
+Q3,C0743,Technical Management: Applications,BEng Software Systems,BER02,PROF030,['G066'],48,Wednesday,12:00,2.5,R022,55,BER02
+Q3,C0859,Industrial Systems,MEng Digital Engineering,POT01,PROF145,['G076'],48,Thursday,13:30,3.0,R036,75,BER03
+Q3,C1128,Organisational Psychology: Applications,BA Social Sciences,BER01,PROF109,['G099'],48,Friday,12:00,2.0,R009,135,BER01
+Q3,C1128,Organisational Psychology: Applications,BA Social Sciences,BER01,PROF109,['G099'],48,Monday,11:30,2.0,R008,60,BER01
+Q3,C1270,Contract Law: Advanced Methods,LLM Business and Technology Law,BER01,PROF294,['G111'],48,Tuesday,13:00,3.0,R036,75,BER03
+Q3,C1271,Contract Law: Advanced Methods,LLM Business and Technology Law,BER01,PROF033,['G112'],48,Wednesday,09:00,3.0,R009,135,BER01
+Q3,C0272,Programming Fundamentals: Advanced Methods,MSc Artificial Intelligence,POT01,PROF085,['G024'],47,Friday,14:00,3.0,R045,55,POT01
+Q3,C0584,Microeconomics: Advanced Methods,BSc Banking and Finance,BER01,PROF065,['G052'],47,Monday,11:30,2.0,R046,55,POT01
+Q3,C0932,Creative Project Management,BA Digital Media,BER04,PROF152,['G082'],47,Thursday,11:00,2.5,R044,125,BER04
+Q3,C1292,Medical Ethics: Applications,BSc Health Management,POT01,PROF191,['G113'],47,Monday,09:00,2.0,R046,55,POT01
+Q3,C0206,Computer Networks: Advanced Methods,BSc Cybersecurity,BER03,PROF190,['G019'],46,Tuesday,13:00,2.5,R029,230,BER03
+Q3,C0327,Leadership: Applications,BSc Business Administration,BER01,PROF005,['G029'],46,Wednesday,12:00,2.0,R014,220,BER01
+Q3,C0480,Digital Transformation: Applications,MSc Management,BER01,PROF138,['G042'],46,Thursday,13:30,3.0,R014,220,BER01
+Q3,C0522,Economic Policy,BSc Economics,BER01,PROF040,['G047'],46,Friday,09:00,2.5,R014,220,BER01
+Q3,C0522,Economic Policy,BSc Economics,BER01,PROF040,['G047'],46,Monday,09:00,2.5,R008,60,BER01
+Q3,C0583,Microeconomics: Advanced Methods,BSc Banking and Finance,BER01,PROF254,['G051'],46,Wednesday,15:00,2.0,R022,55,BER02
+Q3,C0730,Systems Engineering,BEng Software Systems,BER02,PROF291,['G065'],46,Tuesday,13:00,2.5,R017,90,BER02
+Q3,C0730,Systems Engineering,BEng Software Systems,BER02,PROF291,['G065'],46,Friday,14:00,2.5,R016,100,BER02
+Q3,C0616,Risk Management: Applications,MSc Economics,BER01,PROF222,['G055'],45,Thursday,13:30,3.0,R017,90,BER02
+Q3,C0951,Design Thinking,BA Digital Media,BER04,PROF119,['G084'],45,Monday,09:00,2.5,R045,55,POT01
+Q3,C1251,European Business Law: Applications,LLM Business and Technology Law,BER01,PROF134,['G110'],45,Wednesday,09:00,3.0,R014,220,BER01
+Q3,C0026,Programming Fundamentals: Advanced Methods,BSc Computer Science,BER03,PROF298,['G002'],44,Tuesday,11:00,2.0,R034,45,BER03
+Q3,C0228,Big Data Engineering: Applications,MSc Computer Science,BER03,PROF165,['G020'],44,Monday,09:00,3.0,R027,60,BER03
+Q3,C1215,Legal Research: Applications,LLB Law,BER01,PROF114,['G107'],44,Friday,09:00,2.5,R027,60,BER03
+Q3,C0060,Distributed Systems: Applications,BSc Data Science,BER03,PROF243,['G006'],43,Tuesday,13:00,2.5,R016,100,BER02
+Q3,C0084,Operating Systems,BSc Data Science,BER03,PROF048,['G008'],43,Thursday,13:30,2.5,R029,230,BER03
+Q3,C0560,Behavioural Economics: Applications,BSc Banking and Finance,BER01,PROF199,['G049'],43,Wednesday,12:00,2.5,R017,90,BER02
+Q3,C0639,Economic Policy: Applications,MSc Economics,BER01,PROF098,['G056'],43,Friday,14:00,3.0,R046,55,POT01
+Q3,C0952,Visual Communication: Applications,BA Digital Media,BER04,PROF266,['G083'],43,Thursday,13:30,2.5,R044,125,BER04
+Q3,C0638,Econometrics: Applications,MSc Economics,BER01,PROF044,['G057'],42,Monday,13:30,3.0,R001,45,BER01
+Q3,C0638,Econometrics: Applications,MSc Economics,BER01,PROF044,['G057'],42,Wednesday,09:00,3.0,R025,70,BER03
+Q3,C0661,Portfolio Management: Applications,MSc Financial Analytics,BER04,PROF157,['G058'],42,Tuesday,13:00,3.0,R043,130,BER04
+Q3,C0796,Engineering Mathematics: Advanced Methods,BEng Industrial Engineering,BER02,PROF174,['G070'],42,Friday,12:00,2.0,R022,55,BER02
+Q3,C0814,Engineering Mathematics: Advanced Methods,BEng Engineering Management,POT01,PROF127,['G072'],42,Thursday,11:00,2.0,R046,55,POT01
+Q3,C1069,Digital Publishing,MA Digital Media and Innovation,BER04,PROF221,['G094'],42,Tuesday,13:00,3.0,R040,250,BER04
+Q3,C1148,Applied Statistics: Applications,BA Social Sciences,BER01,PROF200,['G101'],42,Monday,09:00,2.5,R034,45,BER03
+Q3,C1315,Clinical Data Management: Applications,BSc Health Management,POT01,PROF063,['G116'],42,Wednesday,12:00,2.5,R016,100,BER02
+Q3,C0098,Programming Fundamentals,BSc Data Science,BER03,PROF249,['G009'],41,Friday,09:00,2.0,R025,70,BER03
+Q3,C0231,Advanced Databases,MSc Computer Science,BER03,PROF101,['G021'],41,Friday,14:00,3.0,R036,75,BER03
+Q3,C0231,Advanced Databases,MSc Computer Science,BER03,PROF101,['G021'],41,Monday,13:30,3.0,R034,45,BER03
+Q3,C0686,Financial Modelling: Advanced Methods,MSc Financial Analytics,BER04,PROF039,['G060'],41,Thursday,13:30,3.0,R043,130,BER04
+Q3,C0825,Sustainable Engineering: Applications,BEng Engineering Management,POT01,PROF089,['G073'],41,Wednesday,15:00,2.0,R046,55,POT01
+Q3,C1293,Medical Ethics: Applications,BSc Health Management,POT01,PROF141,['G114'],41,Tuesday,09:00,2.0,R001,45,BER01
+Q3,C1363,Biomedical Foundations: Advanced Methods,MSc Health Informatics,POT01,PROF168,['G120'],41,Thursday,13:30,3.0,R016,100,BER02
+Q3,C0044,Cloud Computing,BSc Computer Science,BER03,PROF121,['G004'],40,Wednesday,15:00,2.0,R036,75,BER03
+Q3,C0044,Cloud Computing,BSc Computer Science,BER03,PROF121,['G004'],40,Tuesday,09:00,2.0,R027,60,BER03
+Q3,C0348,Business Law,BSc International Business,BER01,PROF289,['G031'],40,Friday,09:00,2.0,R018,40,BER02
+Q3,C0410,Business Analytics,BSc Marketing and Management,BER04,PROF122,['G037'],40,Monday,13:30,2.5,R038,40,BER04
+Q3,C0998,Media Production: Applications,BA UX and Interaction Design,BER04,PROF213,['G088'],40,Wednesday,09:00,2.0,R038,40,BER04
+Q3,C0275,Data Structures,MSc Artificial Intelligence,POT01,PROF228,['G025'],39,Tuesday,13:00,3.0,R049,40,POT01
+Q3,C0367,Consumer Behaviour,BSc International Business,BER01,PROF024,['G033'],39,Thursday,09:00,2.0,R007,40,BER01
+Q3,C0389,Organisational Behaviour: Applications,BSc International Business,BER01,PROF032,['G035'],39,Friday,12:00,2.0,R014,220,BER01
+Q3,C0389,Organisational Behaviour: Applications,BSc International Business,BER01,PROF032,['G035'],39,Monday,11:30,2.0,R038,40,BER04
+Q3,C0500,Applied Econometrics,BSc Economics,BER01,PROF083,['G044'],39,Wednesday,12:00,2.0,R018,40,BER02
+Q3,C0523,Banking Fundamentals: Applications,BSc Economics,BER01,PROF187,['G046'],39,Thursday,09:00,2.0,R014,220,BER01
+Q3,C1349,Human Biology: Advanced Methods,MSc Health Informatics,POT01,PROF163,['G119'],39,Friday,14:00,3.0,R050,40,POT01
+Q3,C1349,Human Biology: Advanced Methods,MSc Health Informatics,POT01,PROF163,['G119'],39,Monday,13:30,3.0,R018,40,BER02
+Q3,C0916,Web Design,BA Digital Media,BER04,PROF235,['G080'],38,Tuesday,13:00,2.5,R038,40,BER04
+Q3,C0916,Web Design,BA Digital Media,BER04,PROF235,['G080'],38,Wednesday,09:00,2.5,R040,250,BER04
+Q3,C0131,Web Application Development,BSc Artificial Intelligence,BER03,PROF130,['G012'],37,Thursday,09:00,2.0,R036,75,BER03
+Q3,C0302,International Business,BSc Business Administration,BER01,PROF136,['G027'],37,Friday,12:00,2.0,R035,40,BER03
+Q3,C0559,Corporate Finance: Applications,BSc Banking and Finance,BER01,PROF198,['G050'],37,Tuesday,11:00,2.0,R035,40,BER03
+Q3,C0009,Operating Systems: Advanced Methods,BSc Computer Science,BER03,PROF288,['G001'],36,Monday,13:30,2.5,R035,40,BER03
+Q3,C0009,Operating Systems: Advanced Methods,BSc Computer Science,BER03,PROF288,['G001'],36,Wednesday,12:00,2.5,R033,40,BER03
+Q3,C0083,Operating Systems,BSc Data Science,BER03,PROF017,['G007'],36,Thursday,11:00,2.5,R025,70,BER03
+Q3,C0462,International Business: Applications,MSc Management,BER01,PROF120,['G041'],36,Tuesday,09:00,3.0,R049,40,POT01
+Q3,C0462,International Business: Applications,MSc Management,BER01,PROF120,['G041'],36,Monday,13:30,3.0,R007,40,BER01
+Q3,C0766,Project Engineering: Advanced Methods,BEng Industrial Engineering,BER02,PROF077,['G068'],36,Friday,12:00,2.0,R017,90,BER02
+Q3,C0766,Project Engineering: Advanced Methods,BEng Industrial Engineering,BER02,PROF077,['G068'],36,Wednesday,15:00,2.0,R018,40,BER02
+Q3,C0061,Advanced Programming,BSc Data Science,BER03,PROF230,['G005'],35,Thursday,11:00,2.0,R036,75,BER03
+Q3,C0347,Business Law,BSc International Business,BER01,PROF203,['G030'],35,Friday,12:00,2.0,R048,35,POT01
+Q3,C0478,Leadership,MSc Management,BER01,PROF156,['G043'],35,Tuesday,13:00,3.0,R041,35,BER04
+Q3,C0703,Software Systems: Applications,BEng Software Systems,BER02,PROF076,['G063'],35,Wednesday,15:00,2.0,R017,90,BER02
+Q3,C1147,Applied Statistics: Applications,BA Social Sciences,BER01,PROF117,['G100'],35,Thursday,11:00,2.5,R006,35,BER01
+Q3,C1227,Commercial Transactions: Applications,LLB Law,BER01,PROF270,['G108'],35,Friday,12:00,2.0,R038,40,BER04
+Q3,C0110,Statistical Computing: Applications,BSc Artificial Intelligence,BER03,PROF223,['G010'],34,Monday,11:30,2.0,R033,40,BER03
+Q3,C0449,International Business: Applications,BSc Marketing and Management,BER04,PROF277,['G040'],34,Wednesday,15:00,2.0,R039,35,BER04
+Q3,C0449,International Business: Applications,BSc Marketing and Management,BER04,PROF277,['G040'],34,Thursday,11:00,2.0,R041,35,BER04
+Q3,C0615,Risk Management: Applications,MSc Economics,BER01,PROF075,['G054'],34,Friday,09:00,3.0,R006,35,BER01
+Q3,C0778,Quality Engineering: Applications,BEng Industrial Engineering,BER02,PROF124,['G069'],34,Monday,11:00,2.5,R006,35,BER01
+Q3,C0801,Manufacturing Systems,BEng Industrial Engineering,BER02,PROF245,['G071'],34,Tuesday,09:00,2.0,R022,55,BER02
+Q3,C0801,Manufacturing Systems,BEng Industrial Engineering,BER02,PROF245,['G071'],34,Wednesday,15:00,2.0,R016,100,BER02
+Q3,C0995,Interactive Media,BA UX and Interaction Design,BER04,PROF269,['G087'],34,Thursday,11:00,2.0,R043,130,BER04
+Q3,C0995,Interactive Media,BA UX and Interaction Design,BER04,PROF269,['G087'],34,Tuesday,11:00,2.0,R041,35,BER04
+Q3,C1080,Introduction to Psychology,BSc Psychology,BER01,PROF286,['G095'],34,Monday,09:00,2.5,R007,40,BER01
+Q3,C1080,Introduction to Psychology,BSc Psychology,BER01,PROF286,['G095'],34,Friday,09:00,2.5,R048,35,POT01
+Q3,C0660,Microeconomics: Applications,MSc Financial Analytics,BER04,PROF173,['G059'],33,Thursday,13:30,3.0,R041,35,BER04
+Q3,C0968,Design Thinking,BA UX and Interaction Design,BER04,PROF060,['G085'],33,Wednesday,09:00,2.0,R041,35,BER04
+Q3,C0968,Design Thinking,BA UX and Interaction Design,BER04,PROF060,['G085'],33,Tuesday,09:00,2.0,R039,35,BER04
+Q3,C1039,Motion Design,BA Digital Communication,BER04,PROF246,['G091'],33,Monday,09:00,2.5,R039,35,BER04
+Q3,C1039,Motion Design,BA Digital Communication,BER04,PROF246,['G091'],33,Wednesday,12:00,2.5,R041,35,BER04
+Q3,C1169,Behavioural Research: Applications,BA Social Sciences,BER01,PROF066,['G102'],33,Friday,12:00,2.0,R049,40,POT01
+Q3,C1182,Counselling Foundations,MA Applied Psychology,BER01,PROF240,['G104'],33,Tuesday,09:00,3.0,R048,35,POT01
+Q3,C1348,Human Biology: Advanced Methods,MSc Health Informatics,POT01,PROF217,['G118'],33,Thursday,13:30,3.0,R048,35,POT01
+Q3,C1348,Human Biology: Advanced Methods,MSc Health Informatics,POT01,PROF217,['G118'],33,Friday,14:00,3.0,R048,35,POT01
+Q3,C1025,UX Research: Applications,BA Digital Communication,BER04,PROF251,['G090'],32,Monday,09:00,2.0,R041,35,BER04
+Q3,C0205,Computer Networks: Advanced Methods,BSc Cybersecurity,BER03,PROF242,['G018'],31,Wednesday,09:00,2.5,R035,40,BER03
+Q3,C0368,Entrepreneurship: Applications,BSc International Business,BER01,PROF293,['G032'],31,Tuesday,11:00,2.0,R038,40,BER04
+Q3,C0165,Database Systems,BSc Cybersecurity,BER03,PROF247,['G015'],30,Monday,09:00,2.5,R005,30,BER01
+Q3,C0165,Database Systems,BSc Cybersecurity,BER03,PROF247,['G015'],30,Thursday,13:30,2.5,R026,30,BER03
+Q3,C1113,Health Psychology: Applications,BSc Psychology,BER01,PROF283,['G098'],30,Wednesday,12:00,2.5,R003,30,BER01
+Q3,C1113,Health Psychology: Applications,BSc Psychology,BER01,PROF283,['G098'],30,Friday,09:00,2.5,R003,30,BER01
+Q3,C1202,Psychology of Learning: Applications,MA Applied Psychology,BER01,PROF034,"['G106', 'G105']",86,Monday,13:30,3.0,R015,130,BER02
+Q3,C0431,Business Communication,BSc Marketing and Management,BER04,PROF176,['G039'],50,Tuesday,15:00,2.0,R019,145,BER02
+Q3,C0185,Advanced Algorithms,BSc Cybersecurity,BER03,PROF247,['G017'],49,Thursday,11:00,2.5,R017,90,BER02
+Q3,C0386,Business Analytics,BSc International Business,BER01,PROF015,['G034'],49,Wednesday,09:00,2.5,R036,75,BER03
+Q3,C0898,Engineering Simulation,MEng Engineering Management,POT01,PROF089,['G079'],49,Friday,14:00,3.0,R047,105,POT01
+Q3,C1012,Digital Storytelling,BA Digital Communication,BER04,PROF055,['G089'],49,Tuesday,11:00,2.0,R043,130,BER04
+Q3,C1012,Digital Storytelling,BA Digital Communication,BER04,PROF055,['G089'],49,Thursday,09:00,2.0,R040,250,BER04
+Q3,C0182,Data Mining: Applications,BSc Cybersecurity,BER03,PROF130,['G016'],48,Monday,11:30,2.0,R036,75,BER03
+Q3,C0765,Project Engineering: Advanced Methods,BEng Industrial Engineering,BER02,PROF291,['G067'],47,Tuesday,09:00,2.0,R016,100,BER02
+Q3,C0765,Project Engineering: Advanced Methods,BEng Industrial Engineering,BER02,PROF291,['G067'],47,Wednesday,15:00,2.0,R023,120,BER02
+Q3,C0931,Content Strategy,BA Digital Media,BER04,PROF144,['G082'],47,Friday,12:00,2.0,R042,70,BER04
+Q3,C0208,Software Architecture,BSc Cybersecurity,BER03,PROF128,['G019'],46,Thursday,13:30,2.0,R023,120,BER02
+Q3,C0208,Software Architecture,BSc Cybersecurity,BER03,PROF128,['G019'],46,Monday,11:30,2.0,R025,70,BER03
+Q3,C0885,Engineering Economics: Advanced Methods,MEng Engineering Management,POT01,PROF174,['G078'],44,Tuesday,09:00,3.0,R025,70,BER03
+Q3,C0641,Banking Fundamentals: Advanced Methods,MSc Economics,BER01,PROF222,['G056'],43,Wednesday,12:00,3.0,R023,120,BER02
+Q3,C0387,Business Analytics,BSc International Business,BER01,PROF150,['G035'],39,Friday,14:00,2.5,R018,40,BER02
+Q3,C0126,Digital Forensics: Applications,BSc Artificial Intelligence,BER03,PROF048,['G011'],34,Thursday,09:00,2.0,R029,230,BER03
+Q3,C0432,Management Accounting,BSc Marketing and Management,BER04,PROF122,['G038'],34,Monday,09:00,2.5,R049,40,POT01
+Q3,C0407,Leadership: Advanced Methods,BSc Marketing and Management,BER04,PROF032,['G036'],33,Tuesday,13:00,2.5,R035,40,BER03
+Q3,C0662,Portfolio Management: Applications,MSc Financial Analytics,BER04,PROF050,['G059'],33,Wednesday,09:00,3.0,R048,35,POT01
+Q3,C0252,Operating Systems: Advanced Methods,MSc Computer Science,BER03,PROF190,['G022'],31,Friday,14:00,3.0,R033,40,BER03
+Q3,C0164,Database Systems,BSc Cybersecurity,BER03,PROF059,['G014'],30,Thursday,13:30,2.5,R028,30,BER03
+Q3,C0164,Database Systems,BSc Cybersecurity,BER03,PROF059,['G014'],30,Monday,09:00,2.5,R011,30,BER01
+Q3,C0685,FinTech Foundations: Applications,MSc Financial Analytics,BER04,PROF044,['G061'],30,Tuesday,13:00,3.0,R037,30,BER04
+Q3,C0980,Digital Media Foundations: Applications,BA UX and Interaction Design,BER04,PROF235,['G086'],30,Wednesday,15:00,2.0,R037,30,BER04
+Q3,C0289,Advanced Programming,MSc Artificial Intelligence,POT01,PROF130,['G026'],49,Thursday,13:30,3.0,R015,130,BER02
+Q3,C0186,Artificial Intelligence,BSc Cybersecurity,BER03,PROF230,['G016'],48,Friday,12:00,2.0,R025,70,BER03
+Q3,C0538,Corporate Finance: Applications,BSc Economics,BER01,PROF044,['G048'],47,Monday,09:00,2.5,R025,70,BER03
+Q3,C0290,Cloud Computing,MSc Artificial Intelligence,POT01,PROF130,['G026'],49,Wednesday,12:00,3.0,R015,130,BER02
+Q3,C0539,Behavioural Economics: Applications,BSc Economics,BER01,PROF044,['G048'],47,Friday,09:00,2.0,R036,75,BER03
+Q3,C0291,Statistical Computing,MSc Artificial Intelligence,POT01,PROF247,['G026'],49,Tuesday,13:00,3.0,R023,120,BER02
+Q4,C1274,Digital Regulation: Applications,LLM Business and Technology Law,BER01,PROF195,"['G111', 'G112']",96,Monday,09:00,3.0,R015,130,BER02
+Q4,C1322,Epidemiology: Advanced Methods,BSc Health Management,POT01,PROF217,"['G116', 'G115']",91,Tuesday,09:00,2.0,R047,105,POT01
+Q4,C0395,Management Accounting: Applications,BSc International Business,BER01,PROF293,"['G034', 'G035']",88,Wednesday,09:00,2.0,R009,135,BER01
+Q4,C0278,Computer Networks: Advanced Methods,MSc Artificial Intelligence,POT01,PROF022,"['G024', 'G025']",86,Thursday,09:00,3.0,R047,105,POT01
+Q4,C1205,Social Research: Applications,MA Applied Psychology,BER01,PROF066,"['G106', 'G105']",86,Friday,09:00,3.0,R009,135,BER01
+Q4,C1175,Developmental Psychology: Advanced Methods,BA Social Sciences,BER01,PROF205,"['G103', 'G102']",84,Tuesday,11:00,2.0,R009,135,BER01
+Q4,C1175,Developmental Psychology: Advanced Methods,BA Social Sciences,BER01,PROF205,"['G103', 'G102']",84,Wednesday,11:00,2.0,R009,135,BER01
+Q4,C0767,Robotics: Applications,BEng Industrial Engineering,BER02,PROF081,"['G068', 'G067']",83,Monday,12:00,2.0,R023,120,BER02
+Q4,C0259,Artificial Intelligence,MSc Computer Science,BER03,PROF267,"['G022', 'G023']",82,Thursday,12:00,3.0,R029,230,BER03
+Q4,C0486,Human Resource Management: Applications,MSc Management,BER01,PROF257,"['G042', 'G043']",81,Friday,12:00,3.0,R009,135,BER01
+Q4,C1149,Psychology of Learning,BA Social Sciences,BER01,PROF043,"['G100', 'G101']",77,Tuesday,13:00,2.0,R002,80,BER01
+Q4,C0804,Engineering Economics,BEng Industrial Engineering,BER02,PROF296,"['G071', 'G070']",76,Wednesday,13:00,2.5,R017,90,BER02
+Q4,C0351,Innovation Management,BSc International Business,BER01,PROF032,"['G031', 'G030']",75,Monday,14:00,2.0,R002,80,BER01
+Q4,C1354,Health Economics: Advanced Methods,MSc Health Informatics,POT01,PROF211,"['G119', 'G118']",72,Tuesday,13:00,3.0,R047,105,POT01
+Q4,C0688,International Finance: Applications,MSc Financial Analytics,BER04,PROF050,"['G061', 'G060']",71,Thursday,09:00,3.0,R044,125,BER04
+Q4,C0373,Business Analytics: Applications,BSc International Business,BER01,PROF054,"['G032', 'G033']",70,Friday,15:00,2.0,R002,80,BER01
+Q4,C0147,Advanced Programming,BSc Artificial Intelligence,BER03,PROF048,['G013'],51,Wednesday,09:00,2.0,R027,60,BER03
+Q4,C0316,Entrepreneurship,BSc Business Administration,BER01,PROF277,['G028'],51,Monday,09:00,2.0,R008,60,BER01
+Q4,C0316,Entrepreneurship,BSc Business Administration,BER01,PROF277,['G028'],51,Friday,09:00,2.0,R008,60,BER01
+Q4,C0862,Project Engineering: Advanced Methods,MEng Digital Engineering,POT01,PROF245,['G075'],51,Wednesday,13:00,3.0,R045,55,POT01
+Q4,C0921,Visual Communication,BA Digital Media,BER04,PROF179,['G081'],51,Monday,12:00,2.0,R042,70,BER04
+Q4,C1059,Interaction Design,MA Digital Media and Innovation,BER04,PROF269,['G093'],51,Tuesday,09:00,3.0,R042,70,BER04
+Q4,C1332,Health Informatics: Applications,BSc Health Management,POT01,PROF276,['G117'],51,Thursday,12:00,2.5,R045,55,POT01
+Q4,C0437,Digital Transformation,BSc Marketing and Management,BER04,PROF284,['G039'],50,Friday,12:00,2.0,R042,70,BER04
+Q4,C0505,Behavioural Economics,BSc Economics,BER01,PROF100,['G045'],50,Monday,14:00,2.0,R021,50,BER02
+Q4,C1114,Behavioural Research,BSc Psychology,BER01,PROF224,['G097'],50,Wednesday,11:00,2.0,R008,60,BER01
+Q4,C0033,Computer Networks: Advanced Methods,BSc Computer Science,BER03,PROF242,['G003'],49,Thursday,15:00,2.0,R027,60,BER03
+Q4,C0191,Operating Systems,BSc Cybersecurity,BER03,PROF258,['G017'],49,Tuesday,15:00,2.0,R020,150,BER02
+Q4,C0292,Algorithms,MSc Artificial Intelligence,POT01,PROF112,['G026'],49,Friday,09:00,3.0,R045,55,POT01
+Q4,C0600,Financial Analytics: Applications,BSc Banking and Finance,BER01,PROF098,['G053'],49,Monday,09:00,2.0,R002,80,BER01
+Q4,C0710,Automation: Applications,BEng Software Systems,BER02,PROF244,['G062'],49,Wednesday,09:00,2.0,R021,50,BER02
+Q4,C0731,Energy Systems: Applications,BEng Software Systems,BER02,PROF089,['G064'],49,Thursday,15:00,2.0,R021,50,BER02
+Q4,C0840,Project Engineering: Advanced Methods,BEng Engineering Management,POT01,PROF076,['G074'],49,Tuesday,09:00,2.0,R045,55,POT01
+Q4,C0877,Sustainable Engineering,MEng Digital Engineering,POT01,PROF185,['G077'],49,Monday,14:00,3.0,R047,105,POT01
+Q4,C0899,Operations Research: Advanced Methods,MEng Engineering Management,POT01,PROF072,['G079'],49,Friday,12:00,3.0,R045,55,POT01
+Q4,C0899,Operations Research: Advanced Methods,MEng Engineering Management,POT01,PROF072,['G079'],49,Wednesday,13:00,3.0,R046,55,POT01
+Q4,C1015,Web Design,BA Digital Communication,BER04,PROF144,['G089'],49,Thursday,09:00,2.5,R042,70,BER04
+Q4,C1049,Digital Publishing: Applications,BA Digital Communication,BER04,PROF026,['G092'],49,Tuesday,11:00,2.0,R044,125,BER04
+Q4,C1096,Cognitive Psychology: Applications,BSc Psychology,BER01,PROF263,['G096'],49,Monday,12:00,2.0,R002,80,BER01
+Q4,C1240,Cyber Law: Applications,LLB Law,BER01,PROF294,['G109'],49,Tuesday,13:00,2.0,R008,60,BER01
+Q4,C0190,Operating Systems,BSc Cybersecurity,BER03,PROF202,['G016'],48,Thursday,12:00,2.0,R027,60,BER03
+Q4,C0747,Software Systems,BEng Software Systems,BER02,PROF127,['G066'],48,Friday,15:00,2.0,R021,50,BER02
+Q4,C0861,Technical Management: Applications,MEng Digital Engineering,POT01,PROF090,['G076'],48,Wednesday,13:00,3.0,R047,105,POT01
+Q4,C1130,Behavioural Research,BA Social Sciences,BER01,PROF035,['G099'],48,Monday,09:00,2.5,R021,50,BER02
+Q4,C0541,Investment Analysis: Applications,BSc Economics,BER01,PROF194,['G048'],47,Tuesday,13:00,2.5,R009,135,BER01
+Q4,C0590,Statistics for Economics: Advanced Methods,BSc Banking and Finance,BER01,PROF199,['G052'],47,Thursday,15:00,2.0,R008,60,BER01
+Q4,C0590,Statistics for Economics: Advanced Methods,BSc Banking and Finance,BER01,PROF199,['G052'],47,Friday,15:00,2.0,R008,60,BER01
+Q4,C0933,Digital Media Foundations,BA Digital Media,BER04,PROF250,['G082'],47,Wednesday,13:00,2.5,R042,70,BER04
+Q4,C1294,Human Biology: Applications,BSc Health Management,POT01,PROF001,['G113'],47,Thursday,09:00,2.0,R045,55,POT01
+Q4,C1294,Human Biology: Applications,BSc Health Management,POT01,PROF001,['G113'],47,Friday,09:00,2.0,R046,55,POT01
+Q4,C0211,Programming Fundamentals,BSc Cybersecurity,BER03,PROF228,['G019'],46,Monday,12:00,2.0,R025,70,BER03
+Q4,C0330,Consumer Behaviour: Applications,BSc Business Administration,BER01,PROF049,['G029'],46,Tuesday,09:00,2.5,R008,60,BER01
+Q4,C0527,Microeconomics: Applications,BSc Economics,BER01,PROF146,['G047'],46,Wednesday,09:00,2.5,R002,80,BER01
+Q4,C0585,Financial Markets: Applications,BSc Banking and Finance,BER01,PROF271,['G051'],46,Thursday,12:00,2.0,R008,60,BER01
+Q4,C0732,Energy Systems: Applications,BEng Software Systems,BER02,PROF208,['G065'],46,Friday,12:00,2.0,R021,50,BER02
+Q4,C0624,Econometrics: Advanced Methods,MSc Economics,BER01,PROF107,['G055'],45,Monday,14:00,3.0,R008,60,BER01
+Q4,C1252,Ethics and Governance,LLM Business and Technology Law,BER01,PROF183,['G110'],45,Tuesday,13:00,3.0,R001,45,BER01
+Q4,C0030,Secure Software Engineering: Applications,BSc Computer Science,BER03,PROF128,['G002'],44,Thursday,09:00,2.5,R034,45,BER03
+Q4,C0238,Secure Software Engineering,MSc Computer Science,BER03,PROF288,['G020'],44,Friday,09:00,3.0,R034,45,BER03
+Q4,C0888,Engineering Design,MEng Engineering Management,POT01,PROF126,['G078'],44,Wednesday,13:00,3.0,R001,45,BER01
+Q4,C1216,European Business Law,LLB Law,BER01,PROF180,['G107'],44,Monday,09:00,2.5,R001,45,BER01
+Q4,C0064,Artificial Intelligence: Applications,BSc Data Science,BER03,PROF017,['G006'],43,Tuesday,09:00,2.0,R034,45,BER03
+Q4,C0088,Advanced Databases,BSc Data Science,BER03,PROF230,['G008'],43,Thursday,15:00,2.0,R034,45,BER03
+Q4,C0562,Derivatives,BSc Banking and Finance,BER01,PROF264,['G049'],43,Friday,15:00,2.0,R001,45,BER01
+Q4,C0956,Immersive Media,BA Digital Media,BER04,PROF213,['G083'],43,Wednesday,11:00,2.0,R042,70,BER04
+Q4,C0648,Macroeconomics,MSc Economics,BER01,PROF187,['G057'],42,Monday,14:00,3.0,R001,45,BER01
+Q4,C0669,Investment Analysis: Advanced Methods,MSc Financial Analytics,BER04,PROF193,['G058'],42,Tuesday,13:00,3.0,R042,70,BER04
+Q4,C0818,Engineering Economics,BEng Engineering Management,POT01,PROF172,['G072'],42,Thursday,12:00,2.0,R046,55,POT01
+Q4,C1071,Creative Coding,MA Digital Media and Innovation,BER04,PROF152,['G094'],42,Friday,12:00,3.0,R044,125,BER04
+Q4,C0100,Operating Systems: Advanced Methods,BSc Data Science,BER03,PROF147,['G009'],41,Wednesday,09:00,2.0,R034,45,BER03
+Q4,C0100,Operating Systems: Advanced Methods,BSc Data Science,BER03,PROF147,['G009'],41,Thursday,15:00,2.0,R025,70,BER03
+Q4,C0828,Engineering Design: Advanced Methods,BEng Engineering Management,POT01,PROF125,['G073'],41,Monday,12:00,2.0,R045,55,POT01
+Q4,C0828,Engineering Design: Advanced Methods,BEng Engineering Management,POT01,PROF125,['G073'],41,Tuesday,11:00,2.0,R045,55,POT01
+Q4,C1295,Human Biology: Applications,BSc Health Management,POT01,PROF253,['G114'],41,Wednesday,11:00,2.0,R045,55,POT01
+Q4,C1295,Human Biology: Applications,BSc Health Management,POT01,PROF253,['G114'],41,Friday,15:00,2.0,R045,55,POT01
+Q4,C1364,Molecular Biology: Applications,MSc Health Informatics,POT01,PROF115,['G120'],41,Thursday,09:00,3.0,R046,55,POT01
+Q4,C0045,Data Structures: Advanced Methods,BSc Computer Science,BER03,PROF161,['G004'],40,Monday,09:00,2.0,R033,40,BER03
+Q4,C0416,Supply Chain Management,BSc Marketing and Management,BER04,PROF069,['G037'],40,Tuesday,13:00,2.5,R038,40,BER04
+Q4,C1000,Web Design,BA UX and Interaction Design,BER04,PROF246,['G088'],40,Wednesday,09:00,2.0,R038,40,BER04
+Q4,C0508,Economic Policy: Applications,BSc Economics,BER01,PROF075,['G044'],39,Friday,09:00,2.0,R007,40,BER01
+Q4,C0508,Economic Policy: Applications,BSc Economics,BER01,PROF075,['G044'],39,Monday,12:00,2.0,R007,40,BER01
+Q4,C0526,Microeconomics: Applications,BSc Economics,BER01,PROF241,['G046'],39,Tuesday,09:00,2.5,R007,40,BER01
+Q4,C0920,Visual Communication,BA Digital Media,BER04,PROF011,['G080'],38,Wednesday,11:00,2.0,R038,40,BER04
+Q4,C0135,Data Structures,BSc Artificial Intelligence,BER03,PROF170,['G012'],37,Thursday,12:00,2.0,R033,40,BER03
+Q4,C0304,Project Management: Advanced Methods,BSc Business Administration,BER01,PROF122,['G027'],37,Friday,12:00,2.5,R007,40,BER01
+Q4,C0563,Derivatives,BSc Banking and Finance,BER01,PROF198,['G050'],37,Monday,14:00,2.0,R018,40,BER02
+Q4,C0010,Web Application Development: Applications,BSc Computer Science,BER03,PROF079,['G001'],36,Wednesday,09:00,2.0,R033,40,BER03
+Q4,C0010,Web Application Development: Applications,BSc Computer Science,BER03,PROF079,['G001'],36,Thursday,15:00,2.0,R033,40,BER03
+Q4,C0087,Advanced Databases,BSc Data Science,BER03,PROF101,['G007'],36,Tuesday,09:00,2.0,R033,40,BER03
+Q4,C0463,Operations Management,MSc Management,BER01,PROF236,['G041'],36,Friday,09:00,3.0,R001,45,BER01
+Q4,C0063,Artificial Intelligence: Applications,BSc Data Science,BER03,PROF047,['G005'],35,Monday,09:00,2.0,R035,40,BER03
+Q4,C0711,Automation: Applications,BEng Software Systems,BER02,PROF099,['G063'],35,Wednesday,11:00,2.0,R018,40,BER02
+Q4,C1229,Dispute Resolution: Applications,LLB Law,BER01,PROF038,['G108'],35,Thursday,09:00,2.5,R006,35,BER01
+Q4,C0112,Cybersecurity Fundamentals: Applications,BSc Artificial Intelligence,BER03,PROF130,['G010'],34,Tuesday,13:00,2.5,R033,40,BER03
+Q4,C0134,Data Structures,BSc Artificial Intelligence,BER03,PROF247,['G011'],34,Monday,12:00,2.0,R048,35,POT01
+Q4,C0436,Digital Transformation,BSc Marketing and Management,BER04,PROF219,['G038'],34,Wednesday,13:00,2.0,R039,35,BER04
+Q4,C0451,Business Law,BSc Marketing and Management,BER04,PROF272,['G040'],34,Friday,15:00,2.0,R039,35,BER04
+Q4,C0621,Behavioural Economics: Applications,MSc Economics,BER01,PROF167,['G054'],34,Thursday,12:00,3.0,R006,35,BER01
+Q4,C0782,Digital Engineering: Advanced Methods,BEng Industrial Engineering,BER02,PROF092,['G069'],34,Tuesday,11:00,2.0,R018,40,BER02
+Q4,C0782,Digital Engineering: Advanced Methods,BEng Industrial Engineering,BER02,PROF092,['G069'],34,Monday,14:00,2.0,R048,35,POT01
+Q4,C0999,Web Design,BA UX and Interaction Design,BER04,PROF045,['G087'],34,Wednesday,15:00,2.0,R050,40,POT01
+Q4,C1085,Psychological Assessment: Applications,BSc Psychology,BER01,PROF201,['G095'],34,Friday,12:00,2.5,R006,35,BER01
+Q4,C0413,International Business,BSc Marketing and Management,BER04,PROF005,['G036'],33,Tuesday,09:00,2.0,R039,35,BER04
+Q4,C0666,Statistics for Economics: Applications,MSc Financial Analytics,BER04,PROF248,['G059'],33,Monday,09:00,3.0,R041,35,BER04
+Q4,C0969,Content Strategy: Advanced Methods,BA UX and Interaction Design,BER04,PROF012,['G085'],33,Thursday,09:00,2.5,R039,35,BER04
+Q4,C1186,Social Psychology: Applications,MA Applied Psychology,BER01,PROF117,['G104'],33,Wednesday,13:00,3.0,R006,35,BER01
+Q4,C1027,Creative Project Management,BA Digital Communication,BER04,PROF055,['G090'],32,Friday,15:00,2.0,R041,35,BER04
+Q4,C0210,Programming Fundamentals,BSc Cybersecurity,BER03,PROF298,['G018'],31,Tuesday,11:00,2.0,R033,40,BER03
+Q4,C0166,Distributed Systems: Applications,BSc Cybersecurity,BER03,PROF059,['G014'],30,Thursday,15:00,2.0,R026,30,BER03
+Q4,C0171,Cloud Computing,BSc Cybersecurity,BER03,PROF249,['G015'],30,Monday,12:00,2.0,R003,30,BER01
+Q4,C0982,Media Psychology,BA UX and Interaction Design,BER04,PROF266,['G086'],30,Friday,09:00,2.0,R037,30,BER04
+Q4,C0982,Media Psychology,BA UX and Interaction Design,BER04,PROF266,['G086'],30,Tuesday,15:00,2.0,R005,30,BER01
+Q4,C1115,Behavioural Research,BSc Psychology,BER01,PROF109,['G098'],30,Wednesday,09:00,2.0,R003,30,BER01
+Q4,C0370,Project Management,BSc International Business,BER01,PROF182,"['G033', 'G032']",70,Thursday,12:00,2.5,R002,80,BER01
+Q4,C0148,Cloud Computing,BSc Artificial Intelligence,BER03,PROF223,['G013'],51,Monday,14:00,2.5,R027,60,BER03
+Q4,C0317,Human Resource Management,BSc Business Administration,BER01,PROF176,['G028'],51,Friday,12:00,2.0,R008,60,BER01
+Q4,C0860,Technical Management: Applications,MEng Digital Engineering,POT01,PROF225,['G075'],51,Tuesday,13:00,3.0,R045,55,POT01
+Q4,C0919,UX Research: Advanced Methods,BA Digital Media,BER04,PROF045,['G081'],51,Wednesday,11:00,2.0,R044,125,BER04
+Q4,C1060,Design Thinking,MA Digital Media and Innovation,BER04,PROF026,['G093'],51,Thursday,09:00,3.0,R043,130,BER04
+Q4,C1172,Social Psychology: Applications,BA Social Sciences,BER01,PROF109,['G103'],51,Friday,15:00,2.0,R009,135,BER01
+Q4,C1333,Health Economics: Advanced Methods,BSc Health Management,POT01,PROF142,['G117'],51,Monday,09:00,2.5,R047,105,POT01
+Q4,C1333,Health Economics: Advanced Methods,BSc Health Management,POT01,PROF142,['G117'],51,Wednesday,13:00,2.5,R022,55,BER02
+Q4,C0439,Marketing Principles: Applications,BSc Marketing and Management,BER04,PROF277,['G039'],50,Tuesday,09:00,2.0,R044,125,BER04
+Q4,C0509,Economic Policy: Applications,BSc Economics,BER01,PROF075,['G045'],50,Friday,12:00,2.0,R002,80,BER01
+Q4,C0509,Economic Policy: Applications,BSc Economics,BER01,PROF075,['G045'],50,Monday,09:00,2.0,R016,100,BER02
+Q4,C1116,Community Studies: Applications,BSc Psychology,BER01,PROF018,['G097'],50,Wednesday,09:00,2.0,R008,60,BER01
+Q4,C0035,Software Architecture,BSc Computer Science,BER03,PROF059,['G003'],49,Thursday,12:00,2.5,R025,70,BER03
+Q4,C0294,Operating Systems: Applications,MSc Artificial Intelligence,POT01,PROF121,['G026'],49,Tuesday,13:00,3.0,R046,55,POT01
+Q4,C0391,Supply Chain Management,BSc International Business,BER01,PROF236,['G034'],49,Friday,12:00,2.5,R014,220,BER01
+Q4,C0601,Macroeconomics: Advanced Methods,BSc Banking and Finance,BER01,PROF146,['G053'],49,Monday,12:00,2.0,R021,50,BER02
+Q4,C0601,Macroeconomics: Advanced Methods,BSc Banking and Finance,BER01,PROF146,['G053'],49,Wednesday,13:00,2.0,R008,60,BER01
+Q4,C0708,Project Engineering: Applications,BEng Software Systems,BER02,PROF278,['G062'],49,Thursday,15:00,2.0,R022,55,BER02
+Q4,C0708,Project Engineering: Applications,BEng Software Systems,BER02,PROF278,['G062'],49,Tuesday,11:00,2.0,R021,50,BER02
+Q4,C0733,Engineering Economics: Advanced Methods,BEng Software Systems,BER02,PROF174,['G064'],49,Friday,09:00,2.5,R021,50,BER02
+Q4,C0733,Engineering Economics: Advanced Methods,BEng Software Systems,BER02,PROF174,['G064'],49,Monday,14:00,2.5,R017,90,BER02
+Q4,C0842,Engineering Mathematics: Applications,BEng Engineering Management,POT01,PROF071,['G074'],49,Wednesday,13:00,2.5,R021,50,BER02
+Q4,C0875,Industrial Systems: Advanced Methods,MEng Digital Engineering,POT01,PROF172,['G077'],49,Thursday,09:00,3.0,R021,50,BER02
+Q4,C0900,Project Engineering,MEng Engineering Management,POT01,PROF111,['G079'],49,Tuesday,13:00,3.0,R021,50,BER02
+Q4,C1016,Graphic Design: Applications,BA Digital Communication,BER04,PROF004,['G089'],49,Friday,15:00,2.0,R042,70,BER04
+Q4,C1016,Graphic Design: Applications,BA Digital Communication,BER04,PROF004,['G089'],49,Monday,12:00,2.0,R022,55,BER02
+Q4,C1045,Design Thinking,BA Digital Communication,BER04,PROF164,['G092'],49,Wednesday,13:00,2.5,R044,125,BER04
+Q4,C1097,Quantitative Research: Applications,BSc Psychology,BER01,PROF043,['G096'],49,Thursday,15:00,2.0,R002,80,BER01
+Q4,C1242,Legal Foundations,LLB Law,BER01,PROF038,['G109'],49,Friday,09:00,2.5,R002,80,BER01
+Q4,C1318,Biomedical Foundations: Applications,BSc Health Management,POT01,PROF253,['G115'],49,Monday,14:00,2.0,R046,55,POT01
+Q4,C0188,Database Systems: Advanced Methods,BSc Cybersecurity,BER03,PROF048,['G016'],48,Tuesday,13:00,2.5,R025,70,BER03
+Q4,C0748,Engineering Simulation,BEng Software Systems,BER02,PROF099,['G066'],48,Wednesday,13:00,2.5,R016,100,BER02
+Q4,C0863,Project Engineering: Advanced Methods,MEng Digital Engineering,POT01,PROF092,['G076'],48,Thursday,12:00,3.0,R047,105,POT01
+Q4,C1129,Human Behaviour,BA Social Sciences,BER01,PROF201,['G099'],48,Monday,12:00,2.0,R008,60,BER01
+Q4,C1272,Corporate Governance: Applications,LLM Business and Technology Law,BER01,PROF192,['G111'],48,Friday,09:00,3.0,R014,220,BER01
+Q4,C1276,Intellectual Property: Advanced Methods,LLM Business and Technology Law,BER01,PROF239,['G112'],48,Tuesday,13:00,3.0,R014,220,BER01
+Q4,C0279,Software Architecture,MSc Artificial Intelligence,POT01,PROF053,['G024'],47,Wednesday,13:00,3.0,R027,60,BER03
+Q4,C0542,FinTech Foundations: Applications,BSc Economics,BER01,PROF050,['G048'],47,Monday,09:00,2.5,R017,90,BER02
+Q4,C0586,Financial Markets: Applications,BSc Banking and Finance,BER01,PROF264,['G052'],47,Thursday,09:00,2.0,R008,60,BER01
+Q4,C0768,Systems Engineering: Advanced Methods,BEng Industrial Engineering,BER02,PROF244,['G067'],47,Friday,15:00,2.0,R022,55,BER02
+Q4,C0935,Interaction Design: Applications,BA Digital Media,BER04,PROF011,['G082'],47,Tuesday,09:00,2.5,R043,130,BER04
+Q4,C1296,Biotechnology Foundations: Applications,BSc Health Management,POT01,PROF217,['G113'],47,Wednesday,11:00,2.0,R046,55,POT01
+Q4,C0215,Algorithms: Applications,BSc Cybersecurity,BER03,PROF170,['G019'],46,Thursday,15:00,2.0,R036,75,BER03
+Q4,C0328,Innovation Management,BSc Business Administration,BER01,PROF123,['G029'],46,Monday,14:00,2.0,R023,120,BER02
+Q4,C0482,Consumer Behaviour,MSc Management,BER01,PROF005,['G042'],46,Friday,09:00,3.0,R022,55,BER02
+Q4,C0529,Portfolio Management: Applications,BSc Economics,BER01,PROF098,['G047'],46,Tuesday,09:00,2.0,R002,80,BER01
+Q4,C0589,Statistics for Economics: Advanced Methods,BSc Banking and Finance,BER01,PROF198,['G051'],46,Wednesday,09:00,2.0,R014,220,BER01
+Q4,C0589,Statistics for Economics: Advanced Methods,BSc Banking and Finance,BER01,PROF198,['G051'],46,Thursday,15:00,2.0,R009,135,BER01
+Q4,C0734,Engineering Economics: Advanced Methods,BEng Software Systems,BER02,PROF102,['G065'],46,Monday,09:00,2.5,R023,120,BER02
+Q4,C0734,Engineering Economics: Advanced Methods,BEng Software Systems,BER02,PROF102,['G065'],46,Tuesday,13:00,2.5,R022,55,BER02
+Q4,C0622,Behavioural Economics: Applications,MSc Economics,BER01,PROF194,['G055'],45,Wednesday,13:00,3.0,R002,80,BER01
+Q4,C0959,Creative Coding: Applications,BA Digital Media,BER04,PROF213,['G084'],45,Thursday,12:00,2.5,R042,70,BER04
+Q4,C1253,Cyber Law: Applications,LLM Business and Technology Law,BER01,PROF009,['G110'],45,Friday,12:00,3.0,R001,45,BER01
+Q4,C0032,Computer Networks: Advanced Methods,BSc Computer Science,BER03,PROF202,['G002'],44,Monday,12:00,2.0,R036,75,BER03
+Q4,C0236,Database Systems,MSc Computer Science,BER03,PROF230,['G020'],44,Tuesday,13:00,3.0,R034,45,BER03
+Q4,C0887,Engineering Mathematics: Advanced Methods,MEng Engineering Management,POT01,PROF300,['G078'],44,Thursday,09:00,3.0,R001,45,BER01
+Q4,C1204,Social Policy,MA Applied Psychology,BER01,PROF129,['G106'],44,Monday,14:00,3.0,R016,100,BER02
+Q4,C1218,Risk and Liability: Applications,LLB Law,BER01,PROF195,['G107'],44,Wednesday,11:00,2.0,R001,45,BER01
+Q4,C0068,Algorithms,BSc Data Science,BER03,PROF190,['G006'],43,Friday,15:00,2.0,R034,45,BER03
+Q4,C0090,Machine Learning,BSc Data Science,BER03,PROF128,['G008'],43,Wednesday,13:00,2.5,R034,45,BER03
+Q4,C0090,Machine Learning,BSc Data Science,BER03,PROF128,['G008'],43,Friday,12:00,2.5,R034,45,BER03
+Q4,C0564,Investment Analysis: Applications,BSc Banking and Finance,BER01,PROF157,['G049'],43,Tuesday,09:00,2.5,R001,45,BER01
+Q4,C0643,Financial Modelling: Applications,MSc Economics,BER01,PROF167,['G056'],43,Thursday,09:00,3.0,R002,80,BER01
+Q4,C0954,Media Production,BA Digital Media,BER04,PROF266,['G083'],43,Monday,09:00,2.0,R042,70,BER04
+Q4,C0954,Media Production,BA Digital Media,BER04,PROF266,['G083'],43,Wednesday,09:00,2.0,R042,70,BER04
+Q4,C0644,Financial Modelling: Applications,MSc Economics,BER01,PROF159,['G057'],42,Friday,09:00,3.0,R027,60,BER03
+Q4,C0665,Statistics for Economics: Applications,MSc Financial Analytics,BER04,PROF241,['G058'],42,Monday,14:00,3.0,R044,125,BER04
+Q4,C0817,Control Engineering: Advanced Methods,BEng Engineering Management,POT01,PROF208,['G072'],42,Tuesday,11:00,2.0,R046,55,POT01
+Q4,C1319,Biomedical Foundations: Applications,BSc Health Management,POT01,PROF058,['G116'],42,Thursday,12:00,2.0,R001,45,BER01
+Q4,C0102,Distributed Systems,BSc Data Science,BER03,PROF258,['G009'],41,Wednesday,11:00,2.0,R034,45,BER03
+Q4,C0239,Secure Software Engineering,MSc Computer Science,BER03,PROF022,['G021'],41,Tuesday,13:00,3.0,R036,75,BER03
+Q4,C0689,Financial Markets: Advanced Methods,MSc Financial Analytics,BER04,PROF086,['G060'],41,Thursday,12:00,3.0,R044,125,BER04
+Q4,C0829,Systems Engineering,BEng Engineering Management,POT01,PROF124,['G073'],41,Friday,15:00,2.0,R046,55,POT01
+Q4,C1297,Biotechnology Foundations: Applications,BSc Health Management,POT01,PROF181,['G114'],41,Monday,12:00,2.0,R046,55,POT01
+Q4,C1365,Health Management: Advanced Methods,MSc Health Informatics,POT01,PROF175,['G120'],41,Wednesday,13:00,3.0,R025,70,BER03
+Q4,C0046,Algorithms,BSc Computer Science,BER03,PROF249,['G004'],40,Friday,12:00,2.0,R033,40,BER03
+Q4,C0353,Strategic Management: Applications,BSc International Business,BER01,PROF049,['G031'],40,Monday,09:00,2.5,R007,40,BER01
+Q4,C0414,International Business,BSc Marketing and Management,BER04,PROF120,['G037'],40,Tuesday,09:00,2.0,R038,40,BER04
+Q4,C1002,Graphic Design: Applications,BA UX and Interaction Design,BER04,PROF231,['G088'],40,Thursday,09:00,2.5,R038,40,BER04
+Q4,C0280,Software Architecture,MSc Artificial Intelligence,POT01,PROF242,['G025'],39,Wednesday,13:00,3.0,R049,40,POT01
+Q4,C0394,Business Communication: Applications,BSc International Business,BER01,PROF150,['G035'],39,Friday,15:00,2.0,R007,40,BER01
+Q4,C0506,Econometrics: Applications,BSc Economics,BER01,PROF020,['G044'],39,Tuesday,11:00,2.0,R002,80,BER01
+Q4,C0506,Econometrics: Applications,BSc Economics,BER01,PROF020,['G044'],39,Monday,14:00,2.0,R035,40,BER03
+Q4,C0530,Corporate Finance: Advanced Methods,BSc Economics,BER01,PROF100,['G046'],39,Thursday,15:00,2.0,R007,40,BER01
+Q4,C1351,Life Sciences: Applications,MSc Health Informatics,POT01,PROF082,['G119'],39,Friday,09:00,3.0,R049,40,POT01
+Q4,C0918,UX Research: Advanced Methods,BA Digital Media,BER04,PROF148,['G080'],38,Tuesday,09:00,2.0,R040,250,BER04
+Q4,C0133,Programming Fundamentals: Advanced Methods,BSc Artificial Intelligence,BER03,PROF079,['G012'],37,Monday,12:00,2.0,R033,40,BER03
+Q4,C0305,Leadership,BSc Business Administration,BER01,PROF054,['G027'],37,Wednesday,09:00,2.0,R007,40,BER01
+Q4,C0565,Investment Analysis: Applications,BSc Banking and Finance,BER01,PROF068,['G050'],37,Thursday,12:00,2.5,R007,40,BER01
+Q4,C0012,Advanced Algorithms,BSc Computer Science,BER03,PROF161,['G001'],36,Tuesday,13:00,2.5,R035,40,BER03
+Q4,C0085,Big Data Engineering: Applications,BSc Data Science,BER03,PROF047,['G007'],36,Monday,12:00,2.0,R035,40,BER03
+Q4,C0465,Leadership: Applications,MSc Management,BER01,PROF069,['G041'],36,Wednesday,13:00,3.0,R007,40,BER01
+Q4,C0771,Software Systems,BEng Industrial Engineering,BER02,PROF125,['G068'],36,Friday,12:00,2.0,R018,40,BER02
+Q4,C0065,Data Structures: Advanced Methods,BSc Data Science,BER03,PROF052,['G005'],35,Thursday,15:00,2.0,R035,40,BER03
+Q4,C0352,Strategic Management: Applications,BSc International Business,BER01,PROF284,['G030'],35,Monday,09:00,2.5,R006,35,BER01
+Q4,C0713,Engineering Mathematics,BEng Software Systems,BER02,PROF296,['G063'],35,Tuesday,11:00,2.0,R022,55,BER02
+Q4,C0713,Engineering Mathematics,BEng Software Systems,BER02,PROF296,['G063'],35,Friday,15:00,2.0,R018,40,BER02
+Q4,C1150,Counselling Foundations: Applications,BA Social Sciences,BER01,PROF197,['G100'],35,Wednesday,11:00,2.0,R006,35,BER01
+Q4,C1228,Contract Law: Applications,LLB Law,BER01,PROF169,['G108'],35,Thursday,15:00,2.0,R006,35,BER01
+Q4,C1228,Contract Law: Applications,LLB Law,BER01,PROF169,['G108'],35,Tuesday,09:00,2.0,R006,35,BER01
+Q4,C0113,Operating Systems: Advanced Methods,BSc Artificial Intelligence,BER03,PROF023,['G010'],34,Friday,09:00,2.0,R033,40,BER03
+Q4,C0113,Operating Systems: Advanced Methods,BSc Artificial Intelligence,BER03,PROF023,['G010'],34,Monday,14:00,2.0,R041,35,BER04
+Q4,C0136,Computer Vision,BSc Artificial Intelligence,BER03,PROF101,['G011'],34,Wednesday,09:00,2.0,R035,40,BER03
+Q4,C0440,Corporate Strategy: Applications,BSc Marketing and Management,BER04,PROF056,['G038'],34,Thursday,09:00,2.0,R041,35,BER04
+Q4,C0452,Leadership: Applications,BSc Marketing and Management,BER04,PROF019,['G040'],34,Tuesday,11:00,2.0,R039,35,BER04
+Q4,C0619,Corporate Finance: Applications,MSc Economics,BER01,PROF065,['G054'],34,Friday,12:00,3.0,R039,35,BER04
+Q4,C0781,Engineering Optimisation: Applications,BEng Industrial Engineering,BER02,PROF274,['G069'],34,Monday,09:00,2.0,R018,40,BER02
+Q4,C0803,Control Engineering: Advanced Methods,BEng Industrial Engineering,BER02,PROF089,['G071'],34,Wednesday,11:00,2.0,R021,50,BER02
+Q4,C1003,Brand Communication: Applications,BA UX and Interaction Design,BER04,PROF055,['G087'],34,Thursday,12:00,2.0,R039,35,BER04
+Q4,C1084,Health Psychology,BSc Psychology,BER01,PROF229,['G095'],34,Tuesday,13:00,2.5,R006,35,BER01
+Q4,C0415,Supply Chain Management,BSc Marketing and Management,BER04,PROF156,['G036'],33,Monday,14:00,2.5,R039,35,BER04
+Q4,C0970,Media Production,BA UX and Interaction Design,BER04,PROF251,['G085'],33,Wednesday,09:00,2.0,R039,35,BER04
+Q4,C1046,Visual Communication: Applications,BA Digital Communication,BER04,PROF246,['G091'],33,Thursday,15:00,2.0,R039,35,BER04
+Q4,C1046,Visual Communication: Applications,BA Digital Communication,BER04,PROF246,['G091'],33,Friday,15:00,2.0,R038,40,BER04
+Q4,C1171,Social Psychology: Applications,BA Social Sciences,BER01,PROF158,['G102'],33,Tuesday,09:00,2.0,R009,135,BER01
+Q4,C1187,Qualitative Research: Applications,MA Applied Psychology,BER01,PROF184,['G104'],33,Monday,09:00,3.0,R039,35,BER04
+Q4,C1350,Life Sciences: Applications,MSc Health Informatics,POT01,PROF064,['G118'],33,Wednesday,13:00,3.0,R048,35,POT01
+Q4,C1026,Content Strategy,BA Digital Communication,BER04,PROF252,['G090'],32,Thursday,09:00,2.5,R040,250,BER04
+Q4,C0214,Algorithms: Applications,BSc Cybersecurity,BER03,PROF147,['G018'],31,Friday,09:00,2.0,R035,40,BER03
+Q4,C0167,Distributed Systems: Applications,BSc Cybersecurity,BER03,PROF130,['G015'],30,Tuesday,11:00,2.0,R026,30,BER03
+Q4,C0168,Advanced Programming,BSc Cybersecurity,BER03,PROF288,['G014'],30,Friday,12:00,2.0,R026,30,BER03
+Q4,C0690,Financial Markets: Advanced Methods,MSc Financial Analytics,BER04,PROF237,['G061'],30,Thursday,12:00,3.0,R037,30,BER04
+Q4,C0981,UX Research,BA UX and Interaction Design,BER04,PROF179,['G086'],30,Monday,14:00,2.0,R003,30,BER01
+Q4,C1119,Research Methods: Advanced Methods,BSc Psychology,BER01,PROF263,['G098'],30,Wednesday,11:00,2.0,R003,30,BER01
+Q4,C0149,Statistical Computing,BSc Artificial Intelligence,BER03,PROF023,['G013'],51,Tuesday,09:00,2.0,R027,60,BER03
+Q4,C0258,Advanced Algorithms,MSc Computer Science,BER03,PROF130,['G023'],51,Friday,09:00,3.0,R025,70,BER03
+Q4,C0318,Operations Management: Applications,BSc Business Administration,BER01,PROF088,['G028'],51,Monday,12:00,2.0,R047,105,POT01
+Q4,C0864,Digital Engineering,MEng Digital Engineering,POT01,PROF137,['G075'],51,Wednesday,09:00,3.0,R047,105,POT01
+Q4,C0864,Digital Engineering,MEng Digital Engineering,POT01,PROF137,['G075'],51,Tuesday,09:00,3.0,R025,70,BER03
+Q4,C0923,Digital Publishing,BA Digital Media,BER04,PROF152,['G081'],51,Thursday,09:00,2.5,R022,55,BER02
+Q4,C1061,Visual Communication: Applications,MA Digital Media and Innovation,BER04,PROF012,['G093'],51,Monday,09:00,3.0,R044,125,BER04
+Q4,C1174,Qualitative Research: Applications,BA Social Sciences,BER01,PROF109,['G103'],51,Friday,12:00,2.0,R022,55,BER02
+Q4,C1334,Healthcare Operations,BSc Health Management,POT01,PROF253,['G117'],51,Wednesday,09:00,2.0,R045,55,POT01
+Q4,C1334,Healthcare Operations,BSc Health Management,POT01,PROF253,['G117'],51,Thursday,15:00,2.0,R045,55,POT01
+Q4,C0507,Econometrics: Applications,BSc Economics,BER01,PROF086,['G045'],50,Tuesday,11:00,2.0,R014,220,BER01
+Q4,C0507,Econometrics: Applications,BSc Economics,BER01,PROF086,['G045'],50,Friday,15:00,2.0,R014,220,BER01
+Q4,C1118,Research Methods: Advanced Methods,BSc Psychology,BER01,PROF297,['G097'],50,Monday,12:00,2.0,R017,90,BER02
+Q4,C0031,Secure Software Engineering: Applications,BSc Computer Science,BER03,PROF116,['G003'],49,Wednesday,13:00,2.5,R036,75,BER03
+Q4,C0293,Cybersecurity Fundamentals,MSc Artificial Intelligence,POT01,PROF147,['G026'],49,Thursday,12:00,3.0,R021,50,BER02
+Q4,C0393,Business Communication: Applications,BSc International Business,BER01,PROF054,['G034'],49,Tuesday,09:00,2.0,R014,220,BER01
+Q4,C0602,Corporate Finance,BSc Banking and Finance,BER01,PROF083,['G053'],49,Friday,15:00,2.0,R027,60,BER03
+Q4,C0712,Engineering Mathematics,BEng Software Systems,BER02,PROF090,['G062'],49,Monday,12:00,2.0,R016,100,BER02
+Q4,C0712,Engineering Mathematics,BEng Software Systems,BER02,PROF090,['G062'],49,Tuesday,13:00,2.0,R017,90,BER02
+Q4,C0735,Operations Research,BEng Software Systems,BER02,PROF296,['G064'],49,Wednesday,11:00,2.0,R022,55,BER02
+Q4,C0841,Digital Engineering,BEng Engineering Management,POT01,PROF125,['G074'],49,Thursday,09:00,2.5,R027,60,BER03
+Q4,C0876,Control Engineering,MEng Digital Engineering,POT01,PROF127,['G077'],49,Friday,09:00,3.0,R047,105,POT01
+Q4,C0901,Automation,MEng Engineering Management,POT01,PROF092,['G079'],49,Monday,09:00,3.0,R045,55,POT01
+Q4,C1014,Creative Coding: Advanced Methods,BA Digital Communication,BER04,PROF036,['G089'],49,Tuesday,13:00,2.5,R044,125,BER04
+Q4,C1095,Applied Statistics,BSc Psychology,BER01,PROF226,['G096'],49,Wednesday,09:00,2.0,R022,55,BER02
+Q4,C1241,Law and Emerging Technologies: Applications,LLB Law,BER01,PROF118,['G109'],49,Thursday,15:00,2.0,R014,220,BER01
+Q4,C1320,Environmental Health: Applications,BSc Health Management,POT01,PROF181,['G115'],49,Friday,12:00,2.5,R046,55,POT01
+Q4,C1320,Environmental Health: Applications,BSc Health Management,POT01,PROF181,['G115'],49,Wednesday,13:00,2.5,R023,120,BER02
+Q4,C0192,Digital Forensics,BSc Cybersecurity,BER03,PROF223,['G016'],48,Monday,12:00,2.0,R027,60,BER03
+Q4,C0746,Systems Engineering: Advanced Methods,BEng Software Systems,BER02,PROF003,['G066'],48,Tuesday,11:00,2.0,R017,90,BER02
+Q4,C0746,Systems Engineering: Advanced Methods,BEng Software Systems,BER02,PROF003,['G066'],48,Thursday,12:00,2.0,R022,55,BER02
+Q4,C0865,Digital Engineering,MEng Digital Engineering,POT01,PROF030,['G076'],48,Friday,09:00,3.0,R042,70,BER04
+Q4,C0865,Digital Engineering,MEng Digital Engineering,POT01,PROF030,['G076'],48,Monday,14:00,3.0,R045,55,POT01
+Q4,C1131,Community Studies: Applications,BA Social Sciences,BER01,PROF066,['G099'],48,Tuesday,09:00,2.0,R021,50,BER02
+Q4,C1273,Corporate Governance: Applications,LLM Business and Technology Law,BER01,PROF192,['G112'],48,Wednesday,13:00,3.0,R009,135,BER01
+Q4,C1275,Intellectual Property: Advanced Methods,LLM Business and Technology Law,BER01,PROF153,['G111'],48,Thursday,09:00,3.0,R009,135,BER01
+Q4,C0281,Big Data Engineering,MSc Artificial Intelligence,POT01,PROF074,['G024'],47,Tuesday,13:00,3.0,R016,100,BER02
+Q4,C0543,Financial Modelling: Advanced Methods,BSc Economics,BER01,PROF020,['G048'],47,Friday,15:00,2.0,R025,70,BER03
+Q4,C0588,Monetary Economics: Applications,BSc Banking and Finance,BER01,PROF027,['G052'],47,Monday,14:00,2.5,R036,75,BER03
+Q4,C0770,Software Systems,BEng Industrial Engineering,BER02,PROF245,['G067'],47,Wednesday,11:00,2.0,R017,90,BER02
+Q4,C0934,Information Design,BA Digital Media,BER04,PROF221,['G082'],47,Thursday,15:00,2.0,R042,70,BER04
+Q4,C0934,Information Design,BA Digital Media,BER04,PROF221,['G082'],47,Friday,12:00,2.0,R043,130,BER04
+Q4,C1298,Public Health: Advanced Methods,BSc Health Management,POT01,PROF166,['G113'],47,Tuesday,11:00,2.0,R047,105,POT01
+Q4,C1298,Public Health: Advanced Methods,BSc Health Management,POT01,PROF166,['G113'],47,Wednesday,09:00,2.0,R046,55,POT01
+Q4,C0213,Natural Language Processing,BSc Cybersecurity,BER03,PROF053,['G019'],46,Monday,09:00,2.0,R027,60,BER03
+Q4,C0329,Strategic Management: Applications,BSc Business Administration,BER01,PROF268,['G029'],46,Thursday,12:00,2.5,R009,135,BER01
+Q4,C0484,Entrepreneurship: Applications,MSc Management,BER01,PROF123,['G042'],46,Tuesday,13:00,3.0,R023,120,BER02
+Q4,C0484,Entrepreneurship: Applications,MSc Management,BER01,PROF123,['G042'],46,Wednesday,13:00,3.0,R014,220,BER01
+Q4,C0531,Corporate Finance: Advanced Methods,BSc Economics,BER01,PROF248,['G047'],46,Friday,15:00,2.0,R036,75,BER03
+Q4,C0587,Monetary Economics: Applications,BSc Banking and Finance,BER01,PROF232,['G051'],46,Monday,14:00,2.5,R025,70,BER03
+Q4,C0736,Operations Research,BEng Software Systems,BER02,PROF077,['G065'],46,Thursday,15:00,2.0,R017,90,BER02
+Q4,C0620,Corporate Finance: Applications,MSc Economics,BER01,PROF050,['G055'],45,Friday,09:00,3.0,R036,75,BER03
+Q4,C1254,Law and Emerging Technologies: Applications,LLM Business and Technology Law,BER01,PROF162,['G110'],45,Monday,09:00,3.0,R036,75,BER03
+Q4,C0034,Software Architecture,BSc Computer Science,BER03,PROF112,['G002'],44,Tuesday,13:00,2.5,R029,230,BER03
+Q4,C0234,Algorithms: Advanced Methods,MSc Computer Science,BER03,PROF258,['G020'],44,Wednesday,13:00,3.0,R029,230,BER03
+Q4,C0889,Manufacturing Systems,MEng Engineering Management,POT01,PROF279,['G078'],44,Thursday,12:00,3.0,R034,45,BER03
+Q4,C1217,International Law: Applications,LLB Law,BER01,PROF114,['G107'],44,Friday,12:00,2.0,R027,60,BER03
+Q4,C1217,International Law: Applications,LLB Law,BER01,PROF114,['G107'],44,Tuesday,09:00,2.0,R022,55,BER02
+Q4,C0066,Data Structures: Advanced Methods,BSc Data Science,BER03,PROF052,['G006'],43,Monday,12:00,2.0,R034,45,BER03
+Q4,C0086,Big Data Engineering: Applications,BSc Data Science,BER03,PROF106,['G008'],43,Wednesday,11:00,2.0,R027,60,BER03
+Q4,C0566,FinTech Foundations: Applications,BSc Banking and Finance,BER01,PROF100,['G049'],43,Thursday,09:00,2.0,R014,220,BER01
+Q4,C0645,Microeconomics: Advanced Methods,MSc Economics,BER01,PROF075,['G056'],43,Friday,14:00,3.0,R017,90,BER02
+Q4,C0958,Creative Coding: Applications,BA Digital Media,BER04,PROF251,['G083'],43,Tuesday,13:00,2.5,R043,130,BER04
+Q4,C0667,Derivatives: Applications,MSc Financial Analytics,BER04,PROF187,['G058'],42,Monday,09:00,3.0,R034,45,BER03
+Q4,C0805,Technical Management,BEng Industrial Engineering,BER02,PROF278,['G070'],42,Wednesday,09:00,2.0,R017,90,BER02
+Q4,C0816,Engineering Simulation: Applications,BEng Engineering Management,POT01,PROF037,['G072'],42,Thursday,15:00,2.0,R046,55,POT01
+Q4,C1073,Information Design: Applications,MA Digital Media and Innovation,BER04,PROF246,['G094'],42,Friday,09:00,3.0,R044,125,BER04
+Q4,C1153,Work and Society: Applications,BA Social Sciences,BER01,PROF263,['G101'],42,Tuesday,11:00,2.0,R034,45,BER03
+Q4,C1203,Social Policy,MA Applied Psychology,BER01,PROF201,['G105'],42,Wednesday,13:00,3.0,R015,130,BER02
+Q4,C1321,Environmental Health: Applications,BSc Health Management,POT01,PROF216,['G116'],42,Thursday,09:00,2.5,R025,70,BER03
+Q4,C1321,Environmental Health: Applications,BSc Health Management,POT01,PROF216,['G116'],42,Monday,14:00,2.5,R022,55,BER02
+Q4,C0101,Computer Networks,BSc Data Science,BER03,PROF085,['G009'],41,Tuesday,13:00,2.5,R015,130,BER02
+Q4,C0101,Computer Networks,BSc Data Science,BER03,PROF085,['G009'],41,Thursday,12:00,2.5,R036,75,BER03
+Q4,C0235,Algorithms: Advanced Methods,MSc Computer Science,BER03,PROF101,['G021'],41,Friday,09:00,3.0,R029,230,BER03
+Q4,C0691,Econometrics,MSc Financial Analytics,BER04,PROF199,['G060'],41,Wednesday,13:00,3.0,R043,130,BER04
+Q4,C0830,Quality Engineering,BEng Engineering Management,POT01,PROF290,['G073'],41,Monday,14:00,2.0,R034,45,BER03
+Q4,C1299,Public Health: Advanced Methods,BSc Health Management,POT01,PROF108,['G114'],41,Tuesday,09:00,2.0,R046,55,POT01
+Q4,C1299,Public Health: Advanced Methods,BSc Health Management,POT01,PROF108,['G114'],41,Thursday,15:00,2.0,R047,105,POT01
+Q4,C1366,Public Health,MSc Health Informatics,POT01,PROF177,['G120'],41,Monday,09:00,3.0,R046,55,POT01
+Q4,C0047,Cybersecurity Fundamentals,BSc Computer Science,BER03,PROF298,['G004'],40,Friday,15:00,2.0,R033,40,BER03
+Q4,C0350,Organisational Behaviour,BSc International Business,BER01,PROF257,['G031'],40,Wednesday,13:00,2.5,R018,40,BER02
+Q4,C0418,Business Communication: Applications,BSc Marketing and Management,BER04,PROF049,['G037'],40,Thursday,09:00,2.5,R007,40,BER01
+Q4,C0418,Business Communication: Applications,BSc Marketing and Management,BER04,PROF049,['G037'],40,Friday,12:00,2.5,R038,40,BER04
+Q4,C1004,Brand Communication: Applications,BA UX and Interaction Design,BER04,PROF179,['G088'],40,Tuesday,11:00,2.0,R038,40,BER04
+Q4,C0372,Sustainable Business,BSc International Business,BER01,PROF160,['G033'],39,Monday,12:00,2.0,R018,40,BER02
+Q4,C0392,Supply Chain Management,BSc International Business,BER01,PROF289,['G035'],39,Tuesday,13:00,2.5,R007,40,BER01
+Q4,C0504,Behavioural Economics,BSc Economics,BER01,PROF040,['G044'],39,Wednesday,11:00,2.0,R007,40,BER01
+Q4,C0528,Portfolio Management: Applications,BSc Economics,BER01,PROF254,['G046'],39,Thursday,12:00,2.0,R014,220,BER01
+Q4,C1353,Health Informatics: Applications,MSc Health Informatics,POT01,PROF070,['G119'],39,Friday,12:00,3.0,R049,40,POT01
+Q4,C0922,Digital Publishing,BA Digital Media,BER04,PROF016,['G080'],38,Monday,14:00,2.5,R038,40,BER04
+Q4,C0137,Computer Vision,BSc Artificial Intelligence,BER03,PROF022,['G012'],37,Wednesday,09:00,2.0,R025,70,BER03
+Q4,C0306,Business Foundations: Applications,BSc Business Administration,BER01,PROF138,['G027'],37,Tuesday,09:00,2.0,R018,40,BER02
+Q4,C0567,FinTech Foundations: Applications,BSc Banking and Finance,BER01,PROF039,['G050'],37,Thursday,15:00,2.0,R001,45,BER01
+Q4,C0011,Data Mining: Applications,BSc Computer Science,BER03,PROF243,['G001'],36,Wednesday,11:00,2.0,R033,40,BER03
+Q4,C0089,Machine Learning,BSc Data Science,BER03,PROF161,['G007'],36,Monday,14:00,2.5,R033,40,BER03
+Q4,C0089,Machine Learning,BSc Data Science,BER03,PROF161,['G007'],36,Friday,09:00,2.5,R018,40,BER02
+Q4,C0769,Systems Engineering: Advanced Methods,BEng Industrial Engineering,BER02,PROF126,['G068'],36,Tuesday,11:00,2.0,R016,100,BER02
+Q4,C0067,Algorithms,BSc Data Science,BER03,PROF249,['G005'],35,Thursday,09:00,2.0,R033,40,BER03
+Q4,C0349,Organisational Behaviour,BSc International Business,BER01,PROF182,['G030'],35,Wednesday,13:00,2.5,R041,35,BER04
+Q4,C0485,Entrepreneurship: Applications,MSc Management,BER01,PROF284,['G043'],35,Tuesday,13:00,3.0,R039,35,BER04
+Q4,C0485,Entrepreneurship: Applications,MSc Management,BER01,PROF284,['G043'],35,Monday,14:00,3.0,R007,40,BER01
+Q4,C0709,Project Engineering: Applications,BEng Software Systems,BER02,PROF186,['G063'],35,Thursday,12:00,2.0,R018,40,BER02
+Q4,C0709,Project Engineering: Applications,BEng Software Systems,BER02,PROF186,['G063'],35,Friday,12:00,2.0,R017,90,BER02
+Q4,C1152,Work and Society: Applications,BA Social Sciences,BER01,PROF218,['G100'],35,Wednesday,09:00,2.0,R006,35,BER01
+Q4,C1230,Technology Law: Advanced Methods,LLB Law,BER01,PROF006,['G108'],35,Thursday,12:00,2.0,R041,35,BER04
+Q4,C0114,Computer Networks,BSc Artificial Intelligence,BER03,PROF247,['G010'],34,Friday,15:00,2.0,R035,40,BER03
+Q4,C0132,Programming Fundamentals: Advanced Methods,BSc Artificial Intelligence,BER03,PROF292,['G011'],34,Tuesday,09:00,2.0,R035,40,BER03
+Q4,C0438,Marketing Principles: Applications,BSc Marketing and Management,BER04,PROF150,['G038'],34,Monday,12:00,2.0,R041,35,BER04
+Q4,C0453,Business Foundations: Advanced Methods,BSc Marketing and Management,BER04,PROF031,['G040'],34,Wednesday,11:00,2.0,R039,35,BER04
+Q4,C0783,Embedded Systems,BEng Industrial Engineering,BER02,PROF244,['G069'],34,Thursday,09:00,2.5,R018,40,BER02
+Q4,C0806,Technical Management,BEng Industrial Engineering,BER02,PROF097,['G071'],34,Friday,15:00,2.0,R016,100,BER02
+Q4,C1001,Graphic Design: Applications,BA UX and Interaction Design,BER04,PROF209,['G087'],34,Tuesday,13:00,2.5,R041,35,BER04
+Q4,C1083,Organisational Psychology,BSc Psychology,BER01,PROF200,['G095'],34,Monday,09:00,2.5,R048,35,POT01
+Q4,C0417,Business Communication: Applications,BSc Marketing and Management,BER04,PROF203,['G036'],33,Wednesday,13:00,2.5,R038,40,BER04
+Q4,C0417,Business Communication: Applications,BSc Marketing and Management,BER04,PROF203,['G036'],33,Friday,09:00,2.5,R039,35,BER04
+Q4,C0971,Immersive Media,BA UX and Interaction Design,BER04,PROF004,['G085'],33,Thursday,12:00,2.5,R038,40,BER04
+Q4,C1044,Design Thinking,BA Digital Communication,BER04,PROF144,['G091'],33,Tuesday,13:00,2.5,R040,250,BER04
+Q4,C1173,Qualitative Research: Applications,BA Social Sciences,BER01,PROF129,['G102'],33,Monday,12:00,2.0,R006,35,BER01
+Q4,C1352,Health Informatics: Applications,MSc Health Informatics,POT01,PROF260,['G118'],33,Wednesday,09:00,3.0,R048,35,POT01
+Q4,C1028,Motion Design: Applications,BA Digital Communication,BER04,PROF207,['G090'],32,Friday,12:00,2.0,R041,35,BER04
+Q4,C1028,Motion Design: Applications,BA Digital Communication,BER04,PROF207,['G090'],32,Thursday,15:00,2.0,R041,35,BER04
+Q4,C0212,Natural Language Processing,BSc Cybersecurity,BER03,PROF121,['G018'],31,Monday,12:00,2.0,R039,35,BER04
+Q4,C0257,Advanced Algorithms,MSc Computer Science,BER03,PROF079,['G022'],31,Tuesday,13:00,3.0,R048,35,POT01
+Q4,C0371,Sustainable Business,BSc International Business,BER01,PROF219,['G032'],31,Friday,09:00,2.0,R006,35,BER01
+Q4,C0169,Advanced Programming,BSc Cybersecurity,BER03,PROF017,['G015'],30,Wednesday,09:00,2.0,R026,30,BER03
+Q4,C0170,Cloud Computing,BSc Cybersecurity,BER03,PROF047,['G014'],30,Thursday,09:00,2.0,R026,30,BER03
+Q4,C0983,Digital Storytelling: Applications,BA UX and Interaction Design,BER04,PROF213,['G086'],30,Monday,09:00,2.0,R003,30,BER01
+Q4,C1117,Community Studies: Applications,BSc Psychology,BER01,PROF158,['G098'],30,Tuesday,11:00,2.0,R003,30,BER01
+Q4,C1206,Introduction to Psychology: Advanced Methods,MA Applied Psychology,BER01,PROF010,"['G106', 'G105']",86,Friday,12:00,3.0,R016,100,BER02
+Q4,C0261,Data Structures: Applications,MSc Computer Science,BER03,PROF170,['G023'],51,Wednesday,13:00,3.0,R019,145,BER02
+Q4,C0441,Corporate Strategy: Applications,BSc Marketing and Management,BER04,PROF054,['G039'],50,Thursday,15:00,2.0,R044,125,BER04
+Q4,C0189,Database Systems: Advanced Methods,BSc Cybersecurity,BER03,PROF101,['G017'],49,Monday,09:00,2.5,R025,70,BER03
+Q4,C1047,Visual Communication: Applications,BA Digital Communication,BER04,PROF179,['G092'],49,Tuesday,09:00,2.0,R036,75,BER03
+Q4,C1047,Visual Communication: Applications,BA Digital Communication,BER04,PROF179,['G092'],49,Thursday,15:00,2.0,R043,130,BER04
+Q4,C0955,Media Production,BA Digital Media,BER04,PROF246,['G084'],45,Friday,12:00,2.0,R040,250,BER04
+Q4,C0955,Media Production,BA Digital Media,BER04,PROF246,['G084'],45,Monday,12:00,2.0,R001,45,BER01
+Q4,C0647,Macroeconomics,MSc Economics,BER01,PROF194,['G056'],43,Wednesday,09:00,3.0,R036,75,BER03
+Q4,C0646,Microeconomics: Advanced Methods,MSc Economics,BER01,PROF075,['G057'],42,Tuesday,13:00,3.0,R019,145,BER02
+Q4,C0802,Control Engineering: Advanced Methods,BEng Industrial Engineering,BER02,PROF244,['G070'],42,Thursday,12:00,2.0,R017,90,BER02
+Q4,C1072,Digital Media Foundations: Applications,MA Digital Media and Innovation,BER04,PROF026,['G094'],42,Monday,14:00,3.0,R042,70,BER04
+Q4,C1151,Counselling Foundations: Applications,BA Social Sciences,BER01,PROF229,['G101'],42,Friday,15:00,2.0,R047,105,POT01
+Q4,C0237,Database Systems,MSc Computer Science,BER03,PROF228,['G021'],41,Wednesday,13:00,3.0,R020,150,BER02
+Q4,C0282,Big Data Engineering,MSc Artificial Intelligence,POT01,PROF079,['G025'],39,Thursday,12:00,3.0,R049,40,POT01
+Q4,C0483,Consumer Behaviour,MSc Management,BER01,PROF156,['G043'],35,Tuesday,09:00,3.0,R041,35,BER04
+Q4,C0623,Econometrics: Advanced Methods,MSc Economics,BER01,PROF050,['G054'],34,Monday,14:00,3.0,R006,35,BER01
+Q4,C0670,Investment Analysis: Advanced Methods,MSc Financial Analytics,BER04,PROF100,['G059'],33,Friday,09:00,3.0,R041,35,BER04
+Q4,C1048,Digital Publishing: Applications,BA Digital Communication,BER04,PROF213,['G091'],33,Wednesday,09:00,2.0,R041,35,BER04
+Q4,C1185,Sociology,MA Applied Psychology,BER01,PROF263,['G104'],33,Thursday,09:00,3.0,R048,35,POT01
+Q4,C0260,Data Structures: Applications,MSc Computer Science,BER03,PROF022,['G022'],31,Tuesday,09:00,3.0,R029,230,BER03
+Q4,C0193,Digital Forensics,BSc Cybersecurity,BER03,PROF101,['G017'],49,Friday,15:00,2.0,R029,230,BER03
+Q4,C0957,Immersive Media,BA Digital Media,BER04,PROF246,['G084'],45,Monday,09:00,2.0,R022,55,BER02
+Q4,C0464,Business Law,MSc Management,BER01,PROF054,['G041'],36,Friday,12:00,3.0,R035,40,BER03
+Q4,C0668,Derivatives: Applications,MSc Financial Analytics,BER04,PROF050,['G059'],33,Wednesday,13:00,3.0,R040,250,BER04
+Q4,C0692,Econometrics,MSc Financial Analytics,BER04,PROF050,['G061'],30,Tuesday,13:00,3.0,R003,30,BER01

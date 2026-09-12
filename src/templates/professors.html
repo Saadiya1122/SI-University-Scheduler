@@ -592,42 +592,24 @@ UniPlan | Professors
 <p> Select a professor to view their sessions. </p>
 </div>
 </div>
-<div id="professorList" class="professor-list" > {
-% for professor in professors %}
-<button type="button" class="professor-row" data-professor-id="{{ professor.professor_id }}" data-search="{{ professor.name|lower }} {{ professor.professor_id|lower }}" >
+
+<div id="professorList" class="professor-list">
+{% for professor in professors %}
+<button type="button" class="professor-row" data-professor-id="{{ professor.professor_id }}" data-search="{{ professor.name|lower }} {{ professor.professor_id|lower }}">
 <div class="professor-row-main">
-<div class="professor-row-name"> {
-{
-professor.name }
-}
-</div>
-<div class="professor-row-sessions"> {
-{
-professor.session_count }
-}
-sessions </div>
+<div class="professor-row-name">{{ professor.name }}</div>
+<div class="professor-row-sessions">{{ professor.session_count }} sessions</div>
 </div>
 <div class="professor-row-meta">
-<span> {
-{
-professor.professor_id }
-}
-</span>
-<span> Faculty {
-{
-professor.faculty_id }
-}
-</span>
-<span> {
-{
-professor.campus_id }
-}
-</span>
+<span>{{ professor.professor_id }}</span>
+<span>Faculty {{ professor.faculty_id }}</span>
+<span>{{ professor.campus_id }}</span>
 </div>
-</button> {
-% endfor %}
-<div id="noProfessors" class="professor-empty" style="display: none;" > No professors match your search. </div>
+</button>
+{% endfor %}
+<div id="noProfessors" class="professor-empty" style="display: none;">No professors match your search.</div>
 </div>
+
 <!-- PAGINATION -->
 <div id="pagination" class="pagination" ></div>
 </div>
@@ -1158,6 +1140,8 @@ professor.campus_id }
         );
 
     }
+
+    
 
     function getSessionEndTime(
         session

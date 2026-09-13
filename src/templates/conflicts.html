@@ -260,7 +260,7 @@ html[data-theme="dark"] .profile-panel-link:hover { background:#1d2636; color:#e
 <div class="avatar"><span id="topbarAvatar">S</span></div>
 
 <div class="user-info">
-<div class="user-name" id="topbarUserName">Saadiya</div>
+<div class="user-name" id="topbarUserName">Administrator</div>
 <div class="user-role">Administrator</div>
 </div>
 
@@ -272,7 +272,7 @@ html[data-theme="dark"] .profile-panel-link:hover { background:#1d2636; color:#e
 <div class="profile-panel-avatar" id="profilePanelAvatar">S</div>
 
 <div>
-<div class="profile-panel-name" id="profilePanelName">Saadiya</div>
+<div class="profile-panel-name" id="profilePanelName">Administrator</div>
 <div class="profile-panel-email" id="profilePanelEmail">administrator@uniplan.local</div>
 </div>
 </div>
@@ -514,6 +514,35 @@ Failed Classes
 </div>
 </section>
 {% endif %}
+{% if unassigned_modules %}
+<section class="conflict-section">
+    <div class="conflict-section-header">
+        <h2>Unassigned Modules</h2>
+        <p>Modules that are not assigned to any quarter and therefore have no scheduled classes.</p>
+    </div>
+
+    <div class="conflict-table-wrapper">
+        <table class="conflict-table">
+            <thead>
+                <tr>
+                    <th>Module ID</th>
+                    <th>Module Code</th>
+                    <th>Module Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for module in unassigned_modules %}
+                <tr>
+                    <td class="conflict-class">{{ module.module_id }}</td>
+                    <td>{{ module.module_code }}</td>
+                    <td>{{ module.module_name }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endif %}
 
 </main>
 </div>
@@ -524,7 +553,7 @@ Failed Classes
     const accountEmailKey = "uniplan-account-email";
 
     function getAccountName() {
-        return localStorage.getItem(accountNameKey) || "Saadiya";
+        return localStorage.getItem(accountNameKey) || "Administrator";
     }
 
     function getAccountEmail() {

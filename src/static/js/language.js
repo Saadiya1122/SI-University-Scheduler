@@ -41,7 +41,7 @@ const translations = {
 
         "UNIVERSITY OVERVIEW": "UNIVERSITY OVERVIEW",
         "Monitor your university schedule and planning activity.": "Monitor your university schedule and planning activity.",
-        "Good afternoon, Saadiya 👋": "Good afternoon, Saadiya 👋",
+        "Good afternoon, Administrator 👋": "Good afternoon, Administrator 👋",
         "Here's a quick look at the current university schedule.": "Here's a quick look at the current university schedule.",
         "View Timetable": "View Timetable",
         "Teaching staff": "Teaching staff",
@@ -252,7 +252,7 @@ const translations = {
 
         "UNIVERSITY OVERVIEW": "UNIVERSITÄTSÜBERSICHT",
         "Monitor your university schedule and planning activity.": "Überwachen Sie Ihren Universitätsstundenplan und die Planungsaktivitäten.",
-        "Good afternoon, Saadiya 👋": "Guten Nachmittag, Saadiya 👋",
+        "Good afternoon, Administrator 👋": "Guten Nachmittag, Administrator 👋",
         "Here's a quick look at the current university schedule.": "Hier ist ein kurzer Überblick über den aktuellen Universitätsstundenplan.",
         "View Timetable": "Stundenplan anzeigen",
         "Teaching staff": "Lehrpersonal",

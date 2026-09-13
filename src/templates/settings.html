@@ -402,7 +402,7 @@ html[data-theme="dark"] .system-health-value { color: #e7ebf2; }
 <button type="button" class="user-profile topbar-profile-button" id="profileButton" aria-expanded="false">
 <div class="avatar">S</div>
 <div class="user-info">
-<div class="user-name" id="topbarUserName">Saadiya</div>
+<div class="user-name" id="topbarUserName">Administrator</div>
 <div class="user-role">Administrator</div>
 </div>
 <span class="user-arrow">⌄</span>
@@ -412,7 +412,7 @@ html[data-theme="dark"] .system-health-value { color: #e7ebf2; }
 <div class="profile-panel-user">
 <div class="avatar profile-panel-avatar">S</div>
 <div>
-<div class="profile-panel-name" id="profilePanelName">Saadiya</div>
+<div class="profile-panel-name" id="profilePanelName">Administrator</div>
 <div class="profile-panel-role">Administrator</div>
 </div>
 </div>
@@ -513,7 +513,7 @@ html[data-theme="dark"] .system-health-value { color: #e7ebf2; }
 
 <div class="account-field">
 <label for="accountName" class="account-label">Name</label>
-<input type="text" id="accountName" class="account-input" value="Saadiya" readonly>
+<input type="text" id="accountName" class="account-input" value="Administrator" readonly>
 </div>
 
 <div class="account-field">
@@ -884,7 +884,7 @@ function setLocalStorage(key, value) {
 }
 
 let originalAccount = {
-    name: getLocalStorage("uniplan-account-name", "Saadiya"),
+    name: getLocalStorage("uniplan-account-name", "Administrator"),
     role: getLocalStorage("uniplan-account-role", "Administrator"),
     email: getLocalStorage("uniplan-account-email", "")
 };
@@ -920,7 +920,7 @@ cancelAccountButton.addEventListener("click", function () {
 
 saveAccountButton.addEventListener("click", function () {
     originalAccount = {
-        name: accountName.value.trim() || "Saadiya",
+        name: accountName.value.trim() || "Administrator",
         role: accountRole.value,
         email: accountEmail.value.trim()
     };
@@ -939,7 +939,7 @@ saveAccountButton.addEventListener("click", function () {
 });
 
 /* Saved account name */
-const savedAccountName = getLocalStorage("uniplan-account-name", "Saadiya");
+const savedAccountName = getLocalStorage("uniplan-account-name", "Administrator");
 accountName.value = savedAccountName;
 originalAccount.name = savedAccountName;
 
@@ -1165,7 +1165,7 @@ loadDatasetStatus();
     const profilePanelName = document.getElementById("profilePanelName");
     const profilePanelEmail = document.getElementById("profilePanelEmail");
 
-    const savedName = localStorage.getItem("uniplan-account-name") || "Saadiya";
+    const savedName = localStorage.getItem("uniplan-account-name") || "Administrator";
     const savedEmail = localStorage.getItem("uniplan-account-email") || "";
 
     if (topbarUserName) topbarUserName.textContent = savedName;

@@ -210,7 +210,7 @@ html[data-theme="dark"] .room-page-info,html[data-theme="dark"] .room-empty { co
 <button type="button" id="profileButton" class="user-profile" aria-expanded="false">
 <div class="avatar">S</div>
 <div class="user-info">
-<div id="topbarUserName" class="user-name">Saadiya</div>
+<div id="topbarUserName" class="user-name">Administrator</div>
 <div class="user-role">Administrator</div>
 </div>
 <span class="user-arrow">⌄</span>
@@ -220,7 +220,7 @@ html[data-theme="dark"] .room-page-info,html[data-theme="dark"] .room-empty { co
 <div class="profile-panel-user">
 <div class="profile-panel-avatar">S</div>
 <div>
-<strong id="profilePanelName">Saadiya</strong>
+<strong id="profilePanelName">Administrator</strong>
 <span>Administrator</span>
 </div>
 </div>
@@ -436,7 +436,7 @@ roomCount.textContent = `${filteredRows.length} rooms`;
 renderRoomTable();
 
 /* Account information */
-const savedAccountName = localStorage.getItem("uniplan-account-name") || "Saadiya";
+const savedAccountName = localStorage.getItem("uniplan-account-name") || "Administrator";
 const savedAccountEmail = localStorage.getItem("uniplan-account-email") || "";
 
 const topbarUserName = document.getElementById("topbarUserName");

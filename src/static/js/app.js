@@ -83,21 +83,42 @@ function getDayDate(day) {
     return date;
 }
 
+function getDateFormat() {
+    return localStorage.getItem("uniplan-date-format") || "long";
+}
+
+function formatDateParts(date) {
+    const day = String(date.getDate()).padStart(2, "0");
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const year = String(date.getFullYear());
+    return { day, month, year };
+}
+
 function formatDateFull(date) {
-    return date.toLocaleDateString("en-GB", {
-        day: "numeric",
-        month: "long",
-        year: "numeric"
-    });
+    const parts = formatDateParts(date);
+
+    if (getDateFormat() === "short") {
+        return `${parts.day}/${parts.month}/${parts.year.slice(-2)}`;
+    }
+
+    return date.getDate() + " " + [
+        "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+        "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"
+    ][date.getMonth()] + " " + parts.year;
 }
 
 function formatDateShort(date) {
-    return date.toLocaleDateString("en-GB", {
-        day: "2-digit",
-        month: "short"
-    });
-}
+    const parts = formatDateParts(date);
 
+    if (getDateFormat() === "short") {
+        return `${parts.day}/${parts.month}`;
+    }
+
+    return date.getDate() + " " + [
+        "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+        "Jul", "Aug", "Sept", "Oct", "Nov", "Dec"
+    ][date.getMonth()];
+}
 function updateWeekDisplay() {
     const week = getCurrentWeek();
     if (!week) return;
@@ -145,14 +166,15 @@ function loadWeeks() {
         const option = document.createElement("option");
         option.value = index;
 
-        if (week.start_display && week.end_display) {
-            option.textContent = `Week ${week.week} · ${week.start_display} – ${week.end_display}`;
-        } else {
-            option.textContent = `Week ${week.week}`;
-        }
+        const start = new Date(`${week.start}T00:00:00`);
+    
+        const end = new Date(start);
+        
+        end.setDate(start.getDate() + days.length - 1);
+        
+        option.textContent =`Week ${week.week} · ${formatDateFull(start)} – ${formatDateFull(end)}`;
 
-        weekFilter.appendChild(option);
-    });
+        weekFilter.appendChild(option);});
 
     if (selectedWeekIndex >= weeks.length) selectedWeekIndex = 0;
     weekFilter.value = selectedWeekIndex;
@@ -194,31 +216,42 @@ function getModules() {
     )].sort((a, b) => a.localeCompare(b));
 }
 
-function showModuleResults() {
+function showModuleResults(showAll = false) {
     if (!moduleResults || !moduleSearch) return;
 
-    const query = cleanText(moduleSearch.value);
+    const query = showAll
+        ? ""
+        : cleanText(moduleSearch.value);
+
     const modules = getModules().filter(
-        module => query === "" || cleanText(module).includes(query)
+        module =>
+            query === "" ||
+            cleanText(module).includes(query)
     );
 
     moduleResults.innerHTML = "";
 
     if (modules.length === 0) {
-        moduleResults.innerHTML = `<div class="no-results">No modules found</div>`;
+        moduleResults.innerHTML =
+            `<div class="no-results">No modules found</div>`;
     } else {
         modules.forEach(module => {
-            const result = document.createElement("button");
+            const result =
+                document.createElement("button");
+
             result.type = "button";
             result.className = "module-result";
             result.textContent = module;
 
-            result.addEventListener("click", function () {
-                selectedModule = module;
-                moduleSearch.value = module;
-                moduleResults.style.display = "none";
-                renderCurrentView();
-            });
+            result.addEventListener(
+                "click",
+                function () {
+                    selectedModule = module;
+                    moduleSearch.value = module;
+                    moduleResults.style.display = "none";
+                    renderCurrentView();
+                }
+            );
 
             moduleResults.appendChild(result);
         });
@@ -226,7 +259,6 @@ function showModuleResults() {
 
     moduleResults.style.display = "block";
 }
-
 function clearModuleFilter() {
     selectedModule = "all";
 
@@ -917,7 +949,7 @@ if (moduleDropdown) {
         if (moduleResults && moduleResults.style.display === "block") {
             moduleResults.style.display = "none";
         } else {
-            showModuleResults();
+            showModuleResults(true);
             if (moduleSearch) moduleSearch.focus();
         }
     });

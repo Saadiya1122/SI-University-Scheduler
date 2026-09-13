@@ -732,6 +732,20 @@ def conflicts():
         on="quarter_module_id",
         how="left"
     )
+    
+    modules_df = dataset["modules"].copy()
+
+    assigned_module_ids = set(
+        quarter_modules_df["module_id"].dropna().astype(str).str.strip()
+    )
+
+    unassigned_modules = modules_df[
+        ~modules_df["module_id"].astype(str).str.strip().isin(assigned_module_ids)
+    ].copy()
+
+    unassigned_modules = unassigned_modules[
+        ["module_id", "module_code", "module_name"]
+    ].to_dict("records")
 
     schedule_records = []
 
@@ -971,7 +985,8 @@ def conflicts():
         failed_classes=failed_classes,
         conflict_rows=conflict_rows,
         quarter_results=quarter_results,
-        schedule_valid=schedule_valid
+        schedule_valid=schedule_valid,
+        unassigned_modules=unassigned_modules
     )
 
 

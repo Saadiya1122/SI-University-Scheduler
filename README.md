@@ -4,7 +4,6 @@
 
 **Student:** Saadiya Shaikh  
 **Student ID:** GH1019657  
-**University:** GISMA University of Applied Sciences  
 
 ## Overview
 

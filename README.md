@@ -36,16 +36,16 @@ Dataset: `data/SI_University_Scheduling_Dataset_AUDITED_FINAL.xlsx`
 python src/app.py
 
 Open:
-[```text
-http://127.0.0.1:5001](http://127.0.0.1:5001)
 
-### Final Results:
+http://127.0.0.1:5001
 
-- 1,550 / 1,550 sessions scheduled
-- 0 failed classes
-- 0 professor conflicts
-- 0 student group conflicts
-- 0 room conflicts
-- 0 capacity errors
-- 59.86% room utilisation
-- 79.81% campus match
+Final Results
+
+1,550 / 1,550 sessions scheduled
+0 failed classes
+0 professor conflicts
+0 student group conflicts
+0 room conflicts
+0 capacity errors
+59.86% room utilisation
+79.81% campus match

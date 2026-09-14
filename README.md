@@ -36,11 +36,10 @@ Dataset: `data/SI_University_Scheduling_Dataset_AUDITED_FINAL.xlsx`
 python src/app.py
 
 Open:
+[```text
+http://127.0.0.1:5001](http://127.0.0.1:5001)
 
-```text
-http://127.0.0.1:5001
-
-### Final Results
+### Final Results:
 
 - 1,550 / 1,550 sessions scheduled
 - 0 failed classes

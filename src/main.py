@@ -79,6 +79,24 @@ def run():
 
         print(f"\n{quarter}")
         print("-" * 40)
+        
+        baseline_schedule, baseline_failed = schedule_quarter(
+            quarter_classes,
+            rooms,
+            None,
+            schedule_config,
+            professor_preferences,
+            first_fit=True
+        )
+
+        baseline_waste = sum(
+            item["capacity"] - item["student_count"]
+            for item in baseline_schedule
+        )
+
+        print("Baseline greedy sessions:", len(baseline_schedule))
+        print("Baseline greedy failed classes:", len(baseline_failed))
+        print("Baseline greedy room waste:", baseline_waste)
 
         graph = build_conflict_graph(quarter_classes)
         colors = welsh_powell(graph)
@@ -93,15 +111,15 @@ def run():
             professor_preferences
         )
 
-        print("Greedy sessions:", len(greedy_schedule))
-        print("Greedy failed classes:", len(failed))
+        print("Graph-guided greedy sessions:", len(greedy_schedule))
+        print("Graph-guided greedy failed classes:", len(failed))
 
         greedy_waste = sum(
             item["capacity"] - item["student_count"]
             for item in greedy_schedule
         )
 
-        print("Greedy room waste:", greedy_waste)
+        print("Graph-guided greedy room waste:", greedy_waste)
 
         final_schedule = greedy_schedule
         repaired = 0
@@ -132,6 +150,7 @@ def run():
 
         algorithm_results.append({
             "quarter": quarter,
+            "baseline_greedy": baseline_waste,
             "greedy": greedy_waste,
             "dp": dp_waste,
             "improvement": improvement
@@ -237,9 +256,13 @@ def run():
         df[columns].to_csv(output / "final_schedule.csv", index=False)
 
     if all_failed:
-        pd.DataFrame({
-            "class_id": sorted(set(all_failed))
-        }).to_csv(output / "conflict_report.csv", index=False)
+        pd.DataFrame([
+            {
+                "class_id": class_id,
+                "reason": "Unable to assign all required sessions"
+            }
+            for class_id in sorted(set(all_failed))
+        ]).to_csv(output / "conflict_report.csv", index=False)
 
     print("\nOVERALL SUMMARY")
     print("-" * 55)
